@@ -7,14 +7,14 @@ textAnimation2.to('.tech__paragraph--left', {xPercent: 20})
 ScrollTrigger.create({
   animation: textAnimation1,
   trigger: '.tech',
-  start: 'top center',
+  start: 'top top',
   end: 'bottom',
   scrub: 1,
 })
 ScrollTrigger.create({
   animation: textAnimation2,
   trigger: '.tech',
-  start: 'top center',
+  start: 'top top',
   end: 'bottom',
   scrub: 1,
 })

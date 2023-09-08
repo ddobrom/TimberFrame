@@ -1,0 +1,101 @@
+.benefit {
+  padding: 160px 0;
+  padding-bottom: 180px;
+  &__container {
+    padding-left: 113px;
+    padding-right: 113px;
+    text-align: center;
+  }
+  &__heading {
+    margin-bottom: 32px;
+    p {
+      margin: 0;
+      color: var(--black-brand-color);
+      font-family: PP PP Neue Montreal;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      span {
+        color: var(--focus-active-color);
+      }
+    }
+  }
+  &__title-logo {
+    margin: 0;
+    margin-bottom: 8px;
+    color: var(--focus-active-color);
+    font-family: PP PP Neue Montreal;
+    font-size: calc-between-width(1440, 40, 3840, 80);
+  }
+  &__title {
+    margin-bottom: 48px;
+  }
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 16px;
+    margin-bottom: 64px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: start;
+  }
+  &__item {
+    flex: 1;
+    padding: 24px 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:not(:last-child) {
+      border-right: 1px solid rgba(37, 35, 33, 0.1);
+    }
+  }
+  &__text {
+    position: relative;
+    padding-top: calc-between-width(1440, 60, 3840, 120);
+    color: var(--black-brand-color);
+    text-align: center;
+    font-family: "PP Neue Montreal";
+    line-height: 160%;
+    letter-spacing: 0.32px;
+    max-width: calc-between-width(1440, 194, 3840, 388);
+    font-size: calc-between-width(1440, 16, 3840, 32);
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc-between-width(1440, 48, 3840, 96);
+      height: calc-between-width(1440, 48, 3840, 96);
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    &--guarantee {
+      &::before {
+        background-size: calc-between-width(1440, 42, 3840, 84) calc-between-width(1440, 42, 3840, 84);
+        background-image: url("./../img/guarantee-icon.svg");
+      }
+    }
+    &--payment {
+      &::before {
+        background-size: calc-between-width(1440, 16, 3840, 32) calc-between-width(1440, 14, 3840, 28);
+        background-image: url("./../img/payment-icon.svg");
+      }
+    }
+    &--prod {
+      &::before {
+        background-size: calc-between-width(1440, 21, 3840, 42) calc-between-width(1440, 21, 3840, 42);
+        background-image: url("./../img/prod-icon.svg");
+      }
+    }
+    &--tech {
+      &::before {
+        background-size: calc-between-width(1440, 16, 3840, 32) calc-between-width(1440, 16, 3840, 32);
+        background-image: url("./../img/tech-icon.svg");
+      }
+    }
+  }
+}

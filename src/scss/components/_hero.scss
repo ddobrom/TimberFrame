@@ -1,0 +1,168 @@
+.hero {
+  position: relative;
+  --offset: -100px;
+  --finish-position: 0;
+  &__slide {
+    position: relative;
+    min-height: 100vh;
+    background-position-y: center;
+    background-position-x: left;
+    background-size: 110% auto;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-position 2s ease-in;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(#000, 0.4);
+    }
+    &--nisalahti {
+      background-image: url("./../img/hero-bg-1.jpeg");
+    }
+    &--lautala {
+      background-image: url("./../img/hero-bg-2.jpeg");
+    }
+  }
+  &__btn-down {
+    width: 48px;
+    height: 96px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 15px;
+    z-index: 5;
+    display: flex;
+    align-items: end;
+    span {
+      display: block;
+      width: 100%;
+      border: 1px solid rgba(255, 150, 92, 0.6);
+      height: 50%;
+      position: relative;
+      transition: border-color 0.3s ease-in;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        height: 56px;
+        width: 10px;
+        background-image: url("./../img/arrow-down.svg");
+        background-position: bottom center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: height 0.3s ease-in, bottom 0.3s ease-in;
+      }
+    }
+    @include hover {
+      span {
+        border-color: var(--focus-active-color);
+        &::before {
+          height: 28px;
+          bottom: 25%;
+        }
+      }
+    }
+  }
+}
+
+.move-background {
+  animation: move-bg 7s linear 1;
+}
+@keyframes move-bg {
+  0% {
+    background-position-x: var(--offset);
+  }
+  100% {
+    background-position-x: left;
+  }
+}
+.slide {
+  &__content {
+    margin-top: 90px;
+    position: relative;
+    z-index: 2;
+  }
+  &__btn {
+    &--watch {
+      margin-right: 8px;
+    }
+  }
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__title {
+    margin: 0;
+    margin-bottom: 12px;
+    color: rgba(228, 228, 228, 0.8);
+    text-align: center;
+    text-overflow: ellipsis;
+    font-family: "PP Neue Montreal";
+    font-size: calc-between-width(1440, 115, 3840, 230);
+    font-weight: 700;
+    letter-spacing: 3.45px;
+  }
+  &__refers {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  &__item {
+    display: inline-block;
+    padding-left: 40px;
+    margin: 0 32px;
+    position: relative;
+    color: rgba(#e4e4e4, 0.8);
+    font-family: "PP Neue Montreal";
+    font-size: calc-between-width(1440, 12, 3840, 24);
+    font-weight: 700;
+    letter-spacing: 1.44px;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in;
+    &-separator {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white-color);
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    &--video {
+      &::before {
+        background-image: url("./../img/play-icon.svg");
+      }
+    }
+    &--tour {
+      &::before {
+        background-image: url("./../img/tour-icon.svg");
+      }
+    }
+    &--gallery {
+      &::before {
+        background-image: url("./../img/gallery-icon.svg");
+      }
+    }
+    @include hover {
+      color: var(--white-color);
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.office {
+  padding-top: 120px;
+  padding-bottom: 160px;
+  &__container-left {
+    padding-left: 30px;
+  }
+  &__title {
+    margin-bottom: 60px;
+  }
+  &__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 80px;
+  }
+
+  &__address {
+    max-width: calc-between-width(1440, 210, 3480, 420);
+    margin-bottom: calc-between-width(1440, 64, 3480, 128);
+  }
+  &__slider {
+  }
+  &__card {
+    max-width: 593px;
+  }
+  .swiper-slide {
+    cursor: grab;
+  }
+}

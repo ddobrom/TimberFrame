@@ -1,0 +1,16 @@
+// если вы хотите использовать sass-переменные - удалите root
+// colors
+:root {
+  // base
+  --font-family: "PP Neue Montreal", sans-serif;
+  --content-width: 1170px;
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  // colors
+  --white-color: #e4e4e4;
+  --focus-color: #ff965c;
+  --focus-active-color: #ff772c;
+  --black-brand-color: #252321;
+  --gray-lite-color: #c6b9b1;
+}

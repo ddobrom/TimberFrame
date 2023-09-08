@@ -1,0 +1,122 @@
+.house-content {
+  &--expanded {
+    padding-bottom: 148px;
+  }
+  &__container {
+    position: relative;
+    width: 100%;
+    padding-left: 30px;
+  }
+  &__grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    justify-content: start;
+    gap: 60px;
+    margin-bottom: 27px;
+    &--mt {
+      margin-top: 190px;
+    }
+  }
+  &__title {
+    margin-bottom: 45px;
+  }
+  &__content {
+    grid-column: 6 span;
+    margin-right: 60px;
+    width: 100%;
+    order: 1;
+    &--gap {
+      padding-top: 70px;
+    }
+    &--order {
+      order: 0;
+    }
+    &--end {
+      align-self: end;
+      transform: translate(-30px, 25%);
+    }
+    &--small {
+      grid-column: 4 span;
+      margin-top: 30px;
+    }
+  }
+  &__btn {
+    margin-bottom: 45px;
+  }
+  &__text {
+    display: flex;
+    justify-content: space-between;
+    p {
+      flex: 1;
+      margin: 0;
+      color: var(--white-color);
+      line-height: 160%;
+      letter-spacing: 0.32px;
+      font-weight: 400;
+      font-size: calc-between-width(1440, 16, 3840, 32);
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+  }
+  &__img {
+    margin-left: -30px;
+    margin-bottom: 20px;
+  }
+  &__image {
+    grid-column: 6 span;
+    width: auto;
+    position: relative;
+    display: flex;
+    img {
+      width: 100%;
+    }
+    &--mini {
+      position: absolute;
+      bottom: 0;
+      left: 23.6%;
+      transform: translateY(84.85%);
+    }
+    &--big {
+      grid-column: 8 span;
+    }
+    &--eco-mini {
+      &-1 {
+        left: unset;
+        right: 30px;
+        transform: translateY(57%);
+      }
+      &-2 {
+        left: unset;
+        right: 0;
+        bottom: 18%;
+      }
+      &-3 {
+
+      }
+    }
+    &--last {
+      transform: translateY(42px);
+    }
+    &--centered {
+      position: absolute;
+      width: 48%;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 70%);
+    }
+  }
+}
+.house-content__row--dark {
+  .house-content {
+    &__title {
+      color: var(--black-brand-color);
+    }
+    &__text {
+      p {
+        color: var(--black-brand-color);
+      }
+    }
+  }
+}

@@ -1,0 +1,130 @@
+.popular {
+  text-align: center;
+  padding-top: 160px;
+  padding-bottom: 50px;
+  &__title {
+    margin-bottom: calc-between-width(1440, 90, 3840, 180);
+  }
+  &__container {
+    margin-bottom: 60px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+  }
+  &__content {
+    grid-column: 6 span;
+  }
+  &__images {
+    grid-column: 6 span;
+    width: 100%;
+  }
+  &__img {
+    display: inline-block;
+    overflow: hidden;
+    height: 660px;
+    width: 100%;
+    img {
+      transition: transform .3s ease-in;
+      height: 100%;
+      width: 100%;
+    }
+    @include hover {
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+.popular-card {
+  max-width: calc-between-width(1440, 400, 3840, 800);
+  margin: 0 auto;
+  &__title {
+    margin: 0;
+    margin-bottom: 32px;
+    color: var(--black-brand-color);
+    font-family: "PP Neue Montreal";
+    font-size: calc-between-width(1440, 32, 3840, 64);
+    font-weight: 700;
+    letter-spacing: 1.6px;
+  }
+  &__desc {
+    margin-bottom: 32px;
+    color: var(--black-brand-color);
+    font-family: "PP Neue Montreal";
+    line-height: 160%;
+    letter-spacing: 0.32px;
+    font-size: calc-between-width(1440, 16, 3840, 32);
+  }
+  &__list {
+    margin-bottom: 32px;
+    display: flex;
+    gap: calc-between-width(1440, 16, 3840, 32);
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  &__item {
+    position: relative;
+    padding: 9px 0;
+    padding-left: calc-between-width(1440, 48, 3840, 110);
+    color: var(--black-brand-color);
+    font-family: "PP Neue Montreal";
+    line-height: 160%;
+    letter-spacing: 0.32px;
+    font-size: calc-between-width(1440, 16, 3840, 32);
+    span {
+      margin-left: 8px;
+      color: rgba(37, 35, 33, 0.40);
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: calc-between-width(1440, 36, 3840, 92);
+      height: calc-between-width(1440, 36, 3840, 92);
+      background-position: center, center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    &--sq {
+      &::before {
+        background-image: url('./../img/house-icon/house-icon-1.svg');
+      }
+    }
+    &--fl {
+      &::before {
+        background-image: url('./../img/house-icon/house-icon-floors.svg');
+      }
+    }
+    &--bed {
+      &::before {
+        background-image: url('./../img/house-icon/house-icon-bedrooms.svg');
+      }
+    }
+    &--bath {
+      &::before {
+        background-image: url('./../img/house-icon/house-icon-bathrooms.svg');
+      }
+    }
+    &--pl {
+      &::before {
+        background-image: url('./../img/house-icon/house-icon-place.svg');
+      }
+    }
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+.popular-content {
+
+}
+.slider-popular__content {
+  width: 100%;
+}

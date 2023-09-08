@@ -1,0 +1,37 @@
+.dropdown {
+  display: inline-block;
+  position: relative;
+  &__list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    z-index: 1;
+  }
+  &__item {
+    padding: 12px 0;
+  }
+  &__btn {
+    color: var(--white-color);
+    display: flex;
+    @include hover {
+      .dropdown__list {
+        display: block;
+      }
+      span {
+        border-color: var(--focus-color);
+      }
+    }
+    span {
+      margin-left: 4px;
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-bottom: 1px solid var(--white-color);
+      border-left: 1px solid var(--white-color);
+      transform: rotate(-45deg);
+      transition: border-color .3s ease-in;
+    }
+  }
+}
+.dropdown:hover .dropdown__list {display: block;}

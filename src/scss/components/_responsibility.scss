@@ -1,0 +1,99 @@
+.responsibility {
+  padding-top: 120px;
+  padding-bottom: 110px;
+  // min-height: 100vh;
+  position: relative !important;
+  &__title {
+    margin: 0 auto;
+    margin-bottom: 80px;
+    max-width: 944px;
+  }
+  &__items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    min-height: 360px;
+  }
+  &__item {
+    display: flex;
+    justify-content: start;
+    background-color: #fff;
+    width: 67%;
+    position: absolute;
+    &--1 {
+      z-index: 1;
+    }
+    &--2 {
+      z-index: -1;
+      display: none;
+    }
+    &--3 {
+      z-index: -1;
+      display: none;
+    }
+    &--4 {
+      z-index: -1;
+      display: none;
+    }
+  }
+}
+.res {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 40px;
+  &__left {
+    width: 360px;
+    height: 360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    svg {
+
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+
+    }
+  }
+  &__right {
+    h4 {
+      margin: 0;
+      color: var(--black-brand-color);
+      font-size: calc-between-width(1440, 40, 3480, 80);
+      span {
+        display: block;
+        color: var(--focus-color);
+      }
+    }
+  }
+  &__info {
+    span {
+      color: var(--focus-color);
+      text-align: center;
+      font-family: "Aeonik Pro";
+      font-size: 120px;
+      text-transform: uppercase;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &__btn {
+    position: relative;
+    transform: unset;
+  }
+}
+
+.progress {
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+.progress-bg {
+  transform: rotate(-90deg);
+  transform-origin: center;
+}

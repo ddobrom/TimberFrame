@@ -1,0 +1,81 @@
+.benefits-house {
+  position: relative;
+  padding-top: 37px;
+  padding-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  &__title {
+    margin: 0 auto;
+    margin-bottom: 77px;
+  }
+  // url('./../img/benefits-house-bg.jpg'),
+  &__content {
+    position: relative;
+    margin: 0 auto;
+    width: 60%;
+    min-height: 510px;
+    background-image: url("./../img/benefits-house-bg.jpg");
+    background-position: center top;
+    padding-top: 190px;
+    transition: background-image 0.3s ease-in;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.6) 0%,
+          rgba(0, 0, 0, 0.6) 100%
+        ),
+        url("./../img/benefits-house-bg.jpg"),
+        lightgray -55.786px -77.315px / 104.867% 126.916% no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: top;
+      opacity: 0;
+      transition: 0.2s ease-in;
+    }
+    &.active {
+      background-image: none;
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  transition: width 0.3s ease-in, min-height 0.3s ease-in,
+    opacity 0.3s ease-in 0.3s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0.6) 100%
+      ),
+      lightgray -55.786px -77.315px / 104.867% 126.916% no-repeat;
+  }
+}
+
+.dis-opacity {
+  opacity: 0;
+  max-height: 0;
+}
+.benefits-house {
+  div {
+    transition: opacity 0.3s ease-in 0.5s, max-height 0.3s;
+  }
+}

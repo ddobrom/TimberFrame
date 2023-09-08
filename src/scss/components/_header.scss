@@ -1,0 +1,79 @@
+.header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.3s ease-in;
+  &__right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__nav {
+    margin-right: 40px;
+  }
+  &__phone {
+    margin-right: 60px;
+    font-size: calc-between-width(1440, 12, 3840, 24);
+    font-weight: 500;
+    font-family: "PP Neue Montreal";
+    color: var(--white-color);
+    transition: color 0.3s ease-in;
+    @include hover {
+      color: var(--focus-color) !important;
+    }
+  }
+  &__btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__btn {
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+    svg {
+      width: calc-between-width(1440, 32, 3840, 64);
+      height: calc-between-width(1440, 32, 3840, 64);
+      fill: none;
+      stroke: var(--white-color);
+      transition: stroke 0.3s ease-in;
+      @include hover {
+        stroke: var(--focus-color) !important;
+      }
+    }
+  }
+}
+
+.header.moved {
+  background-color: #fff;
+
+  .nav {
+    &__link {
+      color: var(--black-brand-color);
+      span {
+        border-color: var(--black-brand-color);
+      }
+    }
+  }
+  .header__phone {
+    color: var(--black-brand-color);
+  }
+  .header__btn {
+    svg {
+      stroke: var(--black-brand-color);
+    }
+  }
+  .header__logo {
+    svg {
+      path {
+        fill: var(--black-brand-color);
+      }
+    }
+  }
+}

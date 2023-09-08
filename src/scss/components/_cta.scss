@@ -1,0 +1,32 @@
+.cta {
+  position: relative;
+  padding: 173px 0 137px;
+  padding-left: 140px;
+  padding-right: 270px;
+  background-image: url('./../img/cta-bg.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  &__left {
+    margin-right: 160px;
+  }
+  &__title {
+    position: relative;
+    z-index: 1;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__form {
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
+}

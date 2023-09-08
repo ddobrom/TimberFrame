@@ -1,0 +1,89 @@
+.services-section {
+  padding-top: 57px;
+  min-height: 100vh;
+  &__title {
+    margin: 0 auto;
+    text-align: center;
+    max-width: calc-between-width(1440, 1000, 3840, 2000);
+
+  }
+  &__container {
+    padding-top: calc-between-width(1440, 113, 3840, 126);
+    padding-left: calc-between-width(1440, 113, 3840, 126);
+    position: relative;
+    display: flex;
+    align-items: center;
+
+  }
+  &__image {
+    position: relative;
+    max-width: calc-between-width(1440, 520, 3840, 1040);
+    margin-right: calc-between-width(1440, 20, 3840, 40);;
+    img {
+      height: auto;
+      object-fit: cover;
+    }
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: -1;
+      top: -20px;
+      right: -20px;
+      border: 1px solid var(--focus-color);
+    }
+  }
+  &__right {
+    position: relative;
+    flex: 1;
+    border-top: 1px solid var(--focus-color);
+  }
+  &__list {
+    position: absolute;
+    counter-reset: counter 0;
+    padding-left: calc-between-width(1440, 66, 3840, 132);
+    transform: translateY(var(--top-offset));
+    transition: transform linear;
+  }
+  &__item {
+    position: relative;
+    counter-increment: counter 1;
+    padding: 24px 0;
+    padding-left: 42px;
+    color: var(--gray-lite-color);
+    transition: color .1s ease-in;
+    &::before {
+      content: counter(counter);
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--black-brand-color);
+      font-size: calc-between-width(1440, 14, 3840, 28);;
+      color: currentColor;
+      transition: color .1s ease-in;
+    }
+    &.active {
+      color: var(--black-brand-color);
+      .services-section__text {
+        span {
+          color: var(--focus-active-color);
+        }
+      }
+    }
+  }
+  &__text {
+    margin: 0;
+    color: inherit;
+    font-size: calc-between-width(1440, 24, 3840, 44);;
+    font-weight: 500;
+    letter-spacing: 0.24px;
+    transition: color .1s ease-in;
+    span {
+      transition: color .1s ease-in;
+    }
+  }
+
+}

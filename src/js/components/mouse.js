@@ -8,6 +8,8 @@ const moveCursor = (e) => {
 };
 
 panoramaSection.addEventListener("mousemove", moveCursor);
+
+
 modalTour.forEach(el => {
   el.addEventListener("mousemove", moveCursor)
 })

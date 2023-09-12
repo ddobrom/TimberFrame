@@ -7,6 +7,11 @@
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  @media (min-width: 1440px){
+    padding: 17.3rem 0 13.7rem;
+    padding-left: 14rem;
+    padding-right: 27rem;
+  }
   &::before {
     content: '';
     position: absolute;
@@ -15,6 +20,9 @@
   }
   &__left {
     margin-right: 160px;
+    @media (min-width: 1440px){
+        margin-right: 16rem;
+    }
   }
   &__title {
     position: relative;

@@ -6,10 +6,10 @@
   display: flex;
   justify-content: end;
   opacity: 0;
-  transition: background 0.3s linear, opacity 0.2s ease-in, z-index 0.1s ease-in;
+  transition: background 0.5s linear, opacity 0.3s ease-in;
   &__window {
     transform: translateX(100%);
-    transition: transform 0.3s ease-in 0.4s;
+    transition: transform 0.5s ease-in;
     &--favorites {
       background-color: var(--white-color);
     }
@@ -34,6 +34,11 @@
     background-position: center center;
     background-size: 13px 13px;
     background-repeat: no-repeat;
+    @media (min-width: 1440px){
+      width: 3.2rem;
+      height: 3.2rem;
+      background-size: 1.3rem 1.3rem;
+    }
   }
 }
 .menu-active {
@@ -47,12 +52,13 @@
   }
 }
 .menu-disabled {
+  opacity: 0;
   .menu-window {
     transition: transform 0.3s ease-in;
     transform: translateX(100%);
   }
   .menu__logo {
-    transition: opacity 0.3s ease-in 0.3;
+    transition: opacity 0.3s ease-in;
     opacity: 0;
   }
 }
@@ -61,7 +67,9 @@
   padding: 90px 120px;
   padding-right: 77px;
   display: flex;
-
+  @media (min-width: 1440px){
+    padding: 9rem 12rem;
+  }
   &__left {
     margin-right: 120px;
   }
@@ -78,10 +86,17 @@
     letter-spacing: 0.96px;
     text-transform: uppercase;
     padding: unset;
+    @media (min-width: 1440px){
+      font-size: 3.2rem;
+      margin-bottom: 1.6rem;
+    }
   }
   &__list {
     &:not(:last-child) {
       margin-bottom: 40px;
+      @media (min-width: 1440px){
+        margin-bottom: 4rem;
+      }
     }
   }
   &__item {
@@ -94,6 +109,9 @@
       text-transform: uppercase;
       margin-bottom: 16px;
     }
+    @media (min-width: 1440px){
+      padding: 1.2rem 0;
+    }
   }
   &__link {
     color: var(--black---brand, #252321);
@@ -102,14 +120,23 @@
     font-weight: 500;
     letter-spacing: 1.2px;
     text-transform: uppercase;
+    @media (min-width: 1440px){
+      font-size: 1.2rem;
+    }
   }
   &:not(:last-child) {
     margin-bottom: 40px;
+    @media (min-width: 1440px){
+      margin-bottom: 4rem;
+    }
   }
 }
 .menu-left {
   &__list {
     margin-bottom: 60px;
+    @media (min-width: 1440px){
+      margin-bottom: 6rem;
+    }
   }
   &__item {
     color: var(--black-brand-color);
@@ -118,6 +145,9 @@
     font-weight: 700;
     letter-spacing: 0.96px;
     text-transform: uppercase;
+    @media (min-width: 1440px){
+      font-size: 3.2rem;
+    }
     a {
       color: inherit;
     }

@@ -5,37 +5,22 @@
   display: flex;
   flex-direction: column;
   align-items: start;
+  @media (min-width: 1440px) {
+    padding-top: 3.7rem;
+    padding-bottom: 12rem;
+  }
   &__title {
     margin: 0 auto;
     margin-bottom: 77px;
-  }
-  // url('./../img/benefits-house-bg.jpg'),
-  &__content {
-    position: relative;
-    margin: 0 auto;
-    width: 60%;
-    min-height: 510px;
-    background-image: url("./../img/benefits-house-bg.jpg");
-    background-position: center top;
-    padding-top: 190px;
-    transition: background-image 0.3s ease-in;
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-          0deg,
-          rgba(0, 0, 0, 0.6) 0%,
-          rgba(0, 0, 0, 0.6) 100%
-        ),
-        url("./../img/benefits-house-bg.jpg"),
-        lightgray -55.786px -77.315px / 104.867% 126.916% no-repeat;
-      background-size: cover;
-      background-attachment: fixed;
-      background-position: top;
-      opacity: 0;
-      transition: 0.2s ease-in;
+    @media (min-width: 1440px) {
+      margin-bottom: 7.7rem;
     }
+  }
+
+  &__content {
+    position: absolute;
+    padding-top: 190px;
+    transition: opacity 1s ease;
     &.active {
       background-image: none;
       &::before {
@@ -44,38 +29,69 @@
     }
   }
 }
-.bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  display: block;
-  margin: 0 auto;
-  width: 50%;
-  transition: width 0.3s ease-in, min-height 0.3s ease-in,
-    opacity 0.3s ease-in 0.3s;
 
-  &::before {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    inset: 0;
-    background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.6) 0%,
-        rgba(0, 0, 0, 0.6) 100%
-      ),
-      lightgray -55.786px -77.315px / 104.867% 126.916% no-repeat;
-  }
-}
-
-.dis-opacity {
-  opacity: 0;
-  max-height: 0;
-}
 .benefits-house {
   div {
     transition: opacity 0.3s ease-in 0.5s, max-height 0.3s;
+  }
+}
+.wrapper {
+  min-height: 300vh;
+  width: 100%;
+}
+.block {
+  position: relative;
+  width: 50%;
+  height: 50vh;
+  margin: 0 auto;
+}
+.parallax__wrapper {
+  position: sticky;
+  top: 0;
+}
+.wrapper {
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+  transition: background-image 0.3s ease-in;
+
+}
+.parallax {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+  &__body {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
+    background-position: top;
+    transition: 0.2s ease-in;
+    background-position: center, center;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-image: url('./../img/benefits-house-bg.jpg');
+    transition: .3s;
+    &::before {
+      content: "";
+      position: absolute;
+      // z-index: 1;
+      inset: 0;
+      opacity: 0;
+      background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.6) 0%,
+          rgba(0, 0, 0, 0.6) 100%
+        ),
+        url("./../img/benefits-house-bg.jpg"),
+        lightgray -55.786px -77.315px / 104.867% 126.916% no-repeat;
+      background-size: 100% 100%;
+      background-attachment: fixed;
+      background-position: top;
+      transition: opacity 1s ease;
+    }
   }
 }

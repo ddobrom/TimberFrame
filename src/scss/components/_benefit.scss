@@ -11,8 +11,7 @@
     p {
       margin: 0;
       color: var(--black-brand-color);
-      font-family: PP PP Neue Montreal;
-      font-size: 10px;
+      font-size: 1rem;
       letter-spacing: 3px;
       text-transform: uppercase;
       span {
@@ -24,8 +23,7 @@
     margin: 0;
     margin-bottom: 8px;
     color: var(--focus-active-color);
-    font-family: PP PP Neue Montreal;
-    font-size: calc-between-width(1440, 40, 3840, 80);
+    font-size: 4rem;
   }
   &__title {
     margin-bottom: 48px;
@@ -54,47 +52,68 @@
   }
   &__text {
     position: relative;
-    padding-top: calc-between-width(1440, 60, 3840, 120);
+    padding-top: 60px;
     color: var(--black-brand-color);
     text-align: center;
     font-family: "PP Neue Montreal";
     line-height: 160%;
     letter-spacing: 0.32px;
-    max-width: calc-between-width(1440, 194, 3840, 388);
-    font-size: calc-between-width(1440, 16, 3840, 32);
+    max-width: 194px;
+    font-size: 16px;
+    @media (min-width: 1440px){
+      padding-top: 6rem;
+      max-width: 19.4rem;
+      font-size: 1.6rem;
+    }
     &::before {
       content: "";
       position: absolute;
       top: 0;
       left: 50%;
       transform: translateX(-50%);
-      width: calc-between-width(1440, 48, 3840, 96);
-      height: calc-between-width(1440, 48, 3840, 96);
+      width: 48px;
+      height: 48px;
       background-position: center center;
       background-repeat: no-repeat;
+      @media (min-width){
+        width: 4.8rem;
+        height: 4.8rem;
+      }
     }
     &--guarantee {
       &::before {
-        background-size: calc-between-width(1440, 42, 3840, 84) calc-between-width(1440, 42, 3840, 84);
+        background-size: 42px 42px;
         background-image: url("./../img/guarantee-icon.svg");
+        @media (min-width : 1440px){
+         background-size: 4.2rem 4.2rem;
+        }
       }
     }
     &--payment {
       &::before {
-        background-size: calc-between-width(1440, 16, 3840, 32) calc-between-width(1440, 14, 3840, 28);
+        background-size: 16px 14px;
         background-image: url("./../img/payment-icon.svg");
+        @media (min-width : 1440px){
+          background-size: 1.6rem 1.4rem;
+         }
       }
     }
     &--prod {
       &::before {
-        background-size: calc-between-width(1440, 21, 3840, 42) calc-between-width(1440, 21, 3840, 42);
+        background-size: 21px 21px;
         background-image: url("./../img/prod-icon.svg");
+        @media (min-width : 1440px){
+          background-size: 2.1rem 2.1rem;
+         }
       }
     }
     &--tech {
       &::before {
-        background-size: calc-between-width(1440, 16, 3840, 32) calc-between-width(1440, 16, 3840, 32);
+        background-size: 16px 16px;
         background-image: url("./../img/tech-icon.svg");
+        @media (min-width : 1440px){
+          background-size: 1.6rem 1.6rem;
+         }
       }
     }
   }

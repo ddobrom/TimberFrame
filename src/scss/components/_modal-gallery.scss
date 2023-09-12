@@ -6,7 +6,7 @@
   border: 1px solid var(--focus-color);
 }
 .gallery__slider-mini {
-  
+
   height: 8%;
   .swiper-slide {
     width: auto;
@@ -44,6 +44,9 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+    @media (min-width: 1440px) {
+      width: 10.2rem;
     }
   }
 }

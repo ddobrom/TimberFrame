@@ -13,13 +13,16 @@
   &__link {
     color: var(--white-color);
     font-family: "PP Neue Montreal";
-    font-size: calc-between-width(1440, 12, 3840, 24);
+    font-size: 12px;
     font-weight: 500;
     letter-spacing: 1.2px;
     text-transform: uppercase;
     transition: color 0.3s ease-in;
     @include hover {
       color: var(--focus-color) !important;
+    }
+    @media (min-width: 1440px) {
+      font-size: 1.2rem;
     }
   }
 }

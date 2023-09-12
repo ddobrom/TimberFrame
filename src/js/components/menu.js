@@ -13,5 +13,5 @@ const closeBtn = menu.querySelector('.menu__close-btn')
     setTimeout(() => {
       menu.classList.remove('menu-active')
       fMenuBtn.classList.remove('disabled')
-    }, 500 )
+    }, 500)
   })

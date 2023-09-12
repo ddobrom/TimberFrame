@@ -8,6 +8,14 @@ const heroslider = new Swiper('.hero__slider', {
   effect: 'fade',
   speed: 2000,
   lazy: true,
+  autoplay: {
+    delay: 7000,
+  },
+  on : {
+    slideChangeTransitionStart: () => {
+      moveBg()
+    }
+  }
 });
 
 const popularContentSlider = new Swiper('.slider-popular__content', {
@@ -18,6 +26,10 @@ const popularContentSlider = new Swiper('.slider-popular__content', {
   },
   loop: true,
   lazy: true,
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  },
 });
 const popularImagesSlider = new Swiper('.slider-popular__images', {
   slidesPerView: 1,
@@ -37,18 +49,7 @@ const moveBg = () => {
   heroSlider.querySelectorAll('.hero__slide').forEach(item => item.classList.remove('move-background'))
   heroSlider.querySelector('.swiper-slide-active').querySelector('.hero__slide').classList.add('move-background')
 }
-heroSlider.querySelector('.slider-control__btn--prev').addEventListener('click', (e => {
-    e.preventDefault();
-    e.stopPropagation();
-    moveBg()
-  })
-)
-heroSlider.querySelector('.slider-control__btn--next').addEventListener('click', (e => {
-    e.preventDefault();
-    e.stopPropagation();
-    moveBg()
-  })
-)
+
 
 moveBg()
 

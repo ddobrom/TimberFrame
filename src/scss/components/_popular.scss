@@ -25,7 +25,7 @@
     height: 660px;
     width: 100%;
     img {
-      transition: transform .3s ease-in;
+      transition: transform 1s ease-in;
       height: 100%;
       width: 100%;
     }
@@ -37,16 +37,23 @@
   }
 }
 .popular-card {
-  max-width: calc-between-width(1440, 400, 3840, 800);
+  max-width: 400px;
   margin: 0 auto;
+  @media (min-width: 1440px){
+    max-width: 40rem;
+  }
   &__title {
     margin: 0;
     margin-bottom: 32px;
     color: var(--black-brand-color);
     font-family: "PP Neue Montreal";
-    font-size: calc-between-width(1440, 32, 3840, 64);
+    font-size: 32px;
     font-weight: 700;
     letter-spacing: 1.6px;
+    @media (min-width: 1440px){
+        font-size: 3.2rem;
+        margin-bottom: 3.2rem;
+    }
   }
   &__desc {
     margin-bottom: 32px;
@@ -54,7 +61,11 @@
     font-family: "PP Neue Montreal";
     line-height: 160%;
     letter-spacing: 0.32px;
-    font-size: calc-between-width(1440, 16, 3840, 32);
+    font-size: 16px;
+    @media (min-width: 1440px){
+      font-size: 1.6rem;
+      margin-bottom: 3.2rem;
+    }
   }
   &__list {
     margin-bottom: 32px;
@@ -67,12 +78,18 @@
   &__item {
     position: relative;
     padding: 9px 0;
-    padding-left: calc-between-width(1440, 48, 3840, 110);
+    padding-left: 48px;
     color: var(--black-brand-color);
     font-family: "PP Neue Montreal";
     line-height: 160%;
     letter-spacing: 0.32px;
-    font-size: calc-between-width(1440, 16, 3840, 32);
+    font-size: 16px;
+
+    @media (min-width: 1440px){
+      background-size: 1.6rem;
+      padding-left: 4.8rem;
+     }
+
     span {
       margin-left: 8px;
       color: rgba(37, 35, 33, 0.40);
@@ -83,11 +100,15 @@
       left: 0;
       top: 50%;
       transform: translateY(-50%);
-      width: calc-between-width(1440, 36, 3840, 92);
-      height: calc-between-width(1440, 36, 3840, 92);
+      width: 36px;
+      height: 36px;
       background-position: center, center;
       background-size: contain;
       background-repeat: no-repeat;
+      @media (min-width: 1440px){
+        width: 3.6rem;
+        height: 3.6rem;
+      }
     }
     &--sq {
       &::before {
@@ -120,6 +141,9 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
+    @media (min-width: 1440px){
+      gap: 1rem;
+    }
   }
 }
 .popular-content {
@@ -127,4 +151,5 @@
 }
 .slider-popular__content {
   width: 100%;
+  position: relative;
 }

@@ -1,0 +1,65 @@
+.slider-control__btn {
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  padding: 0 13.5px;
+  border: 1px solid rgba(255, 150, 92, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+  span {
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 21px;
+      height: 8px;
+      background-image: url('./../img/arrow.svg');
+      background-position: center, center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      transition: width .3s ease-in, transform .3s ease-in;
+    }
+  }
+  &--dark {
+    span {
+      &::before {
+        background-image: url('./../img/arrow-dark.svg');
+      }
+    }
+  }
+  @include hover {
+    span {
+      &::before {
+        width: 35px;
+        transform: translate(0, -50%);
+      }
+    }
+  }
+  &--prev {
+    left: 30px;
+    span {
+      transform: rotate(180deg);
+    }
+  }
+  &--next {
+    right: 30px;
+  }
+  &.swiper-button-disabled {
+    opacity: 0.4;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  @media (min-width: 1440px) {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+}

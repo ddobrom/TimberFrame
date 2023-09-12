@@ -63,7 +63,10 @@
     h4 {
       margin: 0;
       color: var(--black-brand-color);
-      font-size: calc-between-width(1440, 40, 3480, 80);
+      font-size: 40px;
+      @media (min-width: 1440px){
+       font-size: 4rem;
+      }
       span {
         display: block;
         color: var(--focus-color);
@@ -77,6 +80,9 @@
       font-family: "Aeonik Pro";
       font-size: 120px;
       text-transform: uppercase;
+      @media (min-width: 1440px){
+        font-size: 12rem;
+      }
     }
     display: flex;
     flex-direction: column;

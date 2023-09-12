@@ -22,22 +22,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_sliders_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/sliders.js */ "./src/js/components/sliders.js");
 /* harmony import */ var _components_main_modals_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/main-modals.js */ "./src/js/components/main-modals.js");
 /* harmony import */ var _components_main_modals_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_main_modals_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_pano_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/pano.js */ "./src/js/components/pano.js");
-/* harmony import */ var _components_pano_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_pano_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_menu_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/menu.js */ "./src/js/components/menu.js");
-/* harmony import */ var _components_menu_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_menu_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_mouse_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/mouse.js */ "./src/js/components/mouse.js");
-/* harmony import */ var _components_mouse_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_mouse_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _components_favorites_menu_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/favorites-menu.js */ "./src/js/components/favorites-menu.js");
-/* harmony import */ var _components_favorites_menu_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_favorites_menu_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_text_animations_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/text-animations.js */ "./src/js/components/text-animations.js");
-/* harmony import */ var _components_services_scroll_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/services-scroll.js */ "./src/js/components/services-scroll.js");
-/* harmony import */ var _components_clouds_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/clouds.js */ "./src/js/components/clouds.js");
-/* harmony import */ var _components_clouds_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_components_clouds_js__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _components_circleProgress_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/circleProgress.js */ "./src/js/components/circleProgress.js");
-/* harmony import */ var _components_circleProgress_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_components_circleProgress_js__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _components_scrollTech_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/scrollTech.js */ "./src/js/components/scrollTech.js");
-/* harmony import */ var _components_scrollTech_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_components_scrollTech_js__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _components_menu_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/menu.js */ "./src/js/components/menu.js");
+/* harmony import */ var _components_menu_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_menu_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_mouse_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/mouse.js */ "./src/js/components/mouse.js");
+/* harmony import */ var _components_mouse_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_components_mouse_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _components_favorites_menu_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/favorites-menu.js */ "./src/js/components/favorites-menu.js");
+/* harmony import */ var _components_favorites_menu_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_favorites_menu_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _components_text_animations_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/text-animations.js */ "./src/js/components/text-animations.js");
+/* harmony import */ var _components_services_scroll_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/services-scroll.js */ "./src/js/components/services-scroll.js");
+/* harmony import */ var _components_clouds_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/clouds.js */ "./src/js/components/clouds.js");
+/* harmony import */ var _components_clouds_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_components_clouds_js__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _components_circleProgress_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/circleProgress.js */ "./src/js/components/circleProgress.js");
+/* harmony import */ var _components_circleProgress_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_components_circleProgress_js__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _components_scrollTech_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/scrollTech.js */ "./src/js/components/scrollTech.js");
+/* harmony import */ var _components_scrollTech_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_components_scrollTech_js__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _components_parallax_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/parallax.js */ "./src/js/components/parallax.js");
+/* harmony import */ var _components_parallax_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_components_parallax_js__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _components_transition_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/transition.js */ "./src/js/components/transition.js");
+/* harmony import */ var _components_transition_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_components_transition_js__WEBPACK_IMPORTED_MODULE_11__);
+
 
 
 
@@ -199,35 +202,32 @@ __webpack_require__.r(__webpack_exports__);
   \*********************************************/
 /***/ (() => {
 
-const circles = document.querySelectorAll('.progress');
-circles.forEach(el => {
-  let percentageProgress = el.dataset.percents;
-  let radius = el.getAttribute('r');
-  let circleLength = 2 * Math.PI * radius;
-  el.setAttribute('stroke-dasharray', circleLength);
-  el.setAttribute('stroke-dashoffset', circleLength - circleLength * percentageProgress / 100);
-});
-const timeline = gsap.timeline();
-timeline.to('.responsibility__item--1', {
-  zIndex: 1
-}).to('.responsibility__item--2', {
-  zIndex: 2,
-  display: 'block'
-}).to('.responsibility__item--3', {
-  zIndex: 3,
-  display: 'block'
-}).to('.responsibility__item--4', {
-  zIndex: 4,
-  display: 'block'
-});
-ScrollTrigger.create({
-  trigger: '.responsibility',
-  scrub: 1,
-  pin: true,
-  animation: timeline,
-  start: 'center center',
-  end: '+=300'
-});
+// const circles = document.querySelectorAll('.progress')
+
+// circles.forEach(el => {
+//   let percentageProgress = el.dataset.percents
+//   let radius = el.getAttribute('r')
+//   let circleLength = 2 * Math.PI * radius;
+//   el.setAttribute('stroke-dasharray', circleLength)
+//   el.setAttribute('stroke-dashoffset', circleLength - circleLength * percentageProgress / 100)
+// })
+
+// const timeline = gsap.timeline()
+
+// timeline.to('.responsibility__item--1', {zIndex: 1})
+//         .to('.responsibility__item--2', {zIndex: 2,display: 'block'})
+//         .to('.responsibility__item--3', {zIndex: 3,display: 'block'})
+//         .to('.responsibility__item--4', {zIndex: 4,display: 'block'})
+
+// ScrollTrigger.create({
+//   trigger: '.responsibility',
+
+//   scrub: 1,
+//   pin: true,
+//   animation: timeline,
+//   start: 'center center',
+//   end: '+=300',
+// })
 
 /***/ }),
 
@@ -380,105 +380,38 @@ modalTour.forEach(el => {
 
 /***/ }),
 
-/***/ "./src/js/components/pano.js":
-/*!***********************************!*\
-  !*** ./src/js/components/pano.js ***!
-  \***********************************/
+/***/ "./src/js/components/parallax.js":
+/*!***************************************!*\
+  !*** ./src/js/components/parallax.js ***!
+  \***************************************/
 /***/ (() => {
 
-gsap.set('#panorama', {
-  perspective: 1000
-}); //lower number exagerates the 'spheriness'
-if (document.querySelector('#panorama')) {
-  let zoom = 1,
-    stageH = gsap.getProperty('#panorama', 'height'),
-    mouse = {
-      x: 0.5,
-      y: 0.5
-    },
-    // not pixels! these track position as a percentage of stage width/height
-    pov = {
-      x: 0.5,
-      y: 0.5,
-      speed: 0.03
-    },
-    auto = true;
-  const n = 16,
-    //number of divs
-    c = document.getElementById('panorama');
-  for (let i = 0; i < n; i++) {
-    let b = document.createElement('div');
-    b.classList.add('box');
-    c.appendChild(b);
-    gsap.set(b, {
-      left: '50%',
-      top: '50%',
-      xPercent: -50,
-      yPercent: -50,
-      color: '#fff',
-      z: 1300,
-      width: 235,
-      height: 1200,
-      scaleX: -1,
-      //flip horizontally
-      rotationY: -89 + i / n * -360 + 90,
-      transformOrigin: String("50% 50% -585%"),
-      //adjust 3rd percentage to remove space between divs
-      backgroundImage: 'url(./../img/1.jpeg)',
-      backgroundPosition: i * -235 + 'px 0px' //offset should match width
-    });
-  }
-
-  window.onresize = e => {
-    stageH = gsap.getProperty('#panorama', 'height');
-    gsap.to('.box', {
-      y: 0
-    });
-  };
-  c.onmousemove = e => {
-    auto = false;
-    gsap.killTweensOf(mouse);
-    mouse.x = e.clientX / window.innerWidth;
-    mouse.y = e.clientY / window.innerHeight;
-  };
-  c.onmouseleave = () => {
-    auto = true;
-  };
-  c.onclick = e => {
-    e.stopPropagation();
-    gsap.to('.box', {
-      duration: 0.4,
-      z: [1300, 1500, 1700][zoom]
-    });
-    zoom++;
-    if (zoom == 3) zoom = 0;
-  };
-  setAutoX();
-  function setAutoX() {
-    if (auto) gsap.to(mouse, {
-      duration: 5,
-      x: gsap.utils.random(0.45, 0.55),
-      ease: 'sine.in'
-    });
-    gsap.delayedCall(gsap.utils.random(3, 5), setAutoX);
-  }
-  setAutoY();
-  function setAutoY() {
-    if (auto) gsap.to(mouse, {
-      duration: 6,
-      y: gsap.utils.random(0, 1),
-      ease: 'sine.in'
-    });
-    gsap.delayedCall(gsap.utils.random(4, 6), setAutoY);
-  }
-  gsap.ticker.add(() => {
-    pov.x += (mouse.x - pov.x) * pov.speed;
-    pov.y += (mouse.y - pov.y) * pov.speed;
-    gsap.set('.box', {
-      rotationY: i => -89 + i / n * -360 + 180 * pov.x,
-      y: Math.abs(1000 - stageH) / 2 - Math.abs(1000 - stageH) * pov.y
-    });
-  });
+const imgsBig = document.querySelector('[data-parallax="big-img"]');
+const imgsSmall = document.querySelectorAll('[data-parallax="small-img"]');
+const clouds = document.querySelector(".parallax__clouds");
+const thresholdsArr = [];
+for (let i = 0; i <= 1.0; i += 0.005) {
+  thresholdsArr.push(i);
+}
+function callback(entries, observer) {
+  let movingPercent = window.scrollY / document.querySelector(".eco-house").scrollHeight * 100;
+  moveClouds(movingPercent);
+}
+function calcTrans(entries, observer) {
+  let movingPercent = entries[0].target.scrollY / entries[0].target.scrollHeight * 10;
+  movePhotos(movingPercent);
+  console.log(movingPercent);
+}
+const observer = new IntersectionObserver(callback, {
+  threshold: thresholdsArr
+});
+observer.observe(document.querySelector(".eco-house"));
+observer.observe(document.querySelector(".eco-house__title"));
+document.querySelectorAll(".eco-house .house-content__image").forEach(el => {
+  observer.observe(el);
+});
+function moveClouds(percent) {
+  clouds.style.transform = `translateX(${percent / 9}%)`;
 }
 
 /***/ }),
@@ -489,54 +422,62 @@ if (document.querySelector('#panorama')) {
   \*****************************************/
 /***/ (() => {
 
-const textAnimation1 = gsap.timeline();
-const textAnimation2 = gsap.timeline();
-textAnimation1.to('.tech__paragraph--right', {
-  xPercent: -20
-});
-textAnimation2.to('.tech__paragraph--left', {
-  xPercent: 20
-});
-ScrollTrigger.create({
-  animation: textAnimation1,
-  trigger: '.tech',
-  start: 'top top',
-  end: 'bottom',
-  scrub: 1
-});
-ScrollTrigger.create({
-  animation: textAnimation2,
-  trigger: '.tech',
-  start: 'top top',
-  end: 'bottom',
-  scrub: 1
-});
 let menuItem = document.querySelectorAll(".tech__text");
 let menuImage = document.querySelectorAll(".tech__img");
-for (let i = 0; i < 2; i++) {
-  const animation = gsap.to(menuImage[i], {
-    opacity: 1,
-    duration: 0.3,
-    scale: 1,
-    ease: "ease-in-out"
-  });
-  menuItem[i].addEventListener("mouseenter", () => animation.play());
-  menuItem[i].addEventListener("mouseleave", () => animation.reverse());
-  animation.reverse();
+const points = [];
+for (let i = 0; i <= 1.0; i += 0.005) {
+  points.push(i);
 }
-function moveText(e) {
-  gsap.to([...menuImage], {
-    css: {
-      left: e.pageX + 50,
-      top: e.pageY
-    },
-    duration: 0.3
-  });
-}
-menuItem.forEach(el => {
-  el.addEventListener("mousemove", moveText);
-  el.addEventListener("mouseleave", null);
+const textObserver = new IntersectionObserver(callbackObs, {
+  threshold: points
+  // rootMargin: '100px 0px 100px 0px'
 });
+
+textObserver.observe(document.querySelector('.tech'));
+textObserver.observe(menuItem[0]);
+textObserver.observe(menuItem[1]);
+function callbackObs(entries, observer) {
+  const percent = window.scrollY / document.querySelector('.tech').scrollHeight * 10;
+  menuItem[0].querySelector('.tech__paragraph').style.transform = `translateX(-${percent / 3}%)`;
+  menuItem[1].querySelector('.tech__paragraph').style.transform = `translateX(${percent / 3}%)`;
+}
+document.querySelector('.tech').addEventListener('wheel', () => {
+  callbackObs();
+});
+for (let i = 0; i < menuItem.length; i++) {
+  const moveCursor = e => {
+    let left = e.pageX + 20 + 'px';
+    let top = e.pageY + 'px';
+    menuImage[i].style.left = left;
+    menuImage[i].style.top = top;
+  };
+  const setStyles = e => {
+    menuImage[i].style.opacity = '1';
+    menuImage[i].style.transform = 'scale(1)';
+  };
+  const rmStyles = e => {
+    menuImage[i].style.opacity = null;
+    menuImage[i].style.transform = null;
+  };
+  menuItem[i].addEventListener("mousemove", moveCursor);
+  menuItem[i].addEventListener("mouseenter", setStyles);
+  menuItem[i].addEventListener("mouseleave", rmStyles);
+}
+
+// function moveText(e) {
+//   gsap.to([...menuImage], {
+//     css: {
+//       left: e.pageX + 50,
+//       top: e.pageY,
+//     },
+//     duration: 0.3,
+//   });
+// }
+
+// menuItem.forEach((el) => {
+//   el.addEventListener("mousemove", moveText);
+//   el.addEventListener("mouseleave", null);
+// });
 
 /***/ }),
 
@@ -594,7 +535,15 @@ const heroslider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.h
   },
   effect: 'fade',
   speed: 2000,
-  lazy: true
+  lazy: true,
+  autoplay: {
+    delay: 7000
+  },
+  on: {
+    slideChangeTransitionStart: () => {
+      moveBg();
+    }
+  }
 });
 const popularContentSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider-popular__content', {
   slidesPerView: 1,
@@ -603,7 +552,11 @@ const popularContentSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["def
     prevEl: '.popular-slider-btn--prev'
   },
   loop: true,
-  lazy: true
+  lazy: true,
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  }
 });
 const popularImagesSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.slider-popular__images', {
   slidesPerView: 1,
@@ -620,16 +573,6 @@ const moveBg = () => {
   heroSlider.querySelectorAll('.hero__slide').forEach(item => item.classList.remove('move-background'));
   heroSlider.querySelector('.swiper-slide-active').querySelector('.hero__slide').classList.add('move-background');
 };
-heroSlider.querySelector('.slider-control__btn--prev').addEventListener('click', e => {
-  e.preventDefault();
-  e.stopPropagation();
-  moveBg();
-});
-heroSlider.querySelector('.slider-control__btn--next').addEventListener('click', e => {
-  e.preventDefault();
-  e.stopPropagation();
-  moveBg();
-});
 moveBg();
 
 // office__slider
@@ -690,7 +633,7 @@ aos__WEBPACK_IMPORTED_MODULE_0___default().init({
   // offset (in px) from the original trigger point
   delay: 0,
   // values from 0 to 3000, with step 50ms
-  duration: 400,
+  duration: 1000,
   // values from 0 to 3000, with step 50ms
   easing: 'ease',
   // default easing for AOS animations
@@ -700,6 +643,16 @@ aos__WEBPACK_IMPORTED_MODULE_0___default().init({
   // whether elements should animate out while scrolling past them
   anchorPlacement: 'top-bottom' // defines which position of the element regarding to window should trigger the animation
 });
+
+/***/ }),
+
+/***/ "./src/js/components/transition.js":
+/*!*****************************************!*\
+  !*** ./src/js/components/transition.js ***!
+  \*****************************************/
+/***/ (() => {
+
+
 
 /***/ }),
 
@@ -8287,6 +8240,155 @@ var Swiper = function () {
   }];
   return Q.use(ce), Q;
 }();
+
+/***/ }),
+
+/***/ "./node_modules/gsap/CSSRulePlugin.js":
+/*!********************************************!*\
+  !*** ./node_modules/gsap/CSSRulePlugin.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CSSRulePlugin: () => (/* binding */ CSSRulePlugin),
+/* harmony export */   "default": () => (/* binding */ CSSRulePlugin)
+/* harmony export */ });
+/*!
+ * CSSRulePlugin 3.12.2
+ * https://greensock.com
+ *
+ * @license Copyright 2008-2023, GreenSock. All rights reserved.
+ * Subject to the terms at https://greensock.com/standard-license or for
+ * Club GreenSock members, the agreement issued with that membership.
+ * @author: Jack Doyle, jack@greensock.com
+*/
+
+/* eslint-disable */
+var gsap,
+    _coreInitted,
+    _win,
+    _doc,
+    CSSPlugin,
+    _windowExists = function _windowExists() {
+  return typeof window !== "undefined";
+},
+    _getGSAP = function _getGSAP() {
+  return gsap || _windowExists() && (gsap = window.gsap) && gsap.registerPlugin && gsap;
+},
+    _checkRegister = function _checkRegister() {
+  if (!_coreInitted) {
+    _initCore();
+
+    if (!CSSPlugin) {
+      console.warn("Please gsap.registerPlugin(CSSPlugin, CSSRulePlugin)");
+    }
+  }
+
+  return _coreInitted;
+},
+    _initCore = function _initCore(core) {
+  gsap = core || _getGSAP();
+
+  if (_windowExists()) {
+    _win = window;
+    _doc = document;
+  }
+
+  if (gsap) {
+    CSSPlugin = gsap.plugins.css;
+
+    if (CSSPlugin) {
+      _coreInitted = 1;
+    }
+  }
+};
+
+var CSSRulePlugin = {
+  version: "3.12.2",
+  name: "cssRule",
+  init: function init(target, value, tween, index, targets) {
+    if (!_checkRegister() || typeof target.cssText === "undefined") {
+      return false;
+    }
+
+    var div = target._gsProxy = target._gsProxy || _doc.createElement("div");
+
+    this.ss = target;
+    this.style = div.style;
+    div.style.cssText = target.cssText;
+    CSSPlugin.prototype.init.call(this, div, value, tween, index, targets); //we just offload all the work to the regular CSSPlugin and then copy the cssText back over to the rule in the render() method. This allows us to have all of the updates to CSSPlugin automatically flow through to CSSRulePlugin instead of having to maintain both
+  },
+  render: function render(ratio, data) {
+    var pt = data._pt,
+        style = data.style,
+        ss = data.ss,
+        i;
+
+    while (pt) {
+      pt.r(ratio, pt.d);
+      pt = pt._next;
+    }
+
+    i = style.length;
+
+    while (--i > -1) {
+      ss[style[i]] = style[style[i]];
+    }
+  },
+  getRule: function getRule(selector) {
+    _checkRegister();
+
+    var ruleProp = _doc.all ? "rules" : "cssRules",
+        styleSheets = _doc.styleSheets,
+        i = styleSheets.length,
+        pseudo = selector.charAt(0) === ":",
+        j,
+        curSS,
+        cs,
+        a;
+    selector = (pseudo ? "" : ",") + selector.split("::").join(":").toLowerCase() + ","; //note: old versions of IE report tag name selectors as upper case, so we just change everything to lowercase.
+
+    if (pseudo) {
+      a = [];
+    }
+
+    while (i--) {
+      //Firefox may throw insecure operation errors when css is loaded from other domains, so try/catch.
+      try {
+        curSS = styleSheets[i][ruleProp];
+
+        if (!curSS) {
+          continue;
+        }
+
+        j = curSS.length;
+      } catch (e) {
+        console.warn(e);
+        continue;
+      }
+
+      while (--j > -1) {
+        cs = curSS[j];
+
+        if (cs.selectorText && ("," + cs.selectorText.split("::").join(":").toLowerCase() + ",").indexOf(selector) !== -1) {
+          //note: IE adds an extra ":" to pseudo selectors, so .myClass:after becomes .myClass::after, so we need to strip the extra one out.
+          if (pseudo) {
+            a.push(cs.style);
+          } else {
+            return cs.style;
+          }
+        }
+      }
+    }
+
+    return a;
+  },
+  register: _initCore
+};
+_getGSAP() && gsap.registerPlugin(CSSRulePlugin);
+
 
 /***/ }),
 
@@ -24272,79 +24374,89 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_vars */ "./src/js/_vars.js");
 /* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_functions */ "./src/js/_functions.js");
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_components */ "./src/js/_components.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/CSSRulePlugin.js");
 
 
 
 
-const header = document.querySelector('header');
-window.addEventListener('scroll', () => {
-  isScrolled();
-});
-const isScrolled = () => {
-  window.scrollY ? header.classList.add('moved') : header.classList.remove('moved');
+
+const headerNav = document.querySelector(".nav__list");
+const benefitsSection = document.querySelector(".benefit");
+const tourSection = document.querySelector(".tour");
+const popularSection = document.querySelector(".popular");
+const servicesSection = document.querySelector(".services-section");
+const projectSection = document.querySelector(".projects-section");
+const benHouseSection = document.querySelector(".benefits-house");
+const ecoHouseSection = document.querySelector(".eco-house");
+const techSection = document.querySelector(".tech");
+const addSection = document.querySelector(".add");
+const officeSection = document.querySelector(".office");
+const ctaSection = document.querySelector(".cta");
+const getCoord = el => {
+  let rect = el.getBoundingClientRect();
+  let scrollTop = window.pageY || document.documentElement.scrollTop;
+  return rect.top + scrollTop;
 };
-isScrolled();
-const projectCards = document.querySelectorAll('.projects-card');
+const getBottom = el => {
+  return el.offsetHeight + el.offsetTop;
+};
+const isInto = (el1, el2) => {
+  return getBottom(el2) >= getCoord(el1) && getCoord(el1) >= el2.offsetTop;
+};
+window.addEventListener("scroll", () => {
+  if (isInto(headerNav, benefitsSection) || isInto(headerNav, popularSection) || isInto(headerNav, servicesSection) || isInto(headerNav, projectSection) || isInto(headerNav, ecoHouseSection) || isInto(headerNav, techSection) || isInto(headerNav, addSection) || isInto(headerNav, officeSection)) {
+    document.querySelector(".header").classList.add("dark");
+  } else {
+    document.querySelector(".header").classList.remove("dark");
+  }
+});
+const projectCards = document.querySelectorAll(".projects-card");
 projectCards.forEach(el => {
-  const details = el.querySelector('.projects-card__details');
-  el.addEventListener('mouseenter', () => {
-    details.classList.add('active');
-    details.style.maxHeight = details.scrollHeight + 'px';
+  const details = el.querySelector(".projects-card__details");
+  el.addEventListener("mouseenter", () => {
+    details.classList.add("active");
+    details.style.maxHeight = details.scrollHeight + "px";
   });
-  el.addEventListener('mouseleave', () => {
-    details.classList.remove('active');
+  el.addEventListener("mouseleave", () => {
+    details.classList.remove("active");
     details.style.maxHeight = null;
   });
 });
-const forms = document.querySelectorAll('.form');
+const forms = document.querySelectorAll(".form");
 forms.forEach(f => {
-  const inputs = document.querySelectorAll('.form__input');
+  const inputs = document.querySelectorAll(".form__input");
   inputs.forEach(i => {
-    i.addEventListener('click', () => {
-      if (i.classList.contains('focus-visible')) {
-        inputs.forEach(el => el.closest('.form__label').querySelector('span').classList.remove('focus'));
-        i.closest('.form__label').querySelector('span').classList.add('focus');
+    i.addEventListener("click", () => {
+      if (i.classList.contains("focus-visible")) {
+        inputs.forEach(el => el.closest(".form__label").querySelector("span").classList.remove("focus"));
+        i.closest(".form__label").querySelector("span").classList.add("focus");
       }
     });
   });
 });
-const bg = document.querySelector('.bg');
-const benefitsHouseSection = document.querySelector('.benefits-house');
-// const scrollAnimation = () => {
-//   let windowCenter = (window.innerHeight / 2) + window.scrollY;
-
-//   let scrollOffset = benefitsHouseSection.offsetTop + (benefitsHouseSection.offsetHeight / 2)
-//   if(bg.classList.contains('active')) return
-//   if(windowCenter >= scrollOffset){
-//     bg.classList.add('active')
-//     benefitsHouseSection.querySelector('.benefits-house__content').classList.remove('benefits-house__content--disabled')
-//   } else {
-//     bg.classList.remove('active')
-//   }
-// }
-// window.addEventListener('scroll', () => scrollAnimation())
-let t = gsap.timeline();
-
-// t.to('.bg', {scale: 2})
-t.to('.benefits-house__content', {
-  width: '100%',
-  minHeight: '100vh'
+document.querySelector('.wrapper').style.minHeight = document.querySelector('.wrapper').scrollHeight * 2 + 'px';
+let rule = gsap_all__WEBPACK_IMPORTED_MODULE_4__.CSSRulePlugin.getRule('.parallax__body::before');
+const tl = gsap.timeline();
+tl.fromTo(".parallax__body", {
+  backgroundSize: '50% 50%'
+}, {
+  backgroundSize: '100% 100%'
+}).set(rule, {
+  cssRule: {
+    opacity: 1
+  }
+}).to(".benefits-house__content", {
+  yPercent: -115,
+  ease: "linear"
 });
 ScrollTrigger.create({
-  trigger: '.benefits-house__content',
-  ease: 'linear',
-  start: 'center center',
-  end: 'bottom 200px',
-  animation: t,
-  onEnter: () => {
-    document.querySelectorAll('.dis-opacity').forEach(el => el.classList.remove('dis-opacity'));
-    document.querySelector('.benefits-house__content').classList.add('active');
-  }
-});
-window.addEventListener('scroll', () => {
-  if (document.querySelector('.bg') === window.clientWidth) {
-    console.log('wwwww');
-  }
+  animation: tl,
+  trigger: ".wrapper",
+  ease: 'none',
+  start: "top top",
+  end: "bottom",
+  scrub: 0.4,
+  pin: '.parallax'
 });
 })();
 

@@ -49,5 +49,10 @@
     @include hover {
       background-color: var(--focus-active-color);
     }
+    @media (min-width: 1440px) {
+      width: 3.2rem;
+      height: 3.2rem;
+      background-size: 1.5rem 1.5rem;
+    }
   }
 }

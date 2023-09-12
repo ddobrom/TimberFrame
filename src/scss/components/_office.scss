@@ -1,11 +1,11 @@
 .office {
   padding-top: 120px;
   padding-bottom: 160px;
-  &__container-left {
-    padding-left: 30px;
-  }
   &__title {
     margin-bottom: 60px;
+    @media (min-width: 1440px){
+      margin-bottom: 6rem;
+    }
   }
   &__block {
     display: flex;
@@ -13,11 +13,19 @@
     align-items: center;
     flex-direction: column;
     margin-bottom: 80px;
+    @media (min-width: 1440px){
+      margin-bottom: 8rem;
+    }
   }
 
   &__address {
-    max-width: calc-between-width(1440, 210, 3480, 420);
-    margin-bottom: calc-between-width(1440, 64, 3480, 128);
+    max-width: 210px;
+    margin-bottom: 64px;
+
+    @media (min-width: 1440px){
+      max-width: 21rem;
+      margin-bottom: 6.4rem;
+    }
   }
   &__slider {
   }

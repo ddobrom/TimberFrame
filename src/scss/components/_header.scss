@@ -36,37 +36,42 @@
   &__btn {
     &:not(:last-child) {
       margin-right: 16px;
+      @media (min-width: 1440px){
+      margin-right: 1.6rem;
+    }
     }
     svg {
-      width: calc-between-width(1440, 32, 3840, 64);
-      height: calc-between-width(1440, 32, 3840, 64);
+      width: 32px;
+      height: 32px;
       fill: none;
       stroke: var(--white-color);
       transition: stroke 0.3s ease-in;
       @include hover {
         stroke: var(--focus-color) !important;
       }
+      @media (min-width: 1440px){
+        width: 3.2rem;
+        height: 3.2rem;
+      }
     }
   }
 }
 
-.header.moved {
-  background-color: #fff;
-
-  .nav {
-    &__link {
-      color: var(--black-brand-color);
-      span {
-        border-color: var(--black-brand-color);
-      }
-    }
+.header.dark {
+  .nav__link {
+    color: var(--black-brand-color) !important;
+  }
+  .dropdown__btn {
+    span {
+      border-color: var(--black-brand-color) !important
+    };
   }
   .header__phone {
-    color: var(--black-brand-color);
+    color: var(--black-brand-color) !important;
   }
   .header__btn {
     svg {
-      stroke: var(--black-brand-color);
+      stroke: var(--black-brand-color) !important;
     }
   }
   .header__logo {

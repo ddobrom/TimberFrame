@@ -3,10 +3,10 @@
 
 @include('partials/head.html')
 
-<body class="page__body">
-  <div class="site-container">
+<body class="page__body" id="smooth-wrapper">
+  <div class="site-container" id="smooth-content">
     @include('partials/header.html')
-    <main class="main">
+    <main class="main" data-speed="0.5">
       @include('partials/menu.html')
       @include('partials/favorites.html')
       @include('partials/hero.html')

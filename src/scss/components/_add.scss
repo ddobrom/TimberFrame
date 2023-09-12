@@ -10,7 +10,7 @@
 .add-item {
   flex: 1;
   &:not(:last-child){
-    margin-right: calc-between-width(1440, 268, 3840, 536);
+    margin-right: 26.8rem;
   }
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@
     margin-bottom: 30px;
     color: var(--black-brand-color);
     text-align: center;
-    font-size: calc-between-width(1440, 32, 3840, 64);
+    font-size: 3.2rem;
     font-weight: 700;
     letter-spacing: 1.6px;
   }

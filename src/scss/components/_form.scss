@@ -8,6 +8,12 @@
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.90);
   backdrop-filter: blur(10px);
+  @media (min-width: 1440px){
+    gap: 1.6rem;
+    padding: 4.5rem;
+    width: 45rem;
+    border-radius: 1.6rem;
+  }
   &__title {
     margin: 0;
     color: var(--black-brand-color);
@@ -15,6 +21,9 @@
     font-size: 24px;
     font-weight: 700;
     letter-spacing: 0.72px;
+    @media (min-width: 1440px){
+      font-size: 2.4rem;
+    }
   }
   &__label {
     width: 100%;
@@ -28,6 +37,9 @@
       transition: color .3s ease-in;
       &.focus {
         color: var(--gray-lite-color);
+      }
+      @media (min-width: 1440px){
+        font-size: 1.4rem;
       }
     }
 
@@ -48,9 +60,19 @@
     border: 1px solid var(--gray-lite-color);
     background: var(--white-color);
     transition: border .3s ease-in;
+    @media (min-width: 1440px){
+      font-size: 1.5rem;
+      padding-left: 1.7rem;
+      padding-right: 1.7rem;
+      height: 4.8rem;
+      border-radius: 0.4rem;
+    }
   }
   &__btn {
     margin-top: 16px;
+    @media (min-width: 1440px){
+      margin-top: 1.6rem;
+    }
   }
 }
 

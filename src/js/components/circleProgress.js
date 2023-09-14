@@ -1,12 +1,13 @@
 import {gsap} from 'gsap'
 const circles = document.querySelectorAll('.progress')
-
 circles.forEach(el => {
-  let percentageProgress = el.dataset.percents
-  let radius = el.getAttribute('r')
+  let percentageProgress = parseInt(el.dataset.percents)
+  let radius = parseInt(window.getComputedStyle(el).r)
   let circleLength = 2 * Math.PI * radius;
   el.setAttribute('stroke-dasharray', circleLength)
   el.setAttribute('stroke-dashoffset', circleLength - circleLength * percentageProgress / 100)
+
+  console.log(radius);
 })
 
 

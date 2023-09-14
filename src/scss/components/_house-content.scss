@@ -178,11 +178,11 @@
       }
     }
     &--centered {
-      position: absolute;
+      position: relative;
       width: 48%;
       bottom: 0;
       left: 50%;
-      transform: translate(-50%, 50%);
+      transform: translate(-50%, -30%);
       height: 690px;
       width: 690px;
       img {

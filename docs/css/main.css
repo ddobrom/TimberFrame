@@ -3100,13 +3100,13 @@ a {
   }
 }
 .house-content__image--centered {
-  position: absolute;
+  position: relative;
   width: 48%;
   bottom: 0;
   left: 50%;
-  -webkit-transform: translate(-50%, 50%);
-  -ms-transform: translate(-50%, 50%);
-  transform: translate(-50%, 50%);
+  -webkit-transform: translate(-50%, -30%);
+  -ms-transform: translate(-50%, -30%);
+  transform: translate(-50%, -30%);
   height: 690px;
   width: 690px;
 }
@@ -3120,8 +3120,6 @@ a {
 .eco-house {
   position: relative;
   padding-top: 120px;
-  padding-bottom: 120px;
-  margin-bottom: 350px;
   background-image: url("./../img/forest-bg.png");
   background-position: center center;
   background-size: 100% auto;
@@ -3193,19 +3191,6 @@ a {
   .eco-house__content {
     margin-top: 13rem;
   }
-}
-.eco-house__bottom {
-  position: absolute;
-  left: -10%;
-  bottom: 0;
-  height: 30%;
-  min-width: 120%;
-  overflow-x: hidden;
-  z-index: -1;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(42.13%, #020C0C), to(rgba(2, 12, 12, 0)));
-  background: linear-gradient(180deg, #020C0C 42.13%, rgba(2, 12, 12, 0) 100%);
-  -webkit-filter: blur(15px);
-  filter: blur(15px);
 }
 
 .tech {

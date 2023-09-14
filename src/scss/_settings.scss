@@ -49,7 +49,7 @@ a {
 }
 
 .site-container {
-  // overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
+  overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
 }
 
 .is-hidden {
@@ -96,9 +96,9 @@ a {
 }
 
 .container {
-  margin: 0 auto;
 
   @include mobile {
+    margin: 0 auto;
     padding: 0 16px;
   }
 }
@@ -343,11 +343,13 @@ a {
 
 .parallax__clouds {
   position: absolute;
-  right: 150vw;
-  min-width: 300vw;
-  height: 50%;
-  overflow: visible;
+  right: 100vw;
+  min-width: 200vw;
+  // height: 60%;
   object-fit: cover;
+  @include mobile {
+    top: 15%;
+  }
 }
 
 .mob-dis {

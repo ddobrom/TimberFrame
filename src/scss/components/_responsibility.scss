@@ -1,99 +1,23 @@
 .responsibility {
   padding-top: 120px;
   padding-bottom: 110px;
-  // min-height: 100vh;
-  position: relative !important;
+  min-height: 100vh;
   &__title {
     margin: 0 auto;
     margin-bottom: 80px;
     max-width: 944px;
   }
   &__items {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    position: relative;
-    min-height: 360px;
-  }
-  &__item {
-    display: flex;
-    justify-content: flex-start;
-    background-color: #fff;
-    width: 67%;
-    position: absolute;
-    &--1 {
-      z-index: 1;
-    }
-    &--2 {
-      z-index: -1;
-      display: none;
-    }
-    &--3 {
-      z-index: -1;
-      display: none;
-    }
-    &--4 {
-      z-index: -1;
-      display: none;
-    }
-  }
-}
-.res {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 40px;
-  &__left {
-    width: 360px;
+
     height: 360px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    svg {
+    & .swiper-slide {
+      display: flex;
+      align-items: center;justify-content: center;
+    }
+  }
 
-      position: absolute;
-      inset: 0;
-      z-index: 10;
-
-    }
-  }
-  &__right {
-    h4 {
-      margin: 0;
-      color: var(--black-brand-color);
-      font-size: 40px;
-      @media (min-width: 1440px){
-       font-size: 4rem;
-      }
-      span {
-        display: block;
-        color: var(--focus-color);
-      }
-    }
-  }
-  &__info {
-    span {
-      color: var(--focus-color);
-      text-align: center;
-      font-family: "Aeonik Pro";
-      font-size: 120px;
-      text-transform: uppercase;
-      @media (min-width: 1440px){
-        font-size: 12rem;
-      }
-    }
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  &__btn {
-    position: relative;
-    transform: unset;
-  }
 }
+
 
 .progress {
   transform: rotate(-90deg);
@@ -102,4 +26,52 @@
 .progress-bg {
   transform: rotate(-90deg);
   transform-origin: center;
+}
+.res {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 890px;
+  &__left {
+    position: relative;
+    margin-right: 40px;
+
+  }
+  &__title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &__figure {
+    margin: 0;
+    color: var(--focus-color);
+    text-align: center;
+    font-family: "Aeonik Pro";
+    font-size: 120px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  &__info {
+    margin: 0;
+    color: var(--black-brand-color);
+    font-size: 40px;
+    font-weight: 400;
+    span {
+      color: var(--focus-color);
+    }
+  }
+}
+.res-control-btn {
+  position: relative;
+  transform: translateX(50%);
+  padding: 0;
+}
+
+.progress {
+  filter: drop-shadow( 0 0 2px var(--focus-color)) drop-shadow( 0 0 5px var(--focus-color)) drop-shadow( 0 0 10px var(--focus-color));
 }

@@ -203,7 +203,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 
 const circles = document.querySelectorAll('.progress');
 circles.forEach(el => {
@@ -213,21 +212,23 @@ circles.forEach(el => {
   el.setAttribute('stroke-dasharray', circleLength);
   el.setAttribute('stroke-dashoffset', circleLength - circleLength * percentageProgress / 100);
 });
-const timeline = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline();
 
-// timeline.to('.responsibility__item--1', {zIndex: 1})
-//         .to('.responsibility__item--2', {zIndex: 2,display: 'block'})
-//         .to('.responsibility__item--3', {zIndex: 3,display: 'block'})
-//         .to('.responsibility__item--4', {zIndex: 4,display: 'block'})
+// const timeline = gsap.timeline()
+
+// timeline.to('.responsibility__item--1', {y: 200})
+//         .to('.responsibility__item--2', {y: 200})
+//         .to('.responsibility__item--3', {y: 200})
+//         .to('.responsibility__item--4', {y: 200})
 
 // ScrollTrigger.create({
-//   trigger: '.responsibility__item',
+//   trigger: '.responsibility',
 
 //   scrub: 1,
-//   pin: '.responsibility',
+//   pin: '.responsibility__items',
 //   animation: timeline,
-//   start: 'top center',
+//   start: 'top top',
 //   end: '+=300',
+//   markers: true,
 // })
 
 /***/ }),
@@ -416,7 +417,7 @@ document.querySelectorAll(".eco-house .house-content__image").forEach(el => {
   observer.observe(el);
 });
 function moveClouds(percent) {
-  clouds.style.transform = `translateX(${percent / 9}%)`;
+  clouds.style.transform = `translateX(${percent / 6}%)`;
 }
 
 /***/ }),
@@ -514,8 +515,7 @@ mm.add("(min-width: 769px)", () => {
     end: "bottom",
     scrub: 0.1,
     pin: '.services-section__container',
-    normalize: true,
-    markers: true
+    normalize: true
   });
 });
 
@@ -608,6 +608,19 @@ const gallerySlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](
   thumbs: {
     swiper: gallerySliderMini
   }
+});
+const responsibilitySlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".responsibility__items", {
+  slidesPerView: 1,
+  effect: 'fade',
+  loop: true,
+  fadeEffect: {
+    crossFade: true
+  }
+});
+document.querySelectorAll('.res-control-btn').forEach(el => {
+  el.addEventListener('click', () => {
+    responsibilitySlider.slideNext();
+  });
 });
 
 /***/ }),

@@ -65,7 +65,7 @@
       order: 0;
     }
     &--end {
-      align-self: flex-end;
+      align-self: end;
       transform: translate(-30px, 25%);
       @media (min-width: 1440px){
         transform: translate(-3rem, 25%);
@@ -135,10 +135,10 @@
     // width: auto;
     position: relative;
     display: flex;
-    img {
-      width: 100%;
-    }
     @include mobile {
+      img {
+        width: 100%;
+      }
       grid-column: 1;
     }
     &--mini {
@@ -185,8 +185,9 @@
       transform: translate(-50%, -30%);
       height: 690px;
       width: 690px;
-      img {
-
+      @include mobile {
+        width: 220px;
+        height: 220px;
       }
     }
   }

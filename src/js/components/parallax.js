@@ -30,5 +30,5 @@ document.querySelectorAll(".eco-house .house-content__image").forEach((el) => {
   observer.observe(el);
 });
 function moveClouds(percent) {
-  clouds.style.transform = `translateX(${percent / 9}%)`;
+  clouds.style.transform = `translateX(${percent / 6}%)`;
 }

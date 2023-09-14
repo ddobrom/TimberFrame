@@ -30,7 +30,7 @@ mm.add("(min-width: 769px)", () => {
       scrub: 0.1,
       pin: '.services-section__container',
       normalize: true,
-      markers: true
+
     })
 })
 

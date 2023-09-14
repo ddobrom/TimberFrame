@@ -89,3 +89,19 @@ const gallerySlider = new Swiper(".gallery__slider", {
     swiper: gallerySliderMini,
   },
 });
+
+
+const responsibilitySlider = new Swiper(".responsibility__items", {
+  slidesPerView: 1,
+  effect: 'fade',
+  loop: true,
+  fadeEffect: {
+    crossFade: true,
+  },
+})
+
+document.querySelectorAll('.res-control-btn').forEach(el => {
+  el.addEventListener('click', () => {
+    responsibilitySlider.slideNext()
+  })
+})

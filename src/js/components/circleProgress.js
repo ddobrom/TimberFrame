@@ -10,19 +10,20 @@ circles.forEach(el => {
 })
 
 
-const timeline = gsap.timeline()
+// const timeline = gsap.timeline()
 
-// timeline.to('.responsibility__item--1', {zIndex: 1})
-//         .to('.responsibility__item--2', {zIndex: 2,display: 'block'})
-//         .to('.responsibility__item--3', {zIndex: 3,display: 'block'})
-//         .to('.responsibility__item--4', {zIndex: 4,display: 'block'})
+// timeline.to('.responsibility__item--1', {y: 200})
+//         .to('.responsibility__item--2', {y: 200})
+//         .to('.responsibility__item--3', {y: 200})
+//         .to('.responsibility__item--4', {y: 200})
 
 // ScrollTrigger.create({
-//   trigger: '.responsibility__item',
+//   trigger: '.responsibility',
 
 //   scrub: 1,
-//   pin: '.responsibility',
+//   pin: '.responsibility__items',
 //   animation: timeline,
-//   start: 'top center',
+//   start: 'top top',
 //   end: '+=300',
+//   markers: true,
 // })

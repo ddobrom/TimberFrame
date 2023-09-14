@@ -61,7 +61,7 @@
   }
   &__list {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     @include mobile {
       display: grid;
       grid-template-columns: repeat(2, 1fr);

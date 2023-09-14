@@ -31,22 +31,22 @@ const isInto = (el1, el2) => {
   return getBottom(el2) >= getCoord(el1) && getCoord(el1) >= el2.offsetTop;
 };
 
-window.addEventListener("scroll", () => {
-  if (
-    isInto(headerNav, benefitsSection) ||
-    isInto(headerNav, popularSection) ||
-    isInto(headerNav, servicesSection) ||
-    isInto(headerNav, projectSection) ||
-    isInto(headerNav, ecoHouseSection) ||
-    isInto(headerNav, techSection) ||
-    isInto(headerNav, addSection) ||
-    isInto(headerNav, officeSection)
-  ) {
-    document.querySelector(".header").classList.add("dark");
-  } else {
-    document.querySelector(".header").classList.remove("dark");
-  }
-});
+// window.addEventListener("scroll", () => {
+//   if (
+//     isInto(headerNav, benefitsSection) ||
+//     isInto(headerNav, popularSection) ||
+//     isInto(headerNav, servicesSection) ||
+//     isInto(headerNav, projectSection) ||
+//     isInto(headerNav, ecoHouseSection) ||
+//     isInto(headerNav, techSection) ||
+//     isInto(headerNav, addSection) ||
+//     isInto(headerNav, officeSection)
+//   ) {
+//     document.querySelector(".header").classList.add("dark");
+//   } else {
+//     document.querySelector(".header").classList.remove("dark");
+//   }
+// });
 
 const projectCards = document.querySelectorAll(".projects-card");
 projectCards.forEach((el) => {
@@ -80,14 +80,19 @@ forms.forEach((f) => {
     });
   });
 });
+
+
+gsap.registerPlugin(CSSRulePlugin)
 document.querySelector('.wrapper').style.minHeight = document.querySelector('.wrapper').scrollHeight * 2 + 'px'
+
+
 let rule = CSSRulePlugin.getRule('.parallax__body::before')
 const tl = gsap.timeline();
-tl.fromTo(".parallax__body",{backgroundSize: '50% 50%'}, {
-  backgroundSize: '100% 100%'
+tl.fromTo(".parallax__body",{backgroundSize: '75% 75%'}, {
+  backgroundSize: '101% 101%'
 })
 .set(rule, {cssRule: {opacity: 1}})
-.to(".benefits-house__content", {yPercent: -115, ease: "linear", })
+.fromTo(".benefits-house__content",{yPercent: -50} ,{yPercent: -115, ease: "linear", })
 
 ScrollTrigger.create({
   animation: tl,
@@ -98,6 +103,7 @@ ScrollTrigger.create({
     scrub: 0.4,
     pin: '.parallax',
     normalizeScroll: true,
+    // markers: 'marrk'
 })
 
 

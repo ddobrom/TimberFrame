@@ -331,6 +331,7 @@ a {
   }
   @include mobile {
     font-size: 14px;
+    letter-spacing: 4.2px;
   }
 }
 
@@ -353,4 +354,32 @@ a {
   @include mobile {
     display: none !important;
   }
+}
+.mob-order-0 {
+  @include mobile {
+    order: -1 !important;
+  }
+}
+.mob-order-1 {
+  @include mobile {
+    order: 1 !important;
+  }
+}
+.mob-order-2 {
+  @include mobile {
+    order: 2 !important;
+  }
+}
+.mob-order-3 {
+  @include mobile {
+    order: 3 !important;
+  }
+}
+.cancel-padding-mob {
+  @include mobile {
+    padding: 0 !important;
+  }
+}
+.swiper-slide-thumb-active {
+  border: 1px solid var(--focus-color);
 }

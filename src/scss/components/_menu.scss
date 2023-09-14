@@ -4,9 +4,10 @@
   z-index: -1;
   background: rgba(37, 35, 33, 0.8);
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   opacity: 0;
   transition: background 0.5s linear, opacity 0.3s ease-in;
+
   &__window {
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
@@ -23,6 +24,10 @@
     top: 30px;
     opacity: 0;
     transition: opacity 0.3s ease-in;
+    @include mobile {
+      left: 16px;
+      top: 32px;
+    }
   }
   &__close-btn {
     position: absolute;
@@ -39,13 +44,26 @@
       height: 3.2rem;
       background-size: 1.3rem 1.3rem;
     }
+    @include mobile {
+      top: 32px;
+      right: 16px;
+    }
   }
 }
 .menu-active {
   opacity: 1;
-  z-index: 30;
+  z-index: 10;
   .menu__logo {
     opacity: 1;
+    z-index: 30;
+    @include mobile {
+      svg {
+        path {
+          fill: var(--black-brand-color) !important;
+          transition: fill 0.3s ease-in;
+        }
+      }
+    }
   }
   .menu-window {
     transform: translateX(0);
@@ -67,15 +85,30 @@
   padding: 90px 120px;
   padding-right: 77px;
   display: flex;
+  overflow: auto;
   @media (min-width: 1440px){
     padding: 9rem 12rem;
   }
+  @include mobile {
+    width: 100%;
+    padding: 96px 40px 0 0;
+    padding-left: 16px;
+    padding-bottom: 50px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
   &__left {
     margin-right: 120px;
+    @include mobile {
+      margin-right: 0;
+    }
   }
 }
 
 .menu-right {
+  @include mobile {
+    order: -1;
+  }
   &__heading {
     margin: 0;
     margin-bottom: 16px;
@@ -89,6 +122,9 @@
     @media (min-width: 1440px){
       font-size: 3.2rem;
       margin-bottom: 1.6rem;
+    }
+    @include mobile {
+      font-size: 24px;
     }
   }
   &__list {
@@ -123,6 +159,9 @@
     @media (min-width: 1440px){
       font-size: 1.2rem;
     }
+    @include mobile {
+      font-size: 14px;
+    }
   }
   &:not(:last-child) {
     margin-bottom: 40px;
@@ -137,6 +176,9 @@
     @media (min-width: 1440px){
       margin-bottom: 6rem;
     }
+    @include mobile {
+      margin-bottom: 24px;
+    }
   }
   &__item {
     color: var(--black-brand-color);
@@ -145,8 +187,17 @@
     font-weight: 700;
     letter-spacing: 0.96px;
     text-transform: uppercase;
+    &--mob {
+      display: none;
+      @include mobile {
+        display: block;
+      }
+    }
     @media (min-width: 1440px){
       font-size: 3.2rem;
+    }
+    @include mobile {
+      font-size: 24px;
     }
     a {
       color: inherit;

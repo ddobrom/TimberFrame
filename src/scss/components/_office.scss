@@ -3,7 +3,7 @@
   padding-bottom: 160px;
   &__title {
     margin-bottom: 60px;
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       margin-bottom: 6rem;
     }
   }
@@ -13,7 +13,7 @@
     align-items: center;
     flex-direction: column;
     margin-bottom: 80px;
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       margin-bottom: 8rem;
     }
   }
@@ -22,15 +22,32 @@
     max-width: 210px;
     margin-bottom: 64px;
 
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       max-width: 21rem;
       margin-bottom: 6.4rem;
+    }
+    @include mobile {
+      padding-top: 80px;
+      margin-bottom: 40px;
     }
   }
   &__slider {
   }
-  &__card {
-    max-width: 593px;
+  &__img {
+    position: relative;
+    width: 593px;
+    height: 360px;
+    @include mobile {
+      width: 264px;
+      height: 160px;
+    }
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
   .swiper-slide {
     cursor: grab;

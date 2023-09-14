@@ -3,12 +3,17 @@
   padding-bottom: 80px;
   overflow: hidden;
   // background-color: rgb(69, 111, 225)
+  @include mobile {
+    padding-bottom: 160px;
+  }
   &__title {
     margin-bottom: 80px;
   }
   &__container {
     padding: 160px 0;
-
+    @include mobile {
+      padding: 200px 0;
+    }
   }
   &__text {
     display: block;
@@ -18,7 +23,9 @@
     &:not(:last-child) {
       margin-bottom: 60px;
     }
-
+    @include mobile {
+      position: relative;
+    }
     @include hover {
       .tech__paragraph--right {
         -webkit-text-fill-color: var(--focus-color);
@@ -50,11 +57,23 @@
       height: 24rem;
       margin-top: -12rem;
     }
+    @include mobile {
+      z-index: -1;
+      left: 50%;
+      transform: translateX(-50%);
+      // top: 15%;
+      opacity: 1;
+      width: 340px;
+      height: 200px;
+      margin-top: 0;
+    }
     &--1 {
       background-image: url("./../img/text-pic-01.jpg");
+      transform: translateX(-50%) translateY(-93%);
     }
     &--2 {
       background-image: url("./../img/text-pic-02.jpg");
+      top: 70%;
     }
     img {
       max-width: 100%;
@@ -77,10 +96,18 @@
     transition: transform ease;
     &--right {
       -webkit-text-stroke: 1px var(--focus-color);
+      @include mobile {
+        -webkit-text-fill-color: var(--focus-color)
+      }
     }
     &--left {
+      @include mobile {
+        -webkit-text-fill-color: var(--black-brand-color)
+      }
     }
-
+    @include mobile {
+      font-size: 40px;
+    }
     @media (min-width: 1440px){
       font-size: 18rem;
     }

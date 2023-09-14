@@ -4,21 +4,36 @@
     @media (min-width: 1440px){
       padding-bottom: 14.8rem;
     }
+    @include mobile {
+      padding-bottom: 0;
+    }
   }
   &__container {
     position: relative;
     width: 100%;
     padding-left: 30px;
+    @include mobile {
+      padding-left: unset;
+      padding: 0 16px;
+    }
   }
   &__grid {
     position: relative;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    justify-content: start;
+    justify-content: flex-start;
     gap: 60px;
     margin-bottom: 27px;
     &--mt {
       margin-top: 190px;
+      @include mobile {
+        margin-top: 0;
+
+      }
+    }
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 0;
     }
   }
   &__title {
@@ -35,6 +50,11 @@
     @media (min-width: 1440px){
       margin-right: 6rem;
     }
+    @include mobile {
+      grid-column: 1;
+      padding-top: 260px;
+      padding-bottom: 160px;
+    }
     &--gap {
       padding-top: 70px;
       @media (min-width: 1440px){
@@ -45,10 +65,14 @@
       order: 0;
     }
     &--end {
-      align-self: end;
+      align-self: flex-end;
       transform: translate(-30px, 25%);
       @media (min-width: 1440px){
         transform: translate(-3rem, 25%);
+      }
+      @include mobile {
+        transform: unset;
+        align-self: unset;
       }
     }
     &--small {
@@ -56,6 +80,10 @@
       margin-top: 30px;
       @media (min-width: 1440px){
         margin-top: 3rem;
+      }
+      @include mobile {
+        grid-column: 1;
+        margin-top: 0;
       }
     }
   }
@@ -75,13 +103,23 @@
       line-height: 160%;
       letter-spacing: 0.32px;
       font-weight: 400;
-      font-size: calc-between-width(1440, 16, 3840, 32);
+      font-size: 16px;
       &:not(:last-child) {
         margin-right: 30px;
         @media (min-width: 1440px){
           margin-right: 3rem;
         }
       }
+      @media (min-width: 1440px) {
+        font-size: 1.6rem;
+      }
+      @include mobile {
+        flex: unset;
+        margin-bottom: 1em;
+      }
+    }
+    @include mobile {
+      flex-wrap: wrap;
     }
   }
   &__img {
@@ -94,11 +132,14 @@
   }
   &__image {
     grid-column: 6 span;
-    width: auto;
+    // width: auto;
     position: relative;
     display: flex;
     img {
       width: 100%;
+    }
+    @include mobile {
+      grid-column: 1;
     }
     &--mini {
       position: absolute;
@@ -108,6 +149,9 @@
     }
     &--big {
       grid-column: 8 span;
+      @include mobile {
+        grid-column: 1 span;
+      }
     }
     &--eco-mini {
       &-1 {
@@ -138,7 +182,12 @@
       width: 48%;
       bottom: 0;
       left: 50%;
-      transform: translate(-50%, 70%);
+      transform: translate(-50%, 50%);
+      height: 690px;
+      width: 690px;
+      img {
+
+      }
     }
   }
 }

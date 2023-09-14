@@ -34,6 +34,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_clouds_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_components_clouds_js__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _components_circleProgress_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/circleProgress.js */ "./src/js/components/circleProgress.js");
 /* harmony import */ var _components_scrollTech_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/scrollTech.js */ "./src/js/components/scrollTech.js");
+/* harmony import */ var _components_scrollTech_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_components_scrollTech_js__WEBPACK_IMPORTED_MODULE_9__);
 /* harmony import */ var _components_parallax_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/parallax.js */ "./src/js/components/parallax.js");
 /* harmony import */ var _components_parallax_js__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_components_parallax_js__WEBPACK_IMPORTED_MODULE_10__);
 /* harmony import */ var _components_transition_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/transition.js */ "./src/js/components/transition.js");
@@ -424,10 +425,7 @@ function moveClouds(percent) {
 /*!*****************************************!*\
   !*** ./src/js/components/scrollTech.js ***!
   \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
+/***/ (() => {
 
 let menuItem = document.querySelectorAll(".tech__text");
 let menuImage = document.querySelectorAll(".tech__img");
@@ -444,47 +442,39 @@ textObserver.observe(document.querySelector('.tech'));
 textObserver.observe(menuItem[0]);
 textObserver.observe(menuItem[1]);
 function callbackObs(entries, observer) {
-  const percent = window.scrollY / document.querySelector('.tech').scrollHeight * 10;
+  let percent = 1;
+  if (window.matchMedia("(min-width: 769px)").matches) {
+    percent = window.scrollY / document.querySelector('.tech').scrollHeight * 10;
+  } else {
+    percent = window.scrollY / document.querySelector('.tech').scrollHeight;
+  }
   menuItem[0].querySelector('.tech__paragraph').style.transform = `translateX(-${percent / 3}%)`;
   menuItem[1].querySelector('.tech__paragraph').style.transform = `translateX(${percent / 3}%)`;
 }
 document.querySelector('.tech').addEventListener('wheel', () => {
   callbackObs();
 });
-for (let i = 0; i < menuItem.length; i++) {
-  const moveCursor = e => {
-    let left = e.pageX + 20 + 'px';
-    let top = e.pageY + 'px';
-    menuImage[i].style.left = left;
-    menuImage[i].style.top = top;
-  };
-  const setStyles = e => {
-    menuImage[i].style.opacity = '1';
-    menuImage[i].style.transform = 'scale(1)';
-  };
-  const rmStyles = e => {
-    menuImage[i].style.opacity = null;
-    menuImage[i].style.transform = null;
-  };
-  menuItem[i].addEventListener("mousemove", moveCursor);
-  menuItem[i].addEventListener("mouseenter", setStyles);
-  menuItem[i].addEventListener("mouseleave", rmStyles);
+if (window.matchMedia("(min-width: 769px)").matches) {
+  for (let i = 0; i < menuItem.length; i++) {
+    const moveCursor = e => {
+      let left = e.pageX + 20 + 'px';
+      let top = e.pageY + 'px';
+      menuImage[i].style.left = left;
+      menuImage[i].style.top = top;
+    };
+    const setStyles = e => {
+      menuImage[i].style.opacity = '1';
+      menuImage[i].style.transform = 'scale(1)';
+    };
+    const rmStyles = e => {
+      menuImage[i].style.opacity = null;
+      menuImage[i].style.transform = null;
+    };
+    menuItem[i].addEventListener("mousemove", moveCursor);
+    menuItem[i].addEventListener("mouseenter", setStyles);
+    menuItem[i].addEventListener("mouseleave", rmStyles);
+  }
 }
-
-// function moveText(e) {
-//   gsap.to([...menuImage], {
-//     css: {
-//       left: e.pageX + 50,
-//       top: e.pageY,
-//     },
-//     duration: 0.3,
-//   });
-// }
-
-// menuItem.forEach((el) => {
-//   el.addEventListener("mousemove", moveText);
-//   el.addEventListener("mouseleave", null);
-// });
 
 /***/ }),
 
@@ -30556,8 +30546,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_vars */ "./src/js/_vars.js");
 /* harmony import */ var _functions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./_functions */ "./src/js/_functions.js");
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_components */ "./src/js/_components.js");
-/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/CSSRulePlugin.js");
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/CSSRulePlugin.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 
 
 
@@ -30587,13 +30577,24 @@ const getBottom = el => {
 const isInto = (el1, el2) => {
   return getBottom(el2) >= getCoord(el1) && getCoord(el1) >= el2.offsetTop;
 };
-window.addEventListener("scroll", () => {
-  if (isInto(headerNav, benefitsSection) || isInto(headerNav, popularSection) || isInto(headerNav, servicesSection) || isInto(headerNav, projectSection) || isInto(headerNav, ecoHouseSection) || isInto(headerNav, techSection) || isInto(headerNav, addSection) || isInto(headerNav, officeSection)) {
-    document.querySelector(".header").classList.add("dark");
-  } else {
-    document.querySelector(".header").classList.remove("dark");
-  }
-});
+
+// window.addEventListener("scroll", () => {
+//   if (
+//     isInto(headerNav, benefitsSection) ||
+//     isInto(headerNav, popularSection) ||
+//     isInto(headerNav, servicesSection) ||
+//     isInto(headerNav, projectSection) ||
+//     isInto(headerNav, ecoHouseSection) ||
+//     isInto(headerNav, techSection) ||
+//     isInto(headerNav, addSection) ||
+//     isInto(headerNav, officeSection)
+//   ) {
+//     document.querySelector(".header").classList.add("dark");
+//   } else {
+//     document.querySelector(".header").classList.remove("dark");
+//   }
+// });
+
 const projectCards = document.querySelectorAll(".projects-card");
 projectCards.forEach(el => {
   const details = el.querySelector(".projects-card__details");
@@ -30618,18 +30619,21 @@ forms.forEach(f => {
     });
   });
 });
+gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_5__.CSSRulePlugin);
 document.querySelector('.wrapper').style.minHeight = document.querySelector('.wrapper').scrollHeight * 2 + 'px';
-let rule = gsap_all__WEBPACK_IMPORTED_MODULE_4__.CSSRulePlugin.getRule('.parallax__body::before');
-const tl = gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.timeline();
+let rule = gsap_all__WEBPACK_IMPORTED_MODULE_5__.CSSRulePlugin.getRule('.parallax__body::before');
+const tl = gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.timeline();
 tl.fromTo(".parallax__body", {
-  backgroundSize: '50% 50%'
+  backgroundSize: '75% 75%'
 }, {
-  backgroundSize: '100% 100%'
+  backgroundSize: '101% 101%'
 }).set(rule, {
   cssRule: {
     opacity: 1
   }
-}).to(".benefits-house__content", {
+}).fromTo(".benefits-house__content", {
+  yPercent: -50
+}, {
   yPercent: -115,
   ease: "linear"
 });
@@ -30642,6 +30646,7 @@ ScrollTrigger.create({
   scrub: 0.4,
   pin: '.parallax',
   normalizeScroll: true
+  // markers: 'marrk'
 });
 })();
 

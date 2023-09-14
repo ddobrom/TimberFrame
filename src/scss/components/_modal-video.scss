@@ -1,11 +1,14 @@
 .modal {
   display: none;
   position: fixed;
-  z-index: 20;
+  z-index: 99;
   inset: 0;
   align-items: center;
   justify-content: center;
   background-color: rgba(37, 35, 33, 0.80);
+  @include mobile {
+    padding-top: 32px;
+  }
   &__window {
     position: relative;
     z-index: 10;
@@ -13,6 +16,9 @@
     height: 90%;
     border: 1px solid var(--focus-color);
     background-color: #d3d3d34f;
+    @include mobile {
+      height: 80%;
+    }
     iframe {
       position: absolute;
       inset: 0;
@@ -46,6 +52,11 @@
     background-repeat: no-repeat;
 
     transition: background-color .3s ease-in;
+    @include mobile {
+      top: -50px;
+      right: 0;
+      transform: translateY(-100%);
+    }
     @include hover {
       background-color: var(--focus-active-color);
     }

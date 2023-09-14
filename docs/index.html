@@ -348,7 +348,7 @@
 </header>
 
     <main class="main" data-speed="0.5">
-      <div class="menu menu--main menu-disabled main-menu">
+      <div class="menu menu--main menu-disable main-menu">
   <a class="menu__logo logo">
     <svg
       width="200"
@@ -545,7 +545,7 @@
   <div class="menu__window menu__window--main menu-window">
     <div class="menu-window__left menu-left">
       <ul class="list-reset menu-left__list">
-        <li class="menu-left__item">
+        <li class="menu-left__item mob-dis">
           <a href="#" class="menu-left__link">проекты домов</a>
         </li>
         <li class="menu-left__item">
@@ -566,9 +566,12 @@
     </div>
     <div class="menu-window__right menu-right">
       <ul class="menu-right__list list-reset">
-        <h3 class="menu-right__heading">
+        <li class="menu-left__item menu-left__item--mob">
+          <a href="#" class="menu-left__link">проекты домов</a>
+        </li>
+        <li class="menu-right__heading">
           услуги
-        </h3>
+        </li>
         <li class="menu-right__item">
           <a href="#" class="menu-right__link">выбор участка</a>
         </li>
@@ -716,7 +719,7 @@
   <div class="modal modal-video">
   <div class="modal__window">
     <iframe
-      class="modal-window__video"
+      class="modal-window__video iframe"
       src=""
       title="YouTube video player"
       frameborder="0"
@@ -1158,7 +1161,99 @@
   <a href="#" class="btn btn--fill">все проекты</a>
 </section>
 
-      
+      <section class="benefits-house">
+  <h2 class="title centered benefits-house__title" data-aos="fade-up">
+    Преимущества деревянного дома
+  </h2>
+  <div class="wrapper">
+    <div class="parallax">
+      <div class="parallax__body"></div>
+    </div>
+    <div
+      class="benefits-house__content benefits-house__content--disabled house-content"
+    >
+      <div class="house-content__container">
+        <div class="house-content__grid mob-order-0">
+          <div
+            class="house-content__content house-content__content--gap house-content__content--order"
+          >
+            <h2
+              class="title title--white house-content__title"
+              data-aos="fade-up"
+            >
+              Разнообразие фактур и&nbsp;интеллигентное сочетание стилей, для
+              тех, кто не&nbsp;готов довольствоваться простыми постройками
+            </h2>
+            <a href="#" class="btn btn--fill house-content__btn"
+              >заказать индивидуальный проект</a
+            >
+            <div class="house-content__text" data-aos="fade-up">
+              <p>
+                Создаём изысканные формы из&nbsp;дерева, комбинируем
+                с&nbsp;камнем и&nbsp;штукатуркой
+              </p>
+              <p>
+                Такое может быть продумано и&nbsp;воплощено в&nbsp;высочайшем
+                качестве из&nbsp;премиальных материалов только в&nbsp;деревянном
+                доме от&nbsp;TF&nbsp;House
+              </p>
+            </div>
+          </div>
+          <div class="house-content__image">
+            <img src="./img/benefits-house-1.jpg" alt="" data-parallax="big-img"/>
+            <div class="house-content__image--mini" style="width: 45%">
+              <img src="./img/benefits-house-02.jpg" alt="" data-parallax="small-img"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="house-content__grid mob-order-3 container">
+        <div class="house-content__image" data-parallax="big-img">
+          <img src="./img/benefits-house-03.jpg" alt="" />
+        </div>
+      </div>
+      <div class="house-content__grid container">
+        <div class="house-content__content house-content mob-order-2">
+          <h2
+            class="title title--white house-content__title"
+            data-aos="fade-up"
+          >
+            Архитектура&nbsp;&mdash; позволяет сочетать комфорт, пространство
+            и&nbsp;время
+          </h2>
+          <a href="#" class="btn btn--fill house-content__btn"
+            >консультация архитектора</a
+          >
+          <div class="house-content__text" data-aos="fade-up">
+            <p>
+              Классические деревянные дома, которые никогда не&nbsp;выйдут
+              из&nbsp;моды. Современные проекты, как новый символ загородной
+              жизни
+            </p>
+            <p>
+              Мы&nbsp;сможем воплотить вашу мечту о&nbsp;деревянном доме
+              в&nbsp;самые короткие сроки строительства
+            </p>
+          </div>
+        </div>
+        <div
+          class="house-content__image house-content__image--last flex-centered mob-dis"
+        >
+          <img
+            src="./img/benefits-house-04.jpg"
+            alt="House"
+            style="width: auto"
+          />
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="benefits-house__mob-photo">
+    <img src="./img/benefits-house-04.jpg" alt="house image">
+  </div>
+</section>
+
       <section class="eco-house">
   <div class="eco-house__header">
     <h3 class="subtitle centered" data-aos="fade-up">Эко-среда</h3>
@@ -1174,7 +1269,7 @@
       <img src="./img/clouds.png" alt="Clouds" class="parallax__clouds">
     <div class="house-content__container">
       <div class="house-content__grid house-content__row--dark">
-        <div class="house-content__content house-content__content--order">
+        <div class="house-content__content house-content__content--order cancel-padding-mob">
           <h2
             class="title title--white house-content__title"
             data-aos="fade-up"
@@ -1211,7 +1306,7 @@
       class="house-content__grid house-content--expanded"
     >
       <div
-        class="house-content__content house-content__content--end house-content__content--small"
+        class="house-content__content house-content__content--end house-content__content--small mob-order-1 container"
       >
         <h2 class="title title--white house-content__title" data-aos="fade-up">
           Эстетика в&nbsp;любом ландшафте
@@ -1227,8 +1322,8 @@
           </p>
         </div>
       </div>
-      <div class="house-content__image">
-        <img src="./img/eco-03.jpg" alt="" style="width: 75%"/>
+      <div class="house-content__image mob-order-3">
+        <img src="./img/eco-03.jpg" alt="" />
         <div
           class="house-content__image--mini house-content__image--eco-mini-2"
           style="width: 55%;"
@@ -1255,12 +1350,13 @@
       <div class="house-content__image house-content__image--big">
         <img src="./img/eco-05.jpg" alt="" />
       </div>
-      <img class="house-content__image--centered" src="./img/eco-06.jpg" alt="" />
+      <div class="house-content__image--centered">
+        <img src="./img/eco-06.jpg" alt="" />
+      </div>
     </div>
   </div>
   <div class="eco-house__bottom"></div>
 
-  <!-- <img src="./img/clouds.png" alt="" class="eco-house__clouds"> -->
 </section>
 
       <section class="tech">
@@ -1304,18 +1400,31 @@
   </div>
 </section>
 
-      
+      <section class="add">
+  <h2 class="visually-hidden">Title</h2>
+  <div class="add__items">
+    <div class="add__item add-item">
+      <h3 class="add-item__title">Экспресс консультация с&nbsp;архитектором</h3>
+      <a href="#" class="btn btn--fill">связаться с нами</a>
+    </div>
+    <div class="add__item add-item">
+      <h3 class="add-item__title">Наши проекты деревянных домов</h3>
+      <a href="#" class="btn btn--fill">подобрать проект</a>
+    </div>
+  </div>
+</section>
+
       
       <section class="office">
-  <h3 class="subtitle centered office__subtitle" data-aos="fade-up">Удобный офис и персональная парковка</h3>
-  <h2 class="title centered office__title" data-aos="fade-up">Добро пожаловаться к нам в TF House</h2>
+  <h3 class="subtitle centered office__subtitle container" data-aos="fade-up">Удобный офис и персональная парковка</h3>
+  <h2 class="title centered office__title container" data-aos="fade-up">Добро пожаловаться к нам в TF House</h2>
   <div class="office__block">
     <address class="office__address address">
-      <a class="address__tel" href="tel:+78006007008" data-aos="fade-up">+7 800 600 7008</a>
-      <a class="address__tel" href="tel:+78006007008" data-aos="fade-up">Написать в WhatsApp</a>
-      <a class="address__mail" href="mailto:infohelf@tfhouse.com" data-aos="fade-up">infohelf@tfhouse.com</a>
+      <a class="address__tel mob-dis" href="tel:+78006007008" data-aos="fade-up">+7 800 600 7008</a>
+      <a class="address__tel mob-dis" href="tel:+78006007008" data-aos="fade-up">Написать в WhatsApp</a>
+      <a class="address__mail mob-dis" href="mailto:infohelf@tfhouse.com" data-aos="fade-up">infohelf@tfhouse.com</a>
       <span class="address__address" data-aos="fade-up">Санкт-Петербург
-        ул. Савушкина, 104</span>
+        ул.&nbsp;Савушкина, 104</span>
     </address>
     <button class="btn-reset btn btn--fill office__btn" data-aos="fade-up">Связаться с нами</button>
   </div>
@@ -1347,7 +1456,32 @@
   </div>
 </section>
 
-      
+      <section class="cta cta__container">
+  <div class="cta__left">
+    <h2 class="title cta__title title--white">Спроектировать
+      и&nbsp;построить ваш деревянный дом</h2>
+  </div>
+  <form class="cta__form form">
+    <h4 class="form__title">Свяжитесь с нами</h4>
+    <label class="form__label">
+      <span>Имя</span>
+      <input type="text" class="form__input">
+    </label>
+    <label class="form__label">
+      <span>Телефон</span>
+      <input type="phone" class="form__input">
+    </label>
+    <label class="form__label">
+      <span>Комментарий</span>
+      <input type="text" class="form__input">
+    </label>
+    <button class="btn btn--fill form__btn btn-reset" type="submit">Отправить</button>
+    <p class="form__warning">
+      Нажимая кнопку “Отправить”, вы принимаете условия <a href="#" class="form__privacy">Политики конфиденциальности</a>
+    </p>
+  </form>
+</section>
+
       <div class="up-page-btn"></div>
       <button class="phone-btn btn-reset mob-dis"></button>
       <div class="modal modal-form">

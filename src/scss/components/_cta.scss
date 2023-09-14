@@ -12,6 +12,9 @@
     padding-left: 14rem;
     padding-right: 27rem;
   }
+  @include mobile {
+    padding: 32px 16px 80px;
+  }
   &::before {
     content: '';
     position: absolute;
@@ -21,20 +24,38 @@
   &__left {
     margin-right: 160px;
     @media (min-width: 1440px){
-        margin-right: 16rem;
+      margin-right: 16rem;
+    }
+    @include mobile {
+      margin-right: 0;
     }
   }
   &__title {
     position: relative;
     z-index: 1;
+    font-family: "PP Telegraf";
+    font-weight: 700;
+    @include mobile {
+      font-size: 32px;
+      text-align: center;
+      margin-bottom: 64px;
+    }
   }
   &__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include mobile {
+      flex-wrap: wrap;
+    }
   }
   &__form {
     flex-grow: 1;
     flex-shrink: 0;
+    @include mobile {
+      flex-grow: 0;
+      flex-shrink: 1;
+      margin: 0 auto;
+    }
   }
 }

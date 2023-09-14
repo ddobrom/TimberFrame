@@ -1,6 +1,6 @@
 .address {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
   a,
   span {
@@ -24,6 +24,7 @@
       padding-left: 3.6rem;
       font-size: 1.6rem;
     }
+
   }
   &__tel {
     background-image: url("./../img/call-orange-icon.svg");
@@ -39,6 +40,13 @@
   }
   &__address {
     background-image: url("./../img/map-orange-icon.svg");
+    @include mobile {
+      background-image: none;
+      padding-left: 0;
+    }
+  }
+  @include mobile {
+    text-align: center;
   }
 }
 .menu {
@@ -47,9 +55,15 @@
     &__mail,
     &__address {
       color: var(--black-brand-color);
-      font-size: 1.2rem;
+      font-size: 12px;
       font-weight: 500;
       letter-spacing: 1.2px;
+      @media (min-width: 1440px){
+        font-size: 1.2rem;
+      }
+      @include mobile {
+        font-size: 14px;
+      }
     }
     &__tel {
       background-image: url("./../img/call-icon.svg");
@@ -60,6 +74,9 @@
     &__address {
       background-image: url("./../img/map-icon.svg");
       max-width: 160px;
+      @include mobile {
+        max-width: 190px;
+      }
       @media (min-width: 1440px){
         max-width: 16rem;
       }

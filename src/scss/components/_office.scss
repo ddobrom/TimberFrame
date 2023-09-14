@@ -37,6 +37,10 @@
     position: relative;
     width: 593px;
     height: 360px;
+    @media (min-width: 1440px){
+      width: 59.3rem;
+      height: 36rem;
+    }
     @include mobile {
       width: 264px;
       height: 160px;

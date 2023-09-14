@@ -3390,15 +3390,22 @@ a {
 .responsibility {
   padding-top: 120px;
   padding-bottom: 110px;
-  min-height: 100vh;
+}
+@media (min-width: 1440px) {
+  .responsibility {
+    padding-top: 12rem;
+    padding-bottom: 11rem;
+  }
 }
 .responsibility__title {
   margin: 0 auto;
   margin-bottom: 80px;
   max-width: 944px;
 }
-.responsibility__items {
-  height: 360px;
+@media (min-width: 1440px) {
+  .responsibility__title {
+    max-width: 94.4rem;
+  }
 }
 .responsibility__items .swiper-slide {
   display: -webkit-box;
@@ -3434,11 +3441,38 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 890px;
+  width: 100%;
+  max-width: 900px;
+}
+@media (min-width: 1440px) {
+  .res {
+    max-width: 90rem;
+  }
+}
+@media (max-width: 768px) {
+  .res {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 .res__left {
   position: relative;
   margin-right: 40px;
+}
+@media (min-width: 1440px) {
+  .res__left {
+    margin-right: 4rem;
+  }
+}
+@media (max-width: 768px) {
+  .res__left {
+    margin-right: 0;
+  }
 }
 .res__title {
   position: absolute;
@@ -3469,6 +3503,11 @@ a {
   font-weight: 400;
   text-transform: uppercase;
 }
+@media (min-width: 1440px) {
+  .res__figure {
+    font-size: 12rem;
+  }
+}
 .res__info {
   margin: 0;
   color: var(--black-brand-color);
@@ -3476,7 +3515,20 @@ a {
   font-weight: 400;
 }
 .res__info span {
+  display: block;
   color: var(--focus-color);
+}
+@media (max-width: 768px) {
+  .res__info {
+    font-size: 20px;
+    padding: 32px 16px;
+    text-align: center;
+  }
+}
+@media (min-width: 1440px) {
+  .res__info {
+    font-size: 4rem;
+  }
 }
 
 .res-control-btn {
@@ -3489,6 +3541,30 @@ a {
 .progress {
   -webkit-filter: drop-shadow(0 0 2px var(--focus-color)) drop-shadow(0 0 5px var(--focus-color)) drop-shadow(0 0 10px var(--focus-color));
           filter: drop-shadow(0 0 2px var(--focus-color)) drop-shadow(0 0 5px var(--focus-color)) drop-shadow(0 0 10px var(--focus-color));
+}
+
+.circle-img {
+  width: 362px;
+  height: 362px;
+}
+@media (min-width: 1440px) {
+  .circle-img {
+    width: 36.2rem;
+    height: 36.2rem;
+  }
+}
+
+.progress, .progress-bg {
+  cx: 181px;
+  cy: 181px;
+  r: 174px;
+}
+@media (min-width: 1440px) {
+  .progress, .progress-bg {
+    cx: 18.1rem;
+    cy: 18.1rem;
+    r: 17.4rem;
+  }
 }
 
 .office {
@@ -3544,6 +3620,12 @@ a {
   position: relative;
   width: 593px;
   height: 360px;
+}
+@media (min-width: 1440px) {
+  .office__img {
+    width: 59.3rem;
+    height: 36rem;
+  }
 }
 @media (max-width: 768px) {
   .office__img {

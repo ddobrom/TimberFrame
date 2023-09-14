@@ -1,78 +1,91 @@
-import Swiper from 'swiper/bundle'
-const heroslider = new Swiper('.hero__slider', {
-  slidesPerView: 'auto',
+import Swiper from "swiper/bundle";
+const heroslider = new Swiper(".hero__slider", {
+  slidesPerView: "auto",
   navigation: {
-    nextEl: '.slider-control__btn--next',
-    prevEl: '.slider-control__btn--prev',
+    nextEl: ".slider-control__btn--next",
+    prevEl: ".slider-control__btn--prev",
   },
-  effect: 'fade',
+  effect: "fade",
   speed: 2000,
   lazy: true,
   autoplay: {
     delay: 7000,
   },
-  on : {
+  on: {
     slideChangeTransitionStart: () => {
-      moveBg()
-    }
-  }
+      moveBg();
+    },
+  },
 });
 
-const popularContentSlider = new Swiper('.slider-popular__content', {
+
+const popularImagesSlider = new Swiper(".slider-popular__images", {
   slidesPerView: 1,
   navigation: {
-    nextEl: '.popular-slider-btn--next',
-    prevEl: '.popular-slider-btn--prev',
+    nextEl: ".popular-slider-btn--next",
+    prevEl: ".popular-slider-btn--prev",
   },
   loop: true,
+  effect: "fade",
   lazy: true,
-  effect: 'fade',
+
+});
+const popularContentSlider = new Swiper(".slider-popular__content", {
+  slidesPerView: 1,
+  navigation: {
+    nextEl: ".popular-slider-btn--next",
+    prevEl: ".popular-slider-btn--prev",
+  },
+  loop: true,
+  effect: "fade",
   fadeEffect: {
-    crossFade: true
+    crossFade: true,
   },
+
 });
-const popularImagesSlider = new Swiper('.slider-popular__images', {
-  slidesPerView: 1,
-  navigation: {
-    nextEl: '.popular-slider-btn--next',
-    prevEl: '.popular-slider-btn--prev',
-  },
-  loop: true,
-  effect: 'fade',
-  lazy: true,
-});
+const nextButtonsPopular = document.querySelectorAll('.popular-slider-btn--next')
+const prevButtonsPopular = document.querySelectorAll('.popular-slider-btn--prev')
 
+nextButtonsPopular.forEach(el => el.addEventListener('click', () => {
+  popularContentSlider.slideNext()
+  popularImagesSlider.slideNext()
+}))
+prevButtonsPopular.forEach(el => el.addEventListener('click', () => {
+  popularContentSlider.slidePrev()
+  popularImagesSlider.slidePrev()
+}))
 
-
-const heroSlider = document.querySelector('.hero__slider')
+const heroSlider = document.querySelector(".hero__slider");
 const moveBg = () => {
-  heroSlider.querySelectorAll('.hero__slide').forEach(item => item.classList.remove('move-background'))
-  heroSlider.querySelector('.swiper-slide-active').querySelector('.hero__slide').classList.add('move-background')
-}
+  heroSlider
+    .querySelectorAll(".hero__slide")
+    .forEach((item) => item.classList.remove("move-background"));
+  heroSlider
+    .querySelector(".swiper-slide-active")
+    .querySelector(".hero__slide")
+    .classList.add("move-background");
+};
 
-
-moveBg()
-
+moveBg();
 
 // office__slider
-const officeSlider = new Swiper('.office__slider', {
+const officeSlider = new Swiper(".office__slider", {
   loop: true,
-  slidesPerView: 'auto',
+  slidesPerView: "auto",
   spaceBetween: 8,
 });
-const gallerySliderMini = new Swiper('.gallery__slider-mini', {
-  slidesPerView: 'auto',
-  spaceBetween: 5
-})
-const gallerySlider = new Swiper('.gallery__slider', {
+const gallerySliderMini = new Swiper(".gallery__slider-mini", {
+  slidesPerView: "auto",
+  spaceBetween: 5,
+});
+const gallerySlider = new Swiper(".gallery__slider", {
   loop: true,
   slidesPerView: 1,
   navigation: {
-    nextEl: '.gallery__btn--next',
-    prevEl: '.gallery__btn--prev',
+    nextEl: ".gallery__btn--next",
+    prevEl: ".gallery__btn--prev",
   },
-  thumbs : {
+  thumbs: {
     swiper: gallerySliderMini,
-  }
-})
-
+  },
+});

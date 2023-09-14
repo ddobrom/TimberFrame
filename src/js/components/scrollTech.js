@@ -1,6 +1,6 @@
+import {gsap} from 'gsap'
 let menuItem = document.querySelectorAll(".tech__text");
 let menuImage = document.querySelectorAll(".tech__img");
-
 const points = []
 
 for(let i = 0; i <= 1.0; i+= 0.005){

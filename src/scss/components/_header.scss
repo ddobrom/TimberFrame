@@ -16,6 +16,10 @@
   }
   &__nav {
     margin-right: 40px;
+
+    @include mobile {
+      display: none;
+    }
   }
   &__phone {
     margin-right: 60px;
@@ -26,6 +30,9 @@
     transition: color 0.3s ease-in;
     @include hover {
       color: var(--focus-color) !important;
+    }
+    @include mobile {
+      display: none;
     }
   }
   &__btns {
@@ -39,7 +46,12 @@
       @media (min-width: 1440px){
       margin-right: 1.6rem;
     }
+  }
+  &:first-child {
+    @include mobile {
+      display: none;
     }
+  }
     svg {
       width: 32px;
       height: 32px;

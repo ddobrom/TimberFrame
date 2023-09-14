@@ -3,6 +3,7 @@ import vars from "./_vars";
 import "./_functions";
 import "./_components";
 import { CSSRulePlugin } from "gsap/all";
+import {gsap} from 'gsap'
 
 const headerNav = document.querySelector(".nav__list");
 const benefitsSection = document.querySelector(".benefit");
@@ -96,6 +97,7 @@ ScrollTrigger.create({
     end: "bottom",
     scrub: 0.4,
     pin: '.parallax',
+    normalizeScroll: true,
 })
 
 

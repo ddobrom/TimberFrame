@@ -10,7 +10,10 @@
 .add-item {
   flex: 1;
   &:not(:last-child){
-    margin-right: 26.8rem;
+    margin-right: 268px;
+    @media (min-width: 1440px){
+      margin-right: 26.8rem;
+    }
   }
   display: flex;
   flex-direction: column;
@@ -21,8 +24,12 @@
     margin-bottom: 30px;
     color: var(--black-brand-color);
     text-align: center;
-    font-size: 3.2rem;
+    font-size: 32px;
     font-weight: 700;
     letter-spacing: 1.6px;
+    @media (min-width: 1440px){
+      font-size: 3.2rem;
+      margin-bottom: 3rem;
+    }
   }
 }

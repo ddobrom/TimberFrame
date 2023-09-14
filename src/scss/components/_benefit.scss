@@ -1,21 +1,30 @@
 .benefit {
   padding: 160px 0;
   padding-bottom: 180px;
+  @include mobile {
+    padding: 80px 0;
+  }
   &__container {
     padding-left: 113px;
     padding-right: 113px;
     text-align: center;
+    @include mobile {
+      padding: 0 16px;
+    }
   }
   &__heading {
     margin-bottom: 32px;
     p {
       margin: 0;
       color: var(--black-brand-color);
-      font-size: 1rem;
+      font-size: 10px;
       letter-spacing: 3px;
       text-transform: uppercase;
       span {
         color: var(--focus-active-color);
+      }
+      @media (min-width: 1440px){
+        font-size: 1rem;
       }
     }
   }
@@ -34,11 +43,30 @@
     justify-content: center;
     column-gap: 16px;
     margin-bottom: 64px;
-  }
 
+    @include mobile {
+      flex-direction: column;
+      align-items: stretch;
+      margin-bottom: 32px;
+      padding: 0 5%;
+    }
+  }
+  &__btn {
+      &:not(:last-child) {
+        @include mobile {
+
+          margin-bottom: 16px;
+        }
+      }
+  }
   &__list {
     display: flex;
     align-items: start;
+    @include mobile {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+    }
   }
   &__item {
     flex: 1;
@@ -48,6 +76,18 @@
     justify-content: center;
     &:not(:last-child) {
       border-right: 1px solid rgba(37, 35, 33, 0.1);
+
+      @include mobile {
+        border-right: none;
+      }
+    }
+    &:nth-child(odd){
+      @include mobile {
+        border-right: 1px solid rgba(37, 35, 33, 0.1);
+      }
+    }
+    @include mobile {
+      padding: 24px 16px 40px;
     }
   }
   &__text {

@@ -2,8 +2,22 @@
   text-align: center;
   padding-top: 160px;
   padding-bottom: 50px;
+  &--dis {
+    @include mobile {
+      display: none;
+    }
+  }
+  @include mobile {
+    padding-top: 120px;
+  }
   &__title {
-    margin-bottom: calc-between-width(1440, 90, 3840, 180);
+    margin-bottom: 90px;
+    @media (min-width: 1440px){
+      margin-bottom: 9rem;
+    }
+    @include mobile {
+      margin-bottom: 80px;
+    }
   }
   &__container {
     margin-bottom: 60px;
@@ -11,19 +25,42 @@
     align-items: center;
     grid-template-columns: repeat(12, 1fr);
     gap: 30px;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
   }
   &__content {
     grid-column: 6 span;
+    @include mobile {
+      order: 1;
+      grid-column: 1;
+      width: auto;
+    }
   }
   &__images {
+    position: relative;
     grid-column: 6 span;
     width: 100%;
+    @include mobile {
+      grid-column: 1;
+      width: auto;
+    }
   }
   &__img {
+    position: relative;
     display: inline-block;
     overflow: hidden;
     height: 660px;
     width: 100%;
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      @include mobile {
+        background: linear-gradient(180deg, rgba(37, 35, 33, 0.00) 0%, rgba(37, 35, 33, 0.60) 100%);
+      }
+    }
     img {
       transition: transform 1s ease-in;
       height: 100%;
@@ -33,6 +70,9 @@
       img {
         transform: scale(1.05);
       }
+    }
+    @include mobile {
+      height: 343px;
     }
   }
 }
@@ -54,6 +94,7 @@
         font-size: 3.2rem;
         margin-bottom: 3.2rem;
     }
+
   }
   &__desc {
     margin-bottom: 32px;
@@ -66,14 +107,21 @@
       font-size: 1.6rem;
       margin-bottom: 3.2rem;
     }
+    @include mobile {
+      margin-bottom: 0;
+      padding: 0 11px;
+    }
   }
   &__list {
     margin-bottom: 32px;
     display: flex;
-    gap: calc-between-width(1440, 16, 3840, 32);
+    gap: 16px;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    @media (min-width: 1440px){
+      gap: 1.6rem;
+    }
   }
   &__item {
     position: relative;
@@ -152,4 +200,30 @@
 .slider-popular__content {
   width: 100%;
   position: relative;
+  @include mobile {
+    width: 100vw;
+  }
+}
+.slider-popular__images {
+  width: 100%;
+  position: relative;
+
+  @include mobile {
+    width: 100vw;
+  }
+}
+
+.popular-slider__btn--mob {
+  top: unset;
+  transform: unset;
+  bottom: 16px !important;
+}
+.popular-mob {
+  &__controls {
+    position: absolute;
+    bottom: 18px;
+    z-index: 5;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }

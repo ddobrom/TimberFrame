@@ -2,16 +2,27 @@ html {
   font-size: calc(100vw / 144);
   box-sizing: border-box;
 }
-body, html {
+body,
+html {
   scroll-behavior: smooth;
 }
+
 *,
 *::before,
 *::after {
   box-sizing: inherit;
 }
-@function calc-between-width($width-start, $value-start, $width-end, $value-end){
-  @return calc(#{$value-start} * 1px + (#{$value-end} - #{$value-start}) * (100vw - #{$width-start} * 1px) / #{$width-start})
+@function calc-between-width(
+  $width-start,
+  $value-start,
+  $width-end,
+  $value-end
+) {
+  @return calc(
+    #{$value-start} * 1px + (#{$value-end} - #{$value-start}) * (
+        100vw - #{$width-start} * 1px
+      ) / #{$width-start}
+  );
 }
 .page {
   height: 100%;
@@ -86,8 +97,10 @@ a {
 
 .container {
   margin: 0 auto;
-  padding: 0 var(--container-offset);
-  max-width: var(--container-width);
+
+  @include mobile {
+    padding: 0 16px;
+  }
 }
 
 .js-focus-visible :focus:not(.focus-visible) {
@@ -123,15 +136,19 @@ a {
   border-radius: 4px;
 
   font-family: "PP Neue Montreal";
-  font-size: 1.2rem;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.44px;
   text-transform: uppercase;
   transition: background-color 0.3s ease-in, color 0.3s ease-in;
-
+  color: var(--black-brand-color);
+  @media (min-width: 1440px) {
+    font-size: 1.2rem;
+    padding: 1.6rem 3.2rem;
+    border-radius: 0.4rem;
+  }
   &--fill {
     background-color: var(--focus-color);
-    color: var(--black-brand-color);
     &:focus {
       background-color: var(--focus-active-color);
     }
@@ -155,12 +172,18 @@ a {
     }
   }
   &--like {
-    padding: 4px;
+    width: 46px;
+    height: 46px;
+    padding: 0px;
     display: flex;
     align-items: center;
     justify-content: center;
+    @media (min-width: 1440px){
+      width: 4.6rem;
+      height: 4.6rem;
+    }
     svg {
-      padding: 4px;
+      // padding: 4px;
       width: 24px;
       height: 24px;
       fill: none;
@@ -257,14 +280,23 @@ a {
 }
 .logo {
   svg {
-    width: calc-between-width(1440, 200, 3840, 400);
-    height: calc-between-width(1440, 47, 3840, 94);
+    width: 200px;
+    height: 47px;
     path {
       fill: var(--white-color);
-      transition: fill .3s ease-in;
+      transition: fill 0.3s ease-in;
     }
     .fill-orange {
-      fill: #FF965C !important;
+      fill: #ff965c !important;
+    }
+
+    @media (min-width: 1440px) {
+      width: 20rem;
+      height: 4.7rem;
+    }
+    @include mobile {
+      width: 127px;
+      height: 30px;
     }
   }
 }
@@ -272,39 +304,53 @@ a {
 .title {
   margin: 0;
   color: var(--black-brand-color);
-  font-family: PP PP Neue Montreal;
-  // font-size: calc-between-width(1440, 48, 3840, 96);
-  font-size: 4.8rem;
+  font-size: 48px;
   font-weight: 500;
   letter-spacing: 1.92px;
   &--white {
     color: var(--white-color);
   }
+  @media (min-width: 1440px) {
+    font-size: 4.8rem;
+  }
+  @include mobile {
+    font-size: 24px;
+  }
 }
 .subtitle {
   margin: 0;
-  color: var(--focus, #FF965C);
+  color: var(--focus-color);
   font-family: "PP Neue Montreal";
-  font-size: 1.8rem;
+  font-size: 18px;
   letter-spacing: 5.4px;
   text-transform: uppercase;
   font-weight: 400;
+
+  @media (min-width: 1440px) {
+    font-size: 1.8rem;
+  }
+  @include mobile {
+    font-size: 14px;
+  }
 }
 
-
 .sticky {
-
 }
 .flex-centered {
   justify-content: center !important;
 }
 
-
 .parallax__clouds {
   position: absolute;
-    right: 150vw;
-    min-width: 300vw;
-    height: 50%;
-    overflow: visible;
-    object-fit: cover;
+  right: 150vw;
+  min-width: 300vw;
+  height: 50%;
+  overflow: visible;
+  object-fit: cover;
+}
+
+.mob-dis {
+  @include mobile {
+    display: none !important;
+  }
 }

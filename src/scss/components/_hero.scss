@@ -14,6 +14,10 @@
     align-items: center;
     justify-content: center;
     transition: background-position 5s ease-in;
+    @include mobile {
+      background-size: auto 110%;
+      background-position: center;
+    }
     &::before {
       content: "";
       position: absolute;
@@ -73,6 +77,9 @@
 
 .move-background {
   animation: move-bg 7s linear 1;
+  @include mobile {
+    animation: move-bg-mobile 7s linear 1;
+  }
 }
 @keyframes move-bg {
   0% {
@@ -82,11 +89,26 @@
     background-position-x: left;
   }
 }
+
+@keyframes move-bg-mobile {
+  0% {
+    background-position-x: calc(50% - 100px);
+  }
+  100% {
+    background-position-x: 50%;
+  }
+}
 .slide {
   &__content {
     margin-top: 90px;
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include mobile {
+      margin-top: 0;
+    }
   }
   &__btn {
     &--watch {
@@ -105,34 +127,68 @@
     text-align: center;
     text-overflow: ellipsis;
     font-family: "PP Neue Montreal";
-    font-size: calc-between-width(1440, 115, 3840, 230);
+    font-size: 115px;
     font-weight: 700;
     letter-spacing: 3.45px;
+    @media (min-width: 1440px){
+      font-size: 11.5rem;
+    }
+
+    @include mobile {
+      font-size: 48px;
+      margin-bottom: 32px;
+    }
   }
   &__refers {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 40px;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
   }
   &__item {
     display: inline-block;
+    padding: 12px;
     padding-left: 40px;
+    padding-right: 0;
     margin: 0 32px;
     position: relative;
     color: rgba(#e4e4e4, 0.8);
     font-family: "PP Neue Montreal";
-    font-size: calc-between-width(1440, 12, 3840, 24);
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 1.44px;
     text-transform: uppercase;
     transition: color 0.3s ease-in;
+    @media (min-width: 1440px){
+      font-size: 1.2rem;
+      padding: 1.2rem;
+      padding-left: 4rem;
+    }
+    @include mobile {
+      margin: 0;
+    }
+    &:not(:last-child){
+      @include mobile {
+        margin: 8px 0;
+      }
+    }
     &-separator {
       flex-grow: 1;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--white-color);
+      font-size: 10px;
+      @media (min-width: 1440px){
+        font-size: 1rem;
+      }
     }
     &::before {
       content: "";
@@ -145,6 +201,10 @@
       background-position: center center;
       background-size: cover;
       background-repeat: no-repeat;
+      @media (min-width: 1440px){
+        width: 3.2rem;
+        height: 3.2rem;
+      }
     }
     &--video {
       &::before {

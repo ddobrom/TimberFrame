@@ -48,9 +48,15 @@
     span {
       transform: rotate(180deg);
     }
+    @include mobile {
+      left: 16px;
+    }
   }
   &--next {
     right: 30px;
+    @include mobile {
+      right: 16px;
+    }
   }
   &.swiper-button-disabled {
     opacity: 0.4;

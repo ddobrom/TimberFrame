@@ -280,6 +280,12 @@ a {
   -webkit-transition: stroke 0.3s ease-in;
   transition: stroke 0.3s ease-in;
 }
+@media (min-width: 1440px) {
+  .btn--like svg {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
 .btn--like:focus svg {
   stroke: var(--focus-color);
 }

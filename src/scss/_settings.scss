@@ -189,6 +189,10 @@ a {
       fill: none;
       stroke: var(--white-color);
       transition: stroke 0.3s ease-in;
+      @media (min-width: 1440px){
+        width: 2.4rem;
+        height: 2.4rem;
+      }
     }
 
     &:focus {

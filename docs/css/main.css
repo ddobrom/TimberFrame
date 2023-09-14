@@ -480,6 +480,12 @@ a {
   }
 }
 
+@media (min-width: 768px) {
+  .desc-dis {
+    display: none !important;
+  }
+}
+
 @media (max-width: 768px) {
   .mob-order-0 {
     -webkit-box-ordinal-group: 0 !important;
@@ -2257,6 +2263,7 @@ a {
 }
 
 .popular-mob__controls {
+  display: none;
   position: absolute;
   bottom: 18px;
   z-index: 5;
@@ -2264,6 +2271,11 @@ a {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+}
+@media (max-width: 768px) {
+  .popular-mob__controls {
+    display: block;
+  }
 }
 
 .services-section {

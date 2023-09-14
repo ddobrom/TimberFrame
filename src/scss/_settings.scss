@@ -361,6 +361,11 @@ a {
     display: none !important;
   }
 }
+.desc-dis {
+  @media (min-width: 768px){
+    display: none !important;
+  }
+}
 .mob-order-0 {
   @include mobile {
     order: -1 !important;

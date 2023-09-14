@@ -1002,6 +1002,18 @@ a {
   -webkit-transition: height 0.3s ease-in, bottom 0.3s ease-in;
   transition: height 0.3s ease-in, bottom 0.3s ease-in;
 }
+@media (min-width: 1440px) {
+  .hero__btn-down span::before {
+    height: 5.6rem;
+    width: 1rem;
+  }
+}
+@media (min-width: 1440px) {
+  .hero__btn-down span {
+    height: 4.8rem;
+    width: 9.6rem;
+  }
+}
 @media (any-hover: hover) {
   .hero__btn-down:hover span {
     border-color: var(--focus-active-color);

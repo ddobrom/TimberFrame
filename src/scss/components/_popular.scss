@@ -219,6 +219,10 @@
   bottom: 16px !important;
 }
 .popular-mob {
+  display: none;
+  @include mobile {
+    display: block;
+  }
   &__controls {
     position: absolute;
     bottom: 18px;

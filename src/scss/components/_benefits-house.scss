@@ -32,12 +32,12 @@
     }
   }
   &__content {
-    position: absolute;
     padding-top: 190px;
     transition: opacity 1s ease;
     will-change: transform;
     display: flex;
     flex-direction: column;
+
     &.active {
       background-image: none;
       &::before {
@@ -53,65 +53,38 @@
   }
 }
 .wrapper {
-  min-height: 300vh;
   width: 100%;
-}
-.block {
+  // height: 100vh;
   position: relative;
-  width: 50%;
-  height: 50vh;
-  margin: 0 auto;
-}
-.parallax__wrapper {
-  position: sticky;
-  top: 0;
-}
-.wrapper {
-  min-height: 100%;
-  width: 100%;
-  position: relative;
-  transition: background-image 0.3s ease-in;
+
 
 }
 .parallax {
-  position: relative;
-  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  height: 100vh;
   width: 100%;
-  margin: 0 auto;
-  &__body {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
+  &__wrapper {
+    position: relative;
+    width: 100% !important;
     height: 100%;
-    background-attachment: fixed;
-    background-position: top;
-    transition: 0.2s ease-in;
-    background-position: center, center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url('./../img/benefits-house-bg.jpg');
-    transition: .3s;
-    @include mobile {
-      background-image: url('./../img/benefits-house-bg-mob.jpg');
-    }
+    transform: none !important;
     &::before {
       content: "";
       position: absolute;
-      // z-index: 1;
+      z-index: 1;
       inset: 0;
       opacity: 0;
       background: linear-gradient(
           0deg,
           rgba(0, 0, 0, 0.6) 0%,
           rgba(0, 0, 0, 0.6) 100%
-        ),
-        url("./../img/benefits-house-bg.jpg"),
-        lightgray -55.786px -77.315px / 104.867% 126.916% no-repeat;
+        );
+
       background-size: 100% 100%;
       background-attachment: fixed;
       background-position: top;
-      transition: opacity .7s ease;
+      transition: opacity .5s ease;
       @include mobile {
         background: linear-gradient(
           0deg,
@@ -127,5 +100,13 @@
       }
     }
   }
+  &__body {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    background-image: url("./../img/benefits-house-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+  }
 }
-

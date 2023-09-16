@@ -30634,33 +30634,26 @@ forms.forEach(f => {
   });
 });
 gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_5__.CSSRulePlugin);
-document.querySelector('.wrapper').style.minHeight = document.querySelector('.wrapper').scrollHeight * 2 + 'px';
-let rule = gsap_all__WEBPACK_IMPORTED_MODULE_5__.CSSRulePlugin.getRule('.parallax__body::before');
-const tl = gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.timeline();
-tl.fromTo(".parallax__body", {
-  backgroundSize: '75% 75%'
+let rule = gsap_all__WEBPACK_IMPORTED_MODULE_5__.CSSRulePlugin.getRule(".parallax__wrapper::before");
+const timeLine1 = gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.timeline();
+const timeLine2 = gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.timeline();
+timeLine1.fromTo('.parallax__body', {
+  scale: 0.5
 }, {
-  backgroundSize: '101% 101%'
+  scale: 1
 }).set(rule, {
   cssRule: {
     opacity: 1
   }
-}).fromTo(".benefits-house__content", {
-  yPercent: -50
-}, {
-  yPercent: -115,
-  ease: "linear"
 });
 ScrollTrigger.create({
-  animation: tl,
-  trigger: ".wrapper",
-  ease: 'none',
-  start: "top top",
-  end: "bottom",
-  scrub: 0.4,
-  pin: '.parallax',
-  normalizeScroll: true
-  // markers: 'marrk'
+  animation: timeLine1,
+  trigger: '.parallax__wrapper',
+  start: 'top top',
+  end: '+=100%',
+  scrub: 0.1,
+  pin: true,
+  onLeave: () => {}
 });
 })();
 

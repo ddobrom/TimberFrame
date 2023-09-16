@@ -88,6 +88,7 @@ const timeLine1 = gsap.timeline()
 const timeLine2 = gsap.timeline()
 timeLine1.fromTo('.parallax__body',{scale: 0.5}, {scale: 1})
 .set(rule, {cssRule: {opacity: 1} })
+
 ScrollTrigger.create({
   animation: timeLine1,
   trigger: '.parallax__wrapper',

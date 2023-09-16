@@ -108,5 +108,8 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
+    @include mobile {
+      background-image: url("./../img/benefits-house-bg-mob.jpg");
+    }
   }
 }

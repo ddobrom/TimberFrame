@@ -73,12 +73,14 @@
     }
     &__address {
       background-image: url("./../img/map-icon.svg");
-      max-width: 160px;
+      max-width: 170px;
       @include mobile {
         max-width: 190px;
+        text-align: left;
+        padding-left: 36px;
       }
       @media (min-width: 1440px){
-        max-width: 16rem;
+        max-width: 17rem;
       }
     }
   }

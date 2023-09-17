@@ -353,6 +353,7 @@ a {
   min-width: 200vw;
   // height: 60%;
   object-fit: cover;
+  will-change: transform;
   @include mobile {
     top: 15%;
   }

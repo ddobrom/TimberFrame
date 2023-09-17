@@ -4,6 +4,8 @@ import "./_functions";
 import "./_components";
 import { CSSRulePlugin } from "gsap/all";
 import {gsap} from 'gsap'
+import Parallax from 'parallax-js'
+
 
 const headerNav = document.querySelector(".nav__list");
 const benefitsSection = document.querySelector(".benefit");
@@ -100,3 +102,24 @@ ScrollTrigger.create({
 
   }
 })
+
+
+
+// const imgs = document.querySelectorAll('[data-eco]')
+// function callbackEco(entries, observer) {
+//   const r = ecoHouseSection.getBoundingClientRect()
+//   let movingPercent = r.y / 100
+
+//   imgs.forEach(el => {
+//     el.style.transform = `translateY(${movingPercent * el.dataset.eco}px)`
+//   })
+// }
+// const arr = []
+// for(let i = 0; i <= 1.0; i+=0.1){
+//   arr.push(i)
+// }
+// const observerEco = new IntersectionObserver(callbackEco, {
+//   threshold: arr,
+// });
+// imgs.forEach(el => observerEco.observe(el))
+

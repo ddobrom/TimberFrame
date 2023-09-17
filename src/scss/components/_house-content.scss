@@ -135,9 +135,14 @@
     // width: auto;
     position: relative;
     display: flex;
+    img {
+      will-change: transform;
+    }
     @include mobile {
       img {
         width: 100%;
+        transform: translateY(--off-px);
+        will-change: transform;
       }
       grid-column: 1;
     }

@@ -2,7 +2,7 @@ const imgsBig = document.querySelector('[data-parallax="big-img"]');
 const imgsSmall = document.querySelectorAll('[data-parallax="small-img"]');
 
 const clouds = document.querySelector(".parallax__clouds");
-
+const ecoHouse = document.querySelector(".eco-house")
 const thresholdsArr = [];
 for (let i = 0; i <= 1.0; i += 0.005) {
   thresholdsArr.push(i);
@@ -10,20 +10,15 @@ for (let i = 0; i <= 1.0; i += 0.005) {
 
 function callback(entries, observer) {
   let movingPercent =
-    (window.scrollY / document.querySelector(".eco-house").scrollHeight) * 100;
+    (window.scrollY / ecoHouse.scrollHeight) * 100;
   moveClouds(movingPercent);
 }
-function calcTrans(entries, observer) {
-  let movingPercent =
-    (entries[0].target.scrollY / entries[0].target.scrollHeight) * 10;
-  movePhotos(movingPercent);
-  console.log(movingPercent);
-}
+
 const observer = new IntersectionObserver(callback, {
   threshold: thresholdsArr,
 });
 
-observer.observe(document.querySelector(".eco-house"));
+observer.observe(ecoHouse);
 observer.observe(document.querySelector(".eco-house__title"));
 
 document.querySelectorAll(".eco-house .house-content__image").forEach((el) => {

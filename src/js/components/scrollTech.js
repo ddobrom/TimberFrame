@@ -14,12 +14,9 @@ textObserver.observe(menuItem[0])
 textObserver.observe(menuItem[1])
 function callbackObs(entries, observer){
   let percent = 1;
-  if (window.matchMedia("(min-width: 769px)").matches){
-    percent = window.scrollY / document.querySelector('.tech').scrollHeight * 10
-  }
-  else {
-    percent = window.scrollY / document.querySelector('.tech').scrollHeight
-  }
+
+  percent = window.scrollY / document.querySelector('.tech').scrollHeight * 10
+
   menuItem[0].querySelector('.tech__paragraph').style.transform = `translateX(-${percent / 3}%)`
   menuItem[1].querySelector('.tech__paragraph').style.transform = `translateX(${percent / 3}%)`
 }

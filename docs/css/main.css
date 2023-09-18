@@ -2844,10 +2844,12 @@ a {
   top: 0;
   height: 100vh;
   max-width: 100vw !important;
+  width: 100% !important;
 }
 .parallax__wrapper {
   position: relative;
   max-width: 100vw !important;
+  width: 100% !important;
   height: 100%;
   -webkit-transform: none !important;
   -ms-transform: none !important;
@@ -2871,6 +2873,7 @@ a {
   position: absolute;
   inset: 0;
   max-width: 100vw !important;
+  width: 100% !important;
   background-image: url("./../img/benefits-house-bg.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;

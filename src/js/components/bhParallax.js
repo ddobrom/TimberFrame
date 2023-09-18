@@ -1,4 +1,5 @@
 import simpleParallax from 'simple-parallax-js';
+import { gsap } from 'gsap/gsap-core';
 const bh1 = document.getElementById('bh1')
 const bh2 = document.getElementById('bh2')
 const bh3 = document.getElementById('bh3')
@@ -36,3 +37,18 @@ new simpleParallax(bh5, {
   overflow: true,
   transition: 'cubic-bezier(0,0,0,1)'
 });
+
+
+
+// const shT = gsap.timeline()
+
+// shT.to('.shadow__body', {yPercent: -85})
+
+// ScrollTrigger.create({
+//   animation: shT,
+//   trigger: '.tech',
+//   start: 'top bottom-=100px',
+//   end: '+=700',
+//   scrub: true,
+//   markers: true
+// })

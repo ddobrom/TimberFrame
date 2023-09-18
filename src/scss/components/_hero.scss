@@ -7,13 +7,13 @@
     min-height: 100vh;
     background-position-y: center;
     background-position-x: left;
-    background-size: 110% auto;
+    background-size: 110% 100%;
     background-repeat: no-repeat;
 
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-position 5s ease-in;
+    transition: background-position-x 5s ease-in;
     @include mobile {
       background-size: auto 110%;
       background-position: center;
@@ -25,10 +25,16 @@
       background-color: rgba(#000, 0.4);
     }
     &--nisalahti {
-      background-image: url("./../img/hero-bg-1.jpeg");
+      background-image: image-set( url("./../img/hero/hero1-3x.jpg") 3x, url("./../img/hero/hero1-2x.jpg") 2x);
     }
     &--lautala {
-      background-image: url("./../img/hero-bg-2.jpeg");
+      background-image: image-set( url("./../img/hero/hero2-3x.jpg") 3x, url("./../img/hero/hero2-2x.jpg") 2x);
+    }
+    &--vaskela {
+      background-image: image-set( url("./../img/hero/hero3-3x.jpg") 3x, url("./../img/hero/hero3-2x.jpg") 2x);
+    }
+    &--ostamo {
+      background-image: image-set( url("./../img/hero/hero4-3x.jpg") 3x, url("./../img/hero/hero4-2x.jpg") 2x);
     }
   }
   &__btn-down {
@@ -85,6 +91,7 @@
 
 .move-background {
   animation: move-bg 7s linear 1;
+    transition: background-position-x .5s ease-in;
   @include mobile {
     animation: move-bg-mobile 7s linear 1;
   }
@@ -107,6 +114,12 @@
   }
 }
 .slide {
+  &__img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
   &__content {
     margin-top: 90px;
     position: relative;

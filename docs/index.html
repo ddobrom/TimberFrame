@@ -64,8 +64,8 @@
 </head>
 
 
-<body class="page__body" id="smooth-wrapper">
-  <div class="site-container" id="smooth-content">
+<body class="page__body">
+  <div class="site-container">
     <header class="header">
   <a class="header__logo logo">
     <svg
@@ -347,7 +347,7 @@
   </div>
 </header>
 
-    <main class="main" data-speed="0.5">
+    <main class="main">
       <div class="menu menu--main menu-disable main-menu">
   <a class="menu__logo logo">
     <svg
@@ -677,6 +677,70 @@
         </div>
       </div>
       <div class="swiper-slide">
+        <div class="hero__slide hero__slide--vaskela slide swiper-lazy">
+          <div class="slide__content">
+            <h2 class="slide__title" data-aos="fade-up">Vaskela</h2>
+            <div class="slide__refers">
+              <button class="slide__item slide__item--video btn-reset" data-src="https://www.youtube.com/embed/kroO5VE7X3w?si=WHJfBPDBPjmkf24U">
+                Видеополет
+              </button>
+              <span class="slide__item-separator">
+                |
+              </span>
+              <button class="slide__item slide__item--tour btn-reset" data-tour="./img/panorama.jpg">
+                3D тур
+              </button>
+              <span class="slide__item-separator">
+                |
+              </span>
+              <button class="slide__item slide__item--gallery btn-reset" data-gallery="[./img/gallery-01.jpg]">
+                Фотогалерея
+              </button>
+            </div>
+            <div class="slide__buttons">
+              <a href="#" class="btn btn--fill slide__btn slide__btn--watch">Смотреть проект</a>
+              <button class="btn btn--like btn--stroke btn-reset">
+                <svg>
+                  <use xlink:href="img/sprite.svg#like-icon"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="hero__slide hero__slide--ostamo slide swiper-lazy">
+          <div class="slide__content">
+            <h2 class="slide__title" data-aos="fade-up">Ostamo</h2>
+            <div class="slide__refers">
+              <button class="slide__item slide__item--video btn-reset" data-src="https://www.youtube.com/embed/kroO5VE7X3w?si=WHJfBPDBPjmkf24U">
+                Видеополет
+              </button>
+              <span class="slide__item-separator">
+                |
+              </span>
+              <button class="slide__item slide__item--tour btn-reset" data-tour="./img/panorama.jpg">
+                3D тур
+              </button>
+              <span class="slide__item-separator">
+                |
+              </span>
+              <button class="slide__item slide__item--gallery btn-reset" data-gallery="[./img/gallery-01.jpg]">
+                Фотогалерея
+              </button>
+            </div>
+            <div class="slide__buttons">
+              <a href="#" class="btn btn--fill slide__btn slide__btn--watch">Смотреть проект</a>
+              <button class="btn btn--like btn--stroke btn-reset">
+                <svg>
+                  <use xlink:href="img/sprite.svg#like-icon"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
         <div class="hero__slide slide hero__slide--lautala swiper-lazy">
           <div class="slide__content">
             <h2 class="slide__title">Lautala</h2>
@@ -950,15 +1014,15 @@
           <div class="swiper-slide">
             <a href="#" class="popular__img">
               <img
-                src="./img/card-01.jpg"
-                srcset="./img/card-01-2x.jpg"
-                alt=""
+                src="./img/cards/card1-1x.jpg"
+                srcset="./img/cards/card1-1x.jpg 1x, ./img/cards/card1-2x.jpg 2x, ./img/cards/card1-3x.jpg 3x"
+                alt="card1"
               />
             </a>
           </div>
           <div class="swiper-slide">
             <a href="#" class="popular__img">
-              <img src="./img/hero-bg-1.jpg" alt="" />
+              <img src="./img/hero-bg-1.jpg" alt="card2" />
             </a>
           </div>
         </div>
@@ -989,26 +1053,44 @@
 </section>
 
       <section class="services-section">
-  <h2 class="title services-section__title container">Сложное&nbsp;&mdash; это тысяча маленьких шагов, сделанных професионалами</h2>
+  <h2 class="title services-section__title container">
+    Сложное&nbsp;&mdash; это тысяча маленьких шагов, сделанных професионалами
+  </h2>
   <div class="services-section__container">
     <div class="services-section__image">
-      <img src="./img/services-ph.jpg" alt="">
+      <img
+        src="./img/services/services-ph.jpg"
+        srcset="
+          ./img/services/services-ph-2x.jpg 2x,
+          ./img/services/services-ph-3x.jpg 3x
+        "
+        alt="Services ph"
+      />
     </div>
-    <div class="services-section__right container services-section-right__container">
+    <div
+      class="services-section__right container services-section-right__container"
+    >
       <div class="services-section__line"></div>
       <ul class="services-section__list list-reset">
         <li class="services-section__item">
-          <h4 class="services-section__text">Выбор или разработка проекта под <span>ваши запросы</span></h4>
+          <h4 class="services-section__text">
+            Выбор или разработка проекта под <span>ваши запросы</span>
+          </h4>
         </li>
         <li class="services-section__item">
           <h4 class="services-section__text">
-            Согласование сметы и графика <span>производства работ</span></h4>
+            Согласование сметы и графика <span>производства работ</span>
+          </h4>
         </li>
         <li class="services-section__item">
-          <h4 class="services-section__text">Производство индивидуального <span>домокомплекта</span></h4>
+          <h4 class="services-section__text">
+            Производство индивидуального <span>домокомплекта</span>
+          </h4>
         </li>
         <li class="services-section__item">
-          <h4 class="services-section__text">Подготовка участка <span>к строительству</span></h4>
+          <h4 class="services-section__text">
+            Подготовка участка <span>к строительству</span>
+          </h4>
         </li>
         <li class="services-section__item">
           <h4 class="services-section__text">Доставка и <span>сборка</span></h4>
@@ -1020,10 +1102,14 @@
           <h4 class="services-section__text">Дизайн <span>и отделка</span></h4>
         </li>
         <li class="services-section__item">
-          <h4 class="services-section__text">Сдача и гарантия <span>технического соответствия</span></h4>
+          <h4 class="services-section__text">
+            Сдача и гарантия <span>технического соответствия</span>
+          </h4>
         </li>
         <li class="services-section__item">
-          <h4 class="services-section__text">Ландшафтные <span>работы</span></h4>
+          <h4 class="services-section__text">
+            Ландшафтные <span>работы</span>
+          </h4>
         </li>
       </ul>
     </div>
@@ -1244,7 +1330,7 @@
           <img
             src="./img/benefits-house-04.jpg"
             alt="House"
-            style="width: auto"
+            style="width: 70%"
             id="bh4"
           />
         </div>
@@ -1297,12 +1383,12 @@
           </div>
         </div>
         <div class="house-content__image" style="justify-content: flex-end">
-          <img src="./img/eco-01.jpg" alt="" data-eco="2" id="eco1"/>
+          <img src="./img/eco/eco1.jpg" srcset="./img/eco/eco1-2x.jpg 2x, ./img/eco/eco1-3x.jpg 3x" alt="Eco House 1" data-eco="2" id="eco1" />
           <div
             class="house-content__image--mini house-content__image--eco-mini-1"
             style="width: 55%"
           >
-            <img src="./img/eco-02.jpg" alt="" data-eco="10" id="eco2"/>
+            <img src="./img/eco/eco2.jpg" srcset="./img/eco/eco2-2x.jpg 2x, ./img/eco/eco2-3x.jpg 3x" alt="Eco House 2" data-eco="10" id="eco2" />
           </div>
         </div>
       </div>
@@ -1326,12 +1412,22 @@
         </div>
       </div>
       <div class="house-content__image mob-order-3">
-        <img src="./img/eco-03.jpg" alt="" data-eco="2" id="eco3"/>
+        <img
+          src="./img/eco/eco3.jpg" srcset="./img/eco/eco3-2x.jpg 2x, ./img/eco/eco3-3x.jpg 3x" alt="Eco House 3"
+          data-eco="2"
+          id="eco3"
+          style="width: 80%"
+        />
         <div
           class="house-content__image--mini house-content__image--eco-mini-2"
-          style="width: 55%"
+          style="width: 55%; right: 30px"
         >
-          <img src="./img/eco-04.jpg" alt="" data-eco="8" id="eco4"/>
+          <img
+          src="./img/eco/eco4.jpg" srcset="./img/eco/eco4-2x.jpg 2x, ./img/eco/eco4-3x.jpg 3x" alt="Eco House 4"
+            data-eco="8"
+            id="eco4"
+            width="100%"
+          />
         </div>
       </div>
     </div>
@@ -1354,16 +1450,19 @@
         class="house-content__image house-content__image--big"
         style="justify-content: flex-end"
       >
-        <img src="./img/eco-05.jpg" alt="" data-eco="2" id="eco5"/>
+        <img src="./img/eco/eco5.jpg" srcset="./img/eco/eco5-2x.jpg 2x, ./img/eco/eco5-3x.jpg 3x" alt="Eco House 5" data-eco="2" id="eco5" />
       </div>
     </div>
     <div class="house-content__image--centered">
-      <img src="./img/eco-06.jpg" alt="" data-eco="1" id="eco6"/>
+      <img src="./img/eco/eco6.jpg" srcset="./img/eco/eco6-2x.jpg 2x, ./img/eco/eco6-3x.jpg 3x" alt="Eco House 6" data-eco="1" id="eco6" />
     </div>
   </div>
-  <div class="eco-house__bottom"></div>
 </section>
 
+
+      <!-- <div class="shadow">
+        <div class="shadow__body"></div>
+      </div> -->
       <section class="tech">
   <h2 class="title centered tech__title">Технологии строительства</h2>
   <div class="tech__container">
@@ -1403,6 +1502,7 @@
       </a>
     </div>
   </div>
+  
 </section>
 
       <section class="add">

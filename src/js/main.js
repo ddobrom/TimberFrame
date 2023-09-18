@@ -33,22 +33,22 @@ const isInto = (el1, el2) => {
   return getBottom(el2) >= getCoord(el1) && getCoord(el1) >= el2.offsetTop;
 };
 
-// window.addEventListener("scroll", () => {
-//   if (
-//     isInto(headerNav, benefitsSection) ||
-//     isInto(headerNav, popularSection) ||
-//     isInto(headerNav, servicesSection) ||
-//     isInto(headerNav, projectSection) ||
-//     isInto(headerNav, ecoHouseSection) ||
-//     isInto(headerNav, techSection) ||
-//     isInto(headerNav, addSection) ||
-//     isInto(headerNav, officeSection)
-//   ) {
-//     document.querySelector(".header").classList.add("dark");
-//   } else {
-//     document.querySelector(".header").classList.remove("dark");
-//   }
-// });
+window.addEventListener("scroll", () => {
+  if (
+    isInto(headerNav, benefitsSection) ||
+    isInto(headerNav, popularSection) ||
+    isInto(headerNav, servicesSection) ||
+    isInto(headerNav, projectSection) ||
+    isInto(headerNav, ecoHouseSection) ||
+    isInto(headerNav, techSection) ||
+    isInto(headerNav, addSection) ||
+    isInto(headerNav, officeSection)
+  ) {
+    document.querySelector(".header").classList.add("dark");
+  } else {
+    document.querySelector(".header").classList.remove("dark");
+  }
+});
 
 const projectCards = document.querySelectorAll(".projects-card");
 projectCards.forEach((el) => {

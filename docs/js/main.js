@@ -210,6 +210,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var simple_parallax_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! simple-parallax-js */ "./node_modules/simple-parallax-js/dist/simpleParallax.min.js");
 /* harmony import */ var simple_parallax_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(simple_parallax_js__WEBPACK_IMPORTED_MODULE_0__);
 
+
 const bh1 = document.getElementById('bh1');
 const bh2 = document.getElementById('bh2');
 const bh3 = document.getElementById('bh3');
@@ -240,6 +241,19 @@ new (simple_parallax_js__WEBPACK_IMPORTED_MODULE_0___default())(bh5, {
   overflow: true,
   transition: 'cubic-bezier(0,0,0,1)'
 });
+
+// const shT = gsap.timeline()
+
+// shT.to('.shadow__body', {yPercent: -85})
+
+// ScrollTrigger.create({
+//   animation: shT,
+//   trigger: '.tech',
+//   start: 'top bottom-=100px',
+//   end: '+=700',
+//   scrub: true,
+//   markers: true
+// })
 
 /***/ }),
 
@@ -31739,24 +31753,13 @@ const getBottom = el => {
 const isInto = (el1, el2) => {
   return getBottom(el2) >= getCoord(el1) && getCoord(el1) >= el2.offsetTop;
 };
-
-// window.addEventListener("scroll", () => {
-//   if (
-//     isInto(headerNav, benefitsSection) ||
-//     isInto(headerNav, popularSection) ||
-//     isInto(headerNav, servicesSection) ||
-//     isInto(headerNav, projectSection) ||
-//     isInto(headerNav, ecoHouseSection) ||
-//     isInto(headerNav, techSection) ||
-//     isInto(headerNav, addSection) ||
-//     isInto(headerNav, officeSection)
-//   ) {
-//     document.querySelector(".header").classList.add("dark");
-//   } else {
-//     document.querySelector(".header").classList.remove("dark");
-//   }
-// });
-
+window.addEventListener("scroll", () => {
+  if (isInto(headerNav, benefitsSection) || isInto(headerNav, popularSection) || isInto(headerNav, servicesSection) || isInto(headerNav, projectSection) || isInto(headerNav, ecoHouseSection) || isInto(headerNav, techSection) || isInto(headerNav, addSection) || isInto(headerNav, officeSection)) {
+    document.querySelector(".header").classList.add("dark");
+  } else {
+    document.querySelector(".header").classList.remove("dark");
+  }
+});
 const projectCards = document.querySelectorAll(".projects-card");
 projectCards.forEach(el => {
   const details = el.querySelector(".projects-card__details");

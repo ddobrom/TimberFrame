@@ -3,10 +3,10 @@
 
 @include('partials/head.html')
 
-<body class="page__body" id="smooth-wrapper">
-  <div class="site-container" id="smooth-content">
+<body class="page__body">
+  <div class="site-container">
     @include('partials/header.html')
-    <main class="main" data-speed="0.5">
+    <main class="main">
       @include('partials/menu.html')
       @include('partials/favorites.html')
       @include('partials/hero.html')
@@ -17,6 +17,9 @@
       @include('partials/projects-section.html')
       @include('partials/benefits-house.html')
       @include('partials/eco-house.html')
+      <!-- <div class="shadow">
+        <div class="shadow__body"></div>
+      </div> -->
       @include('partials/tech.html')
       @include('partials/add.html')
       @include('partials/responsibility.html')

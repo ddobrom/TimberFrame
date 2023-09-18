@@ -63,7 +63,8 @@
   position: sticky;
   top: 0;
   height: 100vh;
-  width: 100%;
+  width: 100% !important;
+  overflow: hidden;
   &__wrapper {
     position: relative;
     width: 100% !important;
@@ -85,19 +86,7 @@
       background-attachment: fixed;
       background-position: top;
       transition: opacity .5s ease;
-      @include mobile {
-        background: linear-gradient(
-          0deg,
-          rgba(0, 0, 0, 0.6) 0%,
-          rgba(0, 0, 0, 0.6) 100%
-        ),
-        url("./../img/benefits-house-bg-mob.jpg"),
-        lightgray -55.786px -77.315px / 104.867% 126.916% no-repeat;
-        background-size: 100% 100%;
-        background-attachment: fixed;
-        background-position: top;
-        transition: opacity .7s ease;
-      }
+
     }
   }
   &__body {

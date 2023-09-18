@@ -30,10 +30,10 @@
   }
   &__image {
     position: relative;
-    max-width: 520px;
+    max-width: 540px;
     margin-right: 20px;
     @media (min-width: 1440px){
-      max-width: 52rem;
+      max-width: 54rem;
       margin-right: 2rem;
     }
     @include mobile {
@@ -41,6 +41,7 @@
       margin: 0 auto;
     }
     img {
+      width: 100%;
       height: auto;
       object-fit: cover;
     }

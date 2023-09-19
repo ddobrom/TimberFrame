@@ -31788,7 +31788,7 @@ gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.registerPlugin(gsap_all__WEBPACK_IMPORTED
 let rule = gsap_all__WEBPACK_IMPORTED_MODULE_6__.CSSRulePlugin.getRule(".parallax__wrapper::before");
 const timeLine1 = gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.timeline();
 const timeLine2 = gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.timeline();
-timeLine1.fromTo('.parallax__body', {
+timeLine1.fromTo(".parallax__body", {
   scale: 0.5
 }, {
   scale: 1
@@ -31799,31 +31799,12 @@ timeLine1.fromTo('.parallax__body', {
 });
 ScrollTrigger.create({
   animation: timeLine1,
-  trigger: '.parallax__wrapper',
-  start: 'top top',
-  end: '+=100%',
+  trigger: ".parallax__wrapper",
+  start: "top top",
+  end: "+=100%",
   scrub: 0.1,
-  pin: true,
-  onLeave: () => {}
+  pin: true
 });
-
-// const imgs = document.querySelectorAll('[data-eco]')
-// function callbackEco(entries, observer) {
-//   const r = ecoHouseSection.getBoundingClientRect()
-//   let movingPercent = r.y / 100
-
-//   imgs.forEach(el => {
-//     el.style.transform = `translateY(${movingPercent * el.dataset.eco}px)`
-//   })
-// }
-// const arr = []
-// for(let i = 0; i <= 1.0; i+=0.1){
-//   arr.push(i)
-// }
-// const observerEco = new IntersectionObserver(callbackEco, {
-//   threshold: arr,
-// });
-// imgs.forEach(el => observerEco.observe(el))
 })();
 
 /******/ })()

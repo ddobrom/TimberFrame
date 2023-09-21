@@ -452,6 +452,30 @@ favBtns.forEach(el => {
       }
     });
   }
+  if (el.closest('.popular__images')) {
+    el.closest('.swiper-slide').setAttribute('data-id', randomId());
+    el.addEventListener('click', e => {
+      let self = e.currentTarget;
+      if (!self.classList.contains('active')) {
+        self.classList.add('active');
+        let id = el.closest('.swiper-slide').dataset.id;
+        const infoBlock = document.querySelector(`.popular-card[data-item-id="${el.closest('.swiper-slide').querySelector('img').dataset.itemId}"]`);
+        let title = infoBlock.querySelector('.popular-card__title').textContent;
+        let link = infoBlock.querySelector('.popular-card__more').href;
+        let img = el.closest('.swiper-slide').querySelector('img').src;
+        let srcset = img;
+        let info = {
+          square: infoBlock.querySelector('.popular-card__item--sq').querySelector('.popular-card__figure').textContent,
+          floors: infoBlock.querySelector('.popular-card__item--fl').querySelector('.popular-card__figure').textContent,
+          bedrooms: infoBlock.querySelector('.popular-card__item--bed').querySelector('.popular-card__figure').textContent,
+          bathrooms: infoBlock.querySelector('.popular-card__item--bath').querySelector('.popular-card__figure').textContent,
+          place: infoBlock.querySelector('.popular-card__item--pl').querySelector('.popular-card__figure').textContent
+        };
+        favContent.insertAdjacentHTML('afterbegin', generateFavoriteItem(img, srcset, title, info, link, id));
+        printQuantity();
+      } else {}
+    });
+  }
 });
 const printQuantity = () => {
   let length = favContent.children.length;

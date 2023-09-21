@@ -11,6 +11,7 @@
     }
   }
   &__link {
+    display: inline-block;
     color: var(--white-color);
     font-family: "PP Neue Montreal";
     font-size: 12px;
@@ -24,5 +25,6 @@
     @media (min-width: 1440px) {
       font-size: 1.2rem;
     }
+
   }
 }

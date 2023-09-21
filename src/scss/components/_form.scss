@@ -8,6 +8,7 @@
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.90);
   backdrop-filter: blur(10px);
+
   @media (min-width: 1440px){
     gap: 1.6rem;
     padding: 4.5rem;
@@ -16,6 +17,8 @@
   }
   @include mobile {
     padding: 45px 16px;
+    width: unset;
+    max-width: 450px;
   }
   &__title {
     margin: 0;
@@ -99,4 +102,9 @@
 
 .form__input.focus-visible {
   border: 1px solid var(--focus-color);
+}
+.form-close {
+  @include mobile {
+    right: 16px;
+  }
 }

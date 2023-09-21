@@ -43,6 +43,9 @@
         opacity: 1;
       }
     }
+    @include mobile {
+      padding-bottom: 100px;
+    }
   }
 }
 

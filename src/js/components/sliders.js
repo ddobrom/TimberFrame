@@ -1,4 +1,6 @@
 import Swiper from "swiper/bundle";
+import {gsap} from 'gsap'
+import { ScrollTrigger } from "gsap/all";
 const heroslider = new Swiper(".hero__slider", {
   slidesPerView: "auto",
   navigation: {

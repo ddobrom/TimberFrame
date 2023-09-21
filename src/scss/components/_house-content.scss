@@ -43,6 +43,8 @@
     }
   }
   &__content {
+    position: relative;
+    z-index: 5;
     grid-column: 6 span;
     margin-right: 60px;
     width: 100%;
@@ -52,8 +54,8 @@
     }
     @include mobile {
       grid-column: 1;
-      padding-top: 260px;
-      padding-bottom: 160px;
+      padding-top: 240px;
+      padding-bottom: 140px;
     }
     &--gap {
       padding-top: 70px;

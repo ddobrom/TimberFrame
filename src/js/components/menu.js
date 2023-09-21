@@ -6,6 +6,7 @@ menuBtn.addEventListener('click', (e) => {
   fMenuBtn.classList.add('disabled')
   menu.classList.add('menu-active')
   menu.classList.remove('menu-disabled')
+  document.body.style.overflow = 'hidden'
 })
 const closeBtn = menu.querySelector('.menu__close-btn')
   closeBtn.addEventListener('click', () => {
@@ -13,5 +14,6 @@ const closeBtn = menu.querySelector('.menu__close-btn')
     setTimeout(() => {
       menu.classList.remove('menu-active')
       fMenuBtn.classList.remove('disabled')
+      document.body.style.overflow = null
     }, 500)
   })

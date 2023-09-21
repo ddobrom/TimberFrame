@@ -2,6 +2,7 @@
   position: relative;
   --offset: -100px;
   --finish-position: 0;
+  overflow-x: hidden;
   &__slide {
     position: relative;
     min-height: 100vh;
@@ -72,10 +73,13 @@
           width: 1rem;
         }
       }
-      @media (min-width: 1440px){
-        height: 4.8rem;
-        width: 9.6rem;
-      }
+    }
+    @include mobile {
+      bottom: 90px;
+    }
+    @media (min-width: 1440px){
+      width: 4.8rem;
+      height: 9.6rem;
     }
     @include hover {
       span {
@@ -148,6 +152,8 @@
     text-align: center;
     text-overflow: ellipsis;
     font-family: "PP Neue Montreal";
+    font-style: normal;
+    line-height: normal;
     font-size: 115px;
     font-weight: 700;
     letter-spacing: 3.45px;

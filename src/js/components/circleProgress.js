@@ -6,8 +6,6 @@ circles.forEach(el => {
   let circleLength = 2 * Math.PI * radius;
   el.setAttribute('stroke-dasharray', circleLength)
   el.setAttribute('stroke-dashoffset', circleLength - circleLength * percentageProgress / 100)
-
-  console.log(radius);
 })
 
 

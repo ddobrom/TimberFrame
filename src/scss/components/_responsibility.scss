@@ -14,7 +14,7 @@
     }
   }
   &__items {
-
+    overflow: visible;
     // height: 360px;
     & .swiper-slide {
       display: flex;
@@ -29,6 +29,9 @@
 .progress {
   transform: rotate(-90deg);
   transform-origin: center;
+  filter: drop-shadow( 0 0 2px var(--focus-color)) drop-shadow( 0 0 5px var(--focus-color)) drop-shadow( 0 0 10px var(--focus-color));
+  -webkit-filter: drop-shadow( 0 0 2px var(--focus-color)) drop-shadow( 0 0 5px var(--focus-color)) drop-shadow( 0 0 10px var(--focus-color));
+
 }
 .progress-bg {
   transform: rotate(-90deg);
@@ -53,6 +56,7 @@
   &__left {
     position: relative;
     margin-right: 40px;
+
     @media (min-width: 1440px){
       margin-right: 4rem;
     }
@@ -107,12 +111,10 @@
   padding: 0;
 }
 
-.progress {
-  filter: drop-shadow( 0 0 2px var(--focus-color)) drop-shadow( 0 0 5px var(--focus-color)) drop-shadow( 0 0 10px var(--focus-color));
-}
 .circle-img {
   width: 362px;
   height: 362px;
+  overflow: visible;
   @media (min-width: 1440px){
     width: 36.2rem;
     height: 36.2rem;

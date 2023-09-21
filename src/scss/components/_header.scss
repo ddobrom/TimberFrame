@@ -74,19 +74,19 @@
 
 .header.dark {
   .nav__link {
-    color: var(--black-brand-color) !important;
+    color: var(--black-brand-color) ;
   }
   .dropdown__btn {
     span {
-      border-color: var(--black-brand-color) !important
+      border-color: var(--black-brand-color) 
     };
   }
   .header__phone {
-    color: var(--black-brand-color) !important;
+    color: var(--black-brand-color) ;
   }
   .header__btn {
     svg {
-      stroke: var(--black-brand-color) !important;
+      stroke: var(--black-brand-color) ;
     }
   }
   .header__logo {

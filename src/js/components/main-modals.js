@@ -34,6 +34,10 @@ document.querySelector('.phone-btn').addEventListener('click', (e) => {
   const modalForm = document.querySelector('.modal-form')
   modalForm.classList.add('active')
 })
+document.querySelector('.mobile-menu__btn--call').addEventListener('click', (e) => {
+  const modalForm = document.querySelector('.modal-form')
+  modalForm.classList.add('active')
+})
 document.querySelectorAll('.modal').forEach(el => {
   el.addEventListener('click', (e) => {
     e.stopPropagation()

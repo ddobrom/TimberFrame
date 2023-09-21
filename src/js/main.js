@@ -64,6 +64,25 @@ projectCards.forEach((el) => {
   });
 });
 
+
+const favorites = document.querySelector('.favorites-content')
+favorites.addEventListener('mousemove', (e) => {
+  if(e.target.classList.contains('projects-card')){
+    const details = e.target.querySelector(".projects-card__details");
+    e.target.addEventListener("mouseenter", (event) => {
+      event.stopPropagation()
+      details.classList.add("active");
+      details.style.maxHeight = details.scrollHeight + "px";
+    });
+    e.target.addEventListener("mouseleave", (event) => {
+      event.stopPropagation()
+      details.classList.remove("active");
+      details.style.maxHeight = null;
+    });
+  } else {
+    return
+  }
+})
 const forms = document.querySelectorAll(".form");
 
 forms.forEach((f) => {
@@ -87,7 +106,6 @@ forms.forEach((f) => {
 gsap.registerPlugin(CSSRulePlugin);
 let rule = CSSRulePlugin.getRule(".parallax__wrapper::before");
 const timeLine1 = gsap.timeline();
-const timeLine2 = gsap.timeline();
 timeLine1
   .fromTo(".parallax__body", { scale: 0.5 }, { scale: 1 })
   .set(rule, { cssRule: { opacity: 1 } });
@@ -100,3 +118,7 @@ ScrollTrigger.create({
   scrub: 0.1,
   pin: true,
 });
+
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}

@@ -4237,10 +4237,13 @@ span.popular-card__figure {
   display: none;
   padding: 14px 0;
   position: fixed;
-  z-index: 50;
+  z-index: -1;
   left: 0;
   bottom: 0;
+  opacity: 0;
   width: 100%;
+  -webkit-transition: opacity 0.3s ease-in, z-index 0.3s;
+  transition: opacity 0.3s ease-in, z-index 0.3s;
 }
 @media (max-width: 768px) {
   .mobile-menu {

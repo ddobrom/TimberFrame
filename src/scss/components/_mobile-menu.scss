@@ -5,10 +5,12 @@
   }
   padding: 14px 0;
   position: fixed;
-  z-index: 50;
+  z-index: -1;
   left: 0;
   bottom: 0;
+  opacity: 0;
   width: 100%;
+  transition: opacity .3s ease-in, z-index .3s;
   &__list {
     display: flex;
     align-items: center;

@@ -49,6 +49,15 @@ window.addEventListener("scroll", () => {
   } else {
     document.querySelector(".header").classList.remove("dark");
   }
+
+  // console.log(getBottom(document.querySelector('.mobile-menu')));
+  if(getCoord(document.querySelector('.mobile-menu')) >= getBottom(document.querySelector('.hero'))){
+    document.querySelector('.mobile-menu').style.opacity = "1"
+    document.querySelector('.mobile-menu').style.zIndex = "20"
+  } else {
+    document.querySelector('.mobile-menu').style.opacity = null
+    document.querySelector('.mobile-menu').style.zIndex = null
+  }
 });
 
 const projectCards = document.querySelectorAll(".projects-card");

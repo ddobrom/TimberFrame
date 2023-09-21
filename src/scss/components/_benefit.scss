@@ -4,6 +4,10 @@
   @include mobile {
     padding: 80px 0;
   }
+  @media (min-width: 1440px){
+    padding-top: 16rem;
+    padding-bottom: 18rem;
+  }
   &__container {
     padding-left: 113px;
     padding-right: 113px;
@@ -36,6 +40,9 @@
   }
   &__title {
     margin-bottom: 48px;
+    @media (min-width: 1440px){
+      margin-bottom: 4.8rem;
+    }
   }
   &__buttons {
     display: flex;

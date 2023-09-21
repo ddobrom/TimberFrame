@@ -10,6 +10,10 @@
   @include mobile {
     padding-top: 120px;
   }
+  @media (min-width: 1440px){
+    padding-top: 16rem;
+    padding-bottom: 5rem;
+  }
   &__title {
     margin-bottom: 90px;
     @media (min-width: 1440px) {
@@ -64,6 +68,9 @@
           rgba(37, 35, 33, 0.6) 100%
         );
       }
+    }
+    @media (min-width: 1440px){
+      height: 66rem;
     }
     img {
       transition: transform 1s ease-in;

@@ -941,7 +941,7 @@ const heroslider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".h
   },
   effect: "fade",
   speed: 2000,
-  lazy: true,
+  // lazy: true,
   autoplay: {
     delay: 7000
   },

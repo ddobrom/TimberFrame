@@ -9,7 +9,7 @@ const heroslider = new Swiper(".hero__slider", {
   },
   effect: "fade",
   speed: 2000,
-  lazy: true,
+  // lazy: true,
   autoplay: {
     delay: 7000,
   },

@@ -3,6 +3,11 @@
   padding-bottom: 160px;
   &__title {
     margin-bottom: 60px;
+    font-family: "Aeonik Pro";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
     @media (min-width: 1440px) {
       margin-bottom: 6rem;
     }

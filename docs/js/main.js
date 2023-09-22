@@ -342,7 +342,7 @@ new (simple_parallax_js__WEBPACK_IMPORTED_MODULE_0___default())(eco1, {
   transition: 'cubic-bezier(0,0,0,1)'
 });
 new (simple_parallax_js__WEBPACK_IMPORTED_MODULE_0___default())(eco2, {
-  scale: 2,
+  scale: 3,
   overflow: true,
   transition: 'cubic-bezier(0,0,0,1)'
 });

@@ -11,7 +11,7 @@ new simpleParallax(eco1, {
   transition: 'cubic-bezier(0,0,0,1)'
 });
 new simpleParallax(eco2, {
-  scale: 2,
+  scale: 3,
   overflow: true,
   transition: 'cubic-bezier(0,0,0,1)'
 });

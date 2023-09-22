@@ -13,7 +13,12 @@
   normal
 );
 
-@include font-face("PP Telegraf", "./../fonts/PPTelegraf-UltraBold", 800, normal);
+@include font-face(
+  "PP Telegraf",
+  "./../fonts/PPTelegraf-UltraBold",
+  800,
+  normal
+);
 
 @include font-face(
   "PP Neue Montreal",

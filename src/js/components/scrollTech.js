@@ -16,9 +16,13 @@ function callbackObs(entries, observer){
   let percent = 1;
 
   percent = window.scrollY / document.querySelector('.tech').scrollHeight * 10
-
-  menuItem[0].querySelector('.tech__paragraph').style.transform = `translateX(-${percent / 3}%)`
-  menuItem[1].querySelector('.tech__paragraph').style.transform = `translateX(${percent / 3}%)`
+  if(window.matchMedia("(min-width: 769px)")){
+    menuItem[0].querySelector('.tech__paragraph').style.transform = `translateX(-${percent / 3}%)`
+    menuItem[1].querySelector('.tech__paragraph').style.transform = `translateX(${percent / 3}%)`
+  } else {
+    menuItem[0].querySelector('.tech__paragraph').style.transform = `translateX(-${percent / 2}%)`
+    menuItem[1].querySelector('.tech__paragraph').style.transform = `translateX(${percent / 2}%)`
+  }
 }
 
 
@@ -26,7 +30,9 @@ document.querySelector('.tech').addEventListener('wheel', () => {
   callbackObs()
 })
 
-
+document.querySelector('.tech').addEventListener('touchmove', () => {
+  callbackObs()
+})
 
 
 if (window.matchMedia("(min-width: 769px)").matches) {

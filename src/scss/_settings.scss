@@ -461,20 +461,30 @@ a {
 }
 .simplebar-track {
   right: 77px;
+  @include mobile {
+    display: none;
+  }
 }
 .simplebar-track.simplebar-vertical {
-  top: 90px;
-  bottom: 90px;
+  top: 0;
+  bottom: 0;
   width: 6px;
   background-color: #d9d9d9;
 }
+.simplebar-placeholder {
+
+}
 .simplebar-scrollbar::before {
   left: 0;
-  top: 90px;
+  top: 0;
   right: 0;
   bottom: 0;
   opacity: 1;
   background-color: var(--focus-color);
+
+  @include mobile {
+    display: none;
+  }
 }
 .plug {
   display: none;

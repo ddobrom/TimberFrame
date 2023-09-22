@@ -16,20 +16,23 @@ new simpleParallax(eco2, {
   transition: 'cubic-bezier(0,0,0,1)'
 });
 new simpleParallax(eco3, {
+  scale: 1.6,
   overflow: true,
   transition: 'cubic-bezier(0,0,0,1)'
 });
 new simpleParallax(eco4, {
-  scale: 2,
+  scale: 3,
   overflow: true,
   transition: 'cubic-bezier(0,0,0,1)'
 });
 
 new simpleParallax(eco5, {
+  scale: 1.6,
   overflow: true,
   transition: 'cubic-bezier(0,0,0,1)'
 });
 new simpleParallax(eco6, {
+  scale: 2.5,
   overflow: true,
   transition: 'cubic-bezier(0,0,0,1)'
 });

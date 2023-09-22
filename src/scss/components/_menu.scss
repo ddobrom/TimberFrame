@@ -39,7 +39,7 @@
     background-position: center center;
     background-size: 13px 13px;
     background-repeat: no-repeat;
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       width: 3.2rem;
       height: 3.2rem;
       background-size: 1.3rem 1.3rem;
@@ -86,7 +86,7 @@
   padding-right: 77px;
   display: flex;
   overflow: auto;
-  @media (min-width: 1440px){
+  @media (min-width: 1440px) {
     padding: 9rem 12rem;
   }
   @include mobile {
@@ -113,13 +113,13 @@
     margin: 0;
     margin-bottom: 16px;
     color: var(--black-brand-color);
-    font-family: " PP PP Neue Montreal";
+    font-family: "PP Neue Montreal";
     font-size: 32px;
     font-weight: 700;
     letter-spacing: 0.96px;
     text-transform: uppercase;
     padding: unset;
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       font-size: 3.2rem;
       margin-bottom: 1.6rem;
     }
@@ -130,7 +130,7 @@
   &__list {
     &:not(:last-child) {
       margin-bottom: 40px;
-      @media (min-width: 1440px){
+      @media (min-width: 1440px) {
         margin-bottom: 4rem;
       }
     }
@@ -145,7 +145,7 @@
       text-transform: uppercase;
       margin-bottom: 16px;
     }
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       padding: 1.2rem 0;
     }
   }
@@ -156,7 +156,7 @@
     font-weight: 500;
     letter-spacing: 1.2px;
     text-transform: uppercase;
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       font-size: 1.2rem;
     }
     @include mobile {
@@ -165,7 +165,7 @@
   }
   &:not(:last-child) {
     margin-bottom: 40px;
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       margin-bottom: 4rem;
     }
   }
@@ -173,7 +173,7 @@
 .menu-left {
   &__list {
     margin-bottom: 60px;
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       margin-bottom: 6rem;
     }
     @include mobile {
@@ -182,7 +182,7 @@
   }
   &__item {
     color: var(--black-brand-color);
-    font-family: "PP PP Neue Montreal";
+    font-family: "PP Neue Montreal";
     font-size: 32px;
     font-weight: 700;
     letter-spacing: 0.96px;
@@ -193,7 +193,7 @@
         display: block;
       }
     }
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       font-size: 3.2rem;
     }
     @include mobile {
@@ -207,5 +207,3 @@
     }
   }
 }
-
-

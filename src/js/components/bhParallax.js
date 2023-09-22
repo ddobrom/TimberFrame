@@ -21,19 +21,19 @@ new simpleParallax(bh2, {
 });
 
 new simpleParallax(bh3, {
-  scale: 1.2,
+  scale: 3,
   overflow: true,
   transition: 'cubic-bezier(0,0,0,1)'
 });
 
 new simpleParallax(bh4, {
-  scale: 1.2,
+  scale: 1.6,
   overflow: true,
   transition: 'cubic-bezier(0,0,0,1)'
 });
 
 new simpleParallax(bh5, {
-  scale: 1.2,
+  scale: 2,
   overflow: true,
   transition: 'cubic-bezier(0,0,0,1)'
 });

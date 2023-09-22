@@ -495,3 +495,10 @@ a {
     background-color: var(--white-color);
   }
 }
+.mob-menu-logo {
+  display: none;
+  @include mobile {
+    display: block;
+    position: absolute;
+  }
+}

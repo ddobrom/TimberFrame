@@ -623,6 +623,16 @@ a {
   }
 }
 
+.mob-menu-logo {
+  display: none;
+}
+@media (max-width: 768px) {
+  .mob-menu-logo {
+    display: block;
+    position: absolute;
+  }
+}
+
 .header {
   position: fixed;
   z-index: 10;

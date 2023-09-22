@@ -21,14 +21,38 @@ if(heroSection && modalButtons){
         document.body.classList.add('dis-scroll')
       }
       if(e.currentTarget.dataset.gallery){
-        const sources = e.currentTarget.dataset.gallery
+        const sources = Array.from(e.currentTarget.dataset.gallery.split(','))
         const modalGallery = heroSection.querySelector('.modal-gallery')
+        sources.forEach(src => {
+          document.querySelector('.gallery__slider').querySelector('.swiper-wrapper').insertAdjacentHTML('beforeend', generateGallerySlides(src))
+          document.querySelector('.gallery__slider-mini').querySelector('.swiper-wrapper').insertAdjacentHTML('beforeend', generateGallerySlidesMini(src))
+        })
+        console.log(sources);
         modalGallery.classList.add('active')
         modalGallery.addEventListener('click', e => e.stopPropagation())
         document.body.classList.add('dis-scroll')
       }
     })
   })
+}
+
+const generateGallerySlides = (src) => {
+  return `
+    <div class="swiper-slide">
+      <div class="gallery__item">
+        <img src="${src}" alt="Photo of House">
+      </div>
+    </div>
+  `
+}
+const generateGallerySlidesMini = (src) => {
+  return `
+  <div class="swiper-slide">
+    <div class="gallery__item-mini">
+      <img src="${src}" alt="Photo of House">
+    </div>
+  </div>
+  `
 }
 document.querySelector('.phone-btn').addEventListener('click', (e) => {
   const modalForm = document.querySelector('.modal-form')
@@ -43,8 +67,11 @@ document.querySelectorAll('.modal').forEach(el => {
     e.stopPropagation()
     if(e.target == el){
       e.currentTarget.classList.remove('active')
-      if(document.querySelector('.modal').querySelector('.modal-window__video')){
-        document.querySelector('.modal').querySelector('.modal-window__video').setAttribute('src', '')
+      if(e.currentTarget.querySelector('.modal-window__video')){
+        e.currentTarget.querySelector('.modal-window__video').setAttribute('src', '')
+      }
+      if(e.currentTarget.querySelector('.gallery__window')){
+        e.currentTarget.querySelector('.gallery__window').querySelectorAll('.swiper-slide').forEach(slide => slide.remove())
       }
       document.body.classList.remove('dis-scroll')
     }
@@ -55,8 +82,11 @@ document.querySelectorAll('.modal__close').forEach(el => {
     e.preventDefault()
     e.stopPropagation()
     e.currentTarget.closest('.modal').classList.remove('active')
-    if(document.querySelector('.modal').querySelector('.modal-window__video')){
-      document.querySelector('.modal').querySelector('.modal-window__video').setAttribute('src', '')
+    if(e.currentTarget.closest('.modal').querySelector('.modal-window__video')){
+      e.currentTarget.closest('.modal').querySelector('.modal-window__video').setAttribute('src', '')
+    }
+    if(e.currentTarget.closest('.modal').querySelector('.gallery__window')){
+      e.currentTarget.closest('.modal').querySelectorAll('.swiper-slide').forEach(slide => slide.remove())
     }
     document.body.classList.remove('dis-scroll')
   })

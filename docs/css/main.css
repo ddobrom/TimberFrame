@@ -2274,6 +2274,7 @@ a {
   text-align: center;
   padding-top: 160px;
   padding-bottom: 50px;
+  overflow: hidden;
 }
 @media (max-width: 768px) {
   .popular--dis {
@@ -2580,6 +2581,7 @@ span.popular-card__figure {
 .services-section {
   padding-top: 57px;
   min-height: 100vh;
+  overflow: hidden;
 }
 .services-section__title {
   margin: 0 auto;
@@ -2798,6 +2800,7 @@ span.popular-card__figure {
 .projects-section {
   padding: 100px 30px;
   text-align: center;
+  overflow: hidden;
 }
 .projects-section__container {
   -moz-text-align-last: left;
@@ -3781,6 +3784,7 @@ span.popular-card__figure {
 .responsibility {
   padding-top: 120px;
   padding-bottom: 110px;
+  overflow: hidden;
 }
 @media (min-width: 1440px) {
   .responsibility {
@@ -3968,6 +3972,7 @@ span.popular-card__figure {
 .office {
   padding-top: 120px;
   padding-bottom: 160px;
+  overflow: hidden;
 }
 .office__title {
   margin-bottom: 60px;

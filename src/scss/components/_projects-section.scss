@@ -1,6 +1,7 @@
 .projects-section {
   padding: 100px 30px; // переделать
   text-align: center;
+  overflow: hidden;
   &__container {
     text-align-last: left;
     margin-bottom: 60px;

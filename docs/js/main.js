@@ -42489,10 +42489,12 @@ const belowEcoCenter = (el1, el2) => {
   return getCoord(el1) >= getCoord(el2);
 };
 window.addEventListener("scroll", () => {
-  if (isInto(headerNav, benefitsSection) || isInto(headerNav, popularSection) || isInto(headerNav, servicesSection) || isInto(headerNav, projectSection) || isInto(headerNav, ecoHouseSection) && !belowEcoCenter(headerNav, document.querySelector('.house-content--expanded')) || belowEcoCenter(headerNav, document.querySelector('.house-content__image--big')) || isInto(headerNav, techSection) || isInto(headerNav, addSection) || isInto(headerNav, officeSection) || isInto(headerNav, resSection)) {
-    document.querySelector(".header").classList.add("dark");
-  } else {
-    document.querySelector(".header").classList.remove("dark");
+  if (window.matchMedia("(min-width: 1440px)").matches) {
+    if (isInto(headerNav, benefitsSection) || isInto(headerNav, popularSection) || isInto(headerNav, servicesSection) || isInto(headerNav, projectSection) || isInto(headerNav, ecoHouseSection) && !belowEcoCenter(headerNav, document.querySelector('.house-content--expanded')) || isInto(headerNav, techSection) || isInto(headerNav, addSection) || isInto(headerNav, officeSection) || isInto(headerNav, resSection)) {
+      document.querySelector(".header").classList.add("dark");
+    } else {
+      document.querySelector(".header").classList.remove("dark");
+    }
   }
   if (getCoord(document.querySelector('.mobile-menu')) >= getBottom(document.querySelector('.hero'))) {
     document.querySelector('.mobile-menu').style.opacity = "1";

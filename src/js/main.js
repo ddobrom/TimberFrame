@@ -6,8 +6,6 @@ import { CSSRulePlugin } from "gsap/all";
 import { gsap } from "gsap";
 import Parallax from "parallax-js";
 
-
-
 const headerNav = document.querySelector(".nav__list");
 const benefitsSection = document.querySelector(".benefit");
 const tourSection = document.querySelector(".tour");
@@ -22,7 +20,7 @@ const officeSection = document.querySelector(".office");
 const ctaSection = document.querySelector(".cta");
 const resSection = document.querySelector(".responsibility");
 
-const hce = document.querySelector(".house-content__image.mob-order-3")
+const hce = document.querySelector(".house-content__image.mob-order-3");
 const getCoord = (el) => {
   let rect = el.getBoundingClientRect();
   let scrollTop = window.pageY || document.documentElement.scrollTop;
@@ -36,32 +34,63 @@ const isInto = (el1, el2) => {
   return getBottom(el2) >= getCoord(el1) && getCoord(el1) >= el2.offsetTop;
 };
 const belowEcoCenter = (el1, el2) => {
-  return getCoord(el1) >= getCoord(el2)
-}
+  return getCoord(el1) >= getCoord(el2);
+};
 window.addEventListener("scroll", () => {
-  if (
-    isInto(headerNav, benefitsSection) ||
-    isInto(headerNav, popularSection) ||
-    isInto(headerNav, servicesSection) ||
-    isInto(headerNav, projectSection) ||
-    (isInto(headerNav, ecoHouseSection) && !belowEcoCenter(headerNav, document.querySelector('.house-content--expanded'))) ||
-    belowEcoCenter(headerNav, document.querySelector('.house-content__image--big')) ||
-    isInto(headerNav, techSection) ||
-    isInto(headerNav, addSection) ||
-    isInto(headerNav, officeSection) ||
-    isInto(headerNav, resSection)
-  ) {
-    document.querySelector(".header").classList.add("dark");
-  }
-  else {
-    document.querySelector(".header").classList.remove("dark");
-  }
-  if(getCoord(document.querySelector('.mobile-menu')) >= getBottom(document.querySelector('.hero'))){
-    document.querySelector('.mobile-menu').style.opacity = "1"
-    document.querySelector('.mobile-menu').style.zIndex = "20"
+  if (window.matchMedia("(min-width: 1440px)").matches) {
+    if (
+      isInto(headerNav, benefitsSection) ||
+      isInto(headerNav, popularSection) ||
+      isInto(headerNav, servicesSection) ||
+      isInto(headerNav, projectSection) ||
+      (isInto(headerNav, ecoHouseSection) &&
+        !belowEcoCenter(
+          headerNav,
+          document.querySelector(".house-content--expanded")
+        )) ||
+      isInto(headerNav, techSection) ||
+      isInto(headerNav, addSection) ||
+      isInto(headerNav, officeSection) ||
+      isInto(headerNav, resSection)
+    ) {
+      document.querySelector(".header").classList.add("dark");
+    } else {
+      document.querySelector(".header").classList.remove("dark");
+    }
   } else {
-    document.querySelector('.mobile-menu').style.opacity = null
-    document.querySelector('.mobile-menu').style.zIndex = null
+    if (
+      isInto(headerNav, benefitsSection) ||
+      isInto(headerNav, popularSection) ||
+      isInto(headerNav, servicesSection) ||
+      isInto(headerNav, projectSection) ||
+      (isInto(headerNav, ecoHouseSection) &&
+        !belowEcoCenter(
+          headerNav,
+          document.querySelector(".house-content--expanded")
+        )) ||
+      belowEcoCenter(
+        headerNav,
+        document.querySelector(".house-content__image--big")
+      ) ||
+      isInto(headerNav, techSection) ||
+      isInto(headerNav, addSection) ||
+      isInto(headerNav, officeSection) ||
+      isInto(headerNav, resSection)
+    ) {
+      document.querySelector(".header").classList.add("dark");
+    } else {
+      document.querySelector(".header").classList.remove("dark");
+    }
+  }
+  if (
+    getCoord(document.querySelector(".mobile-menu")) >=
+    getBottom(document.querySelector(".hero"))
+  ) {
+    document.querySelector(".mobile-menu").style.opacity = "1";
+    document.querySelector(".mobile-menu").style.zIndex = "20";
+  } else {
+    document.querySelector(".mobile-menu").style.opacity = null;
+    document.querySelector(".mobile-menu").style.zIndex = null;
   }
 });
 
@@ -78,25 +107,24 @@ projectCards.forEach((el) => {
   });
 });
 
-
-const favorites = document.querySelector('.favorites-content')
-favorites.addEventListener('mousemove', (e) => {
-  if(e.target.classList.contains('projects-card')){
+const favorites = document.querySelector(".favorites-content");
+favorites.addEventListener("mousemove", (e) => {
+  if (e.target.classList.contains("projects-card")) {
     const details = e.target.querySelector(".projects-card__details");
     e.target.addEventListener("mouseenter", (event) => {
-      event.stopPropagation()
+      event.stopPropagation();
       details.classList.add("active");
       details.style.maxHeight = details.scrollHeight + "px";
     });
     e.target.addEventListener("mouseleave", (event) => {
-      event.stopPropagation()
+      event.stopPropagation();
       details.classList.remove("active");
       details.style.maxHeight = null;
     });
   } else {
-    return
+    return;
   }
-})
+});
 const forms = document.querySelectorAll(".form");
 
 forms.forEach((f) => {
@@ -135,4 +163,4 @@ ScrollTrigger.create({
 
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
-}
+};

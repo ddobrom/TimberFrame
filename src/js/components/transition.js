@@ -12,7 +12,6 @@ if(window.matchMedia("(max-width: 768px)").matches){
     start: "center bottom-=20%",
     end : "+=600px",
     scrub: 0.5,
-    markers: true,
   })
 }
 else if (window.matchMedia("(min-width: 1440px)").matches){

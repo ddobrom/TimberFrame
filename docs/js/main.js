@@ -2150,8 +2150,7 @@ if (window.matchMedia("(max-width: 768px)").matches) {
     trigger: '.house-content__image--centered',
     start: "center center+=20%",
     end: "+=1000px",
-    scrub: 0.5,
-    markers: true
+    scrub: 0.5
   });
 } else {
   gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
@@ -2159,8 +2158,7 @@ if (window.matchMedia("(max-width: 768px)").matches) {
     trigger: '.house-content__image--centered',
     start: "center bottom-=20%",
     end: "+=600px",
-    scrub: 0.5,
-    markers: true
+    scrub: 0.5
   });
 }
 

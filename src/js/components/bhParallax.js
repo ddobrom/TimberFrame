@@ -20,11 +20,23 @@ new simpleParallax(bh2, {
   transition: 'cubic-bezier(0,0,0,1)'
 });
 
-new simpleParallax(bh3, {
-  scale: 3,
-  overflow: true,
-  transition: 'cubic-bezier(0,0,0,1)'
-});
+
+
+if(window.matchMedia("(max-width: 768px)").matches){
+  new simpleParallax(bh3, {
+    scale: 3,
+    overflow: true,
+    transition: 'cubic-bezier(0,0,0,1)'
+  });
+}
+if(window.matchMedia("(min-width: 769px)").matches){
+  new simpleParallax(bh3, {
+    scale: 1.5,
+    overflow: true,
+    transition: 'cubic-bezier(0,0,0,1)'
+  });
+}
+
 
 new simpleParallax(bh4, {
   scale: 1.6,

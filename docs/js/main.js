@@ -1184,11 +1184,20 @@ new (simple_parallax_js__WEBPACK_IMPORTED_MODULE_0___default())(bh2, {
   overflow: true,
   transition: 'cubic-bezier(0,0,0,1)'
 });
-new (simple_parallax_js__WEBPACK_IMPORTED_MODULE_0___default())(bh3, {
-  scale: 3,
-  overflow: true,
-  transition: 'cubic-bezier(0,0,0,1)'
-});
+if (window.matchMedia("(max-width: 768px)").matches) {
+  new (simple_parallax_js__WEBPACK_IMPORTED_MODULE_0___default())(bh3, {
+    scale: 3,
+    overflow: true,
+    transition: 'cubic-bezier(0,0,0,1)'
+  });
+}
+if (window.matchMedia("(min-width: 769px)").matches) {
+  new (simple_parallax_js__WEBPACK_IMPORTED_MODULE_0___default())(bh3, {
+    scale: 1.5,
+    overflow: true,
+    transition: 'cubic-bezier(0,0,0,1)'
+  });
+}
 new (simple_parallax_js__WEBPACK_IMPORTED_MODULE_0___default())(bh4, {
   scale: 1.6,
   overflow: true,
@@ -1280,6 +1289,7 @@ var eco3 = document.querySelector('#eco3');
 var eco4 = document.querySelector('#eco4');
 var eco5 = document.querySelector('#eco5');
 var eco6 = document.querySelector('#eco6');
+var shadow = document.querySelector('.shadow__body');
 new (simple_parallax_js__WEBPACK_IMPORTED_MODULE_0___default())(eco1, {
   overflow: true,
   transition: 'cubic-bezier(0,0,0,1)'
@@ -1294,18 +1304,27 @@ new (simple_parallax_js__WEBPACK_IMPORTED_MODULE_0___default())(eco3, {
   overflow: true,
   transition: 'cubic-bezier(0,0,0,1)'
 });
-new (simple_parallax_js__WEBPACK_IMPORTED_MODULE_0___default())(eco4, {
-  scale: 3,
-  overflow: true,
-  transition: 'cubic-bezier(0,0,0,1)'
-});
+if (window.matchMedia("(min-width: 769px)").matches) {
+  new (simple_parallax_js__WEBPACK_IMPORTED_MODULE_0___default())(eco4, {
+    scale: 2.3,
+    overflow: true,
+    transition: 'cubic-bezier(0,0,0,1)'
+  });
+}
+if (window.matchMedia("(max-width: 769px)").matches) {
+  new (simple_parallax_js__WEBPACK_IMPORTED_MODULE_0___default())(eco4, {
+    scale: 3,
+    overflow: true,
+    transition: 'cubic-bezier(0,0,0,1)'
+  });
+}
 new (simple_parallax_js__WEBPACK_IMPORTED_MODULE_0___default())(eco5, {
   scale: 1.6,
   overflow: true,
   transition: 'cubic-bezier(0,0,0,1)'
 });
 new (simple_parallax_js__WEBPACK_IMPORTED_MODULE_0___default())(eco6, {
-  scale: 2.5,
+  scale: 1.5,
   overflow: true,
   transition: 'cubic-bezier(0,0,0,1)'
 });
@@ -2109,23 +2128,34 @@ __webpack_require__.r(__webpack_exports__);
 
 const shadowAnim = gsap__WEBPACK_IMPORTED_MODULE_0__.gsap.timeline();
 shadowAnim.to('.shadow__body', {
-  yPercent: -90
+  yPercent: -95
 });
 if (window.matchMedia("(max-width: 768px)").matches) {
   gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
     animation: shadowAnim,
-    trigger: '.shadow',
-    start: "top bottom-=10%",
+    trigger: '.house-content__image--centered',
+    start: "center bottom-=20%",
     end: "+=600px",
-    scrub: 0.5
+    scrub: 0.5,
+    markers: true
+  });
+} else if (window.matchMedia("(min-width: 1440px)").matches) {
+  gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
+    animation: shadowAnim,
+    trigger: '.house-content__image--centered',
+    start: "center center+=20%",
+    end: "+=1000px",
+    scrub: 0.5,
+    markers: true
   });
 } else {
   gsap_all__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.create({
     animation: shadowAnim,
-    trigger: '.shadow',
-    start: "top bottom-=25%",
-    end: "+=300px",
-    scrub: 0.5
+    trigger: '.house-content__image--centered',
+    start: "center bottom-=20%",
+    end: "+=600px",
+    scrub: 0.5,
+    markers: true
   });
 }
 
@@ -42442,6 +42472,8 @@ const techSection = document.querySelector(".tech");
 const addSection = document.querySelector(".add");
 const officeSection = document.querySelector(".office");
 const ctaSection = document.querySelector(".cta");
+const resSection = document.querySelector(".responsibility");
+const hce = document.querySelector(".house-content__image.mob-order-3");
 const getCoord = el => {
   let rect = el.getBoundingClientRect();
   let scrollTop = window.pageY || document.documentElement.scrollTop;
@@ -42453,14 +42485,15 @@ const getBottom = el => {
 const isInto = (el1, el2) => {
   return getBottom(el2) >= getCoord(el1) && getCoord(el1) >= el2.offsetTop;
 };
+const belowEcoCenter = (el1, el2) => {
+  return getCoord(el1) >= getCoord(el2);
+};
 window.addEventListener("scroll", () => {
-  if (isInto(headerNav, benefitsSection) || isInto(headerNav, popularSection) || isInto(headerNav, servicesSection) || isInto(headerNav, projectSection) || isInto(headerNav, ecoHouseSection) || isInto(headerNav, techSection) || isInto(headerNav, addSection) || isInto(headerNav, officeSection)) {
+  if (isInto(headerNav, benefitsSection) || isInto(headerNav, popularSection) || isInto(headerNav, servicesSection) || isInto(headerNav, projectSection) || isInto(headerNav, ecoHouseSection) && !belowEcoCenter(headerNav, document.querySelector('.house-content--expanded')) || belowEcoCenter(headerNav, document.querySelector('.house-content__image--big')) || isInto(headerNav, techSection) || isInto(headerNav, addSection) || isInto(headerNav, officeSection) || isInto(headerNav, resSection)) {
     document.querySelector(".header").classList.add("dark");
   } else {
     document.querySelector(".header").classList.remove("dark");
   }
-
-  // console.log(getBottom(document.querySelector('.mobile-menu')));
   if (getCoord(document.querySelector('.mobile-menu')) >= getBottom(document.querySelector('.hero'))) {
     document.querySelector('.mobile-menu').style.opacity = "1";
     document.querySelector('.mobile-menu').style.zIndex = "20";

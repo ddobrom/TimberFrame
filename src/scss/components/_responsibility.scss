@@ -6,6 +6,10 @@
     padding-top: 12rem;
     padding-bottom: 11rem;
   }
+  @include mobile {
+    padding-top: 160px;
+    padding-bottom: 46px;
+  }
   &__title {
     margin: 0 auto;
     margin-bottom: 80px;
@@ -120,6 +124,10 @@
     width: 36.2rem;
     height: 36.2rem;
   }
+  @media (max-width: 375px){
+    width: 320px;
+    height: 320px;
+  }
 }
 .progress, .progress-bg {
   cx: 181px;
@@ -130,5 +138,10 @@
     cx: 18.1rem;
     cy: 18.1rem;
     r: 17.4rem;
+  }
+  @media (max-width: 375px){
+    cx: 160px;
+    cy: 160px;
+    r: 152px;
   }
 }

@@ -450,13 +450,17 @@ a {
     left: 0;
     top: 0;
     width: 100%;
-    height: 300vh;
+    height: 150vh;
     transform: translateY(-50%);
     background: linear-gradient(
       180deg,
       #020c0c 42.13%,
-      rgba(2, 12, 12, 0) 100%
+      rgba(255, 255, 255, 0) 100%
     );
+    @include mobile {
+      height: 210vh;
+      transform: translateY(-55%);
+    }
   }
 }
 .simplebar-track {

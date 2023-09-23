@@ -20,7 +20,9 @@ const techSection = document.querySelector(".tech");
 const addSection = document.querySelector(".add");
 const officeSection = document.querySelector(".office");
 const ctaSection = document.querySelector(".cta");
+const resSection = document.querySelector(".responsibility");
 
+const hce = document.querySelector(".house-content__image.mob-order-3")
 const getCoord = (el) => {
   let rect = el.getBoundingClientRect();
   let scrollTop = window.pageY || document.documentElement.scrollTop;
@@ -33,24 +35,27 @@ const getBottom = (el) => {
 const isInto = (el1, el2) => {
   return getBottom(el2) >= getCoord(el1) && getCoord(el1) >= el2.offsetTop;
 };
-
+const belowEcoCenter = (el1, el2) => {
+  return getCoord(el1) >= getCoord(el2)
+}
 window.addEventListener("scroll", () => {
   if (
     isInto(headerNav, benefitsSection) ||
     isInto(headerNav, popularSection) ||
     isInto(headerNav, servicesSection) ||
     isInto(headerNav, projectSection) ||
-    isInto(headerNav, ecoHouseSection) ||
+    (isInto(headerNav, ecoHouseSection) && !belowEcoCenter(headerNav, document.querySelector('.house-content--expanded'))) ||
+    belowEcoCenter(headerNav, document.querySelector('.house-content__image--big')) ||
     isInto(headerNav, techSection) ||
     isInto(headerNav, addSection) ||
-    isInto(headerNav, officeSection)
+    isInto(headerNav, officeSection) ||
+    isInto(headerNav, resSection)
   ) {
     document.querySelector(".header").classList.add("dark");
-  } else {
+  }
+  else {
     document.querySelector(".header").classList.remove("dark");
   }
-
-  // console.log(getBottom(document.querySelector('.mobile-menu')));
   if(getCoord(document.querySelector('.mobile-menu')) >= getBottom(document.querySelector('.hero'))){
     document.querySelector('.mobile-menu').style.opacity = "1"
     document.querySelector('.mobile-menu').style.zIndex = "20"

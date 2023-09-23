@@ -200,13 +200,17 @@
         height: 100%;
         object-fit: cover;
       }
+      @media (min-width: 1440px){
+        height: 69rem;
+        width: 69rem;
+      }
       @include mobile {
         width: 220px;
         height: 220px;
       }
-      @media (min-width: 1440px){
-        height: 69rem;
-        width: 69rem;
+      @media (min-width: 550px){
+        width: 440px;
+        height: 440px;
       }
     }
   }

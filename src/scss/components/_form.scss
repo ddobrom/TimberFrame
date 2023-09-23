@@ -86,16 +86,22 @@
       width: 100%;
     }
   }
-  &__warning {
+  &__privacy {
     color: #79716C;
     text-align: center;
-    font-family: "Aeonik Pro";
+
+    /* text-3 */
+    font-family: "PP Neue Montreal";
     font-size: 12px;
+    font-style: normal;
     font-weight: 400;
     line-height: 160%;
     a {
       color: inherit;
       text-decoration: underline;
+    }
+    @media (min-width: 1440px){
+      font-size: 1.2rem;
     }
   }
 }

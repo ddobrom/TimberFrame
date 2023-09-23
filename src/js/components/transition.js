@@ -22,7 +22,6 @@ else if (window.matchMedia("(min-width: 1440px)").matches){
     start: "center center+=20%",
     end : "+=1000px",
     scrub: 0.5,
-    markers: true,
   })
 }
 else {
@@ -32,7 +31,6 @@ else {
     start: "center bottom-=20%",
     end : "+=600px",
     scrub: 0.5,
-    markers: true,
   })
 }
 

@@ -1438,7 +1438,12 @@ favBtns.forEach(el => {
         };
         favContent.insertAdjacentHTML('afterbegin', generateFavoriteItem(img, srcset, title, info, link, id));
         printQuantity();
-      } else {}
+      } else {
+        let id = el.closest('.swiper-slide').dataset.id;
+        favContent.querySelector(`[data-id="${id}"]`).remove();
+        document.querySelector(`[data-id="${id}"]`).querySelector('.btn--like').classList.remove('active');
+        printQuantity();
+      }
     });
   }
 });
@@ -42490,18 +42495,24 @@ const belowEcoCenter = (el1, el2) => {
 };
 window.addEventListener("scroll", () => {
   if (window.matchMedia("(min-width: 1440px)").matches) {
-    if (isInto(headerNav, benefitsSection) || isInto(headerNav, popularSection) || isInto(headerNav, servicesSection) || isInto(headerNav, projectSection) || isInto(headerNav, ecoHouseSection) && !belowEcoCenter(headerNav, document.querySelector('.house-content--expanded')) || isInto(headerNav, techSection) || isInto(headerNav, addSection) || isInto(headerNav, officeSection) || isInto(headerNav, resSection)) {
+    if (isInto(headerNav, benefitsSection) || isInto(headerNav, popularSection) || isInto(headerNav, servicesSection) || isInto(headerNav, projectSection) || isInto(headerNav, ecoHouseSection) && !belowEcoCenter(headerNav, document.querySelector(".house-content--expanded")) || isInto(headerNav, techSection) || isInto(headerNav, addSection) || isInto(headerNav, officeSection) || isInto(headerNav, resSection)) {
+      document.querySelector(".header").classList.add("dark");
+    } else {
+      document.querySelector(".header").classList.remove("dark");
+    }
+  } else {
+    if (isInto(headerNav, benefitsSection) || isInto(headerNav, popularSection) || isInto(headerNav, servicesSection) || isInto(headerNav, projectSection) || isInto(headerNav, ecoHouseSection) && !belowEcoCenter(headerNav, document.querySelector(".house-content--expanded")) || belowEcoCenter(headerNav, document.querySelector(".house-content__image--big")) || isInto(headerNav, techSection) || isInto(headerNav, addSection) || isInto(headerNav, officeSection) || isInto(headerNav, resSection)) {
       document.querySelector(".header").classList.add("dark");
     } else {
       document.querySelector(".header").classList.remove("dark");
     }
   }
-  if (getCoord(document.querySelector('.mobile-menu')) >= getBottom(document.querySelector('.hero'))) {
-    document.querySelector('.mobile-menu').style.opacity = "1";
-    document.querySelector('.mobile-menu').style.zIndex = "20";
+  if (getCoord(document.querySelector(".mobile-menu")) >= getBottom(document.querySelector(".hero"))) {
+    document.querySelector(".mobile-menu").style.opacity = "1";
+    document.querySelector(".mobile-menu").style.zIndex = "20";
   } else {
-    document.querySelector('.mobile-menu').style.opacity = null;
-    document.querySelector('.mobile-menu').style.zIndex = null;
+    document.querySelector(".mobile-menu").style.opacity = null;
+    document.querySelector(".mobile-menu").style.zIndex = null;
   }
 });
 const projectCards = document.querySelectorAll(".projects-card");
@@ -42516,9 +42527,9 @@ projectCards.forEach(el => {
     details.style.maxHeight = null;
   });
 });
-const favorites = document.querySelector('.favorites-content');
-favorites.addEventListener('mousemove', e => {
-  if (e.target.classList.contains('projects-card')) {
+const favorites = document.querySelector(".favorites-content");
+favorites.addEventListener("mousemove", e => {
+  if (e.target.classList.contains("projects-card")) {
     const details = e.target.querySelector(".projects-card__details");
     e.target.addEventListener("mouseenter", event => {
       event.stopPropagation();

@@ -107,7 +107,10 @@ favBtns.forEach(el => {
         favContent.insertAdjacentHTML('afterbegin', generateFavoriteItem(img, srcset, title, info, link ,id))
         printQuantity()
       } else {
-        
+        let id = el.closest('.swiper-slide').dataset.id
+        favContent.querySelector(`[data-id="${id}"]`).remove()
+        document.querySelector(`[data-id="${id}"]`).querySelector('.btn--like').classList.remove('active')
+        printQuantity()
       }
     })
   }

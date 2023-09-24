@@ -1,5 +1,5 @@
 :root {
-  --font-family: "PP Neue Montreal", sans-serif;
+  --font-family: "PP Neue Montreal";
   --content-width: 1170px;
   --container-offset: 15px;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
@@ -32,92 +32,50 @@
 /* stylelint-disable value-keyword-case */
 @font-face {
   font-family: "Aeonik Pro";
-  src: url("../fonts/Aeonik-Pro-Bold.woff2") format("woff2");
+  src: url("./../fonts/./../fonts/Aeonik-Pro-Bold.woff2") format("woff2");
   font-weight: 700;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
   font-family: "Aeonik Pro";
-  src: url("../fonts/Aeonik-Pro-Regular-Italic.woff2") format("woff2");
+  src: url("./../fonts/./../fonts/Aeonik-Pro-Regular-Italic.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
   font-style: italic;
 }
 @font-face {
   font-family: "Aeonik Pro TRIAL";
-  src: url("../fonts/AeonikProTRIAL-Bold.woff2") format("woff2");
+  src: url("./../fonts/./../fonts/AeonikProTRIAL-Bold.woff2") format("woff2");
   font-weight: 700;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
   font-family: "PP Telegraf";
-  src: url("../fonts/PPTelegraf-UltraBold.woff2") format("woff2");
+  src: url("./../fonts/./../fonts/PPTelegraf-UltraBold.woff2") format("woff2");
   font-weight: 800;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
   font-family: "PP Neue Montreal";
-  src: url("../fonts/PPNeueMontreal-Bold.woff2") format("woff2");
+  src: url("./../fonts/../fonts/PPNeueMontrealBold.woff2") format("woff2");
   font-weight: 700;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
   font-family: "PP Neue Montreal";
-  src: url("../fonts/PPNeueMontreal-Regular.woff2") format("woff2");
+  src: url("./../fonts/../fonts/PPNeueMontrealRegular.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
   font-family: "PP Neue Montreal";
-  src: url("../fonts/PPNeueMontreal-Medium.woff2") format("woff2");
+  src: url("./../fonts/../fonts/PPNeueMontrealMedium.woff2") format("woff2");
   font-weight: 500;
-  font-display: swap;
-  font-style: normal;
-}
-@font-face {
-  font-family: "PP Neue Montreal";
-  src: url("./../fonts/PPNeueMontreal-Regular") format("woff2");
-  font-weight: 400;
-  font-display: swap;
-  font-style: normal;
-}
-@font-face {
-  font-family: "PP Neue Montreal";
-  src: url("./../fonts/PPNeueMontreal-Medium") format("woff2");
-  font-weight: 500;
-  font-display: swap;
-  font-style: normal;
-}
-@font-face {
-  font-family: "PP Neue Montreal";
-  src: url("./../fonts/PPNeueMontreal-Bold") format("woff2");
-  font-weight: 700;
-  font-display: swap;
-  font-style: normal;
-}
-@font-face {
-  font-family: "PP Neue Montreal";
-  src: url("./../fonts/PPNeueMontreal-Medium") format("ttf");
-  font-weight: 500;
-  font-display: swap;
-  font-style: normal;
-}
-@font-face {
-  font-family: "PP Neue Montreal";
-  src: url("./../fonts/PPNeueMontreal-Bold") format("ttf");
-  font-weight: 700;
-  font-display: swap;
-  font-style: normal;
-}
-@font-face {
-  font-family: "PP Neue Montreal";
-  src: url("./../fonts/PPNeueMontreal-Regular") format("ttf");
-  font-weight: 400;
   font-display: swap;
   font-style: normal;
 }
@@ -927,7 +885,7 @@ a {
   display: inline-block;
   font-family: inherit;
 }
-.address__tel, .address__mail, .address__address {
+.address__tel, .address__whatsapp, .address__telega, .address__mail, .address__address {
   padding: 12px 0;
   padding-left: 36px;
   color: var(--black-brand-color);
@@ -942,7 +900,7 @@ a {
   background-repeat: no-repeat;
 }
 @media (min-width: 1440px) {
-  .address__tel, .address__mail, .address__address {
+  .address__tel, .address__whatsapp, .address__telega, .address__mail, .address__address {
     background-size: 2.4rem 2.4rem;
     padding-left: 3.6rem;
     font-size: 1.6rem;
@@ -953,6 +911,22 @@ a {
 }
 @media (any-hover: hover) {
   .address__tel:hover {
+    text-decoration: underline;
+  }
+}
+.address__whatsapp {
+  background-image: url("./../img/whatsapp-icon.svg");
+}
+@media (any-hover: hover) {
+  .address__whatsapp:hover {
+    text-decoration: underline;
+  }
+}
+.address__telega {
+  background-image: url("./../img/telegram-icon.svg");
+}
+@media (any-hover: hover) {
+  .address__telega:hover {
     text-decoration: underline;
   }
 }

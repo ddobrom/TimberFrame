@@ -8,6 +8,8 @@
     font-family: inherit;
   }
   &__tel,
+  &__whatsapp,
+  &__telega,
     &__mail,
     &__address  {
     padding: 12px 0;
@@ -35,6 +37,19 @@
       text-decoration: underline;
     }
   }
+  &__whatsapp {
+    background-image: url("./../img/whatsapp-icon.svg");
+    @include hover {
+      text-decoration: underline;
+    }
+  }
+  &__telega {
+    background-image: url("./../img/telegram-icon.svg");
+    @include hover {
+      text-decoration: underline;
+    }
+  }
+
   &__mail {
     background-image: url("./../img/mail-orange-icon.svg");
     @include hover {

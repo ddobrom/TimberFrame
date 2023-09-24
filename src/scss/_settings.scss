@@ -366,7 +366,7 @@ a {
   }
   @include mobile {
     font-size: 24px;
-    letter-spacing: normal;
+    letter-spacing: 0.48px;
   }
 }
 .subtitle {

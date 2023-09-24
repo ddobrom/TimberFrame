@@ -489,7 +489,7 @@ a {
 @media (max-width: 768px) {
   .title {
     font-size: 24px;
-    letter-spacing: normal;
+    letter-spacing: 0.48px;
   }
 }
 

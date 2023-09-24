@@ -2,6 +2,9 @@
   padding-top: 120px;
   padding-bottom: 160px;
   overflow: hidden;
+  @include mobile {
+    padding-bottom: 53px;
+  }
   &__title {
     margin-bottom: 60px;
     font-family: "Aeonik Pro";
@@ -12,6 +15,9 @@
     @media (min-width: 1440px) {
       margin-bottom: 6rem;
       font-size: 2.4rem;
+    }
+    @include mobile {
+      margin-bottom: 54px;
     }
   }
   &__block {
@@ -34,7 +40,6 @@
       margin-bottom: 6.4rem;
     }
     @include mobile {
-      padding-top: 80px;
       margin-bottom: 40px;
     }
   }

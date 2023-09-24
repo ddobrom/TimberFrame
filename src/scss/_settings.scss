@@ -180,6 +180,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
     @media (min-width: 1440px) {
       width: 4.6rem;
       height: 4.6rem;
@@ -353,7 +354,7 @@ a {
   color: var(--black-brand-color);
   font-size: 48px;
   font-weight: 500;
-  letter-spacing: 1.92px;
+  letter-spacing: 2.4px;
   line-height: normal;
   font-family: "PP Neue Montreal";
   &--white {
@@ -361,9 +362,11 @@ a {
   }
   @media (min-width: 1440px) {
     font-size: 4.8rem;
+    letter-spacing: 0.24rem;
   }
   @include mobile {
     font-size: 24px;
+    letter-spacing: normal;
   }
 }
 .subtitle {
@@ -377,6 +380,7 @@ a {
 
   @media (min-width: 1440px) {
     font-size: 1.8rem;
+    letter-spacing: 0.54rem;
   }
   @include mobile {
     font-size: 14px;
@@ -384,8 +388,6 @@ a {
   }
 }
 
-.sticky {
-}
 .flex-centered {
   justify-content: center !important;
 }
@@ -494,7 +496,7 @@ a {
   display: none;
   @include mobile {
     display: block;
-    height: 50px;
+    height: 60px;
     width: 100%;
     background-color: var(--white-color);
   }

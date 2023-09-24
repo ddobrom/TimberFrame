@@ -43,13 +43,6 @@
   }
   &__address {
     background-image: url("./../img/map-orange-icon.svg");
-    @include mobile {
-      background-image: none;
-      padding-left: 0;
-    }
-  }
-  @include mobile {
-    text-align: center;
   }
 }
 .menu {

@@ -3,13 +3,16 @@
   --offset: -100px;
   --finish-position: 0;
   overflow-x: hidden;
-  &__slide {
+  .swiper-slide {
     position: relative;
-    min-height: 100vh;
+
+  }
+  &__slide {
     background-position-y: center;
     background-position-x: left;
     background-size: 110% 100%;
     background-repeat: no-repeat;
+    min-height: 100vh;
 
     display: flex;
     align-items: center;
@@ -75,7 +78,7 @@
       }
     }
     @include mobile {
-      bottom: 90px;
+      bottom: 5%;
     }
     @media (min-width: 1440px){
       width: 4.8rem;
@@ -139,6 +142,7 @@
     &--watch {
       margin-right: 8px;
     }
+
   }
   &__buttons {
     display: flex;

@@ -1,45 +1,64 @@
 // @include font-face("Muller", "../fonts/MullerRegular", 400, normal);
-@include font-face("Aeonik Pro", "./../fonts/Aeonik-Pro-Bold", 700, normal);
+@include font-face("Aeonik Pro", "Aeonik-Pro-Bold", 700, normal);
 @include font-face(
   "Aeonik Pro",
-  "./../fonts/Aeonik-Pro-Regular-Italic",
+  "Aeonik-Pro-Regular-Italic",
   400,
   italic
 );
 @include font-face(
   "Aeonik Pro TRIAL",
-  "./../fonts/AeonikProTRIAL-Bold",
+  "AeonikProTRIAL-Bold",
   700,
   normal
 );
 
 @include font-face(
   "PP Telegraf",
-  "./../fonts/PPTelegraf-UltraBold",
+  "PPTelegraf-UltraBold",
   800,
   normal
 );
 
 @include font-face(
   "PP Neue Montreal",
-  "./../fonts/PPNeueMontreal-Bold",
+  "PPNeueMontreal-Bold",
   700,
   normal
 );
 @include font-face(
   "PP Neue Montreal",
-  "./../fonts/PPNeueMontreal-Regular",
+  "PPNeueMontreal-Regular",
   400,
   normal
 );
 @include font-face(
   "PP Neue Montreal",
-  "./../fonts/PPNeueMontreal-Medium",
+  "PPNeueMontreal-Medium",
   500,
   normal
 );
-
-
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("./../fonts/PPNeueMontreal-Regular") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("./../fonts/PPNeueMontreal-Medium") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("./../fonts/PPNeueMontreal-Bold") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
 
 @font-face {
   font-family: "PP Neue Montreal";

@@ -2,7 +2,7 @@
   padding-top: 120px;
   padding-bottom: 110px;
   overflow: hidden;
-  @media (min-width: 1440px){
+  @media (min-width: 1440px) {
     padding-top: 12rem;
     padding-bottom: 11rem;
   }
@@ -14,7 +14,7 @@
     margin: 0 auto;
     margin-bottom: 80px;
     max-width: 944px;
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       max-width: 94.4rem;
     }
   }
@@ -27,42 +27,41 @@
       justify-content: center;
     }
   }
-
 }
-
 
 .progress {
   transform: rotate(-90deg);
   transform-origin: center;
-  filter: drop-shadow( 0 0 2px var(--focus-color)) drop-shadow( 0 0 5px var(--focus-color)) drop-shadow( 0 0 10px var(--focus-color));
-  -webkit-filter: drop-shadow( 0 0 2px var(--focus-color)) drop-shadow( 0 0 5px var(--focus-color)) drop-shadow( 0 0 10px var(--focus-color));
-
+  filter: drop-shadow(0 0 2px var(--focus-color))
+    drop-shadow(0 0 5px var(--focus-color))
+    drop-shadow(0 0 10px var(--focus-color));
+  -webkit-filter: drop-shadow(0 0 2px var(--focus-color))
+    drop-shadow(0 0 5px var(--focus-color))
+    drop-shadow(0 0 10px var(--focus-color));
 }
 .progress-bg {
   transform: rotate(-90deg);
   transform-origin: center;
 }
 .res {
-
   position: relative;
   display: flex;
   align-items: center;
 
   width: 100%;
   max-width: 900px;
-  @media (min-width: 1440px){
+  @media (min-width: 1440px) {
     max-width: 90rem;
   }
   @include mobile {
     flex-direction: column;
     justify-content: center;
-
   }
   &__left {
     position: relative;
     margin-right: 40px;
 
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       margin-right: 4rem;
     }
     @include mobile {
@@ -87,7 +86,7 @@
     font-size: 120px;
     font-weight: 400;
     text-transform: uppercase;
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       font-size: 12rem;
     }
   }
@@ -105,7 +104,7 @@
       padding: 32px 16px;
       text-align: center;
     }
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       font-size: 4rem;
     }
   }
@@ -120,26 +119,27 @@
   width: 362px;
   height: 362px;
   overflow: visible;
-  @media (min-width: 1440px){
+  @media (min-width: 1440px) {
     width: 36.2rem;
     height: 36.2rem;
   }
-  @media (max-width: 375px){
+  @media (max-width: 375px) {
     width: 320px;
     height: 320px;
   }
 }
-.progress, .progress-bg {
+.progress,
+.progress-bg {
   cx: 181px;
   cy: 181px;
   r: 174px;
 
-  @media (min-width: 1440px){
+  @media (min-width: 1440px) {
     cx: 18.1rem;
     cy: 18.1rem;
     r: 17.4rem;
   }
-  @media (max-width: 375px){
+  @media (max-width: 375px) {
     cx: 160px;
     cy: 160px;
     r: 152px;

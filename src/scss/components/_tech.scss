@@ -1,7 +1,12 @@
 .tech {
+  padding-top: 80px;
   padding-bottom: 80px;
   overflow: hidden;
   // background-color: rgb(69, 111, 225)
+  @media (min-width: 1440px){
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
   @include mobile {
     padding-bottom: 160px;
   }

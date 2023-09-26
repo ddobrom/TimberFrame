@@ -10,23 +10,30 @@
       <div class="swiper slider-popular__content swiper-no-swiping">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <div class="popular-content__item popular-card container" data-item-id="1">
+            <div
+              class="popular-content__item popular-card container"
+              data-item-id="1"
+            >
               <h3 class="popular-card__title">Vuotta</h3>
               <ul class="popular-card__list list-reset">
                 <li class="popular-card__item popular-card__item--sq">
-                  <span class="popular-card__figure">275</span><span>м<sup>2</sup></span>
+                  <span class="popular-card__figure">275</span
+                  ><span>м<sup>2</sup></span>
                 </li>
                 <li class="popular-card__item popular-card__item--fl">
                   <span class="popular-card__figure">2</span><span>этажа</span>
                 </li>
                 <li class="popular-card__item popular-card__item--bed">
-                  <span class="popular-card__figure">4</span><span>спальни</span>
+                  <span class="popular-card__figure">4</span
+                  ><span>спальни</span>
                 </li>
                 <li class="popular-card__item popular-card__item--bath">
-                  <span class="popular-card__figure">3</span><span>санузла</span>
+                  <span class="popular-card__figure">3</span
+                  ><span>санузла</span>
                 </li>
                 <li class="popular-card__item popular-card__item--pl">
-                  <span class="popular-card__figure">153</span><span>м<sup>2</sup></span>
+                  <span class="popular-card__figure">153</span
+                  ><span>м<sup>2</sup></span>
                 </li>
               </ul>
               <p class="popular-card__desc">
@@ -35,7 +42,9 @@
                 жилья.
               </p>
               <div class="popular-card__row mob-dis">
-                <a href="#" class="btn btn--fill slide__btn popular-card__more">Подробнее</a>
+                <a href="#" class="btn btn--fill slide__btn popular-card__more"
+                  >Подробнее</a
+                >
                 <button
                   class="btn btn--like btn--like-dark btn--stroke btn-reset"
                 >
@@ -47,23 +56,30 @@
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="popular-content__item popular-card container" data-item-id="2">
+            <div
+              class="popular-content__item popular-card container"
+              data-item-id="2"
+            >
               <h3 class="popular-card__title">Nisalahti</h3>
               <ul class="popular-card__list list-reset">
                 <li class="popular-card__item popular-card__item--sq">
-                  <span class="popular-card__figure">275</span><span>м<sup>2</sup></span>
+                  <span class="popular-card__figure">275</span
+                  ><span>м<sup>2</sup></span>
                 </li>
                 <li class="popular-card__item popular-card__item--fl">
                   <span class="popular-card__figure">2</span><span>этажа</span>
                 </li>
                 <li class="popular-card__item popular-card__item--bed">
-                  <span class="popular-card__figure">4</span><span>спальни</span>
+                  <span class="popular-card__figure">4</span
+                  ><span>спальни</span>
                 </li>
                 <li class="popular-card__item popular-card__item--bath">
-                  <span class="popular-card__figure">3</span><span>санузла</span>
+                  <span class="popular-card__figure">3</span
+                  ><span>санузла</span>
                 </li>
                 <li class="popular-card__item popular-card__item--pl">
-                  <span class="popular-card__figure">153</span><span>м<sup>2</sup></span>
+                  <span class="popular-card__figure">153</span
+                  ><span>м<sup>2</sup></span>
                 </li>
               </ul>
               <p class="popular-card__desc">
@@ -72,7 +88,9 @@
                 жилья.
               </p>
               <div class="popular-card__row mob-dis">
-                <a href="#" class="btn btn--fill slide__btn popular-card__more">Подробнее</a>
+                <a href="#" class="btn btn--fill slide__btn popular-card__more"
+                  >Подробнее</a
+                >
                 <button
                   class="btn btn--like btn--like-dark btn--stroke btn-reset"
                 >
@@ -101,38 +119,62 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <a href="#" class="popular__img">
-              <img
-                src="./img/cards/card1-1x.jpg"
-                srcset="./img/cards/card1-1x.jpg 1x, ./img/cards/card1-2x.jpg 2x, ./img/cards/card1-3x.jpg 3x"
-                alt="card1"
-                data-item-id="1"
-              />
+              <picture>
+                <source
+                  srcset=""
+                  data-item-id="1"
+                  data-img-srcset="./img/cards/popular1.webp"
+                />
+                <img
+                  src=""
+                  alt="card1"
+                  data-img-src="./img/cards/popular1.jpeg"
+                  data-item-id="1"
+                />
+              </picture>
             </a>
             <div class="popular-mob__controls">
-            <div class="popular-card__row">
-              <a href="#" class="btn btn--fill slide__btn popular-card__more">Подробнее</a>
-              <button class="btn btn--like btn--like btn--stroke btn-reset">
-                <svg>
-                  <use xlink:href="img/sprite.svg#like-icon"></use>
-                </svg>
-              </button>
+              <div class="popular-card__row">
+                <a href="#" class="btn btn--fill slide__btn popular-card__more"
+                  >Подробнее</a
+                >
+                <button class="btn btn--like btn--like btn--stroke btn-reset">
+                  <svg>
+                    <use xlink:href="img/sprite.svg#like-icon"></use>
+                  </svg>
+                </button>
+              </div>
             </div>
-          </div>
           </div>
           <div class="swiper-slide">
             <a href="#" class="popular__img">
-              <img src="./img/hero-bg-1.jpg" alt="card2" data-item-id="2"/>
+              <picture>
+                <source
+                  srcset=""
+                  type="image/webp"
+                  data-item-id="2"
+                  data-img-srcset="./img/hero/hero1-2x.webp"
+                />
+                <img
+                  src=""
+                  alt="card2"
+                  data-item-id="2"
+                  data-img-src="./img/hero/hero1-2x.jpeg"
+                />
+              </picture>
             </a>
             <div class="popular-mob__controls">
-            <div class="popular-card__row">
-              <a href="#" class="btn btn--fill slide__btn popular-card__more">Подробнее</a>
-              <button class="btn btn--like btn--like btn--stroke btn-reset">
-                <svg>
-                  <use xlink:href="img/sprite.svg#like-icon"></use>
-                </svg>
-              </button>
+              <div class="popular-card__row">
+                <a href="#" class="btn btn--fill slide__btn popular-card__more"
+                  >Подробнее</a
+                >
+                <button class="btn btn--like btn--like btn--stroke btn-reset">
+                  <svg>
+                    <use xlink:href="img/sprite.svg#like-icon"></use>
+                  </svg>
+                </button>
+              </div>
             </div>
-      </div>
           </div>
         </div>
       </div>
@@ -146,7 +188,6 @@
       >
         <span></span>
       </div>
-
     </div>
   </div>
   <a href="#" class="btn btn--fill">Подобрать проект</a>

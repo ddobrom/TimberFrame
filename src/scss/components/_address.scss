@@ -10,8 +10,8 @@
   &__tel,
   &__whatsapp,
   &__telega,
-    &__mail,
-    &__address  {
+  &__mail,
+  &__address {
     padding: 12px 0;
     padding-left: 36px;
     color: var(--black-brand-color);
@@ -24,12 +24,11 @@
     background-position: left center;
     background-size: 24px 24px;
     background-repeat: no-repeat;
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       background-size: 2.4rem 2.4rem;
       padding-left: 3.6rem;
       font-size: 1.6rem;
     }
-
   }
   &__tel {
     background-image: url("./../img/call-orange-icon.svg");
@@ -72,7 +71,7 @@
       font-family: "PP Neue Montreal";
       font-style: normal;
       line-height: normal;
-      @media (min-width: 1440px){
+      @media (min-width: 1440px) {
         font-size: 1.2rem;
       }
       @include mobile {
@@ -93,7 +92,7 @@
         text-align: left;
         padding-left: 36px;
       }
-      @media (min-width: 1440px){
+      @media (min-width: 1440px) {
         max-width: 17rem;
       }
     }

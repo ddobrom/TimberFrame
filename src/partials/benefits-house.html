@@ -3,10 +3,10 @@
     Преимущества деревянного дома
   </h2>
   <div class="wrapper">
-    <div class="parallax ">
-          <div class="parallax__wrapper">
-            <div class="parallax__body"></div>
-          </div>
+    <div class="parallax">
+      <div class="parallax__wrapper">
+        <div class="parallax__body"></div>
+      </div>
     </div>
     <div
       class="benefits-house__content benefits-house__content--disabled house-content"
@@ -38,17 +38,52 @@
               </p>
             </div>
           </div>
-          <div class="house-content__image">
-            <img src="./img/benefits-house-1.jpg" alt="House image" data-parallax="big-img" id="bh1"/>
-            <div class="house-content__image--mini" style="width: 45%">
-              <img src="" alt="House image mini" data-parallax="small-img" id="bh2" data-img-src="./img/benefits-house-02.jpg"/>
+          <div class="house-content__image" id="bh1">
+            <picture
+              class="rellax"
+              data-rellax-speed="3"
+              data-rellax-percentage="1"
+            >
+              <source srcset="./img/bh/bh1.webp" type="image/webp" />
+              <img src="./img/bh/bh1.jpeg" alt="House image" loading="lazy" />
+            </picture>
+            <div
+              class="house-content__image--mini rellax house-content__image--mini-mob"
+              style="width: 45%; transform: translateY(50%)"
+              data-rellax-speed="4"
+              data-rellax-percentage="1"
+            >
+              <picture>
+                <source srcset="./img/bh/bh2.webp" type="image.webp" />
+                <img
+                  src=""
+                  alt="House image mini"
+                  data-img-src="./img/bh/bh2.jpeg"
+                />
+              </picture>
             </div>
           </div>
         </div>
       </div>
       <div class="house-content__grid mob-order-3 container">
-        <div class="house-content__image" data-parallax="big-img">
-          <img src="./img/benefits-house-03.jpg" alt="House image" id="bh3" />
+        <div class="house-content__image">
+          <picture
+            class="rellax"
+            data-rellax-speed="3"
+            data-rellax-mobile-speed="6"
+            data-rellax-tablet-speed="6"
+            data-rellax-percentage="0.3"
+            style="transform: translateY(40%)"
+          >
+            <source srcset="./img/bh/bh3.webp" type="image/webp" />
+            <img
+              src="./img/bh/bh3.jpeg"
+              alt="House image"
+              id="bh3"
+              loading="lazy"
+              height="400"
+            />
+          </picture>
         </div>
       </div>
       <div class="house-content__grid container">
@@ -77,19 +112,35 @@
         </div>
         <div
           class="house-content__image house-content__image--last flex-centered mob-dis"
+          id="bh4"
         >
-          <img
-            src="./img/benefits-house-04.jpg"
-            alt="House"
-            style="width: 70%"
-            id="bh4"
-          />
+          <picture
+            class="rellax"
+            data-rellax-speed="2"
+            data-rellax-percentage="1"
+            style="transform: translateY(20%)"
+          >
+            <source srcset="./img/bh/bh4.webp" type="image/webp" />
+            <img
+              src="./img/bh/bh4.jpeg"
+              alt="House"
+              style="width: 70%"
+              height="400"
+              width="400"
+            />
+          </picture>
         </div>
       </div>
     </div>
-
   </div>
-  <div class="benefits-house__mob-photo">
-    <img src="" alt="house image" id="bh5" data-img-src="./img/benefits-house-04.jpg">
+  <div
+    class="benefits-house__mob-photo rellax"
+    data-rellax-speed="2"
+    data-rellax-percentage="0.8"
+  >
+    <picture>
+      <source srcset="./img/bh/bh4.webp" type="image/webp" />
+      <img src="" alt="house image" data-img-src="./img/bh/bh4.jpeg" />
+    </picture>
   </div>
 </section>

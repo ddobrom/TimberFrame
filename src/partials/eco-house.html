@@ -10,12 +10,15 @@
     </p>
   </div>
   <div class="eco-house__content house-content">
-    <img
-      src=""
-      alt="Clouds"
-      class="parallax__clouds"
-      data-img-src="./img/clouds.png"
-    />
+    <picture>
+      <source srcset="" type="image/webp" data-img-src="./img/clouds.webp" />
+      <img
+        src=""
+        alt="Clouds"
+        class="parallax__clouds"
+        data-img-src="./img/clouds.png"
+      />
+    </picture>
     <div class="house-content__container">
       <div class="house-content__grid house-content__row--dark">
         <div
@@ -42,25 +45,33 @@
             </p>
           </div>
         </div>
-        <div class="house-content__image" style="justify-content: flex-end">
-          <img
-            src="./img/eco/eco1.jpg"
-            srcset="./img/eco/eco1-2x.jpg 2x, ./img/eco/eco1-3x.jpg 3x"
-            alt="Eco House 1"
-            id="eco1"
-          />
-          <div
-            class="house-content__image--mini house-content__image--eco-mini-1"
-            style="width: 55%"
+        <div
+          class="house-content__image"
+          style="justify-content: flex-end; transform: translateY(10%)"
+        >
+          <picture
+            class="rellax"
+            data-rellax-speed="2"
+            data-rellax-percentage="1"
           >
-            <img
-              src=""
-              srcset=""
-              alt="Eco House 2"
-              id="eco2"
-              data-img-src="./img/eco/eco2.jpg"
-              data-img-srcset="./img/eco/eco2-2x.jpg 2x, ./img/eco/eco2-3x.jpg 3x"
-            />
+            <source srcset="./img/eco/eco1.webp" type="image/webp" />
+            <img src="./img/eco/eco1.jpeg" alt="Eco House 1" id="eco1" />
+          </picture>
+          <div
+            class="house-content__image--mini house-content__image--eco-mini-1 rellax"
+            data-rellax-speed="4"
+            data-rellax-percentage="1"
+            style="width: 55%; transform: translateY(60%)"
+          >
+            <picture>
+              <source srcset="./img/eco/eco2.webp" type="image/webp" />
+              <img
+                src=""
+                alt="Eco House 2"
+                id="eco2"
+                data-img-src="./img/eco/eco2.jpeg"
+              />
+            </picture>
           </div>
         </div>
       </div>
@@ -84,26 +95,35 @@
         </div>
       </div>
       <div class="house-content__image mob-order-3">
-        <img
-          src="./img/eco/eco3.jpg"
-          srcset="./img/eco/eco3-2x.jpg 2x, ./img/eco/eco3-3x.jpg 3x"
-          alt="Eco House 3"
-          id="eco3"
-          style="width: 80%"
-        />
-        <div
-          class="house-content__image--mini house-content__image--eco-mini-2"
-          style="width: 55%; right: 30px"
+        <picture
+          class="rellax"
+          data-rellax-speed="2"
+          data-rellax-percentage="1"
         >
+          <source srcset="./img/eco/eco3.webp" />
           <img
-            src=""
-            srcset=""
-            alt="Eco House 4"
-            id="eco4"
-            width="100%"
-            data-img-src="./img/eco/eco4.jpg"
-            data-img-srcset="./img/eco/eco4-2x.jpg 2x, ./img/eco/eco4-3x.jpg 3x"
+            src="./img/eco/eco3.jpeg"
+            alt="Eco House 3"
+            id="eco3"
+
           />
+        </picture>
+        <div
+          class="house-content__image--mini house-content__image--eco-mini-2 rellax"
+          style="width: 55%; right: 30px; transform: translateY(110%)"
+          data-rellax-speed="4"
+          data-rellax-percentage="1"
+        >
+          <picture>
+            <source srcset="./img/eco/eco4.webp" />
+            <img
+              src=""
+              alt="Eco House 4"
+              id="eco4"
+              width="100%"
+              data-img-src="./img/eco/eco4.jpeg"
+            />
+          </picture>
         </div>
       </div>
     </div>
@@ -126,21 +146,25 @@
         class="house-content__image house-content__image--big"
         style="justify-content: flex-end"
       >
-        <img
-          src="./img/eco/eco5.jpg"
-          srcset="./img/eco/eco5-2x.jpg 2x, ./img/eco/eco5-3x.jpg 3x"
-          alt="Eco House 5"
-          id="eco5"
-        />
+        <picture
+          class="rellax"
+          data-rellax-speed="2"
+          data-rellax-percentage="1"
+        >
+          <source srcset="./img/eco/eco5.webp" type="image/webp" />
+          <img src="./img/eco/eco5.jpeg" alt="Eco House 5" id="eco5" />
+        </picture>
       </div>
     </div>
-    <div class="house-content__image--centered">
-      <img
-        src="./img/eco/eco6.jpg"
-        srcset="./img/eco/eco6-2x.jpg 2x, ./img/eco/eco6-3x.jpg 3x"
-        alt="Eco House 6"
-        id="eco6"
-      />
+    <div
+      class="house-content__image--centered rellax"
+      data-rellax-speed="3"
+      data-rellax-percentage="0.5"
+    >
+      <picture>
+        <source srcset="./img/eco/eco6.webp" type="image/webp" />
+        <img src="./img/eco/eco6.jpeg" alt="Eco House 6" id="eco6" />
+      </picture>
     </div>
   </div>
 </section>

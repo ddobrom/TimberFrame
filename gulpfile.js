@@ -18,8 +18,8 @@ const gulpif = require("gulp-if");
 const notify = require("gulp-notify");
 const image = require("gulp-imagemin");
 const { readFileSync } = require("fs");
-const typograf = require("gulp-typograf");
-// const webp = require('gulp-webp');
+// const typograf = require("gulp-typograf");
+const webp = require("gulp-webp");
 const mainSass = gulpSass(sass);
 const webpackStream = require("webpack-stream");
 const plumber = require("gulp-plumber");
@@ -243,27 +243,24 @@ const resources = () => {
 const images = () => {
   return src([`${paths.srcImgFolder}/**/**.{jpg,jpeg,png,svg}`])
     .pipe(
-      gulpif(
-        isProd,
         image([
           image.mozjpeg({
             quality: 80,
             progressive: true,
           }),
           image.optipng({
-            optimizationLevel: 2,
+            optimizationLevel: 3,
           }),
         ])
-      )
     )
     .pipe(dest(paths.buildImgFolder));
 };
 
-// const webpImages = () => {
-//   return src([`${paths.srcImgFolder}/**/**.{jpg,jpeg,png}`])
-//     .pipe(webp())
-//     .pipe(dest(paths.buildImgFolder))
-// };
+const webpImages = () => {
+  return src([`${paths.srcImgFolder}/**/**.{jpg,jpeg,png}`])
+    .pipe(webp())
+    .pipe(dest(paths.buildImgFolder));
+};
 
 const htmlInclude = () => {
   return src([`${srcFolder}/*.html`])
@@ -273,10 +270,15 @@ const htmlInclude = () => {
         basepath: "@file",
       })
     )
+
     .pipe(dest(buildFolder))
     .pipe(browserSync.stream());
 };
-
+// .pipe(
+//   typograf({
+//     locale: ["ru", "en-US"],
+//   })
+// )
 const watchFiles = () => {
   browserSync.init({
     server: {
@@ -290,7 +292,7 @@ const watchFiles = () => {
   watch(`${srcFolder}/*.html`, htmlInclude);
   watch(`${paths.resourcesFolder}/**`, resources);
   watch(`${paths.srcImgFolder}/**/**.{jpg,jpeg,png,svg}`, images);
-  // watch(`${paths.srcImgFolder}/**/**.{jpg,jpeg,png}`, webpImages);
+  watch(`${paths.srcImgFolder}/**/**.{jpg,jpeg,png}`, webpImages);
   watch(paths.srcSvg, svgSprites);
 };
 
@@ -360,6 +362,7 @@ exports.default = series(
   styles,
   resources,
   images,
+  webpImages,
   svgSprites,
   watchFiles
 );
@@ -371,6 +374,7 @@ exports.backend = series(
   stylesBackend,
   resources,
   images,
+  webpImages,
   svgSprites
 );
 
@@ -382,6 +386,7 @@ exports.build = series(
   styles,
   resources,
   images,
+  webpImages,
   svgSprites,
   htmlMinify
 );

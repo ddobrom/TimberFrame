@@ -4,14 +4,17 @@
   </h2>
   <div class="services-section__container">
     <div class="services-section__image">
-      <img
-        src="./img/services/services-ph.jpg"
-        srcset="
-          ./img/services/services-ph-2x.jpg 2x,
-          ./img/services/services-ph-3x.jpg 3x
-        "
-        alt="Services ph"
-      />
+      <picture>
+        <source srcset="./img/services/services-ph.webp">
+        <img
+          src="./img/services/services-ph.jpg"
+          srcset="
+            ./img/services/services-ph-2x.jpg 2x,
+            ./img/services/services-ph-3x.jpg 3x
+          "
+          alt="Services ph"
+        />
+      </picture>
     </div>
     <div
       class="services-section__right container services-section-right__container"

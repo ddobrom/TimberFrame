@@ -4,7 +4,7 @@ html {
 }
 body,
 html {
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
 }
 
 *,
@@ -283,7 +283,6 @@ a {
     background-size: 3rem 3rem;
     border-radius: 0.4rem;
   }
-
 }
 .up-page-btn {
   display: none;
@@ -452,17 +451,13 @@ a {
     left: 0;
     top: 0;
     width: 100%;
-    height: 150vh;
-    transform: translateY(-50%);
+    height: 220vh;
+
     background: linear-gradient(
       180deg,
       #020c0c 42.13%,
       rgba(255, 255, 255, 0) 100%
     );
-    @include mobile {
-      height: 210vh;
-      transform: translateY(-55%);
-    }
   }
 }
 .simplebar-track {
@@ -478,7 +473,6 @@ a {
   background-color: #d9d9d9;
 }
 .simplebar-placeholder {
-
 }
 .simplebar-scrollbar::before {
   left: 0;
@@ -506,5 +500,47 @@ a {
   @include mobile {
     display: block;
     position: absolute;
+  }
+}
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+.house-content__image {
+  picture {
+    source,
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+.mob-pb-ph {
+  transform: translateY(50%);
+  @include mobile {
+    transform: translateY(0);
+  }
+}
+#eco3 {
+  width: 80%;
+
+  @include mobile {
+    width: 100%;
   }
 }

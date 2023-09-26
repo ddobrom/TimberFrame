@@ -7,7 +7,6 @@ for(let i = 0; i <= 1.0; i+= 0.005){
 }
 const textObserver = new IntersectionObserver(callbackObs, {
   threshold: points,
-  // rootMargin: '100px 0px 100px 0px'
 })
 textObserver.observe(document.querySelector('.tech'))
 textObserver.observe(menuItem[0])

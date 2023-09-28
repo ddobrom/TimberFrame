@@ -29,16 +29,16 @@
       background-color: rgba(#000, 0.4);
     }
     &--nisalahti {
-      background-image: image-set( url("./../img/hero/hero1-3x.jpg") 3x, url("./../img/hero/hero1-2x.jpg") 2x);
+      background-image: image-set(  url("./../img/hero/hero1-2x.jpg") 2x);
     }
     &--lautala {
-      background-image: image-set( url("./../img/hero/hero2-3x.jpg") 3x, url("./../img/hero/hero2-2x.jpg") 2x);
+      background-image: image-set(  url("./../img/hero/hero2-2x.jpg") 2x);
     }
     &--vaskela {
-      background-image: image-set( url("./../img/hero/hero3-3x.jpg") 3x, url("./../img/hero/hero3-2x.jpg") 2x);
+      background-image: image-set(  url("./../img/hero/hero3-2x.jpg") 2x);
     }
     &--ostamo {
-      background-image: image-set( url("./../img/hero/hero4-3x.jpg") 3x, url("./../img/hero/hero4-2x.jpg") 2x);
+      background-image: image-set(  url("./../img/hero/hero4-2x.jpg") 2x);
     }
   }
   &__btn-down {

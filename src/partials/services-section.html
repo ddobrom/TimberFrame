@@ -5,13 +5,19 @@
   <div class="services-section__container">
     <div class="services-section__image">
       <picture>
-        <source srcset="./img/services/services-ph.webp">
+        <source
+          srcset="./img/services-ph.webp"
+          type="image/webp"
+          media="(max-width: 1440px)"
+        />
+        <source
+          srcset="./img/services-ph_2x.webp 2x"
+          type="image/webp"
+          media="(min-width: 1440px)"
+        />
         <img
-          src="./img/services/services-ph.jpg"
-          srcset="
-            ./img/services/services-ph-2x.jpg 2x,
-            ./img/services/services-ph-3x.jpg 3x
-          "
+          src="./img/services-ph.jpg"
+          srcset="./img/services-ph_2x.jpg 2x"
           alt="Services ph"
         />
       </picture>

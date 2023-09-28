@@ -44,8 +44,22 @@
               data-rellax-speed="3"
               data-rellax-percentage="1"
             >
-              <source srcset="./img/bh/bh1.webp" type="image/webp" />
-              <img src="./img/bh/bh1.jpeg" alt="House image" loading="lazy" />
+              <source
+                srcset="./img/bh2/bh1.webp"
+                type="image/webp"
+                media="(max-width: 1440px)"
+              />
+              <source
+                srcset="./img/bh2/bh1_2x.webp 2x"
+                type="image/webp"
+                media="(min-width: 1440px)"
+              />
+              <img
+                src="./img/bh2/bh1.jpg"
+                srcset="./img/bh2/bh1_2x.jpg 2x"
+                alt="House image"
+                loading="lazy"
+              />
             </picture>
             <div
               class="house-content__image--mini rellax house-content__image--mini-mob"
@@ -54,11 +68,21 @@
               data-rellax-percentage="1"
             >
               <picture>
-                <source srcset="./img/bh/bh2.webp" type="image.webp" />
+                <source
+                  srcset="./img/bh/bh2.webp"
+                  type="image.webp"
+                  media="(max-width: 1440px)"
+                />
+                <source
+                  srcset="./img/bh2/bh2_2x.webp 2x"
+                  type="image.webp"
+                  media="(min-width: 1440px)"
+                />
                 <img
                   src=""
                   alt="House image mini"
-                  data-img-src="./img/bh/bh2.jpeg"
+                  data-img-src="./img/bh2/bh2.jpg"
+                  data-img-srcset="./img/bh2/bh2_2x.jpg"
                 />
               </picture>
             </div>
@@ -75,9 +99,19 @@
             data-rellax-percentage="0.3"
             style="transform: translateY(40%)"
           >
-            <source srcset="./img/bh/bh3.webp" type="image/webp" />
+            <source
+              srcset="./img/bh2/bh3.webp"
+              type="image/webp"
+              media="(max-width: 1440px)"
+            />
+            <source
+              srcset="./img/bh2/bh3_2x.webp"
+              type="image/webp"
+              media="(min-width: 1440px)"
+            />
             <img
-              src="./img/bh/bh3.jpeg"
+              src="./img/bh2/bh3.jpg"
+              srcset="./img/bh2/bh3_2x.jpg 2x"
               alt="House image"
               id="bh3"
               loading="lazy"
@@ -120,9 +154,19 @@
             data-rellax-percentage="1"
             style="transform: translateY(20%)"
           >
-            <source srcset="./img/bh/bh4.webp" type="image/webp" />
+            <source
+              srcset="./img/bh2/bh4.webp"
+              type="image/webp"
+              media="(max-width: 1440px)"
+            />
+            <source
+              srcset="./img/bh2/bh4_2x.webp"
+              type="image/webp"
+              media="(min-width: 1440px)"
+            />
             <img
-              src="./img/bh/bh4.jpeg"
+              src="./img/bh2/bh4.jpg"
+              srcset="./img/bh2/bh4_2x.jpg"
               alt="House"
               style="width: 70%"
               height="400"
@@ -139,7 +183,7 @@
     data-rellax-percentage="0.8"
   >
     <picture>
-      <source srcset="./img/bh/bh4.webp" type="image/webp" />
+      <source srcset="./img/bh2/bh4.webp" type="image/webp" />
       <img src="" alt="house image" data-img-src="./img/bh/bh4.jpeg" />
     </picture>
   </div>

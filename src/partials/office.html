@@ -44,22 +44,44 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="office__img">
-            <img src="./img/office-01.jpg" alt="office image 1" />
+            <picture>
+              <source
+                srcset="./img/office1.webp"
+                type="image/webp"
+                media="(max-width: 1440px)"
+              />
+              <source
+                srcset="./img/office1_2x.webp 2x"
+                type="image/webp"
+                media="(min-width: 1440px)"
+              />
+              <img
+                src="./img/office1.jpg"
+                srcset="./img/office1_2x.jpg 2x"
+                alt="office image 1"
+              />
+            </picture>
           </div>
         </div>
         <div class="swiper-slide">
           <div class="office__img">
-            <img src="./img/office-02.jpg" alt="office image 2" />
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="office__img">
-            <img src="./img/office-01.jpg" alt="office image 1" />
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="office__img">
-            <img src="./img/office-02.jpg" alt="office image 2" />
+            <picture>
+              <source
+                srcset="./img/office2.webp"
+                type="image/webp"
+                media="(max-width: 1440px)"
+              />
+              <source
+                srcset="./img/office2_2x.webp 2x"
+                type="image/webp"
+                media="(min-width: 1440px)"
+              />
+              <img
+                src="./img/office2.jpg"
+                srcset="./img/office2_2x.jpg 2x"
+                alt="office image 2"
+              />
+            </picture>
           </div>
         </div>
       </div>

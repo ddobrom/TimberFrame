@@ -1409,12 +1409,29 @@
                 <source
                   srcset=""
                   data-item-id="1"
-                  data-img-srcset="./img/cards/popular1.webp"
+                  data-img-srcset="./img/popular.webp"
+                  type="image/webp"
+                  media="(max-width: 1440px)"
+                />
+                <source
+                  srcset=""
+                  data-item-id="1"
+                  data-img-srcset="./img/popular_2x.webp 2x"
+                  type="image/webp"
+                  media="(min-width: 1440px)"
+                />
+                <source
+                  srcset=""
+                  data-item-id="1"
+                  data-img-srcset="./img/popular_3x.webp 3x"
+                  type="image/webp"
+                  media="(min-width: 2560px)"
                 />
                 <img
                   src=""
                   alt="card1"
-                  data-img-src="./img/cards/popular1.jpeg"
+                  data-img-src="./img/popular.jpg"
+                  data-img-srcset="./img/popular_2x.jpg 2x, ./img/popular_3x.jpg 3x"
                   data-item-id="1"
                 />
               </picture>
@@ -1486,13 +1503,19 @@
   <div class="services-section__container">
     <div class="services-section__image">
       <picture>
-        <source srcset="./img/services/services-ph.webp">
+        <source
+          srcset="./img/services-ph.webp"
+          type="image/webp"
+          media="(max-width: 1440px)"
+        />
+        <source
+          srcset="./img/services-ph_2x.webp 2x"
+          type="image/webp"
+          media="(min-width: 1440px)"
+        />
         <img
-          src="./img/services/services-ph.jpg"
-          srcset="
-            ./img/services/services-ph-2x.jpg 2x,
-            ./img/services/services-ph-3x.jpg 3x
-          "
+          src="./img/services-ph.jpg"
+          srcset="./img/services-ph_2x.jpg 2x"
           alt="Services ph"
         />
       </picture>
@@ -1555,14 +1578,23 @@
       <picture>
         <source
           srcset=""
-          data-img-srcset="./img/projects/project1.webp"
+          data-img-srcset="./img/projects2/projects1.webp"
           type="image/webp"
+          media="(max-width: 1440px)"
+        />
+        <source
+          srcset=""
+          data-img-srcset="./img/projects2/projects1_2x.webp 2x"
+          type="image/webp"
+          media="(min-width: 1440px)"
         />
         <img
           class="projects-card__img"
           src=""
+          srcset=""
           alt="Card"
-          data-img-src="./img/projects/project1.jpeg"
+          data-img-src="./img/projects2/projects1.jpg"
+          data-img-srcset="./img/projects2/projects1_2x.jpg 2x"
         />
       </picture>
       <div class="projects-card__info">
@@ -1610,14 +1642,23 @@
       <picture>
         <source
           srcset=""
-          data-img-srcset="./img//projects/project2.webp"
+          data-img-srcset="./img/projects2/projects2.webp"
           type="image/webp"
+          media="(max-width: 1440px)"
+        />
+        <source
+          srcset=""
+          data-img-srcset="./img//projects2/projects2_2x.webp 2x"
+          type="image/webp"
+          media="(min-width: 1440px)"
         />
         <img
           class="projects-card__img"
           src=""
+          srcset=""
           alt="Project 2."
-          data-img-src="./img/projects/project2.jpeg"
+          data-img-src="./img/projects2/projects2.jpeg"
+          data-img-srcset="./img/projects2/projects2_2x.jpeg 2x"
         />
       </picture>
       <div class="projects-card__info">
@@ -1665,14 +1706,23 @@
       <picture>
         <source
           srcset=""
-          data-img-srcset="./img/projects/project3.webp"
+          data-img-srcset="./img/projects2/projects3.webp"
           type="image/webp"
+          media="(max-width: 1440px)"
+        />
+        <source
+          srcset=""
+          data-img-srcset="./img/projects2/projects3_2x.webp 2x"
+          type="image/webp"
+          media="(min-width: 1440px)"
         />
         <img
           class="projects-card__img"
           src=""
+          srcset=""
           alt="Card"
-          data-img-src="./img/projects/project3.jpeg"
+          data-img-src="./img/projects2/projects3.jpg"
+          data-img-srcset="./img/projects2/projects3_2x.jpg 2x"
         />
       </picture>
       <div class="projects-card__info">
@@ -1721,13 +1771,21 @@
         <source
           srcset=""
           type="image/webp"
-          data-img-srcset="./img/projects/project4.webp"
+          data-img-srcset="./img/projects2/projects4.webp"
+          media="(max-width: 1440px)"
+        />
+        <source
+          srcset=""
+          type="image/webp"
+          data-img-srcset="./img/projects2/projects4_2x.webp 2x"
+          media="(min-width: 1440px)"
         />
         <img
           class="projects-card__img"
           src=""
           alt="Card"
-          data-img-src="./img/projects/project4.jpeg"
+          data-img-src="./img/projects2/projects4.jpg"
+          data-img-srcset="./img/projects2/projects4_2x.jpg 2x"
         />
       </picture>
       <div class="projects-card__info">
@@ -1821,8 +1879,22 @@
               data-rellax-speed="3"
               data-rellax-percentage="1"
             >
-              <source srcset="./img/bh/bh1.webp" type="image/webp" />
-              <img src="./img/bh/bh1.jpeg" alt="House image" loading="lazy" />
+              <source
+                srcset="./img/bh2/bh1.webp"
+                type="image/webp"
+                media="(max-width: 1440px)"
+              />
+              <source
+                srcset="./img/bh2/bh1_2x.webp 2x"
+                type="image/webp"
+                media="(min-width: 1440px)"
+              />
+              <img
+                src="./img/bh2/bh1.jpg"
+                srcset="./img/bh2/bh1_2x.jpg 2x"
+                alt="House image"
+                loading="lazy"
+              />
             </picture>
             <div
               class="house-content__image--mini rellax house-content__image--mini-mob"
@@ -1831,11 +1903,21 @@
               data-rellax-percentage="1"
             >
               <picture>
-                <source srcset="./img/bh/bh2.webp" type="image.webp" />
+                <source
+                  srcset="./img/bh/bh2.webp"
+                  type="image.webp"
+                  media="(max-width: 1440px)"
+                />
+                <source
+                  srcset="./img/bh2/bh2_2x.webp 2x"
+                  type="image.webp"
+                  media="(min-width: 1440px)"
+                />
                 <img
                   src=""
                   alt="House image mini"
-                  data-img-src="./img/bh/bh2.jpeg"
+                  data-img-src="./img/bh2/bh2.jpg"
+                  data-img-srcset="./img/bh2/bh2_2x.jpg"
                 />
               </picture>
             </div>
@@ -1852,9 +1934,19 @@
             data-rellax-percentage="0.3"
             style="transform: translateY(40%)"
           >
-            <source srcset="./img/bh/bh3.webp" type="image/webp" />
+            <source
+              srcset="./img/bh2/bh3.webp"
+              type="image/webp"
+              media="(max-width: 1440px)"
+            />
+            <source
+              srcset="./img/bh2/bh3_2x.webp"
+              type="image/webp"
+              media="(min-width: 1440px)"
+            />
             <img
-              src="./img/bh/bh3.jpeg"
+              src="./img/bh2/bh3.jpg"
+              srcset="./img/bh2/bh3_2x.jpg 2x"
               alt="House image"
               id="bh3"
               loading="lazy"
@@ -1897,9 +1989,19 @@
             data-rellax-percentage="1"
             style="transform: translateY(20%)"
           >
-            <source srcset="./img/bh/bh4.webp" type="image/webp" />
+            <source
+              srcset="./img/bh2/bh4.webp"
+              type="image/webp"
+              media="(max-width: 1440px)"
+            />
+            <source
+              srcset="./img/bh2/bh4_2x.webp"
+              type="image/webp"
+              media="(min-width: 1440px)"
+            />
             <img
-              src="./img/bh/bh4.jpeg"
+              src="./img/bh2/bh4.jpg"
+              srcset="./img/bh2/bh4_2x.jpg"
               alt="House"
               style="width: 70%"
               height="400"
@@ -1916,7 +2018,7 @@
     data-rellax-percentage="0.8"
   >
     <picture>
-      <source srcset="./img/bh/bh4.webp" type="image/webp" />
+      <source srcset="./img/bh2/bh4.webp" type="image/webp" />
       <img src="" alt="house image" data-img-src="./img/bh/bh4.jpeg" />
     </picture>
   </div>
@@ -1978,8 +2080,22 @@
             data-rellax-speed="2"
             data-rellax-percentage="1"
           >
-            <source srcset="./img/eco/eco1.webp" type="image/webp" />
-            <img src="./img/eco/eco1.jpeg" alt="Eco House 1" id="eco1" />
+            <source
+              srcset="./img/eco2/eco1.webp"
+              type="image/webp"
+              media="(max-width: 1440px)"
+            />
+            <source
+              srcset="./img/eco2/eco1_2x.webp 2x"
+              type="image/webp"
+              media="(min-width: 1440px)"
+            />
+            <img
+              src="./img/eco2/eco1.jpg"
+              srcset="./img/eco2/eco1_2x.jpg 2x"
+              alt="Eco House 1"
+              id="eco1"
+            />
           </picture>
           <div
             class="house-content__image--mini house-content__image--eco-mini-1 rellax"
@@ -1988,12 +2104,23 @@
             style="width: 55%; transform: translateY(60%)"
           >
             <picture>
-              <source srcset="./img/eco/eco2.webp" type="image/webp" />
+              <source
+                srcset="./img/eco2/eco2.webp"
+                type="image/webp"
+                media="(max-width: 1440px)"
+              />
+              <source
+                srcset="./img/eco2/eco2_2x.webp 2x"
+                type="image/webp"
+                media="(min-width: 1440px)"
+              />
               <img
                 src=""
+                srcset=""
                 alt="Eco House 2"
                 id="eco2"
-                data-img-src="./img/eco/eco2.jpeg"
+                data-img-src="./img/eco2/eco2.jpg"
+                data-img-srcset="./img/eco2/eco2_2x.jpg 2x"
               />
             </picture>
           </div>
@@ -2024,12 +2151,21 @@
           data-rellax-speed="2"
           data-rellax-percentage="1"
         >
-          <source srcset="./img/eco/eco3.webp" />
+          <source
+            srcset="./img/eco2/eco3.webp"
+            media="(max-width: 1440px)"
+            type="image/webp"
+          />
+          <source
+            srcset="./img/eco2/eco3_2x.webp"
+            media="(min-width: 1440px)"
+            type="image/webp"
+          />
           <img
-            src="./img/eco/eco3.jpeg"
+            src="./img/eco2/eco3.jpg"
+            srcset="./img/eco2/eco3_2x.jpg 2x"
             alt="Eco House 3"
             id="eco3"
-
           />
         </picture>
         <div
@@ -2039,13 +2175,24 @@
           data-rellax-percentage="1"
         >
           <picture>
-            <source srcset="./img/eco/eco4.webp" />
+            <source
+              srcset="./img/eco2/eco4.webp"
+              type="image/webp"
+              media="(max-width: 1440px)"
+            />
+            <source
+              srcset="./img/eco2/eco4_2x.webp"
+              type="image/webp"
+              media="(min-width: 1440px)"
+            />
             <img
               src=""
+              srcset=""
               alt="Eco House 4"
               id="eco4"
               width="100%"
-              data-img-src="./img/eco/eco4.jpeg"
+              data-img-src="./img/eco2/eco4.jpg"
+              data-img-srcset="./img/eco2/eco4_2x.jpg"
             />
           </picture>
         </div>
@@ -2075,8 +2222,22 @@
           data-rellax-speed="2"
           data-rellax-percentage="1"
         >
-          <source srcset="./img/eco/eco5.webp" type="image/webp" />
-          <img src="./img/eco/eco5.jpeg" alt="Eco House 5" id="eco5" />
+          <source
+            srcset="./img/eco2/eco5.webp"
+            type="image/webp"
+            media="(max-width: 1440px)"
+          />
+          <source
+            srcset="./img/eco2/eco5_2x.webp 2x"
+            type="image/webp"
+            media="(min-width: 1440px)"
+          />
+          <img
+            src="./img/eco2/eco5.jpg"
+            srcset="./img/eco2/eco5_2x.jpg 2x"
+            alt="Eco House 5"
+            id="eco5"
+          />
         </picture>
       </div>
     </div>
@@ -2086,8 +2247,22 @@
       data-rellax-percentage="0.5"
     >
       <picture>
-        <source srcset="./img/eco/eco6.webp" type="image/webp" />
-        <img src="./img/eco/eco6.jpeg" alt="Eco House 6" id="eco6" />
+        <source
+          srcset="./img/eco2/eco6.webp"
+          type="image/webp"
+          media="(max-width: 1440px)"
+        />
+        <source
+          srcset="./img/eco2/eco6_2x.webp"
+          type="image/webp"
+          media="(min-width: 1440px)"
+        />
+        <img
+          src="./img/eco2/eco6.jpg"
+          srcset="./img/eco2/eco6_2x.jpg 2x"
+          alt="Eco House 6"
+          id="eco6"
+        />
       </picture>
     </div>
   </div>
@@ -2356,22 +2531,44 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="office__img">
-            <img src="./img/office-01.jpg" alt="office image 1" />
+            <picture>
+              <source
+                srcset="./img/office1.webp"
+                type="image/webp"
+                media="(max-width: 1440px)"
+              />
+              <source
+                srcset="./img/office1_2x.webp 2x"
+                type="image/webp"
+                media="(min-width: 1440px)"
+              />
+              <img
+                src="./img/office1.jpg"
+                srcset="./img/office1_2x.jpg 2x"
+                alt="office image 1"
+              />
+            </picture>
           </div>
         </div>
         <div class="swiper-slide">
           <div class="office__img">
-            <img src="./img/office-02.jpg" alt="office image 2" />
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="office__img">
-            <img src="./img/office-01.jpg" alt="office image 1" />
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="office__img">
-            <img src="./img/office-02.jpg" alt="office image 2" />
+            <picture>
+              <source
+                srcset="./img/office2.webp"
+                type="image/webp"
+                media="(max-width: 1440px)"
+              />
+              <source
+                srcset="./img/office2_2x.webp 2x"
+                type="image/webp"
+                media="(min-width: 1440px)"
+              />
+              <img
+                src="./img/office2.jpg"
+                srcset="./img/office2_2x.jpg 2x"
+                alt="office image 2"
+              />
+            </picture>
           </div>
         </div>
       </div>

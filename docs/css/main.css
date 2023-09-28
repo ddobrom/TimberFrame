@@ -3157,7 +3157,7 @@ span.popular-card__figure {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: hidden;
+  overflow: visible;
 }
 .benefits-house__content.active {
   background-image: none;
@@ -3559,7 +3559,7 @@ span.popular-card__figure {
   position: relative;
   z-index: 2;
   padding-top: 120px;
-  background-image: url("./../img/forest.png");
+  background-image: url("./../img/forest.jpg");
   background-position: top -15% center;
   background-size: 100% auto;
   background-repeat: no-repeat;

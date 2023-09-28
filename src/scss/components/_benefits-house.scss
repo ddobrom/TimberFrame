@@ -40,7 +40,7 @@
     will-change: transform;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: visible;
     &.active {
       background-image: none;
       &::before {

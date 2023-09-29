@@ -3157,7 +3157,7 @@ span.popular-card__figure {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  overflow: visible;
+  overflow-x: hidden;
 }
 .benefits-house__content.active {
   background-image: none;

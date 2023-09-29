@@ -4,6 +4,7 @@
   padding-bottom: 120px;
 
   align-items: flex-start;
+  // background-color: ;
   @media (min-width: 1440px) {
     padding-top: 3.7rem;
     padding-bottom: 12rem;
@@ -40,7 +41,7 @@
     will-change: transform;
     display: flex;
     flex-direction: column;
-    overflow: visible;
+    overflow-x: hidden;
     &.active {
       background-image: none;
       &::before {

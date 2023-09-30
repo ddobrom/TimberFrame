@@ -1,7 +1,7 @@
 .house-content {
   &--expanded {
     padding-bottom: 148px;
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       padding-bottom: 14.8rem;
     }
     @include mobile {
@@ -10,7 +10,9 @@
   }
   &__container {
     position: relative;
+
     width: 100%;
+    max-width: 100%;
     padding-left: 30px;
     @include mobile {
       padding-left: unset;
@@ -18,18 +20,21 @@
     }
   }
   &__grid {
+    // вот сюда надо смотреть вылазит падла
     position: relative;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     justify-content: flex-start;
-    gap: 60px;
+    gap: 0 50px;
     margin-bottom: 27px;
     &--mt {
       margin-top: 190px;
       @include mobile {
         margin-top: 0;
-
       }
+    }
+    @media (min-width: 1440px) {
+      gap: 0 5rem;
     }
     @include mobile {
       grid-template-columns: 1fr;
@@ -38,18 +43,22 @@
   }
   &__title {
     margin-bottom: 45px;
-    @media (min-width: 1440px){
+    line-height: normal;
+    letter-spacing: 2.4px;
+    @media (min-width: 1440px) {
       margin-bottom: 4.5rem;
+      letter-spacing: 0.24rem;
     }
   }
   &__content {
+    max-width: 100%;
+    width: 100%;
     position: relative;
     z-index: 5;
     grid-column: 6 span;
-    margin-right: 60px;
-    width: 100%;
+
     order: 1;
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       margin-right: 6rem;
     }
     @include mobile {
@@ -59,7 +68,7 @@
     }
     &--gap {
       padding-top: 70px;
-      @media (min-width: 1440px){
+      @media (min-width: 1440px) {
         padding-top: 7rem;
       }
     }
@@ -69,7 +78,7 @@
     &--end {
       align-self: end;
       transform: translate(-30px, 25%);
-      @media (min-width: 1440px){
+      @media (min-width: 1440px) {
         transform: translate(-3rem, 25%);
       }
       @include mobile {
@@ -80,7 +89,7 @@
     &--small {
       grid-column: 4 span;
       margin-top: 30px;
-      @media (min-width: 1440px){
+      @media (min-width: 1440px) {
         margin-top: 3rem;
       }
       @include mobile {
@@ -91,13 +100,12 @@
   }
   &__btn {
     margin-bottom: 45px;
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       margin-bottom: 4.5rem;
     }
   }
   &__text {
     display: flex;
-    justify-content: space-between;
     p {
       flex: 1;
       margin: 0;
@@ -108,7 +116,7 @@
       font-size: 16px;
       &:not(:last-child) {
         margin-right: 30px;
-        @media (min-width: 1440px){
+        @media (min-width: 1440px) {
           margin-right: 3rem;
         }
       }
@@ -127,18 +135,17 @@
   &__img {
     margin-left: -30px;
     margin-bottom: 20px;
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       margin-left: -3rem;
       margin-bottom: 2rem;
     }
   }
   &__image {
     grid-column: 6 span;
-    // width: auto;
     position: relative;
     z-index: 2;
     display: flex;
-    img, picture {
+    img {
       will-change: transform;
       width: 100%;
     }
@@ -161,12 +168,10 @@
       }
       &-mob {
         @include mobile {
-
           left: unset;
           right: -16px;
-
         }
-        @media (max-width: 475px){
+        @media (max-width: 475px) {
           width: 165px !important;
           height: 158px;
           left: unset;
@@ -189,7 +194,7 @@
         left: unset;
         right: 30px;
         transform: translateY(57%);
-        @media (min-width: 1440px){
+        @media (min-width: 1440px) {
           right: 3rem;
         }
       }
@@ -199,7 +204,6 @@
         bottom: 18%;
       }
       &-3 {
-
       }
     }
     &--last {
@@ -219,7 +223,7 @@
         height: 100%;
         object-fit: cover;
       }
-      @media (min-width: 1440px){
+      @media (min-width: 1440px) {
         height: 69rem;
         width: 69rem;
       }
@@ -227,7 +231,6 @@
         width: 220px;
         height: 220px;
       }
-
     }
   }
 }

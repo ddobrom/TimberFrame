@@ -3150,14 +3150,8 @@ span.popular-card__figure {
   -webkit-transition: opacity 1s ease;
   transition: opacity 1s ease;
   will-change: transform;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
 }
 .benefits-house__content.active {
   background-image: none;
@@ -3245,6 +3239,7 @@ span.popular-card__figure {
 .house-content__container {
   position: relative;
   width: 100%;
+  max-width: 100%;
   padding-left: 30px;
 }
 @media (max-width: 768px) {
@@ -3262,7 +3257,7 @@ span.popular-card__figure {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  gap: 60px;
+  gap: 0 50px;
   margin-bottom: 27px;
 }
 .house-content__grid--mt {
@@ -3271,6 +3266,11 @@ span.popular-card__figure {
 @media (max-width: 768px) {
   .house-content__grid--mt {
     margin-top: 0;
+  }
+}
+@media (min-width: 1440px) {
+  .house-content__grid {
+    gap: 0 5rem;
   }
 }
 @media (max-width: 768px) {
@@ -3282,19 +3282,22 @@ span.popular-card__figure {
 }
 .house-content__title {
   margin-bottom: 45px;
+  line-height: normal;
+  letter-spacing: 2.4px;
 }
 @media (min-width: 1440px) {
   .house-content__title {
     margin-bottom: 4.5rem;
+    letter-spacing: 0.24rem;
   }
 }
 .house-content__content {
+  max-width: 100%;
+  width: 100%;
   position: relative;
   z-index: 5;
   -ms-grid-column-span: 6;
   grid-column: 6 span;
-  margin-right: 60px;
-  width: 100%;
   -webkit-box-ordinal-group: 2;
   -ms-flex-order: 1;
   order: 1;
@@ -3379,9 +3382,6 @@ span.popular-card__figure {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
 }
 .house-content__text p {
   -webkit-box-flex: 1;
@@ -3440,7 +3440,7 @@ span.popular-card__figure {
   display: -ms-flexbox;
   display: flex;
 }
-.house-content__image img, .house-content__image picture {
+.house-content__image img {
   will-change: transform;
   width: 100%;
 }

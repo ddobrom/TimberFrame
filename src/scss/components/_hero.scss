@@ -5,7 +5,6 @@
   overflow-x: hidden;
   .swiper-slide {
     position: relative;
-
   }
   &__slide {
     background-position-y: center;
@@ -29,16 +28,16 @@
       background-color: rgba(#000, 0.4);
     }
     &--nisalahti {
-      background-image: image-set(  url("./../img/hero/hero1-2x.jpg") 2x);
+      background-image: url("./../img/hero/hero1-2x.webp");
     }
     &--lautala {
-      background-image: image-set(  url("./../img/hero/hero2-2x.jpg") 2x);
+      background-image: url("./../img/hero/hero2-2x.webp");
     }
     &--vaskela {
-      background-image: image-set(  url("./../img/hero/hero3-2x.jpg") 2x);
+      background-image: url("./../img/hero/hero3-2x.webp");
     }
     &--ostamo {
-      background-image: image-set(  url("./../img/hero/hero4-2x.jpg") 2x);
+      background-image: url("./../img/hero/hero4-2x.webp");
     }
   }
   &__btn-down {
@@ -71,7 +70,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         transition: height 0.3s ease-in, bottom 0.3s ease-in;
-        @media (min-width: 1440px){
+        @media (min-width: 1440px) {
           height: 5.6rem;
           width: 1rem;
         }
@@ -80,7 +79,7 @@
     @include mobile {
       bottom: 5%;
     }
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       width: 4.8rem;
       height: 9.6rem;
     }
@@ -98,7 +97,7 @@
 
 .move-background {
   animation: move-bg 7s linear 1;
-    transition: background-position-x .5s ease-in;
+  transition: background-position-x 0.5s ease-in;
   @include mobile {
     animation: move-bg-mobile 7s linear 1;
   }
@@ -142,7 +141,6 @@
     &--watch {
       margin-right: 8px;
     }
-
   }
   &__buttons {
     display: flex;
@@ -161,7 +159,7 @@
     font-size: 115px;
     font-weight: 700;
     letter-spacing: 3.45px;
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       font-size: 11.5rem;
     }
 
@@ -197,7 +195,7 @@
     letter-spacing: 1.44px;
     text-transform: uppercase;
     transition: color 0.3s ease-in;
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       font-size: 1.2rem;
       padding: 1.2rem;
       padding-left: 4rem;
@@ -205,7 +203,7 @@
     @include mobile {
       margin: 0;
     }
-    &:not(:last-child){
+    &:not(:last-child) {
       @include mobile {
         margin: 8px 0;
       }
@@ -217,7 +215,7 @@
       justify-content: center;
       color: var(--white-color);
       font-size: 10px;
-      @media (min-width: 1440px){
+      @media (min-width: 1440px) {
         font-size: 1rem;
       }
     }
@@ -232,7 +230,7 @@
       background-position: center center;
       background-size: cover;
       background-repeat: no-repeat;
-      @media (min-width: 1440px){
+      @media (min-width: 1440px) {
         width: 3.2rem;
         height: 3.2rem;
       }

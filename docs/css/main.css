@@ -3440,6 +3440,9 @@ span.popular-card__figure {
   display: -ms-flexbox;
   display: flex;
 }
+.house-content__image picture {
+  width: 100%;
+}
 .house-content__image img {
   will-change: transform;
   width: 100%;

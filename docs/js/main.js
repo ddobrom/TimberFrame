@@ -968,7 +968,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_main_modals_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/main-modals.js */ "./src/js/components/main-modals.js");
 /* harmony import */ var _components_menu_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/menu.js */ "./src/js/components/menu.js");
 /* harmony import */ var _components_up_page_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/up-page.js */ "./src/js/components/up-page.js");
-/* harmony import */ var _components_up_page_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_up_page_js__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _components_mouse_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/mouse.js */ "./src/js/components/mouse.js");
 /* harmony import */ var _components_mouse_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_mouse_js__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _components_favorites_menu_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/favorites-menu.js */ "./src/js/components/favorites-menu.js");
@@ -2148,6 +2147,7 @@ const lenis = new _studio_freight_lenis__WEBPACK_IMPORTED_MODULE_0__["default"](
   lerp: 0.07,
   wheelMultiplier: 0.7,
   touchMultiplier: 0.7,
+  smooth: true,
   orientation: "vertical",
   gestureOrientation: "vertical",
   normalizeWheel: false,
@@ -2244,14 +2244,23 @@ if (window.matchMedia("(max-width: 768px)").matches) {
 /*!**************************************!*\
   !*** ./src/js/components/up-page.js ***!
   \**************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _smooth_scroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./smooth-scroll */ "./src/js/components/smooth-scroll.js");
 const upBtn = document.querySelector('.up-page-btn');
+const downBtn = document.querySelector('.hero__btn-down');
+
 upBtn.addEventListener('click', () => {
   window.scrollTo(scrollY, 0);
 });
+downBtn.addEventListener('click', e => {
+  e.preventDefault();
+  _smooth_scroll__WEBPACK_IMPORTED_MODULE_0__["default"].scrollTo('#benefit');
+});
 window.addEventListener('scroll', () => {
-  if (scrollY >= document.documentElement.offsetHeight * 2) {
+  if (scrollY >= document.documentElement.offsetHeight) {
     upBtn.style.display = 'block';
     upBtn.style.opacity = '1';
   } else {

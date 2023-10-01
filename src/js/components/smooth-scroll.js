@@ -4,6 +4,7 @@ const lenis = new Lenis({
   lerp: 0.07,
   wheelMultiplier: 0.7,
   touchMultiplier: 0.7,
+  smooth: true,
   orientation: "vertical",
   gestureOrientation: "vertical",
   normalizeWheel: false,

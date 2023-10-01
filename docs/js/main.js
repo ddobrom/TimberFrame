@@ -2253,14 +2253,14 @@ const upBtn = document.querySelector('.up-page-btn');
 const downBtn = document.querySelector('.hero__btn-down');
 
 upBtn.addEventListener('click', () => {
-  window.scrollTo(scrollY, 0);
+  _smooth_scroll__WEBPACK_IMPORTED_MODULE_0__["default"].scrollTo(".site-container");
 });
 downBtn.addEventListener('click', e => {
   e.preventDefault();
   _smooth_scroll__WEBPACK_IMPORTED_MODULE_0__["default"].scrollTo('#benefit');
 });
 window.addEventListener('scroll', () => {
-  if (scrollY >= document.documentElement.offsetHeight) {
+  if (scrollY >= document.documentElement.clientHeight * 2) {
     upBtn.style.display = 'block';
     upBtn.style.opacity = '1';
   } else {

@@ -1,5 +1,4 @@
 import Lenis from "@studio-freight/lenis";
-import ScrollTrigger from "gsap/ScrollTrigger";
 const lenis = new Lenis({
   lerp: 0.07,
   wheelMultiplier: 0.7,

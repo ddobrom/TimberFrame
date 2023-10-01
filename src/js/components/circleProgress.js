@@ -1,4 +1,3 @@
-import {gsap} from 'gsap'
 const circles = document.querySelectorAll('.progress')
 circles.forEach(el => {
   let percentageProgress = parseInt(el.dataset.percents)

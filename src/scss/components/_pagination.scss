@@ -1,0 +1,40 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__item {
+    &:not(:last-child){
+      margin-right: 12px;
+    }
+
+  }
+  &__btn {
+    padding: 16px 32px;
+    border-radius: 4px;
+    color: var(--black-brand-color);
+    font-family: "PP Neue Montreal";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.44px;
+    text-transform: uppercase;
+    outline: 1px solid transparent;
+    transition: outline-color .2s ease-in;
+    &.active {
+      background-color: var(--focus-active-color);
+    }
+    &:not(.active){
+      @include hover {
+        outline-color: var(--focus-active-color);
+      }
+    }
+    @media (min-width: 1440px){
+      padding: 1.6rem 3.2rem;
+      border-radius: 0.4rem;
+      font-size: 1.2rem;
+      letter-spacing: 0.144rem;
+    }
+  }
+}

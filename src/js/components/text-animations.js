@@ -1,21 +1,23 @@
-import AOS from 'aos'
+import AOS from "aos";
+
 AOS.init({
   disable: false,
-  startEvent: 'DOMContentLoaded',
-  initClassName: 'aos-init',
-  animatedClassName: 'aos-animate',
+  startEvent: "DOMContentLoaded",
+  initClassName: "aos-init",
+  animatedClassName: "aos-animate",
   useClassNames: false,
   disableMutationObserver: false,
   debounceDelay: 50,
   throttleDelay: 99,
 
-
-  offset: 10,
+  offset: 100,
   delay: 0,
-  duration: 1000,
-  easing: 'ease',
+  duration: 500,
+  easing: "ease",
   once: true,
   mirror: false,
-  anchorPlacement: 'top-bottom',
-
-})
+  anchorPlacement: "top-bottom",
+});
+window.addEventListener("DOMContentLoaded", () => {
+  setTimeout(() => AOS.refresh(), 50);
+});

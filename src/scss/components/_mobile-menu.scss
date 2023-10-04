@@ -42,4 +42,8 @@
       background-image: url('./../img/mobile-tap/tap-4.svg');
     }
   }
+  &--active {
+    opacity: 1;
+    z-index: 10;
+  }
 }

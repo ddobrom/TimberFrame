@@ -29,95 +29,116 @@ const isInto = (el1, el2) => {
 const belowEcoCenter = (el1, el2) => {
   return getCoord(el1) >= getCoord(el2);
 };
-window.addEventListener("scroll", () => {
-  if (window.matchMedia("(min-width: 1440px)").matches) {
-    if (
-      isInto(headerNav, benefitsSection) ||
-      isInto(headerNav, popularSection) ||
-      isInto(headerNav, servicesSection) ||
-      isInto(headerNav, projectSection) ||
-      (isInto(headerNav, ecoHouseSection) &&
-        !belowEcoCenter(
-          headerNav,
-          document.querySelector(".house-content--expanded")
-        )) ||
-      isInto(headerNav, techSection) ||
-      isInto(headerNav, addSection) ||
-      isInto(headerNav, officeSection) ||
-      isInto(headerNav, resSection)
-    ) {
-      document.querySelector(".header").classList.add("dark");
+if(document.querySelector('.hero')){
+  window.addEventListener("scroll", () => {
+    if (window.matchMedia("(min-width: 1440px)").matches) {
+      if (
+        isInto(headerNav, benefitsSection) ||
+        isInto(headerNav, popularSection) ||
+        isInto(headerNav, servicesSection) ||
+        isInto(headerNav, projectSection) ||
+        (isInto(headerNav, ecoHouseSection) &&
+          !belowEcoCenter(
+            headerNav,
+            document.querySelector(".house-content--expanded")
+          )) ||
+        isInto(headerNav, techSection) ||
+        isInto(headerNav, addSection) ||
+        isInto(headerNav, officeSection) ||
+        isInto(headerNav, resSection)
+      ) {
+        document.querySelector(".header").classList.add("dark");
+      } else {
+        document.querySelector(".header").classList.remove("dark");
+      }
     } else {
-      document.querySelector(".header").classList.remove("dark");
-    }
-  } else {
-    if (
-      isInto(headerNav, benefitsSection) ||
-      isInto(headerNav, popularSection) ||
-      isInto(headerNav, servicesSection) ||
-      isInto(headerNav, projectSection) ||
-      (isInto(headerNav, ecoHouseSection) &&
-        !belowEcoCenter(
+      if (
+        isInto(headerNav, benefitsSection) ||
+        isInto(headerNav, popularSection) ||
+        isInto(headerNav, servicesSection) ||
+        isInto(headerNav, projectSection) ||
+        (isInto(headerNav, ecoHouseSection) &&
+          !belowEcoCenter(
+            headerNav,
+            document.querySelector(".house-content--expanded")
+          )) ||
+        belowEcoCenter(
           headerNav,
-          document.querySelector(".house-content--expanded")
-        )) ||
-      belowEcoCenter(
-        headerNav,
-        document.querySelector(".house-content__image--big")
-      ) ||
-      isInto(headerNav, techSection) ||
-      isInto(headerNav, addSection) ||
-      isInto(headerNav, officeSection) ||
-      isInto(headerNav, resSection)
-    ) {
-      document.querySelector(".header").classList.add("dark");
-    } else {
-      document.querySelector(".header").classList.remove("dark");
+          document.querySelector(".house-content__image--big")
+        ) ||
+        isInto(headerNav, techSection) ||
+        isInto(headerNav, addSection) ||
+        isInto(headerNav, officeSection) ||
+        isInto(headerNav, resSection)
+      ) {
+        document.querySelector(".header").classList.add("dark");
+      } else {
+        document.querySelector(".header").classList.remove("dark");
+      }
     }
-  }
-  if (
-    getCoord(document.querySelector(".mobile-menu")) >=
-    getBottom(document.querySelector(".hero"))
-  ) {
-    document.querySelector(".mobile-menu").style.opacity = "1";
-    document.querySelector(".mobile-menu").style.zIndex = "20";
-  } else {
-    document.querySelector(".mobile-menu").style.opacity = null;
-    document.querySelector(".mobile-menu").style.zIndex = null;
-  }
-});
-
+    if (
+      getCoord(document.querySelector(".mobile-menu")) >=
+      getBottom(document.querySelector(".hero"))
+    ) {
+      document.querySelector(".mobile-menu").style.opacity = "1";
+      document.querySelector(".mobile-menu").style.zIndex = "20";
+    } else {
+      document.querySelector(".mobile-menu").style.opacity = null;
+      document.querySelector(".mobile-menu").style.zIndex = null;
+    }
+  });
+}
+// if(document.querySelector('.catalogue')){
+//   const allItems = document.querySelectorAll('.product__image')
+//   window.addEventListener('scroll', () => {
+//     const isOne = []
+//     allItems.forEach(el => {
+//       isOne.push(isInto(headerNav, el))
+//     })
+//     if(isOne.includes(true)){
+//       document.querySelector(".header").classList.remove("dark");
+//     } else {
+//       document.querySelector(".header").classList.add("dark");
+//     }
+//   })
+// }
 const projectCards = document.querySelectorAll(".projects-card");
-projectCards.forEach((el) => {
-  const details = el.querySelector(".projects-card__details");
-  el.addEventListener("mouseenter", () => {
-    details.classList.add("active");
-    details.style.maxHeight = details.scrollHeight + "px";
-  });
-  el.addEventListener("mouseleave", () => {
-    details.classList.remove("active");
-    details.style.maxHeight = null;
-  });
-});
 
-const favorites = document.querySelector(".favorites-content");
-favorites.addEventListener("mousemove", (e) => {
-  if (e.target.classList.contains("projects-card")) {
-    const details = e.target.querySelector(".projects-card__details");
-    e.target.addEventListener("mouseenter", (event) => {
-      event.stopPropagation();
+if(projectCards){
+  projectCards.forEach((el) => {
+    const details = el.querySelector(".projects-card__details");
+    el.addEventListener("mouseenter", () => {
       details.classList.add("active");
       details.style.maxHeight = details.scrollHeight + "px";
     });
-    e.target.addEventListener("mouseleave", (event) => {
-      event.stopPropagation();
+    el.addEventListener("mouseleave", () => {
       details.classList.remove("active");
       details.style.maxHeight = null;
     });
-  } else {
-    return;
-  }
-});
+  });
+}
+
+const favorites = document.querySelector(".favorites-content");
+
+if(favorites){
+  favorites.addEventListener("mousemove", (e) => {
+    if (e.target.classList.contains("projects-card")) {
+      const details = e.target.querySelector(".projects-card__details");
+      e.target.addEventListener("mouseenter", (event) => {
+        event.stopPropagation();
+        details.classList.add("active");
+        details.style.maxHeight = details.scrollHeight + "px";
+      });
+      e.target.addEventListener("mouseleave", (event) => {
+        event.stopPropagation();
+        details.classList.remove("active");
+        details.style.maxHeight = null;
+      });
+    } else {
+      return;
+    }
+  });
+}
 const forms = document.querySelectorAll(".form");
 
 forms.forEach((f) => {
@@ -137,31 +158,25 @@ forms.forEach((f) => {
     });
   });
 });
+if(document.querySelector('.parallax')){
+  gsap.registerPlugin(CSSRulePlugin);
+  let rule = CSSRulePlugin.getRule(".parallax__wrapper::before");
+  const timeLine1 = gsap.timeline();
+  timeLine1
+    .fromTo(".parallax__body", { scale: 0.5 }, { scale: 1 })
+    .set(rule, { cssRule: { opacity: 1 } });
 
-gsap.registerPlugin(CSSRulePlugin);
-let rule = CSSRulePlugin.getRule(".parallax__wrapper::before");
-const timeLine1 = gsap.timeline();
-timeLine1
-  .fromTo(".parallax__body", { scale: 0.5 }, { scale: 1 })
-  .set(rule, { cssRule: { opacity: 1 } });
-
-ScrollTrigger.create({
-  animation: timeLine1,
-  trigger: ".parallax__wrapper",
-  start: "top top",
-  end: "+=100%",
-  scrub: 0.1,
-  pin: true,
-});
+  ScrollTrigger.create({
+    animation: timeLine1,
+    trigger: ".parallax__wrapper",
+    start: "top top",
+    end: "+=100%",
+    scrub: 0.1,
+    pin: true,
+  });
+}
 
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
 
-document
-  .getElementById("down-sect-btn")
-  .addEventListener("click", function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    document.getElementById("benefits").scrollIntoView({ behavior: "smooth" });
-  });

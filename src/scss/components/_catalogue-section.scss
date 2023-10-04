@@ -1,0 +1,40 @@
+.catalogue-section {
+  &__breadcrumbs {
+    padding: 7px 0;
+
+    @media (min-width: 1440px){
+      padding: 0.7rem 0;
+    }
+    @include mobile {
+      padding: 8px 0;
+    }
+  }
+  &__filters {
+    justify-content: center;
+    padding: 10px 30px;
+    margin-bottom: 28px;
+
+    @media (min-width: 1440px){
+      padding: 1rem 3rem;
+      margin-bottom: 2.8rem;
+    }
+    @include mobile {
+      padding: 10px 16px;
+      margin-bottom: 13px;
+    }
+  }
+  &__catalogue {
+    padding-bottom: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 5px;
+
+    @media (min-width: 1440px){
+      padding-bottom: 6rem;
+      gap: 3rem 0.5rem;
+    }
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -15,8 +15,14 @@
 
 @include font-face(
   "PP Telegraf",
-  "./../fonts/PPTelegraf-UltraBold",
+  "../fonts/PPTelegraf-UltraBold",
   800,
+  normal
+);
+@include font-face(
+  "PP Telegraf",
+  "./../fonts/PPTelegrafRegular",
+  400,
   normal
 );
 

@@ -58,13 +58,11 @@
   "dependencies": {
     "@popperjs/core": "^2.11.2",
     "@studio-freight/lenis": "^1.0.23",
-    "@uvarov.frontend/vanilla-sticky": "^1.0.0",
     "aos": "^2.3.4",
     "graph-modal": "^1.0.4",
     "graph-tabs": "^1.0.0",
     "inputmask": "^5.0.7",
     "just-validate": "^3.3.3",
-    "locomotive-scroll": "^4.1.4",
     "parallax-js": "^3.1.0",
     "rellax": "^1.12.1",
     "resize-observer-polyfill": "^1.5.1",

@@ -56,28 +56,35 @@ const generateGallerySlidesMini = (src) => {
   </div>
   `
 }
-document.querySelector('.phone-btn').addEventListener('click', (e) => {
-  const modalForm = document.querySelector('.modal-form')
-  modalForm.classList.add('active')
-  lenis.stop()
 
-  modalForm.setAttribute('form-id', e.currentTarget.dataset.formId)
-})
-document.querySelector('.consult-btn').addEventListener('click', (e) => {
-  e.preventDefault()
-  e.stopPropagation()
-  const modalForm = document.querySelector('.modal-form')
-  modalForm.classList.add('active')
-  lenis.stop()
+if(document.querySelector('.phone-btn')){
+  document.querySelector('.phone-btn').addEventListener('click', (e) => {
+    const modalForm = document.querySelector('.modal-form')
+    modalForm.classList.add('active')
+    lenis.stop()
 
-  modalForm.setAttribute('form-id', e.currentTarget.dataset.formId)
-})
-document.querySelector('.mobile-menu__btn--call').addEventListener('click', (e) => {
-  const modalForm = document.querySelector('.modal-form')
-  modalForm.classList.add('active')
-  lenis.stop()
-  modalForm.setAttribute('form-id', e.currentTarget.dataset.formId)
-})
+    modalForm.setAttribute('form-id', e.currentTarget.dataset.formId)
+  })
+}
+if(document.querySelector('.consult-btn')){
+  document.querySelector('.consult-btn').addEventListener('click', (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    const modalForm = document.querySelector('.modal-form')
+    modalForm.classList.add('active')
+    lenis.stop()
+
+    modalForm.setAttribute('form-id', e.currentTarget.dataset.formId)
+  })
+}
+if(document.querySelector('.mobile-menu__btn--call')){
+  document.querySelector('.mobile-menu__btn--call').addEventListener('click', (e) => {
+    const modalForm = document.querySelector('.modal-form')
+    modalForm.classList.add('active')
+    lenis.stop()
+    modalForm.setAttribute('form-id', e.currentTarget.dataset.formId)
+  })
+}
 document.querySelectorAll('.modal').forEach(el => {
   el.addEventListener('click', (e) => {
     e.stopPropagation()

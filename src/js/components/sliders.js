@@ -1,6 +1,6 @@
 import Swiper from "swiper/bundle";
-import  {Navigation, Thumbs } from 'swiper';
-Swiper.use([  Navigation,  Thumbs]);
+import { Navigation, Thumbs, Pagination } from "swiper";
+Swiper.use([Navigation, Thumbs]);
 const heroslider = new Swiper(".hero__slider", {
   slidesPerView: "auto",
   navigation: {
@@ -20,7 +20,6 @@ const heroslider = new Swiper(".hero__slider", {
   },
 });
 
-
 const popularImagesSlider = new Swiper(".slider-popular__images", {
   slidesPerView: 1,
   navigation: {
@@ -30,7 +29,6 @@ const popularImagesSlider = new Swiper(".slider-popular__images", {
   loop: true,
   effect: "fade",
   lazy: true,
-
 });
 const popularContentSlider = new Swiper(".slider-popular__content", {
   slidesPerView: 1,
@@ -43,21 +41,29 @@ const popularContentSlider = new Swiper(".slider-popular__content", {
   fadeEffect: {
     crossFade: true,
   },
-
 });
-const nextButtonsPopular = document.querySelectorAll('.popular-slider-btn--next')
-const prevButtonsPopular = document.querySelectorAll('.popular-slider-btn--prev')
+const nextButtonsPopular = document.querySelectorAll(
+  ".popular-slider-btn--next"
+);
+const prevButtonsPopular = document.querySelectorAll(
+  ".popular-slider-btn--prev"
+);
 
-nextButtonsPopular.forEach(el => el.addEventListener('click', () => {
-  popularContentSlider.slideNext()
-  popularImagesSlider.slideNext()
-}))
-prevButtonsPopular.forEach(el => el.addEventListener('click', () => {
-  popularContentSlider.slidePrev()
-  popularImagesSlider.slidePrev()
-}))
+nextButtonsPopular.forEach((el) =>
+  el.addEventListener("click", () => {
+    popularContentSlider.slideNext();
+    popularImagesSlider.slideNext();
+  })
+);
+prevButtonsPopular.forEach((el) =>
+  el.addEventListener("click", () => {
+    popularContentSlider.slidePrev();
+    popularImagesSlider.slidePrev();
+  })
+);
 
 const heroSlider = document.querySelector(".hero__slider");
+
 const moveBg = () => {
   heroSlider
     .querySelectorAll(".hero__slide")
@@ -67,8 +73,9 @@ const moveBg = () => {
     .querySelector(".hero__slide")
     .classList.add("move-background");
 };
-
-moveBg();
+if (heroSlider) {
+  moveBg();
+}
 
 // office__slider
 const officeSlider = new Swiper(".office__slider", {
@@ -92,18 +99,60 @@ const gallerySlider = new Swiper(".gallery__slider", {
   },
 });
 
-
 const responsibilitySlider = new Swiper(".responsibility__items", {
   slidesPerView: 1,
-  effect: 'fade',
+  effect: "fade",
   loop: true,
   fadeEffect: {
     crossFade: true,
   },
-})
+});
 
-document.querySelectorAll('.res-control-btn').forEach(el => {
-  el.addEventListener('click', () => {
-    responsibilitySlider.slideNext()
-  })
-})
+document.querySelectorAll(".res-control-btn").forEach((el) => {
+  el.addEventListener("click", () => {
+    responsibilitySlider.slideNext();
+  });
+});
+
+const builtHouseSlide = new Swiper(".built-houses__slider", {
+  slidesPerView: "auto",
+  spaceBetween: 30,
+  loop: true,
+  breakpoints: {
+    320 : {
+      spaceBetween: 11,
+    },
+    768 : {
+      spaceBetween: 30,
+    }
+  },
+
+});
+
+const productSliders = document.querySelectorAll(".product__slider");
+
+if(window.matchMedia("(max-width: 768px)").matches){
+  productSliders.forEach((el) => {
+    new Swiper(el, {
+      slidesPerView: 'auto',
+      pagination : {
+        el: '.product-slider__pagination'
+      }
+    });
+
+    el.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      const pagination = el.querySelector('.product-slider__pagination')
+
+      pagination.classList.add('product-slider__pagination--active')
+    })
+    el.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      const pagination = el.querySelector('.product-slider__pagination')
+      setTimeout(() => {
+        pagination.classList.remove('product-slider__pagination--active')
+      }, 500)
+
+    })
+  });
+}

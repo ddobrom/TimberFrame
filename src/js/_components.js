@@ -16,3 +16,6 @@ import "./components/transition.js";
 import "./components/ecoParllax.js";
 import "./components/lazy.js";
 import "./components/main-scripts.js";
+import "./components/scrollBuilt.js";
+import "./components/sortCatalogue.js";
+import "./components/product.js";

@@ -1710,7 +1710,9 @@ const createProduct = (title, price, square, floors, bathrooms, bedrooms, placeS
     </li>
   `;
 };
-main();
+if (document.querySelector('.catalogue')) {
+  main();
+}
 
 /***/ }),
 

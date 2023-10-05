@@ -249,5 +249,6 @@ const createProduct = (title, price, square, floors, bathrooms, bedrooms, placeS
   `
 }
 
-
-main()
+if(document.querySelector('.catalogue')){
+  main()
+}

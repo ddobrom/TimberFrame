@@ -139,7 +139,7 @@ const initProductSliders = (productSliders) => {
       }
     });
 
-    el.addEventListener("touchstart", (e) => {
+    el.addEventListener("touchmove", (e) => {
       e.preventDefault();
       const pagination = el.querySelector('.product-slider__pagination')
 

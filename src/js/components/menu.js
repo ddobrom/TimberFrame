@@ -8,7 +8,7 @@ menuBtn.addEventListener('click', (e) => {
   menu.classList.add('menu-active')
   menu.classList.remove('menu-disabled')
   document.body.style.overflow = 'hidden'
-  lenis.stop()
+  // lenis.stop()
 })
 const closeBtn = menu.querySelector('.menu__close-btn')
   closeBtn.addEventListener('click', () => {

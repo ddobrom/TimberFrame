@@ -1471,6 +1471,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sliders__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sliders */ "./src/js/components/sliders.js");
 /* harmony import */ var _sortCatalogue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sortCatalogue */ "./src/js/components/sortCatalogue.js");
 /* harmony import */ var _product__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./product */ "./src/js/components/product.js");
+/* harmony import */ var _smooth_scroll__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./smooth-scroll */ "./src/js/components/smooth-scroll.js");
+
 
 
 
@@ -1526,6 +1528,7 @@ async function main() {
       currentItemLi.classList.remove('active');
       btnPagination.classList.add('active');
       document.querySelector('.filters__btn.active').click();
+      _smooth_scroll__WEBPACK_IMPORTED_MODULE_4__["default"].scrollTo(".site-container");
     });
     return liEl;
   };
@@ -2016,16 +2019,18 @@ fMenuBtn.addEventListener('click', e => {
   fMenu.classList.add('menu-active');
   fMenu.classList.remove('menu-disabled');
   document.body.style.overflow = 'hidden';
-  _smooth_scroll__WEBPACK_IMPORTED_MODULE_0__["default"].stop();
+  // lenis.stop()
 });
+
 mobileFavoritesMenu.addEventListener('click', e => {
   e.stopPropagation();
   menuBtn.classList.add('disabled');
   fMenu.classList.add('menu-active');
   fMenu.classList.remove('menu-disabled');
   document.body.style.overflow = 'hidden';
-  _smooth_scroll__WEBPACK_IMPORTED_MODULE_0__["default"].stop();
+  // lenis.stop()
 });
+
 const closeBtn = fMenu.querySelector('.menu__close-btn');
 closeBtn.addEventListener('click', () => {
   fMenu.classList.add('menu-disabled');
@@ -2438,8 +2443,9 @@ menuBtn.addEventListener('click', e => {
   menu.classList.add('menu-active');
   menu.classList.remove('menu-disabled');
   document.body.style.overflow = 'hidden';
-  _smooth_scroll__WEBPACK_IMPORTED_MODULE_0__["default"].stop();
+  // lenis.stop()
 });
+
 const closeBtn = menu.querySelector('.menu__close-btn');
 closeBtn.addEventListener('click', () => {
   menu.classList.add('menu-disabled');
@@ -2857,7 +2863,7 @@ const initProductSliders = productSliders => {
         el: '.product-slider__pagination'
       }
     });
-    el.addEventListener("touchstart", e => {
+    el.addEventListener("touchmove", e => {
       e.preventDefault();
       const pagination = el.querySelector('.product-slider__pagination');
       pagination.classList.add('product-slider__pagination--active');

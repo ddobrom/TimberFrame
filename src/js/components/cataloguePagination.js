@@ -3,6 +3,7 @@ import data from './catalogueData'
 import initProductSliders from './sliders';
 import initFilters from './sortCatalogue'
 import imagePagination from './product'
+import lenis from './smooth-scroll'
 async function getData(){
   // const response = await fetch('ваш url к базе со списком объектов. пример таких объектов есть в файле catalogueData') // раскомментировать при работе с бд
   // const d = await response.json()
@@ -63,6 +64,7 @@ async function main(){
       btnPagination.classList.add('active')
 
       document.querySelector('.filters__btn.active').click()
+      lenis.scrollTo(".site-container");
     })
     return liEl
   }

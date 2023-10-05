@@ -9,7 +9,7 @@ fMenuBtn.addEventListener('click', (e) => {
   fMenu.classList.add('menu-active')
   fMenu.classList.remove('menu-disabled')
   document.body.style.overflow = 'hidden'
-  lenis.stop()
+  // lenis.stop()
 })
 mobileFavoritesMenu.addEventListener('click', (e) => {
   e.stopPropagation()
@@ -17,7 +17,7 @@ mobileFavoritesMenu.addEventListener('click', (e) => {
   fMenu.classList.add('menu-active')
   fMenu.classList.remove('menu-disabled')
   document.body.style.overflow = 'hidden'
-  lenis.stop()
+  // lenis.stop()
 })
 const closeBtn = fMenu.querySelector('.menu__close-btn')
 

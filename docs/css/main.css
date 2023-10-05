@@ -4817,6 +4817,7 @@ span.popular-card__figure {
   font-weight: 700;
   line-height: normal;
   letter-spacing: 1.6px;
+  text-transform: capitalize;
 }
 @media (min-width: 1440px) {
   .product-info__title {
@@ -5029,6 +5030,7 @@ span.popular-card__figure {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  overflow-anchor: none;
 }
 .pagination__item:not(:last-child) {
   margin-right: 12px;

@@ -989,9 +989,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_scrollBuilt_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/scrollBuilt.js */ "./src/js/components/scrollBuilt.js");
 /* harmony import */ var _components_scrollBuilt_js__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_components_scrollBuilt_js__WEBPACK_IMPORTED_MODULE_18__);
 /* harmony import */ var _components_sortCatalogue_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/sortCatalogue.js */ "./src/js/components/sortCatalogue.js");
-/* harmony import */ var _components_sortCatalogue_js__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_components_sortCatalogue_js__WEBPACK_IMPORTED_MODULE_19__);
 /* harmony import */ var _components_product_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/product.js */ "./src/js/components/product.js");
-/* harmony import */ var _components_product_js__WEBPACK_IMPORTED_MODULE_20___default = /*#__PURE__*/__webpack_require__.n(_components_product_js__WEBPACK_IMPORTED_MODULE_20__);
+/* harmony import */ var _components_cataloguePagination_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/cataloguePagination.js */ "./src/js/components/cataloguePagination.js");
+
 
 
 
@@ -1152,6 +1152,565 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+/***/ }),
+
+/***/ "./src/js/components/catalogueData.js":
+/*!********************************************!*\
+  !*** ./src/js/components/catalogueData.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const products = [{
+  title: "vaskela",
+  price: 12000,
+  square: 190,
+  floors: 2,
+  bathrooms: 2,
+  bedrooms: 3,
+  placeSquare: 100,
+  imgSrcArray: {
+    webp: ["./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp", "./img/catalogue/01-2-2x.webp", "./img/catalogue/01-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
+    jpg: ["./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg", "./img/catalogue/01-2.jpg", "./img/catalogue/01-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
+  }
+}, {
+  title: "loftonen",
+  price: 19000,
+  square: 350,
+  floors: 3,
+  bathrooms: 3,
+  bedrooms: 4,
+  placeSquare: 100,
+  imgSrcArray: {
+    webp: ["./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp", "./img/catalogue/02-2-2x.webp", "./img/catalogue/02-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
+    jpg: ["./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg", "./img/catalogue/02-2.jpg", "./img/catalogue/02-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
+  }
+}, {
+  title: "ostamo",
+  price: 17000,
+  square: 400,
+  floors: 3,
+  bathrooms: 3,
+  bedrooms: 2,
+  placeSquare: 200,
+  imgSrcArray: {
+    webp: ["./img/catalogue/03-1-2x.webp", "./img/catalogue/03-1.webp", "./img/catalogue/03-2-2x.webp", "./img/catalogue/03-2.webp", "./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp"],
+    jpg: ["./img/catalogue/03-1.jpg", "./img/catalogue/03-1-2x.jpg", "./img/catalogue/03-2.jpg", "./img/catalogue/03-2-2x.jpg", "./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg"]
+  }
+}, {
+  title: "vaskela",
+  price: 12000,
+  square: 190,
+  floors: 2,
+  bathrooms: 2,
+  bedrooms: 3,
+  placeSquare: 100,
+  imgSrcArray: {
+    webp: ["./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp", "./img/catalogue/01-2-2x.webp", "./img/catalogue/01-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
+    jpg: ["./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg", "./img/catalogue/01-2.jpg", "./img/catalogue/01-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
+  }
+}, {
+  title: "loftonen",
+  price: 19000,
+  square: 350,
+  floors: 3,
+  bathrooms: 3,
+  bedrooms: 4,
+  placeSquare: 100,
+  imgSrcArray: {
+    webp: ["./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp", "./img/catalogue/02-2-2x.webp", "./img/catalogue/02-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
+    jpg: ["./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg", "./img/catalogue/02-2.jpg", "./img/catalogue/02-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
+  }
+}, {
+  title: "ostamo",
+  price: 17000,
+  square: 400,
+  floors: 3,
+  bathrooms: 3,
+  bedrooms: 2,
+  placeSquare: 200,
+  imgSrcArray: {
+    webp: ["./img/catalogue/03-1-2x.webp", "./img/catalogue/03-1.webp", "./img/catalogue/03-2-2x.webp", "./img/catalogue/03-2.webp", "./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp"],
+    jpg: ["./img/catalogue/03-1.jpg", "./img/catalogue/03-1-2x.jpg", "./img/catalogue/03-2.jpg", "./img/catalogue/03-2-2x.jpg", "./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg"]
+  }
+}, {
+  title: "vaskela",
+  price: 12000,
+  square: 190,
+  floors: 2,
+  bathrooms: 2,
+  bedrooms: 3,
+  placeSquare: 100,
+  imgSrcArray: {
+    webp: ["./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp", "./img/catalogue/01-2-2x.webp", "./img/catalogue/01-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
+    jpg: ["./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg", "./img/catalogue/01-2.jpg", "./img/catalogue/01-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
+  }
+}, {
+  title: "loftonen",
+  price: 19000,
+  square: 350,
+  floors: 3,
+  bathrooms: 3,
+  bedrooms: 4,
+  placeSquare: 100,
+  imgSrcArray: {
+    webp: ["./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp", "./img/catalogue/02-2-2x.webp", "./img/catalogue/02-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
+    jpg: ["./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg", "./img/catalogue/02-2.jpg", "./img/catalogue/02-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
+  }
+}, {
+  title: "ostamo",
+  price: 17000,
+  square: 400,
+  floors: 3,
+  bathrooms: 3,
+  bedrooms: 2,
+  placeSquare: 200,
+  imgSrcArray: {
+    webp: ["./img/catalogue/03-1-2x.webp", "./img/catalogue/03-1.webp", "./img/catalogue/03-2-2x.webp", "./img/catalogue/03-2.webp", "./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp"],
+    jpg: ["./img/catalogue/03-1.jpg", "./img/catalogue/03-1-2x.jpg", "./img/catalogue/03-2.jpg", "./img/catalogue/03-2-2x.jpg", "./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg"]
+  }
+}, {
+  title: "vaskela",
+  price: 12000,
+  square: 190,
+  floors: 2,
+  bathrooms: 2,
+  bedrooms: 3,
+  placeSquare: 100,
+  imgSrcArray: {
+    webp: ["./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp", "./img/catalogue/01-2-2x.webp", "./img/catalogue/01-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
+    jpg: ["./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg", "./img/catalogue/01-2.jpg", "./img/catalogue/01-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
+  }
+}, {
+  title: "loftonen",
+  price: 19000,
+  square: 350,
+  floors: 3,
+  bathrooms: 3,
+  bedrooms: 4,
+  placeSquare: 100,
+  imgSrcArray: {
+    webp: ["./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp", "./img/catalogue/02-2-2x.webp", "./img/catalogue/02-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
+    jpg: ["./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg", "./img/catalogue/02-2.jpg", "./img/catalogue/02-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
+  }
+}, {
+  title: "ostamo",
+  price: 17000,
+  square: 400,
+  floors: 3,
+  bathrooms: 3,
+  bedrooms: 2,
+  placeSquare: 200,
+  imgSrcArray: {
+    webp: ["./img/catalogue/03-1-2x.webp", "./img/catalogue/03-1.webp", "./img/catalogue/03-2-2x.webp", "./img/catalogue/03-2.webp", "./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp"],
+    jpg: ["./img/catalogue/03-1.jpg", "./img/catalogue/03-1-2x.jpg", "./img/catalogue/03-2.jpg", "./img/catalogue/03-2-2x.jpg", "./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg"]
+  }
+}, {
+  title: "vaskela",
+  price: 12000,
+  square: 190,
+  floors: 2,
+  bathrooms: 2,
+  bedrooms: 3,
+  placeSquare: 100,
+  imgSrcArray: {
+    webp: ["./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp", "./img/catalogue/01-2-2x.webp", "./img/catalogue/01-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
+    jpg: ["./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg", "./img/catalogue/01-2.jpg", "./img/catalogue/01-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
+  }
+}, {
+  title: "loftonen",
+  price: 19000,
+  square: 350,
+  floors: 3,
+  bathrooms: 3,
+  bedrooms: 4,
+  placeSquare: 100,
+  imgSrcArray: {
+    webp: ["./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp", "./img/catalogue/02-2-2x.webp", "./img/catalogue/02-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
+    jpg: ["./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg", "./img/catalogue/02-2.jpg", "./img/catalogue/02-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
+  }
+}, {
+  title: "ostamo",
+  price: 17000,
+  square: 400,
+  floors: 3,
+  bathrooms: 3,
+  bedrooms: 2,
+  placeSquare: 200,
+  imgSrcArray: {
+    webp: ["./img/catalogue/03-1-2x.webp", "./img/catalogue/03-1.webp", "./img/catalogue/03-2-2x.webp", "./img/catalogue/03-2.webp", "./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp"],
+    jpg: ["./img/catalogue/03-1.jpg", "./img/catalogue/03-1-2x.jpg", "./img/catalogue/03-2.jpg", "./img/catalogue/03-2-2x.jpg", "./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg"]
+  }
+}, {
+  title: "vaskela",
+  price: 12000,
+  square: 190,
+  floors: 2,
+  bathrooms: 2,
+  bedrooms: 3,
+  placeSquare: 100,
+  imgSrcArray: {
+    webp: ["./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp", "./img/catalogue/01-2-2x.webp", "./img/catalogue/01-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
+    jpg: ["./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg", "./img/catalogue/01-2.jpg", "./img/catalogue/01-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
+  }
+}, {
+  title: "loftonen",
+  price: 19000,
+  square: 350,
+  floors: 3,
+  bathrooms: 3,
+  bedrooms: 4,
+  placeSquare: 100,
+  imgSrcArray: {
+    webp: ["./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp", "./img/catalogue/02-2-2x.webp", "./img/catalogue/02-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
+    jpg: ["./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg", "./img/catalogue/02-2.jpg", "./img/catalogue/02-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
+  }
+}, {
+  title: "ostamo",
+  price: 17000,
+  square: 400,
+  floors: 3,
+  bathrooms: 3,
+  bedrooms: 2,
+  placeSquare: 200,
+  imgSrcArray: {
+    webp: ["./img/catalogue/03-1-2x.webp", "./img/catalogue/03-1.webp", "./img/catalogue/03-2-2x.webp", "./img/catalogue/03-2.webp", "./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp"],
+    jpg: ["./img/catalogue/03-1.jpg", "./img/catalogue/03-1-2x.jpg", "./img/catalogue/03-2.jpg", "./img/catalogue/03-2-2x.jpg", "./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg"]
+  }
+}, {
+  title: "vaskela",
+  price: 12000,
+  square: 190,
+  floors: 2,
+  bathrooms: 2,
+  bedrooms: 3,
+  placeSquare: 100,
+  imgSrcArray: {
+    webp: ["./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp", "./img/catalogue/01-2-2x.webp", "./img/catalogue/01-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
+    jpg: ["./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg", "./img/catalogue/01-2.jpg", "./img/catalogue/01-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
+  }
+}, {
+  title: "loftonen",
+  price: 19000,
+  square: 350,
+  floors: 3,
+  bathrooms: 3,
+  bedrooms: 4,
+  placeSquare: 100,
+  imgSrcArray: {
+    webp: ["./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp", "./img/catalogue/02-2-2x.webp", "./img/catalogue/02-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
+    jpg: ["./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg", "./img/catalogue/02-2.jpg", "./img/catalogue/02-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
+  }
+}, {
+  title: "ostamo",
+  price: 17000,
+  square: 400,
+  floors: 3,
+  bathrooms: 3,
+  bedrooms: 2,
+  placeSquare: 200,
+  imgSrcArray: {
+    webp: ["./img/catalogue/03-1-2x.webp", "./img/catalogue/03-1.webp", "./img/catalogue/03-2-2x.webp", "./img/catalogue/03-2.webp", "./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp"],
+    jpg: ["./img/catalogue/03-1.jpg", "./img/catalogue/03-1-2x.jpg", "./img/catalogue/03-2.jpg", "./img/catalogue/03-2-2x.jpg", "./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg"]
+  }
+}, {
+  title: "vaskela",
+  price: 12000,
+  square: 190,
+  floors: 2,
+  bathrooms: 2,
+  bedrooms: 3,
+  placeSquare: 100,
+  imgSrcArray: {
+    webp: ["./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp", "./img/catalogue/01-2-2x.webp", "./img/catalogue/01-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
+    jpg: ["./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg", "./img/catalogue/01-2.jpg", "./img/catalogue/01-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
+  }
+}, {
+  title: "loftonen",
+  price: 19000,
+  square: 350,
+  floors: 3,
+  bathrooms: 3,
+  bedrooms: 4,
+  placeSquare: 100,
+  imgSrcArray: {
+    webp: ["./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp", "./img/catalogue/02-2-2x.webp", "./img/catalogue/02-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
+    jpg: ["./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg", "./img/catalogue/02-2.jpg", "./img/catalogue/02-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
+  }
+}, {
+  title: "ostamo",
+  price: 17000,
+  square: 400,
+  floors: 3,
+  bathrooms: 3,
+  bedrooms: 2,
+  placeSquare: 200,
+  imgSrcArray: {
+    webp: ["./img/catalogue/03-1-2x.webp", "./img/catalogue/03-1.webp", "./img/catalogue/03-2-2x.webp", "./img/catalogue/03-2.webp", "./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp"],
+    jpg: ["./img/catalogue/03-1.jpg", "./img/catalogue/03-1-2x.jpg", "./img/catalogue/03-2.jpg", "./img/catalogue/03-2-2x.jpg", "./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg"]
+  }
+}];
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (products);
+
+/***/ }),
+
+/***/ "./src/js/components/cataloguePagination.js":
+/*!**************************************************!*\
+  !*** ./src/js/components/cataloguePagination.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _catalogueData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./catalogueData */ "./src/js/components/catalogueData.js");
+/* harmony import */ var _sliders__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sliders */ "./src/js/components/sliders.js");
+/* harmony import */ var _sortCatalogue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sortCatalogue */ "./src/js/components/sortCatalogue.js");
+/* harmony import */ var _product__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./product */ "./src/js/components/product.js");
+
+
+
+
+async function getData() {
+  // const response = await fetch('ваш url к базе со списком объектов. пример таких объектов есть в файле catalogueData') // раскомментировать при работе с бд
+  // const d = await response.json()
+  const d = _catalogueData__WEBPACK_IMPORTED_MODULE_0__["default"]; // удалить при работе с бд
+  return d;
+}
+async function main() {
+  const productsData = await getData();
+  let currentPage = 1;
+  let rows = 10;
+  function displayList(arrData, rowPerPage, page) {
+    const catalogue = document.querySelector('.catalogue');
+    catalogue.innerHTML = '';
+    page--;
+    const start = rowPerPage * page;
+    const end = start + rowPerPage;
+    const paginatedData = arrData.slice(start, end);
+    paginatedData.forEach(el => {
+      catalogue.innerHTML += createProduct(el.title, el.price, el.square, el.floors, el.bathrooms, el.bedrooms, el.placeSquare, el.imgSrcArray);
+    });
+    const products = document.querySelectorAll('.product');
+    const productSliders = document.querySelectorAll('.product__slider');
+    (0,_product__WEBPACK_IMPORTED_MODULE_3__["default"])(products);
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      (0,_sliders__WEBPACK_IMPORTED_MODULE_1__["default"])(productSliders);
+    }
+    (0,_sortCatalogue__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  }
+  function displayPagination(arrData, rowPerPage) {
+    const paginationEl = document.querySelector('.pagination');
+    const pagesCount = Math.ceil(arrData.length / rowPerPage);
+    for (let i = 0; i < pagesCount; i++) {
+      paginationEl.appendChild(createPaginationBtn(i + 1));
+    }
+  }
+  const createPaginationBtn = page => {
+    const liEl = document.createElement('li');
+    const btnPagination = document.createElement('button');
+    liEl.classList.add('pagination__item');
+    btnPagination.classList.add('btn-reset');
+    btnPagination.classList.add('pagination__btn');
+    if (currentPage == page) btnPagination.classList.add('active');
+    btnPagination.innerText = page;
+    liEl.appendChild(btnPagination);
+    btnPagination.addEventListener('click', () => {
+      currentPage = page;
+      displayList(productsData, rows, currentPage);
+      let currentItemLi = document.querySelector('.pagination__btn.active');
+      currentItemLi.classList.remove('active');
+      btnPagination.classList.add('active');
+      document.querySelector('.filters__btn.active').click();
+    });
+    return liEl;
+  };
+  displayList(productsData, rows, currentPage);
+  displayPagination(productsData, rows);
+}
+const createProduct = (title, price, square, floors, bathrooms, bedrooms, placeSquare, imgSrcArray) => {
+  return `
+    <li class="catalogue__item">
+      <article class="catalogue__product product">
+        <button class="product__btn btn btn--like btn--stroke btn-reset">
+          <svg>
+            <use xlink:href="img/sprite.svg#like-icon"></use>
+          </svg>
+        </button>
+        <a href="#" class="product__image">
+          <div class="product__switch image-switch">
+            <div class="image-switch__item">
+              <div class="image-switch__img">
+                <picture>
+                  <source
+                    srcset="${imgSrcArray['webp'][0]}"
+                    type="image/webp"
+                    media="(min-width: 1440px)"
+                  />
+                  <source
+                    srcset="${imgSrcArray['webp'][1]}"
+                    type="image/webp"
+                  />
+                  <img
+                    src="${imgSrcArray['jpg'][0]}"
+                    srcset="${imgSrcArray['jpg'][1]}"
+                    alt="Product 1"
+                  />
+                </picture>
+              </div>
+            </div>
+            <div class="image-switch__item">
+              <div class="image-switch__img">
+                <picture>
+                  <source
+                    srcset="${imgSrcArray['webp'][2]}"
+                    type="image/webp"
+                    media="(min-width: 1440px)"
+                  />
+                  <source
+                    srcset="${imgSrcArray['webp'][3]}"
+                    type="image/webp"
+                  />
+                  <img
+                    src="${imgSrcArray['jpg'][2]}"
+                    srcset="${imgSrcArray['jpg'][3]}"
+                    alt="Product 1"
+                  />
+                </picture>
+              </div>
+            </div>
+            <div class="image-switch__item">
+              <div class="image-switch__img">
+                <picture>
+                  <source
+                    srcset="${imgSrcArray['webp'][4]}"
+                    type="image/webp"
+                    media="(min-width: 1440px)"
+                  />
+                  <source
+                    srcset="${imgSrcArray['webp'][5]}"
+                    type="image/webp"
+                  />
+                  <img
+                    src="${imgSrcArray['jpg'][4]}"
+                    srcset="${imgSrcArray['jpg'][5]}"
+                    alt="Product 1"
+                  />
+                </picture>
+              </div>
+            </div>
+          </div>
+          <div class="product__slider swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <picture>
+                  <source
+                    srcset="${imgSrcArray['webp'][0]}"
+                    type="image/webp"
+                    media="(min-width: 1440px)"
+                  />
+                  <source
+                    srcset="${imgSrcArray['webp'][1]}"
+                    type="image/webp"
+                  />
+                  <img
+                    src="${imgSrcArray['jpg'][0]}"
+                    srcset="${imgSrcArray['jpg'][1]}"
+                    alt="Product 1"
+                  />
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <source
+                    srcset="${imgSrcArray['webp'][2]}"
+                    type="image/webp"
+                    media="(min-width: 1440px)"
+                  />
+                  <source
+                    srcset="${imgSrcArray['webp'][3]}"
+                    type="image/webp"
+                  />
+                  <img
+                    src="${imgSrcArray['jpg'][2]}"
+                    srcset="${imgSrcArray['jpg'][3]} 2x"
+                    alt="Product 1"
+                  />
+                </picture>
+              </div>
+              <div class="swiper-slide">
+                <picture>
+                  <source
+                    srcset="${imgSrcArray['webp'][4]}"
+                    type="image/webp"
+                    media="(min-width: 1440px)"
+                  />
+                  <source
+                    srcset="${imgSrcArray['webp'][5]}"
+                    type="image/webp"
+                  />
+                  <img
+                    src="${imgSrcArray['jpg'][4]}"
+                    srcset="${imgSrcArray['jpg'][4]} 2x"
+                    alt="Product 1"
+                  />
+                </picture>
+              </div>
+            </div>
+            <div class="swiper-pagination product-slider__pagination"></div>
+          </div>
+          <ul
+            class="pruoduct__image-pagination image-pagination list-reset"
+          ></ul>
+        </a>
+        <div class="product__info product-info">
+          <div class="product-info__left">
+            <h3 class="product-info__title">${title}</h3>
+            <span class="product-info__price"
+              >от ${price} ₽</span
+            >
+          </div>
+          <ul class="product-info__right list-reset">
+            <li
+              class="product-info__item product-info__item--sq"
+              data-sq="${square}"
+            >
+              <div class="product-info__figure">
+                ${square} <span>м<sup>2</sup></span>
+              </div>
+            </li>
+            <li class="product-info__item product-info__item--fl" data-fl="${floors}">
+              <div class="product-info__figure">${floors} <span>этажа</span></div>
+            </li>
+            <li
+              class="product-info__item product-info__item--bed"
+              data-bed="${bedrooms}"
+            >
+              <div class="product-info__figure">${bedrooms} <span>спальни</span></div>
+            </li>
+            <li
+              class="product-info__item product-info__item--bath"
+              data-bath="${bathrooms}"
+            >
+              <div class="product-info__figure">${bathrooms} <span>санузла</span></div>
+            </li>
+            <li
+              class="product-info__item product-info__item--pl visually-hidden"
+              data-pl="${placeSquare}"
+            >
+              <div class="product-info__figure">${placeSquare} <span>площадь</span></div>
+            </li>
+          </ul>
+        </div>
+      </article>
+    </li>
+  `;
+};
+main();
 
 /***/ }),
 
@@ -1954,10 +2513,14 @@ if (ecoHouse) {
 /*!**************************************!*\
   !*** ./src/js/components/product.js ***!
   \**************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-const products = document.querySelectorAll(".product");
-if (products) {
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const addImagePagination = products => {
   products.forEach(el => {
     const imageSwitchItems = el.querySelectorAll(".image-switch__item");
     const imagePagination = el.querySelector(".image-pagination");
@@ -1980,7 +2543,8 @@ if (products) {
       });
     }
   });
-}
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addImagePagination);
 
 /***/ }),
 
@@ -2167,6 +2731,9 @@ window.addEventListener('resize', () => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/bundle */ "./node_modules/swiper/swiper-bundle.esm.js");
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 
@@ -2278,8 +2845,9 @@ const builtHouseSlide = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"
     }
   }
 });
-const productSliders = document.querySelectorAll(".product__slider");
-if (window.matchMedia("(max-width: 768px)").matches) {
+
+// const productSliders = document.querySelectorAll(".product__slider");
+const initProductSliders = productSliders => {
   productSliders.forEach(el => {
     new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](el, {
       slidesPerView: 'auto',
@@ -2300,7 +2868,8 @@ if (window.matchMedia("(max-width: 768px)").matches) {
       }, 500);
     });
   });
-}
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initProductSliders);
 
 /***/ }),
 
@@ -2341,69 +2910,77 @@ requestAnimationFrame(raf);
 /*!********************************************!*\
   !*** ./src/js/components/sortCatalogue.js ***!
   \********************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-const filtersBtns = document.querySelectorAll(".filters__btn");
-const cards = document.querySelectorAll(".catalogue__item");
-filtersBtns.forEach(el => {
-  el.addEventListener("click", e => {
-    e.preventDefault();
-    e.stopPropagation();
-    clearActive(filtersBtns);
-    e.currentTarget.classList.add("active");
-    const currentCategory = e.currentTarget.dataset.filter;
-    filter(currentCategory, cards);
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const initFilters = () => {
+  const filtersBtns = document.querySelectorAll(".filters__btn");
+  const cards = document.querySelectorAll(".catalogue__item");
+  filtersBtns.forEach(el => {
+    el.addEventListener("click", e => {
+      e.preventDefault();
+      e.stopPropagation();
+      clearActive(filtersBtns);
+      e.currentTarget.classList.add("active");
+      const currentCategory = e.currentTarget.dataset.filter;
+      filter(currentCategory, cards);
+    });
   });
-});
-const filter = (category, items) => {
-  clearHidden(items);
-  if (category == "1-floor") {
-    items.forEach(item => {
-      const isFiltered = parseInt(item.querySelector(".product-info__item--fl").dataset.fl) === 1;
-      if (!isFiltered) {
-        item.classList.add("is-hidden");
-      }
-    });
-  }
-  if (category == "2-floors") {
-    items.forEach(item => {
-      const isFiltered = parseInt(item.querySelector(".product-info__item--fl").dataset.fl) === 2;
-      if (!isFiltered) {
-        item.classList.add("is-hidden");
-      }
-    });
-  }
-  if (category == "3-floors") {
-    items.forEach(item => {
-      const isFiltered = parseInt(item.querySelector(".product-info__item--fl").dataset.fl) === 3;
-      if (!isFiltered) {
-        item.classList.add("is-hidden");
-      }
-    });
-  }
-  if (category == "up-200-sq") {
-    items.forEach(item => {
-      const isFiltered = parseInt(item.querySelector(".product-info__item--sq").dataset.sq) <= 200;
-      if (!isFiltered) {
-        item.classList.add("is-hidden");
-      }
-    });
-  }
-  if (category == "from-200-sq") {
-    items.forEach(item => {
-      const isFiltered = parseInt(item.querySelector(".product-info__item--sq").dataset.sq) >= 200;
-      if (!isFiltered) {
-        item.classList.add("is-hidden");
-      }
-    });
-  }
+  const filter = (category, items) => {
+    clearHidden(items);
+    if (category == "1-floor") {
+      items.forEach(item => {
+        const isFiltered = parseInt(item.querySelector(".product-info__item--fl").dataset.fl) === 1;
+        if (!isFiltered) {
+          item.classList.add("is-hidden");
+        }
+      });
+    }
+    if (category == "2-floors") {
+      items.forEach(item => {
+        const isFiltered = parseInt(item.querySelector(".product-info__item--fl").dataset.fl) === 2;
+        if (!isFiltered) {
+          item.classList.add("is-hidden");
+        }
+      });
+    }
+    if (category == "3-floors") {
+      items.forEach(item => {
+        const isFiltered = parseInt(item.querySelector(".product-info__item--fl").dataset.fl) === 3;
+        if (!isFiltered) {
+          item.classList.add("is-hidden");
+        }
+      });
+    }
+    if (category == "up-200-sq") {
+      items.forEach(item => {
+        const isFiltered = parseInt(item.querySelector(".product-info__item--sq").dataset.sq) <= 200;
+        if (!isFiltered) {
+          item.classList.add("is-hidden");
+        }
+      });
+    }
+    if (category == "from-200-sq") {
+      items.forEach(item => {
+        const isFiltered = parseInt(item.querySelector(".product-info__item--sq").dataset.sq) >= 200;
+        if (!isFiltered) {
+          item.classList.add("is-hidden");
+        }
+      });
+    }
+  };
+  const clearHidden = items => {
+    items.forEach(item => item.classList.remove("is-hidden"));
+  };
+  const clearActive = items => {
+    items.forEach(item => item.classList.remove("active"));
+  };
 };
-const clearHidden = items => {
-  items.forEach(item => item.classList.remove("is-hidden"));
-};
-const clearActive = items => {
-  items.forEach(item => item.classList.remove("active"));
-};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initFilters);
 
 /***/ }),
 

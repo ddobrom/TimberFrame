@@ -1,6 +1,4 @@
-const products = document.querySelectorAll(".product");
-
-if (products) {
+const addImagePagination = (products) => {
   products.forEach((el) => {
     const imageSwitchItems = el.querySelectorAll(".image-switch__item");
     const imagePagination = el.querySelector(".image-pagination");
@@ -31,3 +29,4 @@ if (products) {
     }
   });
 }
+export default addImagePagination

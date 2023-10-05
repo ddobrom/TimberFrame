@@ -129,9 +129,8 @@ const builtHouseSlide = new Swiper(".built-houses__slider", {
 
 });
 
-const productSliders = document.querySelectorAll(".product__slider");
-
-if(window.matchMedia("(max-width: 768px)").matches){
+// const productSliders = document.querySelectorAll(".product__slider");
+const initProductSliders = (productSliders) => {
   productSliders.forEach((el) => {
     new Swiper(el, {
       slidesPerView: 'auto',
@@ -156,3 +155,4 @@ if(window.matchMedia("(max-width: 768px)").matches){
     })
   });
 }
+export default initProductSliders

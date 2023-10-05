@@ -204,7 +204,7 @@
     font-weight: 700;
     line-height: normal;
     letter-spacing: 1.6px;
-
+    text-transform: capitalize;
     @media (min-width: 1440px) {
       margin-bottom: 0.4rem;
       font-size: 3.2rem;
@@ -295,7 +295,6 @@
     width: 8px;
     border-radius: 100%;
     background-color: var(--black-brand-color);
-
     &--active {
       background-color: var(--focus-color);
     }

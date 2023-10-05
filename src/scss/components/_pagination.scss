@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
+  overflow-anchor: none;
   &__item {
     &:not(:last-child){
       margin-right: 12px;

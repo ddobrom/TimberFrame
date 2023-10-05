@@ -19,3 +19,4 @@ import "./components/main-scripts.js";
 import "./components/scrollBuilt.js";
 import "./components/sortCatalogue.js";
 import "./components/product.js";
+import "./components/cataloguePagination.js";

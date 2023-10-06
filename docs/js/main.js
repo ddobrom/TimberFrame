@@ -2774,14 +2774,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_1__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_1__.Thumbs]);
+const heroSlider = document.querySelector(".hero__slider");
+const moveBg = () => {
+  const slides = heroSlider.querySelectorAll(".hero__slide");
+  slides.forEach(item => item.style.backgroundPositionX = null);
+  const activeSlide = heroSlider.querySelector(".swiper-slide-active").querySelector(".hero__slide");
+  activeSlide.style.backgroundPositionX = "0";
+};
 const heroslider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".hero__slider", {
   slidesPerView: "auto",
+  loop: true,
   navigation: {
     nextEl: ".slider-control__btn--next",
     prevEl: ".slider-control__btn--prev"
   },
   effect: "fade",
-  speed: 2000,
+  speed: 1500,
   // lazy: true,
   autoplay: {
     delay: 7000
@@ -2824,11 +2832,6 @@ prevButtonsPopular.forEach(el => el.addEventListener("click", () => {
   popularContentSlider.slidePrev();
   popularImagesSlider.slidePrev();
 }));
-const heroSlider = document.querySelector(".hero__slider");
-const moveBg = () => {
-  heroSlider.querySelectorAll(".hero__slide").forEach(item => item.classList.remove("move-background"));
-  heroSlider.querySelector(".swiper-slide-active").querySelector(".hero__slide").classList.add("move-background");
-};
 if (heroSlider) {
   moveBg();
 }
@@ -2885,21 +2888,21 @@ const builtHouseSlide = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"
 const initProductSliders = productSliders => {
   productSliders.forEach(el => {
     new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](el, {
-      slidesPerView: 'auto',
+      slidesPerView: "auto",
       pagination: {
-        el: '.product-slider__pagination'
+        el: ".product-slider__pagination"
       }
     });
     el.addEventListener("touchmove", e => {
       e.preventDefault();
-      const pagination = el.querySelector('.product-slider__pagination');
-      pagination.classList.add('product-slider__pagination--active');
+      const pagination = el.querySelector(".product-slider__pagination");
+      pagination.classList.add("product-slider__pagination--active");
     });
     el.addEventListener("touchend", e => {
       e.preventDefault();
-      const pagination = el.querySelector('.product-slider__pagination');
+      const pagination = el.querySelector(".product-slider__pagination");
       setTimeout(() => {
-        pagination.classList.remove('product-slider__pagination--active');
+        pagination.classList.remove("product-slider__pagination--active");
       }, 500);
     });
   });

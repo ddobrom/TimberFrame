@@ -1149,7 +1149,7 @@ html.lenis {
 }
 .hero__slide {
   background-position-y: center;
-  background-position-x: left;
+  background-position-x: -100px;
   background-size: 110% 100%;
   background-repeat: no-repeat;
   min-height: 100vh;
@@ -1162,8 +1162,8 @@ html.lenis {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-transition: background-position-x 5s ease-in;
-  transition: background-position-x 5s ease-in;
+  -webkit-transition: background-position-x 7.5s linear 0.1s;
+  transition: background-position-x 7.5s linear 0.1s;
 }
 @media (max-width: 768px) {
   .hero__slide {
@@ -1272,23 +1272,9 @@ html.lenis {
   }
 }
 
-@-webkit-keyframes move-bg {
-  0% {
-    background-position-x: var(--offset);
-  }
-  100% {
-    background-position-x: left;
-  }
-}
+@-webkit-keyframes move-bg {}
 
-@keyframes move-bg {
-  0% {
-    background-position-x: var(--offset);
-  }
-  100% {
-    background-position-x: left;
-  }
-}
+@keyframes move-bg {}
 @-webkit-keyframes move-bg-mobile {
   0% {
     background-position-x: calc(50% - 100px);
@@ -2541,6 +2527,7 @@ html.lenis {
   .popular-card__item {
     background-size: 1.6rem;
     padding-left: 4.8rem;
+    font-size: 1.6rem;
   }
 }
 .popular-card__item span {
@@ -2962,6 +2949,9 @@ span.popular-card__figure {
     -ms-transform: scale(1.05);
     transform: scale(1.05);
   }
+  .projects-card:hover::before {
+    background: rgba(37, 35, 33, 0.6);
+  }
 }
 .projects-card::before {
   content: "";
@@ -2969,6 +2959,8 @@ span.popular-card__figure {
   inset: 0;
   z-index: 1;
   background: rgba(37, 35, 33, 0.3);
+  -webkit-transition: background 0.5s ease-in;
+  transition: background 0.5s ease-in;
 }
 @media (max-width: 768px) {
   .projects-card::before {
@@ -4134,7 +4126,7 @@ span.popular-card__figure {
 .office__title {
   margin-bottom: 60px;
   font-family: "Aeonik Pro";
-  font-size: 24px;
+  font-size: 48px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -4142,11 +4134,12 @@ span.popular-card__figure {
 @media (min-width: 1440px) {
   .office__title {
     margin-bottom: 6rem;
-    font-size: 2.4rem;
+    font-size: 4.8rem;
   }
 }
 @media (max-width: 768px) {
   .office__title {
+    font-size: 24px;
     margin-bottom: 54px;
   }
 }
@@ -4224,6 +4217,8 @@ span.popular-card__figure {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  overflow: hidden;
+  width: 60%;
 }
 @media (min-width: 1440px) {
   .cta {
@@ -4290,6 +4285,7 @@ span.popular-card__figure {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  width: 100%;
 }
 @media (max-width: 768px) {
   .cta__container {
@@ -4534,6 +4530,7 @@ span.popular-card__figure {
   justify-content: center;
   padding: 10px 30px;
   margin-bottom: 28px;
+  overflow: hidden;
 }
 @media (min-width: 1440px) {
   .catalogue-section__filters {
@@ -4554,6 +4551,7 @@ span.popular-card__figure {
   -ms-grid-columns: (1fr)[2];
   grid-template-columns: repeat(2, 1fr);
   gap: 30px 5px;
+  overflow: hidden;
 }
 @media (min-width: 1440px) {
   .catalogue-section__catalogue {
@@ -5021,6 +5019,9 @@ span.popular-card__figure {
   -webkit-transition: outline-color 0.3s ease-in;
   transition: outline-color 0.3s ease-in;
 }
+.filters__btn:focus, .filters__btn:active {
+  outline: 1px solid var(--focus-active-color);
+}
 @media (min-width: 1440px) {
   .filters__btn {
     padding: 0.8rem 2.4rem;
@@ -5034,7 +5035,7 @@ span.popular-card__figure {
   }
 }
 .filters__btn:not(.active):hover {
-  outline-color: var(--focus-color);
+  outline: 1px solid var(--focus-color);
 }
 .filters__btn.active {
   outline: 1px solid var(--focus-active-color) !important;
@@ -5091,6 +5092,8 @@ span.popular-card__figure {
   padding: 120px 0;
   position: relative;
   overflow: hidden;
+  max-width: 100%;
+  width: 100%;
 }
 .built-houses__text {
   display: -webkit-box;

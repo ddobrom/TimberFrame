@@ -43,6 +43,9 @@
     .projects-card__img {
       transform: scale(1.05);
     }
+    &::before {
+      background: rgb(37, 35, 33, 0.6);
+    }
   }
   &::before {
     content: '';
@@ -50,6 +53,7 @@
     inset: 0;
     z-index: 1;
     background: rgb(37, 35, 33, 0.3);
+    transition: background 0.5s ease-in;
     @include mobile {
       background: rgb(37, 35, 33, 0.6);
     }

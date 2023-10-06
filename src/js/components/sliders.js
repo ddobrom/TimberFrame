@@ -1,14 +1,25 @@
 import Swiper from "swiper/bundle";
 import { Navigation, Thumbs, Pagination } from "swiper";
 Swiper.use([Navigation, Thumbs]);
+const heroSlider = document.querySelector(".hero__slider");
+const moveBg = () => {
+  const slides = heroSlider.querySelectorAll(".hero__slide");
+  slides.forEach((item) => (item.style.backgroundPositionX = null));
+  const activeSlide = heroSlider
+    .querySelector(".swiper-slide-active")
+    .querySelector(".hero__slide");
+
+  activeSlide.style.backgroundPositionX = "0";
+};
 const heroslider = new Swiper(".hero__slider", {
   slidesPerView: "auto",
+  loop: true,
   navigation: {
     nextEl: ".slider-control__btn--next",
     prevEl: ".slider-control__btn--prev",
   },
   effect: "fade",
-  speed: 2000,
+  speed: 1500,
   // lazy: true,
   autoplay: {
     delay: 7000,
@@ -62,17 +73,6 @@ prevButtonsPopular.forEach((el) =>
   })
 );
 
-const heroSlider = document.querySelector(".hero__slider");
-
-const moveBg = () => {
-  heroSlider
-    .querySelectorAll(".hero__slide")
-    .forEach((item) => item.classList.remove("move-background"));
-  heroSlider
-    .querySelector(".swiper-slide-active")
-    .querySelector(".hero__slide")
-    .classList.add("move-background");
-};
 if (heroSlider) {
   moveBg();
 }
@@ -119,40 +119,38 @@ const builtHouseSlide = new Swiper(".built-houses__slider", {
   spaceBetween: 30,
   loop: true,
   breakpoints: {
-    320 : {
+    320: {
       spaceBetween: 11,
     },
-    768 : {
+    768: {
       spaceBetween: 30,
-    }
+    },
   },
-
 });
 
 // const productSliders = document.querySelectorAll(".product__slider");
 const initProductSliders = (productSliders) => {
   productSliders.forEach((el) => {
     new Swiper(el, {
-      slidesPerView: 'auto',
-      pagination : {
-        el: '.product-slider__pagination'
-      }
+      slidesPerView: "auto",
+      pagination: {
+        el: ".product-slider__pagination",
+      },
     });
 
     el.addEventListener("touchmove", (e) => {
       e.preventDefault();
-      const pagination = el.querySelector('.product-slider__pagination')
+      const pagination = el.querySelector(".product-slider__pagination");
 
-      pagination.classList.add('product-slider__pagination--active')
-    })
+      pagination.classList.add("product-slider__pagination--active");
+    });
     el.addEventListener("touchend", (e) => {
       e.preventDefault();
-      const pagination = el.querySelector('.product-slider__pagination')
+      const pagination = el.querySelector(".product-slider__pagination");
       setTimeout(() => {
-        pagination.classList.remove('product-slider__pagination--active')
-      }, 500)
-
-    })
+        pagination.classList.remove("product-slider__pagination--active");
+      }, 500);
+    });
   });
-}
-export default initProductSliders
+};
+export default initProductSliders;

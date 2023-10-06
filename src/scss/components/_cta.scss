@@ -7,6 +7,8 @@
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  overflow: hidden;
+  width: 60%;
   @media (min-width: 1440px) {
     padding: 17.3rem 0 13.7rem;
     padding-left: 14rem;
@@ -55,6 +57,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+
     @include mobile {
       flex-wrap: wrap;
     }

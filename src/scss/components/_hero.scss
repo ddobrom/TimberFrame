@@ -8,7 +8,7 @@
   }
   &__slide {
     background-position-y: center;
-    background-position-x: left;
+    background-position-x: -100px;
     background-size: 110% 100%;
     background-repeat: no-repeat;
     min-height: 100vh;
@@ -16,7 +16,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-position-x 5s ease-in;
+    transition: background-position-x 7.5s linear 0.1s;
     @include mobile {
       background-size: auto 110%;
       background-position: center;
@@ -107,12 +107,12 @@
   }
 }
 @keyframes move-bg {
-  0% {
-    background-position-x: var(--offset);
-  }
-  100% {
-    background-position-x: left;
-  }
+  // 0% {
+  //   background-position-x: var(--offset);
+  // }
+  // 100% {
+  //   background-position-x: left;
+  // }
 }
 
 @keyframes move-bg-mobile {

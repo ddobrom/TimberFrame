@@ -3,9 +3,9 @@ const products = [
     title: "vaskela",
     price: 12000,
     square: 190,
-    floors: 2,
+    floors: 1,
     bathrooms: 2,
-    bedrooms: 3,
+    bedrooms: 5,
     placeSquare: 100,
 
     imgSrcArray: {
@@ -60,7 +60,7 @@ const products = [
     square: 400,
     floors: 3,
     bathrooms: 3,
-    bedrooms: 2,
+    bedrooms: 1,
     placeSquare: 200,
 
     imgSrcArray: {

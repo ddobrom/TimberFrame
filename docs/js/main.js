@@ -990,7 +990,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_scrollBuilt_js__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(_components_scrollBuilt_js__WEBPACK_IMPORTED_MODULE_18__);
 /* harmony import */ var _components_sortCatalogue_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/sortCatalogue.js */ "./src/js/components/sortCatalogue.js");
 /* harmony import */ var _components_product_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/product.js */ "./src/js/components/product.js");
-/* harmony import */ var _components_cataloguePagination_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/cataloguePagination.js */ "./src/js/components/cataloguePagination.js");
+/* harmony import */ var _components_declOfNum_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/declOfNum.js */ "./src/js/components/declOfNum.js");
+/* harmony import */ var _components_cataloguePagination_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/cataloguePagination.js */ "./src/js/components/cataloguePagination.js");
+
 
 
 
@@ -1170,9 +1172,9 @@ const products = [{
   title: "vaskela",
   price: 12000,
   square: 190,
-  floors: 2,
+  floors: 1,
   bathrooms: 2,
-  bedrooms: 3,
+  bedrooms: 5,
   placeSquare: 100,
   imgSrcArray: {
     webp: ["./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp", "./img/catalogue/01-2-2x.webp", "./img/catalogue/01-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
@@ -1196,7 +1198,7 @@ const products = [{
   square: 400,
   floors: 3,
   bathrooms: 3,
-  bedrooms: 2,
+  bedrooms: 1,
   placeSquare: 200,
   imgSrcArray: {
     webp: ["./img/catalogue/03-1-2x.webp", "./img/catalogue/03-1.webp", "./img/catalogue/03-2-2x.webp", "./img/catalogue/03-2.webp", "./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp"],
@@ -1472,6 +1474,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sortCatalogue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sortCatalogue */ "./src/js/components/sortCatalogue.js");
 /* harmony import */ var _product__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./product */ "./src/js/components/product.js");
 /* harmony import */ var _smooth_scroll__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./smooth-scroll */ "./src/js/components/smooth-scroll.js");
+/* harmony import */ var _declOfNum__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./declOfNum */ "./src/js/components/declOfNum.js");
+
 
 
 
@@ -1528,7 +1532,7 @@ async function main() {
       currentItemLi.classList.remove('active');
       btnPagination.classList.add('active');
       document.querySelector('.filters__btn.active').click();
-      _smooth_scroll__WEBPACK_IMPORTED_MODULE_4__["default"].scrollTo(".site-container");
+      _smooth_scroll__WEBPACK_IMPORTED_MODULE_4__["default"].scrollTo(".page-body");
     });
     return liEl;
   };
@@ -1536,179 +1540,184 @@ async function main() {
   displayPagination(productsData, rows);
 }
 const createProduct = (title, price, square, floors, bathrooms, bedrooms, placeSquare, imgSrcArray) => {
+  const floorsWord = (0,_declOfNum__WEBPACK_IMPORTED_MODULE_5__["default"])(floors, ['этаж', 'этажа', 'этажей']);
+  const bathroomsWord = (0,_declOfNum__WEBPACK_IMPORTED_MODULE_5__["default"])(bathrooms, ['санузел', 'санузла', 'санузлов']);
+  const bedroomsWord = (0,_declOfNum__WEBPACK_IMPORTED_MODULE_5__["default"])(bedrooms, ['спальня', 'спальни', 'спален']);
   return `
     <li class="catalogue__item">
       <article class="catalogue__product product">
-        <button class="product__btn btn btn--like btn--stroke btn-reset">
-          <svg>
-            <use xlink:href="img/sprite.svg#like-icon"></use>
-          </svg>
-        </button>
-        <a href="#" class="product__image">
-          <div class="product__switch image-switch">
-            <div class="image-switch__item">
-              <div class="image-switch__img">
-                <picture>
-                  <source
-                    srcset="${imgSrcArray['webp'][0]}"
-                    type="image/webp"
-                    media="(min-width: 1440px)"
-                  />
-                  <source
-                    srcset="${imgSrcArray['webp'][1]}"
-                    type="image/webp"
-                  />
-                  <img
-                    src="${imgSrcArray['jpg'][0]}"
-                    srcset="${imgSrcArray['jpg'][1]}"
-                    alt="Product 1"
-                  />
-                </picture>
+      <a href="#" class="product__link">
+          <button class="product__btn btn btn--like btn--stroke btn-reset">
+            <svg>
+              <use xlink:href="img/sprite.svg#like-icon"></use>
+            </svg>
+          </button>
+          <div class="product__image">
+            <div class="product__switch image-switch">
+              <div class="image-switch__item">
+                <div class="image-switch__img">
+                  <picture>
+                    <source
+                      srcset="${imgSrcArray['webp'][0]}"
+                      type="image/webp"
+                      media="(min-width: 1440px)"
+                    />
+                    <source
+                      srcset="${imgSrcArray['webp'][1]}"
+                      type="image/webp"
+                    />
+                    <img
+                      src="${imgSrcArray['jpg'][0]}"
+                      srcset="${imgSrcArray['jpg'][1]}"
+                      alt="Product 1"
+                    />
+                  </picture>
+                </div>
+              </div>
+              <div class="image-switch__item">
+                <div class="image-switch__img">
+                  <picture>
+                    <source
+                      srcset="${imgSrcArray['webp'][2]}"
+                      type="image/webp"
+                      media="(min-width: 1440px)"
+                    />
+                    <source
+                      srcset="${imgSrcArray['webp'][3]}"
+                      type="image/webp"
+                    />
+                    <img
+                      src="${imgSrcArray['jpg'][2]}"
+                      srcset="${imgSrcArray['jpg'][3]}"
+                      alt="Product 1"
+                    />
+                  </picture>
+                </div>
+              </div>
+              <div class="image-switch__item">
+                <div class="image-switch__img">
+                  <picture>
+                    <source
+                      srcset="${imgSrcArray['webp'][4]}"
+                      type="image/webp"
+                      media="(min-width: 1440px)"
+                    />
+                    <source
+                      srcset="${imgSrcArray['webp'][5]}"
+                      type="image/webp"
+                    />
+                    <img
+                      src="${imgSrcArray['jpg'][4]}"
+                      srcset="${imgSrcArray['jpg'][5]}"
+                      alt="Product 1"
+                    />
+                  </picture>
+                </div>
               </div>
             </div>
-            <div class="image-switch__item">
-              <div class="image-switch__img">
-                <picture>
-                  <source
-                    srcset="${imgSrcArray['webp'][2]}"
-                    type="image/webp"
-                    media="(min-width: 1440px)"
-                  />
-                  <source
-                    srcset="${imgSrcArray['webp'][3]}"
-                    type="image/webp"
-                  />
-                  <img
-                    src="${imgSrcArray['jpg'][2]}"
-                    srcset="${imgSrcArray['jpg'][3]}"
-                    alt="Product 1"
-                  />
-                </picture>
+            <div class="product__slider swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <picture>
+                    <source
+                      srcset="${imgSrcArray['webp'][0]}"
+                      type="image/webp"
+                      media="(min-width: 1440px)"
+                    />
+                    <source
+                      srcset="${imgSrcArray['webp'][1]}"
+                      type="image/webp"
+                    />
+                    <img
+                      src="${imgSrcArray['jpg'][0]}"
+                      srcset="${imgSrcArray['jpg'][1]}"
+                      alt="Product 1"
+                    />
+                  </picture>
+                </div>
+                <div class="swiper-slide">
+                  <picture>
+                    <source
+                      srcset="${imgSrcArray['webp'][2]}"
+                      type="image/webp"
+                      media="(min-width: 1440px)"
+                    />
+                    <source
+                      srcset="${imgSrcArray['webp'][3]}"
+                      type="image/webp"
+                    />
+                    <img
+                      src="${imgSrcArray['jpg'][2]}"
+                      srcset="${imgSrcArray['jpg'][3]} 2x"
+                      alt="Product 1"
+                    />
+                  </picture>
+                </div>
+                <div class="swiper-slide">
+                  <picture>
+                    <source
+                      srcset="${imgSrcArray['webp'][4]}"
+                      type="image/webp"
+                      media="(min-width: 1440px)"
+                    />
+                    <source
+                      srcset="${imgSrcArray['webp'][5]}"
+                      type="image/webp"
+                    />
+                    <img
+                      src="${imgSrcArray['jpg'][4]}"
+                      srcset="${imgSrcArray['jpg'][4]} 2x"
+                      alt="Product 1"
+                    />
+                  </picture>
+                </div>
               </div>
+              <div class="swiper-pagination product-slider__pagination"></div>
             </div>
-            <div class="image-switch__item">
-              <div class="image-switch__img">
-                <picture>
-                  <source
-                    srcset="${imgSrcArray['webp'][4]}"
-                    type="image/webp"
-                    media="(min-width: 1440px)"
-                  />
-                  <source
-                    srcset="${imgSrcArray['webp'][5]}"
-                    type="image/webp"
-                  />
-                  <img
-                    src="${imgSrcArray['jpg'][4]}"
-                    srcset="${imgSrcArray['jpg'][5]}"
-                    alt="Product 1"
-                  />
-                </picture>
-              </div>
-            </div>
+            <ul
+              class="pruoduct__image-pagination image-pagination list-reset"
+            ></ul>
           </div>
-          <div class="product__slider swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <picture>
-                  <source
-                    srcset="${imgSrcArray['webp'][0]}"
-                    type="image/webp"
-                    media="(min-width: 1440px)"
-                  />
-                  <source
-                    srcset="${imgSrcArray['webp'][1]}"
-                    type="image/webp"
-                  />
-                  <img
-                    src="${imgSrcArray['jpg'][0]}"
-                    srcset="${imgSrcArray['jpg'][1]}"
-                    alt="Product 1"
-                  />
-                </picture>
-              </div>
-              <div class="swiper-slide">
-                <picture>
-                  <source
-                    srcset="${imgSrcArray['webp'][2]}"
-                    type="image/webp"
-                    media="(min-width: 1440px)"
-                  />
-                  <source
-                    srcset="${imgSrcArray['webp'][3]}"
-                    type="image/webp"
-                  />
-                  <img
-                    src="${imgSrcArray['jpg'][2]}"
-                    srcset="${imgSrcArray['jpg'][3]} 2x"
-                    alt="Product 1"
-                  />
-                </picture>
-              </div>
-              <div class="swiper-slide">
-                <picture>
-                  <source
-                    srcset="${imgSrcArray['webp'][4]}"
-                    type="image/webp"
-                    media="(min-width: 1440px)"
-                  />
-                  <source
-                    srcset="${imgSrcArray['webp'][5]}"
-                    type="image/webp"
-                  />
-                  <img
-                    src="${imgSrcArray['jpg'][4]}"
-                    srcset="${imgSrcArray['jpg'][4]} 2x"
-                    alt="Product 1"
-                  />
-                </picture>
-              </div>
+          <div class="product__info product-info">
+            <div class="product-info__left">
+              <h3 class="product-info__title">${title}</h3>
+              <span class="product-info__price"
+                >от ${price} ₽</span
+              >
             </div>
-            <div class="swiper-pagination product-slider__pagination"></div>
+            <ul class="product-info__right list-reset">
+              <li
+                class="product-info__item product-info__item--sq"
+                data-sq="${square}"
+              >
+                <div class="product-info__figure">
+                  ${square} <span>м<sup>2</sup></span>
+                </div>
+              </li>
+              <li class="product-info__item product-info__item--fl" data-fl="${floors}">
+                <div class="product-info__figure">${floors} <span>${floorsWord}</span></div>
+              </li>
+              <li
+                class="product-info__item product-info__item--bed"
+                data-bed="${bedrooms}"
+              >
+                <div class="product-info__figure">${bedrooms} <span>${bedroomsWord}</span></div>
+              </li>
+              <li
+                class="product-info__item product-info__item--bath"
+                data-bath="${bathrooms}"
+              >
+                <div class="product-info__figure">${bathrooms} <span>${bathroomsWord}</span></div>
+              </li>
+              <li
+                class="product-info__item product-info__item--pl visually-hidden"
+                data-pl="${placeSquare}"
+              >
+                <div class="product-info__figure">${placeSquare} <span>площадь</span></div>
+              </li>
+            </ul>
           </div>
-          <ul
-            class="pruoduct__image-pagination image-pagination list-reset"
-          ></ul>
         </a>
-        <div class="product__info product-info">
-          <div class="product-info__left">
-            <h3 class="product-info__title">${title}</h3>
-            <span class="product-info__price"
-              >от ${price} ₽</span
-            >
-          </div>
-          <ul class="product-info__right list-reset">
-            <li
-              class="product-info__item product-info__item--sq"
-              data-sq="${square}"
-            >
-              <div class="product-info__figure">
-                ${square} <span>м<sup>2</sup></span>
-              </div>
-            </li>
-            <li class="product-info__item product-info__item--fl" data-fl="${floors}">
-              <div class="product-info__figure">${floors} <span>этажа</span></div>
-            </li>
-            <li
-              class="product-info__item product-info__item--bed"
-              data-bed="${bedrooms}"
-            >
-              <div class="product-info__figure">${bedrooms} <span>спальни</span></div>
-            </li>
-            <li
-              class="product-info__item product-info__item--bath"
-              data-bath="${bathrooms}"
-            >
-              <div class="product-info__figure">${bathrooms} <span>санузла</span></div>
-            </li>
-            <li
-              class="product-info__item product-info__item--pl visually-hidden"
-              data-pl="${placeSquare}"
-            >
-              <div class="product-info__figure">${placeSquare} <span>площадь</span></div>
-            </li>
-          </ul>
-        </div>
       </article>
     </li>
   `;
@@ -1735,6 +1744,24 @@ if (circles) {
     el.setAttribute('stroke-dashoffset', circleLength - circleLength * percentageProgress / 100);
   });
 }
+
+/***/ }),
+
+/***/ "./src/js/components/declOfNum.js":
+/*!****************************************!*\
+  !*** ./src/js/components/declOfNum.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function declOfNum(number, words) {
+  return words[number % 100 > 4 && number % 100 < 20 ? 2 : [2, 0, 1, 1, 1, 2][number % 10 < 5 ? Math.abs(number) % 10 : 5]];
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (declOfNum);
 
 /***/ }),
 

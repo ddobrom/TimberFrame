@@ -43,7 +43,7 @@
       }
     }
     &.active {
-      border: 1px solid var(--focus-active-color);
+      outline: 1px solid var(--focus-active-color) !important;
     }
   }
 }

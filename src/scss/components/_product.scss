@@ -1,5 +1,10 @@
 .product {
   position: relative;
+  @include hover {
+    .product-info__title {
+      color: var(--focus-color);
+    }
+  }
   &__slider {
     display: none;
     height: 100%;
@@ -74,13 +79,15 @@
     }
     @include mobile {
       padding: 16px;
-
     }
   }
   &__link {
-    position: absolute;
-    z-index: 5;
-    inset: 0;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
   }
 }
 .product-info {
@@ -205,6 +212,7 @@
     line-height: normal;
     letter-spacing: 1.6px;
     text-transform: capitalize;
+    transition: color .2s ease-in;
     @media (min-width: 1440px) {
       margin-bottom: 0.4rem;
       font-size: 3.2rem;
@@ -304,7 +312,8 @@
 .product-slider__pagination {
   opacity: 0;
   bottom: 0;
-  transition: opacity .2s ease-in;
+  transform: translateY(16px);
+  transition: opacity 0.2s ease-in, transform 0.2s ease-in;
   .swiper-pagination-bullet {
     margin: 0 4px;
     height: 8px;
@@ -318,5 +327,6 @@
   }
   &--active {
     opacity: 1;
+    transform: translateY(0);
   }
 }

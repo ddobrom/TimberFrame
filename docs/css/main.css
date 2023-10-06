@@ -4263,7 +4263,7 @@ span.popular-card__figure {
   font-family: "PP Neue Montreal";
   font-size: 48px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: normal;
   letter-spacing: 2.4px;
 }
@@ -4313,6 +4313,10 @@ span.popular-card__figure {
     flex-shrink: 1;
     margin: 0 auto;
   }
+}
+.cta__form--catalogue .form__title {
+  -ms-flex-item-align: start;
+  align-self: flex-start;
 }
 
 .form {
@@ -4521,7 +4525,7 @@ span.popular-card__figure {
 }
 @media (max-width: 768px) {
   .catalogue-section__breadcrumbs {
-    padding: 8px 0;
+    margin-bottom: 4px;
   }
 }
 .catalogue-section__filters {
@@ -4566,6 +4570,11 @@ span.popular-card__figure {
 
 .product {
   position: relative;
+}
+@media (any-hover: hover) {
+  .product:hover .product-info__title {
+    color: var(--focus-color);
+  }
 }
 .product__slider {
   display: none;
@@ -4657,10 +4666,11 @@ span.popular-card__figure {
     padding: 16px;
   }
 }
-.product__link {
+.product__link::before {
+  content: "";
   position: absolute;
-  z-index: 5;
   inset: 0;
+  z-index: 1;
 }
 
 .product-info {
@@ -4818,6 +4828,8 @@ span.popular-card__figure {
   line-height: normal;
   letter-spacing: 1.6px;
   text-transform: capitalize;
+  -webkit-transition: color 0.2s ease-in;
+  transition: color 0.2s ease-in;
 }
 @media (min-width: 1440px) {
   .product-info__title {
@@ -4945,8 +4957,13 @@ span.popular-card__figure {
 .product-slider__pagination {
   opacity: 0;
   bottom: 0;
-  -webkit-transition: opacity 0.2s ease-in;
-  transition: opacity 0.2s ease-in;
+  -webkit-transform: translateY(16px);
+  -ms-transform: translateY(16px);
+  transform: translateY(16px);
+  -webkit-transition: opacity 0.2s ease-in, -webkit-transform 0.2s ease-in;
+  transition: opacity 0.2s ease-in, -webkit-transform 0.2s ease-in;
+  transition: opacity 0.2s ease-in, transform 0.2s ease-in;
+  transition: opacity 0.2s ease-in, transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
 }
 .product-slider__pagination .swiper-pagination-bullet {
   margin: 0 4px;
@@ -4961,6 +4978,9 @@ span.popular-card__figure {
 }
 .product-slider__pagination--active {
   opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
 }
 
 .filters {
@@ -5017,7 +5037,7 @@ span.popular-card__figure {
   outline-color: var(--focus-color);
 }
 .filters__btn.active {
-  border: 1px solid var(--focus-active-color);
+  outline: 1px solid var(--focus-active-color) !important;
 }
 
 .pagination {

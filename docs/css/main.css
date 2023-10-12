@@ -1281,9 +1281,9 @@ html.lenis {
 }
 @media (max-width: 768px) {
   .hero .hero-slide__image {
-    -webkit-transform: translateX(-55%, -50%);
-    -ms-transform: translateX(-55%, -50%);
-    transform: translateX(-55%, -50%);
+    -webkit-transform: translate(-55%, -50%);
+    -ms-transform: translate(-55%, -50%);
+    transform: translate(-55%, -50%);
   }
 }
 .hero .hero-slide__image--nisalahti {

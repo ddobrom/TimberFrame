@@ -85,7 +85,7 @@
   />
   <link rel="stylesheet" href="css/vendor.css" />
   <link rel="stylesheet" href="css/main.css" />
-  <script defer src="js/main.js"></script>
+ 
 </head>
 
 
@@ -204,7 +204,10 @@
               d="M150.493 25.9196L151.281 25.9303C151.308 26.2947 151.597 26.5466 152.058 26.5466C152.428 26.5466 152.701 26.3858 152.701 26.0911C152.701 25.7749 152.396 25.7106 151.769 25.5873C151.136 25.4694 150.579 25.2658 150.579 24.5048C150.579 23.8403 151.131 23.3687 151.978 23.3687C152.862 23.3687 153.424 23.8296 153.435 24.5477H152.647C152.61 24.2315 152.369 24.0118 151.978 24.0118C151.635 24.0118 151.388 24.1565 151.388 24.4459C151.388 24.7513 151.683 24.8156 152.304 24.9335C152.947 25.0514 153.516 25.2444 153.51 26C153.505 26.702 152.926 27.1843 152.047 27.1843C151.093 27.1843 150.498 26.6806 150.493 25.9196Z"
               fill="#E4E4E4"
             />
-            <path d="M155.6 27.1521V23.4009H156.404V27.1521H155.6Z" fill="#E4E4E4" />
+            <path
+              d="M155.6 27.1521V23.4009H156.404V27.1521H155.6Z"
+              fill="#E4E4E4"
+            />
             <path
               d="M160.281 27.1843C159.21 27.1843 158.497 26.4287 158.497 25.2765C158.497 24.1243 159.204 23.3687 160.357 23.3687C161.262 23.3687 161.9 23.9261 161.996 24.7353H161.193C161.096 24.3226 160.796 24.0493 160.335 24.0493C159.708 24.0493 159.317 24.5531 159.317 25.2765C159.317 26 159.692 26.5037 160.335 26.5037C160.764 26.5037 161.198 26.2786 161.273 25.7535V25.7052H160.34V25.0675H162.018V27.1521H161.455L161.375 26.702C161.176 26.9646 160.812 27.1843 160.281 27.1843Z"
               fill="#E4E4E4"
@@ -334,7 +337,9 @@
                       >
                     </li>
                     <li class="dropdown__item">
-                      <a href="#" class="nav__link">Каркасно&nbsp;-&nbsp;брусовые&nbsp;дома</a>
+                      <a href="#" class="nav__link"
+                        >Каркасно&nbsp;-&nbsp;брусовые&nbsp;дома</a
+                      >
                     </li>
                     <li class="dropdown__item">
                       <a href="#" class="nav__link">Каркасные&nbsp;дома</a>
@@ -372,7 +377,7 @@
         </div>
       </header>
       <main class="main smooth-scroll">
-        <div class="menu menu--main menu-disable main-menu">
+        <div class="menu menu--main menu-disable main-menu" data-lenis-prevent>
   <a class="menu__logo logo mob-dis">
     <svg
       width="200"
@@ -833,8 +838,10 @@
     </button>
   </div>
 </div>
-
-        <div class="menu menu--favorites menu-disabled favorites-menu">
+ <div
+  class="menu menu--favorites menu-disabled favorites-menu"
+  data-lenis-prevent
+>
   <a class="logo menu__logo favorites__logo">
     <svg
       width="200"
@@ -1034,13 +1041,12 @@
     <h2 class="favorites-menu__title">
       Избранное<span class="favorites-menu__count">0</span>
     </h2>
-    <div class="favorites-menu__wrapper" data-simplebar id="fav-scroll">
+    <div class="favorites-menu__wrapper" id="fav-scroll">
       <div class="favorites-menu__content favorites-content"></div>
     </div>
     <button class="btn-close btn-reset menu__close-btn"></button>
   </div>
 </div>
-
 
         <section class="catalogue-section">
   <h1 class="visually-hidden">Title Catalogue</h1>
@@ -1244,7 +1250,11 @@
 
         <section class="cta cta__container">
           <div class="cta__left">
-            <h2 class="title cta__title title--white" data-aos="fade-up" data-aos-offset="20">
+            <h2
+              class="title cta__title title--white"
+              data-aos="custom-custom-fade-up"
+              data-aos-offset="20"
+            >
               Заказать индивидуальный расчет
             </h2>
           </div>
@@ -1274,26 +1284,32 @@
         <div class="mobile-menu mobile-menu--active">
           <ul class="mobile-menu__list list-reset">
             <li class="mobile-menu__item">
-              <a href="#" class="mobile-menu__btn mobile-menu__btn--home btn-reset">
+              <a
+                href="#"
+                class="mobile-menu__btn mobile-menu__btn--home btn-reset"
+              >
               </a>
             </li>
             <li class="mobile-menu__item">
-              <button class="mobile-menu__btn mobile-menu__btn--search btn-reset">
-              </button>
+              <button
+                class="mobile-menu__btn mobile-menu__btn--search btn-reset"
+              ></button>
             </li>
             <li class="mobile-menu__item">
-              <button class="mobile-menu__btn mobile-menu__btn--favorites btn-reset">
+              <button
+                class="mobile-menu__btn mobile-menu__btn--favorites btn-reset"
+              >
                 <span class="favorites-btn__quantity">0</span>
               </button>
             </li>
             <li class="mobile-menu__item">
-              <button class="mobile-menu__btn mobile-menu__btn--call btn-reset" data-form-id="call-btn-main-mob">
-
-              </button>
+              <button
+                class="mobile-menu__btn mobile-menu__btn--call btn-reset"
+                data-form-id="call-btn-main-mob"
+              ></button>
             </li>
           </ul>
         </div>
-
       </main>
       <footer class="footer">
   <div class="footer__row">
@@ -1319,5 +1335,6 @@
 
       <div class="plug"></div>
     </div>
+    <script src="js/main.js"></script>
   </body>
 </html>

@@ -85,7 +85,7 @@
   />
   <link rel="stylesheet" href="css/vendor.css" />
   <link rel="stylesheet" href="css/main.css" />
-  <script defer src="js/main.js"></script>
+ 
 </head>
 
 
@@ -359,7 +359,7 @@
     <div class="header__btns">
       <button class="header__btn btn-reset favorites-btn">
         <svg class="">
-          <use xlink:href="img/sprite.svg#like-icon"></use>
+          <use xlink:href="img/sprite.svg#like-icon-2"></use>
         </svg>
         <span class="favorites-btn__quantity">0</span>
       </button>
@@ -373,7 +373,7 @@
 </header>
 
       <main class="main">
-        <div class="menu menu--main menu-disable main-menu">
+        <div class="menu menu--main menu-disable main-menu" data-lenis-prevent>
   <a class="menu__logo logo mob-dis">
     <svg
       width="200"
@@ -834,7 +834,11 @@
     </button>
   </div>
 </div>
- <div class="menu menu--favorites menu-disabled favorites-menu">
+
+        <div
+  class="menu menu--favorites menu-disabled favorites-menu"
+  data-lenis-prevent
+>
   <a class="logo menu__logo favorites__logo">
     <svg
       width="200"
@@ -1034,20 +1038,25 @@
     <h2 class="favorites-menu__title">
       Избранное<span class="favorites-menu__count">0</span>
     </h2>
-    <div class="favorites-menu__wrapper" data-simplebar id="fav-scroll">
+    <div class="favorites-menu__wrapper" id="fav-scroll">
       <div class="favorites-menu__content favorites-content"></div>
     </div>
     <button class="btn-close btn-reset menu__close-btn"></button>
   </div>
 </div>
 
-        <section class="hero">
+         <section class="hero">
   <div class="swiper hero__slider swiper-no-swiping">
     <div class="swiper-wrapper">
       <div class="swiper-slide" style="width: 100%">
         <div class="hero__slide hero__slide--nisalahti slide swiper-lazy">
+          <div class="hero-slide__image hero-slide__image--nisalahti" style="width: 110%;"></div>
           <div class="slide__content">
-            <h2 class="slide__title" data-aos="fade-up" data-aos-offset="20">
+            <h2
+              class="slide__title"
+              data-aos="custom-fade-up"
+              data-aos-duration="700"
+            >
               Nisalahti
             </h2>
             <div class="slide__refers">
@@ -1067,7 +1076,7 @@
               <span class="slide__item-separator"> | </span>
               <button
                 class="slide__item slide__item--gallery btn-reset"
-                data-gallery="./img/gallery-01.jpg, ./img/cards/card1-2x.jpg, ./img/hero/hero1-2x.jpg"
+                data-gallery="./img/gallery-01.jpg, ./img/cards/popular1.jpeg, ./img/hero/hero1-2x.jpg"
               >
                 Фотогалерея
               </button>
@@ -1087,10 +1096,9 @@
       </div>
       <div class="swiper-slide" style="width: 100%">
         <div class="hero__slide hero__slide--vaskela slide swiper-lazy">
+          <div class="hero-slide__image hero-slide__image--vaskela" style="width: 110%;"></div>
           <div class="slide__content">
-            <h2 class="slide__title" data-aos="fade-up" data-aos-offset="20">
-              Vaskela
-            </h2>
+            <h2 class="slide__title" data-aos="custom-fade-up">Vaskela</h2>
             <div class="slide__refers">
               <button
                 class="slide__item slide__item--video btn-reset"
@@ -1108,7 +1116,7 @@
               <span class="slide__item-separator"> | </span>
               <button
                 class="slide__item slide__item--gallery btn-reset"
-                data-gallery="./img/gallery-01.jpg, ./img/cards/card1-2x.jpg, ./img/hero/hero3-2x.jpg"
+                data-gallery="./img/gallery-01.jpg, ./img/cards/popular1.jpeg, ./img/hero/hero3-2x.jpg"
               >
                 Фотогалерея
               </button>
@@ -1128,10 +1136,9 @@
       </div>
       <div class="swiper-slide" style="width: 100%">
         <div class="hero__slide hero__slide--ostamo slide swiper-lazy">
+          <div class="hero-slide__image hero-slide__image--ostamo" style="width: 110%;"></div>
           <div class="slide__content">
-            <h2 class="slide__title" data-aos="fade-up" data-aos-offset="20">
-              Ostamo
-            </h2>
+            <h2 class="slide__title" data-aos="custom-fade-up">Ostamo</h2>
             <div class="slide__refers">
               <button
                 class="slide__item slide__item--video btn-reset"
@@ -1149,7 +1156,7 @@
               <span class="slide__item-separator"> | </span>
               <button
                 class="slide__item slide__item--gallery btn-reset"
-                data-gallery="./img/gallery-01.jpg, ./img/cards/card1-2x.jpg, ./img/hero/hero2-2x.jpg"
+                data-gallery="./img/gallery-01.jpg, ./img/cards/popular1.jpeg, ./img/hero/hero2-2x.jpg"
               >
                 Фотогалерея
               </button>
@@ -1169,10 +1176,9 @@
       </div>
       <div class="swiper-slide" style="width: 100%">
         <div class="hero__slide slide hero__slide--lautala swiper-lazy">
+          <div class="hero-slide__image hero-slide__image--lautala" style="width: 110%;"></div>
           <div class="slide__content">
-            <h2 class="slide__title" data-aos="fade-up" data-aos-offset="20">
-              Lautala
-            </h2>
+            <h2 class="slide__title" data-aos="custom-fade-up">Lautala</h2>
             <div class="slide__refers">
               <button
                 class="slide__item slide__item--video btn-reset"
@@ -1190,7 +1196,7 @@
               <span class="slide__item-separator"> | </span>
               <button
                 class="slide__item slide__item--gallery btn-reset"
-                data-gallery="./img/gallery-01.jpg, ./img/hero/hero4-2x.jpg, ./img/cards/card1-2x.jpg, ./img/hero/hero4-2x.jpg"
+                data-gallery="./img/gallery-01.jpg, ./img/hero/hero4-2x.jpg, ./img/cards/popular1.jpeg, ./img/hero/hero4-2x.jpg"
               >
                 Фотогалерея
               </button>
@@ -1232,7 +1238,7 @@
 </div>
  <div class="modal modal-tour">
   <div class="modal__window">
-    <iframe width="100%" height="100%" frameborder="0" allow="xr-spatial-tracking; gyroscope; accelerometer" allowfullscreen scrolling="no" src="https://kuula.co/share/NzlGp?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"></iframe>
+    <!-- <iframe width="100%" height="100%" frameborder="0" allow="xr-spatial-tracking; accelerometer" allowfullscreen scrolling="no" src="https://kuula.co/share/NzlGp?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"></iframe> -->
     <button class="modal__close btn-reset"></button>
     <div class="mouse-rotate">Вращать</div>
   </div>
@@ -1264,13 +1270,19 @@
     <span></span>
   </button>
 </section>
- <section class="benefit" id="benefit">
+
+        <section class="benefit" id="benefit">
   <div class="benefit__container">
-    <div class="benefit__heading" data-aos="fade-up" data-aos-offset="20">
+    <div class="benefit__heading" data-aos="custom-fade-up">
       <h3 class="benefit__title-logo">TF House</h3>
       <p>The best for different <span>|</span> Лучшее для разных</p>
     </div>
-    <h1 class="title benefit__title" data-aos="fade-up" data-aos-offset="20">
+    <h1
+      class="title benefit__title"
+      data-aos="custom-fade-up"
+      data-aos-easing="ease-in-sine"
+      data-aos-duration="800"
+    >
       Будь то&nbsp;самые смелые или консервативные мечты об&nbsp;идеальном
       загородном доме&nbsp;&mdash; мы&nbsp;готовы их&nbsp;реализовать!
     </h1>
@@ -1288,8 +1300,7 @@
     <li class="benefit__item">
       <p
         class="benefit__text benefit__text--guarantee"
-        data-aos="fade-up"
-        data-aos-offset="20"
+        data-aos="custom-fade-up"
         data-aos-delay="0"
       >
         Гарантия 5&nbsp;лет и&nbsp;3&nbsp;года сервисное сопровождение
@@ -1298,9 +1309,8 @@
     <li class="benefit__item">
       <p
         class="benefit__text benefit__text--payment"
-        data-aos="fade-up"
+        data-aos="custom-fade-up"
         data-aos-delay="200"
-        data-aos-offset="20"
       >
         Прозрачная детальная&nbsp;смета и&nbsp;поэтапная оплата
       </p>
@@ -1308,9 +1318,8 @@
     <li class="benefit__item">
       <p
         class="benefit__text benefit__text--prod"
-        data-aos="fade-up"
+        data-aos="custom-fade-up"
         data-aos-delay="400"
-        data-aos-offset="20"
       >
         Собственное производство и&nbsp;технадзор
       </p>
@@ -1318,9 +1327,8 @@
     <li class="benefit__item">
       <p
         class="benefit__text benefit__text--tech"
-        data-aos="fade-up"
+        data-aos="custom-fade-up"
         data-aos-delay="600"
-        data-aos-offset="20"
       >
         Финские технологии и&nbsp;премиальное сырьё
       </p>
@@ -1329,29 +1337,25 @@
 </section>
 
         <section class="tour">
-  <iframe
-    width="100%"
-    height="640"
-    frameborder="0"
-    allow="xr-spatial-tracking; accelerometer"
-    scrolling="no"
-    src="https://kuula.co/share/NzlGp?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"
-  ></iframe>
-  <!-- <div class="mouse-rotate">Вращать</div> -->
+  <div class="tour__overlay">
+
+    <iframe
+      width="100%"
+      frameborder="0"
+      allow="xr-spatial-tracking; accelerometer"
+      scrolling="no"
+      src="https://kuula.co/share/NzlGp?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"
+    >
+    </iframe>
+  </div>
+  <div class="mouse-rotate">Вращать</div>
 </section>
- <section class="popular">
-  <h3
-    class="subtitle popular__subtitle container"
-    data-aos="fade-up"
-    data-aos-offset="20"
-  >
+
+        <section class="popular">
+  <h3 class="subtitle popular__subtitle container" data-aos="custom-fade-up">
     популярные проекты
   </h3>
-  <h2
-    class="title popular__title container"
-    data-aos="fade-up"
-    data-aos-offset="20"
-  >
+  <h2 class="title popular__title container" data-aos="custom-fade-up">
     Тёплые и&nbsp;экологичные дома из&nbsp;клеёного бруса
   </h2>
   <div class="popular__container">
@@ -1363,17 +1367,12 @@
               class="popular-content__item popular-card container"
               data-item-id="1"
             >
-              <h3
-                class="popular-card__title"
-                data-aos="fade-up"
-                data-aos-offset="20"
-              >
+              <h3 class="popular-card__title" data-aos="custom-fade-up">
                 Vuotta
               </h3>
               <ul
                 class="popular-card__list list-reset"
-                data-aos="fade-up"
-                data-aos-offset="20"
+                data-aos="custom-fade-up"
               >
                 <li class="popular-card__item popular-card__item--sq">
                   <span class="popular-card__figure">275</span
@@ -1395,11 +1394,7 @@
                   ><span>м<sup>2</sup></span>
                 </li>
               </ul>
-              <p
-                class="popular-card__desc"
-                data-aos="fade-up"
-                data-aos-offset="20"
-              >
+              <p class="popular-card__desc" data-aos="custom-fade-up">
                 Натуральные материалы и&nbsp;инновационные методы создания
                 обеспечивают превосходное качество и&nbsp;долговечность этого
                 жилья.
@@ -1423,17 +1418,12 @@
               class="popular-content__item popular-card container"
               data-item-id="2"
             >
-              <h3
-                class="popular-card__title"
-                data-aos="fade-up"
-                data-aos-offset="20"
-              >
+              <h3 class="popular-card__title" data-aos="custom-fade-up">
                 Nisalahti
               </h3>
               <ul
                 class="popular-card__list list-reset"
-                data-aos="fade-up"
-                data-aos-offset="20"
+                data-aos="custom-fade-up"
               >
                 <li class="popular-card__item popular-card__item--sq">
                   <span class="popular-card__figure">275</span
@@ -1455,11 +1445,7 @@
                   ><span>м<sup>2</sup></span>
                 </li>
               </ul>
-              <p
-                class="popular-card__desc"
-                data-aos="fade-up"
-                data-aos-offset="20"
-              >
+              <p class="popular-card__desc" data-aos="custom-fade-up">
                 Натуральные материалы и&nbsp;инновационные методы создания
                 обеспечивают превосходное качество и&nbsp;долговечность этого
                 жилья.
@@ -1588,28 +1574,137 @@
 </section>
 
         <section class="services-section">
-  <h2 class="title services-section__title container" data-aos="fade-up" data-aos-offset="20">
+  <h2 class="title services-section__title container" data-aos="custom-fade-up">
     Сложное&nbsp;&mdash; это тысяча маленьких шагов, сделанных професионалами
   </h2>
   <div class="services-section__container">
     <div class="services-section__image">
-      <picture>
-        <source
-          srcset="./img/services-ph.webp"
-          type="image/webp"
-          media="(max-width: 1440px)"
-        />
-        <source
-          srcset="./img/services-ph_2x.webp 2x"
-          type="image/webp"
-          media="(min-width: 1440px)"
-        />
-        <img
-          src="./img/services-ph.jpg"
-          srcset="./img/services-ph_2x.jpg 2x"
-          alt="Services ph"
-        />
-      </picture>
+      <div class="services-section__item-image active">
+        <picture>
+          <source
+            srcset="./img/services-ph.webp"
+            type="image/webp"
+            media="(max-width: 1440px)"
+          />
+          <source
+            srcset="./img/services-ph_2x.webp 2x"
+            type="image/webp"
+            media="(min-width: 1440px)"
+          />
+          <img
+            src="./img/services-ph.jpg"
+            srcset="./img/services-ph_2x.jpg 2x"
+            alt="Services ph"
+          />
+        </picture>
+      </div>
+      <div class="services-section__item-image">
+        <picture>
+          <source
+            srcset="./img/services-ph-2.webp"
+            type="image/webp"
+            media="(max-width: 1440px)"
+          />
+          <img src="./img/services-ph-2.jpg" alt="Services ph" />
+        </picture>
+      </div>
+      <div class="services-section__item-image">
+        <picture>
+          <source
+            srcset="./img/services-ph.webp"
+            type="image/webp"
+            media="(max-width: 1440px)"
+          />
+          <source
+            srcset="./img/services-ph_2x.webp 2x"
+            type="image/webp"
+            media="(min-width: 1440px)"
+          />
+          <img
+            src="./img/services-ph.jpg"
+            srcset="./img/services-ph_2x.jpg 2x"
+            alt="Services ph"
+          />
+        </picture>
+      </div>
+      <div class="services-section__item-image">
+        <picture>
+          <source
+            srcset="./img/services-ph-2.webp"
+            type="image/webp"
+            media="(max-width: 1440px)"
+          />
+          <img src="./img/services-ph-2.jpg" alt="Services ph" />
+        </picture>
+      </div>
+      <div class="services-section__item-image">
+        <picture>
+          <source
+            srcset="./img/services-ph.webp"
+            type="image/webp"
+            media="(max-width: 1440px)"
+          />
+          <source
+            srcset="./img/services-ph_2x.webp 2x"
+            type="image/webp"
+            media="(min-width: 1440px)"
+          />
+          <img
+            src="./img/services-ph.jpg"
+            srcset="./img/services-ph_2x.jpg 2x"
+            alt="Services ph"
+          />
+        </picture>
+      </div>
+      <div class="services-section__item-image">
+        <picture>
+          <source
+            srcset="./img/services-ph-2.webp"
+            type="image/webp"
+            media="(max-width: 1440px)"
+          />
+          <img src="./img/services-ph-2.jpg" alt="Services ph" />
+        </picture>
+      </div>
+      <div class="services-section__item-image">
+        <picture>
+          <source
+            srcset="./img/services-ph.webp"
+            type="image/webp"
+            media="(max-width: 1440px)"
+          />
+          <source
+            srcset="./img/services-ph_2x.webp 2x"
+            type="image/webp"
+            media="(min-width: 1440px)"
+          />
+          <img
+            src="./img/services-ph.jpg"
+            srcset="./img/services-ph_2x.jpg 2x"
+            alt="Services ph"
+          />
+        </picture>
+      </div>
+      <div class="services-section__item-image">
+        <picture>
+          <source
+            srcset="./img/services-ph-2.webp"
+            type="image/webp"
+            media="(max-width: 1440px)"
+          />
+          <img src="./img/services-ph-2.jpg" alt="Services ph" />
+        </picture>
+      </div>
+      <div class="services-section__item-image">
+        <picture>
+          <source
+            srcset="./img/services-ph.webp"
+            type="image/webp"
+            media="(max-width: 1440px)"
+          />
+          <img src="./img/services-ph.jpg" alt="Services ph" />
+        </picture>
+      </div>
     </div>
     <div
       class="services-section__right container services-section-right__container"
@@ -1667,15 +1762,16 @@
     poster="./img/video-cover.webp"
     height="640"
     autoplay
-    muted
+    controls
     loop
+    muted
     preload="metadata"
     data-video-src="./video.mp4"
   ></video>
 </section>
 
         <section class="projects-section">
-  <h2 class="title projects-section__title centered" data-aos="fade-up" data-aos-offset="20">
+  <h2 class="title projects-section__title centered" data-aos="custom-fade-up">
     Проекты и цены
   </h2>
   <div class="projects-section__container">
@@ -1762,8 +1858,8 @@
           src=""
           srcset=""
           alt="Project 2."
-          data-img-src="./img/projects2/projects2.jpeg"
-          data-img-srcset="./img/projects2/projects2_2x.jpeg 2x"
+          data-img-src="./img/projects2/projects2.jpg"
+          data-img-srcset="./img/projects2/projects2_2x.jpg 2x"
         />
       </picture>
       <div class="projects-card__info">
@@ -1939,17 +2035,19 @@
 </section>
 
         <section class="benefits-house">
-  <h2
-    class="title centered benefits-house__title container"
-    data-aos="fade-up"
-    data-aos-offset="20"
-  >
-    Преимущества деревянного дома
-  </h2>
   <div class="wrapper">
+    <h2
+      class="title centered benefits-house__title container"
+      data-aos="custom-fade-up"
+      data-aos-easing="ease-in-sine"
+      data-aos-duration="800"
+    >
+      Преимущества деревянного дома
+    </h2>
     <div class="parallax">
       <div class="parallax__wrapper">
-        <div class="parallax__body"></div>
+        <div class="parallax__body">
+        </div>
       </div>
     </div>
     <div
@@ -1962,8 +2060,7 @@
           >
             <h2
               class="title title--white house-content__title"
-              data-aos="fade-up"
-              data-aos-offset="20"
+              data-aos="custom-fade-up"
               data-aos-delay="100"
             >
               Разнообразие фактур и&nbsp;интеллигентное сочетание стилей, для
@@ -1973,11 +2070,11 @@
               >заказать индивидуальный проект</a
             >
             <div class="house-content__text">
-              <p data-aos="fade-up" data-aos-offset="20" data-aos-delay="100">
+              <p data-aos="custom-fade-up" data-aos-delay="100">
                 Создаём изысканные формы из&nbsp;дерева, комбинируем
                 с&nbsp;камнем и&nbsp;штукатуркой
               </p>
-              <p data-aos="fade-up" data-aos-offset="20" data-aos-delay="300">
+              <p data-aos="custom-fade-up" data-aos-delay="300">
                 Такое может быть продумано и&nbsp;воплощено в&nbsp;высочайшем
                 качестве из&nbsp;премиальных материалов только в&nbsp;деревянном
                 доме от&nbsp;TF&nbsp;House
@@ -2015,6 +2112,7 @@
                 srcset="./img/bh2/bh1_2x.jpg 2x"
                 alt="House image"
                 loading="lazy"
+                height="690"
               />
             </picture>
             <div
@@ -2060,11 +2158,10 @@
         <div class="house-content__image">
           <picture
             class="rellax"
-            data-rellax-speed="3"
+            data-rellax-speed="2"
             data-rellax-mobile-speed="6"
             data-rellax-tablet-speed="6"
             data-rellax-percentage="1"
-            style="transform: translateY(40%)"
           >
             <source
               srcset="./img/bh2/bh3_mob.webp"
@@ -2092,7 +2189,6 @@
               srcset="./img/bh2/bh3_2x.jpg 2x"
               alt="House image"
               id="bh3"
-              loading="lazy"
               height="400"
             />
           </picture>
@@ -2100,13 +2196,12 @@
       </div>
       <div class="house-content__grid container">
         <div
-          class="house-content__content house-content mob-order-2"
+          class="house-content__content house-content mob-order-2 up-content"
           style="@media (min-width: 769px) {margin-left: -30px} width: unset"
         >
           <h2
             class="title title--white house-content__title"
-            data-aos="fade-up"
-            data-aos-offset="20"
+            data-aos="custom-fade-up"
           >
             Архитектура&nbsp;&mdash; позволяет сочетать комфорт, пространство
             и&nbsp;время
@@ -2115,12 +2210,12 @@
             >консультация архитектора</a
           >
           <div class="house-content__text">
-            <p data-aos="fade-up" data-aos-offset="20" data-aos-delay="100">
+            <p data-aos="custom-fade-up" data-aos-delay="100">
               Классические деревянные дома, которые никогда не&nbsp;выйдут
               из&nbsp;моды. Современные проекты, как новый символ загородной
               жизни
             </p>
-            <p data-aos="fade-up" data-aos-offset="20" data-aos-delay="300">
+            <p data-aos="custom-fade-up" data-aos-delay="300">
               Мы&nbsp;сможем воплотить вашу мечту о&nbsp;деревянном доме
               в&nbsp;самые короткие сроки строительства
             </p>
@@ -2183,17 +2278,11 @@
 
         <section class="eco-house">
   <div class="eco-house__header container">
-    <h3 class="subtitle centered" data-aos="fade-up" data-aos-offset="20">
-      Эко-среда
-    </h3>
-    <h2
-      class="title centered eco-house__title"
-      data-aos="fade-up"
-      data-aos-offset="20"
-    >
+    <h3 class="subtitle centered" data-aos="custom-fade-up">Эко-среда</h3>
+    <h2 class="title centered eco-house__title" data-aos="custom-fade-up">
       Возможность проводить время с&nbsp;семьёй, оберегая каждого
     </h2>
-    <p class="eco-house__desc" data-aos="fade-up" data-aos-offset="20">
+    <p class="eco-house__desc" data-aos="custom-fade-up">
       *деревянные дома лучше всего подходят для жизни людей с&nbsp;астмой или
       аллергией
     </p>
@@ -2215,8 +2304,7 @@
         >
           <h2
             class="title title--white house-content__title"
-            data-aos="fade-up"
-            data-aos-offset="20"
+            data-aos="custom-fade-up"
           >
             Здоровые дома от&nbsp;TF&nbsp;House не&nbsp;выделяют вредных
             испарений
@@ -2225,11 +2313,11 @@
             >современные технологии</a
           >
           <div class="house-content__text">
-            <p data-aos="fade-up" data-aos-offset="20" data-aos-delay="100">
+            <p data-aos="custom-fade-up" data-aos-delay="100">
               Регулирует комфортную влажность 40&ndash;60% не&nbsp;позволяя
               пересушиваться воздуху
             </p>
-            <p data-aos="fade-up" data-aos-offset="20" data-aos-delay="300">
+            <p data-aos="custom-fade-up" data-aos-delay="300">
               Сохраняет тепло подобно теплу родных любящих сердец зимой
               и&nbsp;дарит прохладу летом.
             </p>
@@ -2242,6 +2330,7 @@
           <picture
             class="rellax"
             data-rellax-speed="2"
+            data-rellax-mobile-speed="1"
             data-rellax-percentage="1"
           >
             <source
@@ -2274,9 +2363,9 @@
           </picture>
           <div
             class="house-content__image--mini house-content__image--eco-mini-1 rellax"
-            data-rellax-speed="4"
+            data-rellax-speed="3"
             data-rellax-percentage="1"
-            style="width: 55%; transform: translateY(60%)"
+            style="width: 55%; transform: translateY(50%)"
           >
             <picture>
               <source
@@ -2315,12 +2404,11 @@
     </div>
     <div class="house-content__grid house-content--expanded">
       <div
-        class="house-content__content house-content__content--end house-content__content--small mob-order-1 container"
+        class="house-content__content house-content__content--end house-content__content--small mob-order-1 container down-content"
       >
         <h2
           class="title title--white house-content__title"
-          data-aos="fade-up"
-          data-aos-offset="20"
+          data-aos="custom-fade-up"
           data-aos-delay="200"
         >
           Эстетика&nbsp;в&nbsp;любом ландшафте
@@ -2330,8 +2418,7 @@
         >
         <div
           class="house-content__text"
-          data-aos="fade-up"
-          data-aos-offset="20"
+          data-aos="custom-fade-up"
           data-aos-delay="200"
         >
           <p>
@@ -2345,6 +2432,7 @@
         <picture
           class="rellax"
           data-rellax-speed="2"
+          data-rellax-mobile-speed="1"
           data-rellax-percentage="1"
         >
           <source
@@ -2376,10 +2464,8 @@
           />
         </picture>
         <div
-          class="house-content__image--mini house-content__image--eco-mini-2 rellax"
-          style="width: 55%; right: 30px; transform: translateY(110%)"
-          data-rellax-speed="4"
-          data-rellax-percentage="1"
+          class="house-content__image--mini house-content__image--eco-mini-2"
+          style="width: 55%; right: 30px"
         >
           <picture>
             <source
@@ -2404,6 +2490,9 @@
             />
 
             <img
+              class="rellax"
+              data-rellax-speed="3"
+              data-rellax-percentage="1"
               src=""
               srcset=""
               alt="Eco House 4"
@@ -2422,8 +2511,7 @@
       >
         <h2
           class="title title--white house-content__title"
-          data-aos="fade-up"
-          data-aos-offset="20"
+          data-aos="custom-fade-up"
           data-aos-delay="200"
         >
           Атмосфера
@@ -2431,8 +2519,7 @@
         <a href="#" class="btn btn--fill house-content__btn">выбрать проект</a>
         <div
           class="house-content__text"
-          data-aos="fade-up"
-          data-aos-offset="20"
+          data-aos="custom-fade-up"
           data-aos-delay="200"
         >
           <p>
@@ -2448,7 +2535,8 @@
         <picture
           class="rellax"
           data-rellax-speed="2"
-          data-rellax-percentage="1"
+          data-rellax-mobile-speed="4"
+          data-rellax-percentage="0.5"
         >
           <source
             srcset="./img/eco2/eco5_mob.webp"
@@ -2482,8 +2570,8 @@
     </div>
     <div
       class="house-content__image--centered rellax"
-      data-rellax-speed="3"
-      data-rellax-percentage="0.5"
+      data-rellax-speed="5"
+      data-rellax-percentage="0.01"
     >
       <picture>
         <source
@@ -2527,18 +2615,18 @@
     <div class="tech__text">
       <a href="#" style="align-self: start;">
         <span class="tech__paragraph tech__paragraph--right">
-          <span>клееный брус</span>
-           <span>клееный брус</span>
-           <span>клееный брус</span>
-          <span>клееный брус</span>
-          <span>клееный брус</span>
-           <span>клееный брус</span>
-           <span>клееный брус</span>
-          <span>клееный брус</span>
-          <span>клееный брус</span>
-           <span>клееный брус</span>
-           <span>клееный брус</span>
-          <span>клееный брус</span>
+          <span>клееный бруc</span>
+           <span>клееный бруc</span>
+           <span>клееный бруc</span>
+          <span>клееный бруc</span>
+          <span>клееный бруc</span>
+           <span>клееный бруc</span>
+           <span>клееный бруc</span>
+          <span>клееный бруc</span>
+          <span>клееный бруc</span>
+           <span>клееный бруc</span>
+           <span>клееный бруc</span>
+          <span>клееный бруc</span>
         </span>
         <div class="tech__img tech__img--1"></div>
       </a>
@@ -2546,236 +2634,275 @@
     <div class="tech__text">
       <a href="#" style="align-self: end;">
         <span class="tech__paragraph tech__paragraph--left">
-          <span>каркас+брус</span>
-          <span>каркас+брус</span>
-          <span>каркас+брус</span>
-          <span>каркас+брус</span>
-          <span>каркас+брус</span>
-          <span>каркас+брус</span>
-          <span>каркас+брус</span>
-          <span>каркас+брус</span>
-          <span>каркас+брус</span>
+          <span>каркаc+бруc</span>
+          <span>каркаc+бруc</span>
+          <span>каркаc+бруc</span>
+          <span>каркаc+бруc</span>
+          <span>каркаc+бруc</span>
+          <span>каркаc+бруc</span>
+          <span>каркаc+бруc</span>
+          <span>каркаc+бруc</span>
+          <span>каркаc+бруc</span>
       </span>
         <div class="tech__img tech__img--2"></div>
       </a>
     </div>
   </div>
-  
+
 </section>
  <section class="add">
   <h2 class="visually-hidden">Title</h2>
   <div class="add__items">
     <div class="add__item add-item">
-      <h3 class="add-item__title">Экспресс консультация с&nbsp;архитектором</h3>
+      <h3 class="add-item__title" data-aos="custom-fade-up" data-aos-delay="100">Экспресс&nbsp;консультация с&nbsp;архитектором</h3>
       <a href="#" class="btn btn--fill">связаться с нами</a>
     </div>
     <div class="add__item add-item">
-      <h3 class="add-item__title">Наши проекты деревянных домов</h3>
+      <h3 class="add-item__title" data-aos="custom-fade-up" data-aos-delay="300">Наши&nbsp;проекты деревянных&nbsp;домов</h3>
       <a href="#" class="btn btn--fill">подобрать проект</a>
     </div>
   </div>
 </section>
 
         <div class="responsibility">
-  <div class="responsibility__container">
-    <h2 class="title centered responsibility__title container" data-aos="fade-up" data-aos-offset="20">
-      Когда одна компания несёт ответственность за&nbsp;результат
-    </h2>
-    <div class="responsibility__items swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="res">
-            <div class="res__left">
-              <svg  class="circle-img">
-                <circle
-                  class="progress-bg"
-                  stroke="black"
-                  stroke-width="1"
-                  fill="none"
-                />
-                <circle
-                  class="progress"
-                  stroke="orange"
-                  stroke-width="3"
-                  fill="none"
-                  data-percents="25"
-                />
-              </svg>
-              <div class="res__title">
-                <h3 class="res__figure">1</h3>
-                <div
-                  class="slider-control__btn slider-control__btn--dark slider-control__btn--next res-control-btn"
-                >
-                  <span></span>
+  <div class="responsibility__wrapper">
+    <div class="responsibility__container">
+      <h2
+        class="title centered responsibility__title container"
+        data-aos="custom-fade-up"
+      >
+        Когда одна компания несёт ответственность за&nbsp;результат
+      </h2>
+      <div class="responsibility__items swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="res">
+              <div class="res__left">
+                <svg class="circle-img">
+                  <circle
+                    class="progress-bg"
+                    stroke="black"
+                    stroke-width="1"
+                    fill="none"
+                  />
+                  <circle
+                    class="progress"
+                    stroke="orange"
+                    stroke-width="3"
+                    fill="none"
+                    data-percents="25"
+                  />
+                </svg>
+                <div class="res__title">
+                  <h3 class="res__figure">1</h3>
+                  <div
+                    class="slider-control__btn slider-control__btn--dark slider-control__btn--next res-control-btn"
+                  >
+                    <span></span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="res__right">
-              <p class="res__info">
-                Фиксированные затраты <span>согласно смете</span>
-              </p>
+              <div class="res__right">
+                <p class="res__info" data-aos="custom-fade-up">
+                  Фиксированные затраты <span data-aos="custom-fade-up" data-aos-delay="200">согласно смете</span>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="res">
-            <div class="res__left">
-              <svg
-                height="362"
-                width="362"
-                class="circle-img"
-                style="overflow: visible"
-              >
-                <circle
-                  class="progress-bg"
-
-                  stroke="black"
-                  stroke-width="1"
-                  fill="none"
-                />
-                <circle
-                  class="progress"
-
-                  stroke="orange"
-                  stroke-width="3"
-                  fill="none"
-                  data-percents="50"
-                />
-              </svg>
-              <div class="res__title">
-                <h3 class="res__figure">2</h3>
-                <div
-                  class="slider-control__btn slider-control__btn--dark slider-control__btn--next res-control-btn"
+          <div class="swiper-slide">
+            <div class="res">
+              <div class="res__left">
+                <svg
+                  height="362"
+                  width="362"
+                  class="circle-img"
+                  style="overflow: visible"
                 >
-                  <span></span>
+                  <circle
+                    class="progress-bg"
+                    stroke="black"
+                    stroke-width="1"
+                    fill="none"
+                  />
+                  <circle
+                    class="progress"
+                    stroke="orange"
+                    stroke-width="3"
+                    fill="none"
+                    data-percents="50"
+                  />
+                </svg>
+                <div class="res__title">
+                  <h3 class="res__figure">2</h3>
+                  <div
+                    class="slider-control__btn slider-control__btn--dark slider-control__btn--next res-control-btn"
+                  >
+                    <span></span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="res__right">
-              <p class="res__info">
-                Минимизация <span>сопутствующих затрат</span>
-              </p>
+              <div class="res__right">
+                <p class="res__info">
+                  Минимизация <span>сопутствующих затрат</span>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="res">
-            <div class="res__left">
-              <svg  class="circle-img">
-                <circle
-                  class="progress-bg"
-
-                  stroke="black"
-                  stroke-width="1"
-                  fill="none"
-                />
-                <circle
-                  class="progress"
-
-                  stroke="orange"
-                  stroke-width="3"
-                  fill="none"
-                  data-percents="75"
-                />
-              </svg>
-              <div class="res__title">
-                <h3 class="res__figure">3</h3>
-                <div
-                  class="slider-control__btn slider-control__btn--dark slider-control__btn--next res-control-btn"
-                >
-                  <span></span>
+          <div class="swiper-slide">
+            <div class="res">
+              <div class="res__left">
+                <svg class="circle-img">
+                  <circle
+                    class="progress-bg"
+                    stroke="black"
+                    stroke-width="1"
+                    fill="none"
+                  />
+                  <circle
+                    class="progress"
+                    stroke="orange"
+                    stroke-width="3"
+                    fill="none"
+                    data-percents="75"
+                  />
+                </svg>
+                <div class="res__title">
+                  <h3 class="res__figure">3</h3>
+                  <div
+                    class="slider-control__btn slider-control__btn--dark slider-control__btn--next res-control-btn"
+                  >
+                    <span></span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="res__right">
-              <p class="res__info">
-                Полная гарантия, включая <span>субподрядные работы</span>
-              </p>
+              <div class="res__right">
+                <p class="res__info">
+                  Полная гарантия, включая <span>субподрядные работы</span>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="res">
-            <div class="res__left">
-              <svg  class="circle-img">
-                <circle
-                  class="progress-bg"
-
-                  stroke="black"
-                  stroke-width="1"
-                  fill="none"
-                />
-                <circle
-                  class="progress"
-
-                  stroke="orange"
-                  stroke-width="3"
-                  fill="none"
-                  data-percents="100"
-                />
-              </svg>
-              <div class="res__title">
-                <h3 class="res__figure">4</h3>
-                <div
-                  class="slider-control__btn slider-control__btn--dark slider-control__btn--next res-control-btn"
-                >
-                  <span></span>
+          <div class="swiper-slide">
+            <div class="res">
+              <div class="res__left">
+                <svg class="circle-img">
+                  <circle
+                    class="progress-bg"
+                    stroke="black"
+                    stroke-width="1"
+                    fill="none"
+                  />
+                  <circle
+                    class="progress"
+                    stroke="orange"
+                    stroke-width="3"
+                    fill="none"
+                    data-percents="100"
+                  />
+                </svg>
+                <div class="res__title">
+                  <h3 class="res__figure">4</h3>
+                  <div
+                    class="slider-control__btn slider-control__btn--dark slider-control__btn--next res-control-btn"
+                  >
+                    <span></span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="res__right">
-              <p class="res__info">
-                Сроки и неустойки <span>прописаны в договоре</span>
-              </p>
+              <div class="res__right">
+                <p class="res__info">
+                  Сроки и неустойки <span>прописаны в договоре</span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div
+      class="responsibility__line responsibility__line--0"
+      data-res-line="2"
+    ></div>
+    <div
+      class="responsibility__line responsibility__line--1"
+      data-res-line="2"
+    ></div>
+    <div
+      class="responsibility__line responsibility__line--2"
+      data-res-line="3"
+    ></div>
+    <div
+      class="responsibility__line responsibility__line--3"
+      data-res-line="4"
+    ></div>
   </div>
 </div>
 
         <section class="office">
-  <h3 class="subtitle centered office__subtitle container" data-aos="fade-up" data-aos-delay="300" data-aos-offset="20">
+  <h3
+    class="subtitle centered office__subtitle container"
+    data-aos="custom-fade-up"
+    data-aos-delay="300"
+  >
     Удобный офис и персональная парковка
   </h3>
-  <h2 class="title centered office__title container" data-aos="fade-up" data-aos-delay="300" data-aos-offset="20">
+  <h2
+    class="title centered office__title container"
+    data-aos="custom-fade-up"
+    data-aos-delay="300"
+  >
     Добро пожаловаться к нам в TF House
   </h2>
-  <div class="office__block">
+  <div class="office__row">
     <address class="office__address address">
-      <a class="address__tel" href="tel:+78006007008" data-aos="fade-up" data-aos-delay="300" data-aos-offset="20"
+      <a
+        class="address__tel"
+        href="tel:+78006007008"
+        data-aos="custom-fade-up"
+        data-aos-delay="300"
         >+7 800 600 7008</a
       >
       <a
         class="address__whatsapp"
         href="https://api.whatsapp.com/send?phone=78006007008"
         target="_blank"
-        data-aos="fade-up" data-aos-delay="300" data-aos-offset="20"
+        data-aos="custom-fade-up"
+        data-aos-delay="300"
         >Написать в WhatsApp</a
       >
       <a
         class="address__telega"
         href="tg://resolve?domain=username"
         target="_blank"
-        data-aos="fade-up" data-aos-delay="300" data-aos-offset="20"
+        data-aos="custom-fade-up"
+        data-aos-delay="300"
         >Написать в Telegram</a
       >
+    </address>
+    <address class="office__address address">
       <a
         class="address__mail"
         href="mailto:infohelf@tfhouse.com"
-        data-aos="fade-up" data-aos-delay="300" data-aos-offset="20"
+        data-aos="custom-fade-up"
+        data-aos-delay="300"
         target="_blank"
         >infohelf@tfhouse.com</a
       >
-      <span class="address__address" data-aos="fade-up" data-aos-delay="300" data-aos-offset="20"
+      <span
+        class="address__address"
+        data-aos="custom-fade-up"
+        data-aos-delay="300"
         >Санкт-Петербург ул.&nbsp;Савушкина, 104</span
       >
     </address>
-    <button class="btn-reset btn btn--fill office__btn" data-aos="fade-up" data-aos-delay="300" data-aos-offset="20">
-      Связаться с нами
-    </button>
   </div>
+  <button
+    class="btn-reset btn btn--fill office__btn"
+    data-aos="custom-fade-up"
+    data-aos-delay="300"
+  >
+    Связаться с нами
+  </button>
   <div class="office__container-left">
     <div class="office__slider swiper">
       <div class="swiper-wrapper">
@@ -2827,7 +2954,7 @@
 </section>
  <section class="cta cta__container">
   <div class="cta__left">
-    <h2 class="title cta__title title--white" data-aos="fade-up" data-aos-offset="20">
+    <h2 class="title cta__title title--white" data-aos="custom-fade-up">
       Спроектировать и&nbsp;построить ваш деревянный дом
     </h2>
   </div>
@@ -2933,5 +3060,6 @@
 
       <div class="plug"></div>
     </div>
+    <script src="js/main.js"></script>
   </body>
 </html>

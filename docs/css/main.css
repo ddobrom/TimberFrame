@@ -1278,6 +1278,7 @@ html.lenis {
   transition: -webkit-transform 7.5s linear 0.1s;
   transition: transform 7.5s linear 0.1s;
   transition: transform 7.5s linear 0.1s, -webkit-transform 7.5s linear 0.1s;
+  will-change: transform;
 }
 @media (max-width: 768px) {
   .hero .hero-slide__image {
@@ -2037,11 +2038,13 @@ html.lenis {
   border: 1px solid #fff6f6;
   pointer-events: none;
   color: var(--white-color);
-  font-family: "PP Telegraf";
+  font-family: "PP Neue Montreal";
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.32px;
   text-transform: uppercase;
+  font-style: normal;
+  line-height: normal;
   left: 0;
   top: 0;
   -webkit-transform: translate(-50%, -50%);

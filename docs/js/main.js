@@ -3016,7 +3016,7 @@ const lenis = new _studio_freight_lenis__WEBPACK_IMPORTED_MODULE_0__["default"](
   wheelMultiplier: 0.7,
   touchMultiplier: 0.7,
   smooth: true,
-  normalizeWheel: true,
+  normalizeWheel: false,
   infinite: false,
   breakpoints: [0, 768, 1201]
 });

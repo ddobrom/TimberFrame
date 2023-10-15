@@ -91,6 +91,8 @@ html {
   font-size: 0.6944444444vw;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 *,
@@ -749,6 +751,14 @@ html.lenis {
   }
 }
 
+.swiper {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100vh;
+  min-height: 0;
+  min-width: 0;
+}
+
 .header {
   position: fixed;
   z-index: 10;
@@ -1284,6 +1294,8 @@ html.lenis {
   transition: transform 7.5s linear 0.1s;
   transition: transform 7.5s linear 0.1s, -webkit-transform 7.5s linear 0.1s;
   will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 @media (max-width: 768px) {
   .hero .hero-slide__image {
@@ -2877,6 +2889,8 @@ span.popular-card__figure {
   z-index: -1;
   -webkit-transition: opacity 0.2s ease-in;
   transition: opacity 0.2s ease-in;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .services-section__item-image.active {
   z-index: 1;
@@ -5137,8 +5151,25 @@ span.popular-card__figure {
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 160%;
   letter-spacing: 0.32px;
+  line-height: 170%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.product-info__price svg {
+  height: 25px;
+  width: 15px;
+  fill: currentColor;
+}
+@media (min-width: 1440px) {
+  .product-info__price svg {
+    height: 2.6rem;
+    width: 1.5rem;
+  }
 }
 @media (min-width: 1440px) {
   .product-info__price {

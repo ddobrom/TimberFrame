@@ -2133,7 +2133,6 @@
                 srcset="./img/bh2/bh1_2x.jpg 2x"
                 alt="House image"
                 loading="lazy"
-                height="690"
               />
             </picture>
             <div
@@ -2486,7 +2485,7 @@
         </picture>
         <div
           class="house-content__image--mini house-content__image--eco-mini-2"
-          style="width: 55%; right: 30px"
+          style="width: 55%; right: 30px; transform: translateY(50%)"
         >
           <picture>
             <source
@@ -3070,8 +3069,8 @@
     </h2>
   </div>
   <form class="cta__form form">
-    <h4 class="form__title">Свяжитесь с нами</h4>
-    <address class="cta__address address">
+    <h4 class="form__title desc-dis">Свяжитесь с нами</h4>
+    <address class="cta__address address desc-dis">
       <a
         class="address__tel"
         href="tel:+78006007008"
@@ -3099,33 +3098,41 @@
     <h4 class="form__title">Написать нам</h4>
     <label class="form__label">
       <span>Имя</span>
-      <input type="text" class="form__input" />
+      <input type="text" class="form__input" name="name"/>
     </label>
     <label class="form__label">
       <span>Телефон</span>
-      <input type="phone" class="form__input" />
+      <input
+        type="tel"
+        name="phone"
+        class="form__input"
+      />
     </label>
     <label class="form__label">
       <span>Комментарий</span>
-      <input type="text" class="form__input" />
+      <input type="text" class="form__input" name="comment" />
     </label>
     <button class="btn btn--fill form__btn btn-reset" type="submit">
       Отправить
     </button>
     <p class="form__privacy">
       Нажимая кнопку “Отправить”, вы принимаете условия
-      <a href="#">Политики конфиденциальности</a>
+      <a href="#" target="_blank">Политики конфиденциальности</a>
     </p>
   </form>
 </section>
 
         <button class="up-page-btn btn-reset"></button>
-        <button class="phone-btn btn-reset mob-dis" data-form-id="call-btn-main"></button>
+        <div class="contact__btns">
+          <button class="contact__btn phone-btn btn-reset mob-dis" data-form-id="call-btn-main"></button>
+          <a href="https://api.whatsapp.com/send?phone=78006007008" class="contact__btn whatsapp-btn btn-reset mob-dis"></a>
+          <a href="tg://resolve?domain=username" class="contact__btn telegram-btn btn-reset mob-dis"></a>
+        </div>
         <div class="modal modal-form" data-lenis-prevent>
   <div class="modal__window--form">
     <form class="cta__form form">
-      <h4 class="form__title">Свяжитесь с нами</h4>
-      <address class="cta__address address">
+      <h4 class="form__title desc-dis">Свяжитесь с нами</h4>
+      <address class="cta__address address desc-dis">
         <a
           class="address__tel"
           href="tel:+78006007008"
@@ -3153,22 +3160,22 @@
       <h4 class="form__title">Написать нам</h4>
       <label class="form__label">
         <span>Имя</span>
-        <input type="text" class="form__input" />
+        <input type="text" class="form__input" name="name"/>
       </label>
       <label class="form__label">
         <span>Телефон</span>
-        <input type="phone" class="form__input" />
+        <input type="tel" class="form__input" name="phone"/>
       </label>
       <label class="form__label">
         <span>Комментарий</span>
-        <input type="text" class="form__input" />
+        <input type="text" class="form__input" name="comment"/>
       </label>
       <button class="btn btn--fill form__btn btn-reset" type="submit">
         Отправить
       </button>
       <p class="form__privacy">
         Нажимая кнопку “Отправить”, вы принимаете условия
-        <a href="#">Политики конфиденциальности</a>
+        <a href="#" target="_blank">Политики конфиденциальности</a>
       </p>
     </form>
     <button class="modal__close btn-reset form-close"></button>

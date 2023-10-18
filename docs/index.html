@@ -836,9 +836,9 @@
         </li>
       </ul>
     </div>
-    <button class="btn-close btn-reset menu__close-btn">
-    </button>
   </div>
+  <button class="btn-close btn-reset menu__close-btn">
+  </button>
 </div>
 
         <div
@@ -2107,7 +2107,7 @@
           <div class="house-content__image" id="bh1">
             <picture
               class="rellax"
-              data-rellax-speed="3"
+              data-rellax-speed="2"
               data-rellax-percentage="1"
             >
               <source
@@ -2184,6 +2184,7 @@
             data-rellax-mobile-speed="6"
             data-rellax-tablet-speed="6"
             data-rellax-percentage="1"
+            data-rellax-zindex="1"
           >
             <source
               srcset="./img/bh2/bh3_mob.webp"
@@ -2290,6 +2291,7 @@
     class="benefits-house__mob-photo rellax"
     data-rellax-speed="2"
     data-rellax-percentage="0.8"
+    data-rellax-zindex="3"
   >
     <picture>
       <source srcset="./img/bh2/bh4.webp" type="image/webp" />
@@ -2387,7 +2389,7 @@
             class="house-content__image--mini house-content__image--eco-mini-1 rellax"
             data-rellax-speed="3"
             data-rellax-percentage="1"
-            style="width: 55%; transform: translateY(50%);"
+            style="width: 55%; transform: translateY(50%)"
           >
             <picture>
               <source
@@ -2514,7 +2516,7 @@
             <img
               class="rellax"
               data-rellax-speed="3"
-              data-rellax-percentage="1"
+              data-rellax-percentage="1.2"
               src=""
               srcset=""
               alt="Eco House 4"
@@ -2592,7 +2594,7 @@
     </div>
     <div
       class="house-content__image--centered rellax"
-      data-rellax-speed="5"
+      data-rellax-speed="4"
       data-rellax-percentage="0.1"
     >
       <picture>
@@ -3132,53 +3134,57 @@
         </div>
         <div class="modal modal-form" data-lenis-prevent>
   <div class="modal__window--form">
-    <form class="cta__form form">
-      <h4 class="form__title desc-dis">Свяжитесь с нами</h4>
-      <address class="cta__address address desc-dis">
-        <a
-          class="address__tel"
-          href="tel:+78006007008"
-          data-aos="custom-fade-up"
-          data-aos-delay="300"
-          >+7 800 600 7008</a
-        >
-        <a
-          class="address__whatsapp"
-          href="https://api.whatsapp.com/send?phone=78006007008"
-          target="_blank"
-          data-aos="custom-fade-up"
-          data-aos-delay="300"
-          >Написать в WhatsApp</a
-        >
-        <a
-          class="address__telega"
-          href="tg://resolve?domain=username"
-          target="_blank"
-          data-aos="custom-fade-up"
-          data-aos-delay="300"
-          >Написать в Telegram</a
-        >
-      </address>
-      <h4 class="form__title">Написать нам</h4>
-      <label class="form__label">
-        <span>Имя</span>
-        <input type="text" class="form__input" name="name"/>
-      </label>
-      <label class="form__label">
-        <span>Телефон</span>
-        <input type="tel" class="form__input" name="phone"/>
-      </label>
-      <label class="form__label">
-        <span>Комментарий</span>
-        <input type="text" class="form__input" name="comment"/>
-      </label>
-      <button class="btn btn--fill form__btn btn-reset" type="submit">
-        Отправить
-      </button>
-      <p class="form__privacy">
-        Нажимая кнопку “Отправить”, вы принимаете условия
-        <a href="#" target="_blank">Политики конфиденциальности</a>
-      </p>
+    <form class="cta__form form modal-form__form">
+      <div class="form__left">
+        <h4 class="form__title">Свяжитесь с нами</h4>
+        <address class="cta__address address">
+          <a
+            class="address__tel"
+            href="tel:+78006007008"
+            data-aos="custom-fade-up"
+            data-aos-delay="300"
+            >+7 800 600 7008</a
+          >
+          <a
+            class="address__whatsapp"
+            href="https://api.whatsapp.com/send?phone=78006007008"
+            target="_blank"
+            data-aos="custom-fade-up"
+            data-aos-delay="300"
+            >Написать в WhatsApp</a
+          >
+          <a
+            class="address__telega"
+            href="tg://resolve?domain=username"
+            target="_blank"
+            data-aos="custom-fade-up"
+            data-aos-delay="300"
+            >Написать в Telegram</a
+          >
+        </address>
+      </div>
+      <div class="form__right">
+        <h4 class="form__title">Написать нам</h4>
+        <label class="form__label">
+          <span>Имя</span>
+          <input type="text" class="form__input" name="name"/>
+        </label>
+        <label class="form__label">
+          <span>Телефон</span>
+          <input type="tel" class="form__input" name="phone"/>
+        </label>
+        <label class="form__label">
+          <span>Комментарий</span>
+          <input type="text" class="form__input" name="comment"/>
+        </label>
+        <button class="btn btn--fill form__btn btn-reset" type="submit">
+          Отправить
+        </button>
+        <p class="form__privacy">
+          Нажимая кнопку “Отправить”, вы принимаете условия
+          <a href="#" target="_blank">Политики конфиденциальности</a>
+        </p>
+      </div>
     </form>
     <button class="modal__close btn-reset form-close"></button>
   </div>

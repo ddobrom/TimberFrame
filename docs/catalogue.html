@@ -299,7 +299,8 @@
                 <li class="nav__item">
                   <div class="nav__dropdown dropdown">
                     <button class="dropdown__btn btn-reset nav__link">
-                      Услуги <svg class="">
+                      Услуги
+                      <svg class="">
                         <use xlink:href="img/sprite.svg#arrow-dropdown"></use>
                       </svg>
                     </button>
@@ -328,13 +329,16 @@
                 <li class="nav__item">
                   <div class="nav__dropdown dropdown">
                     <button class="dropdown__btn btn-reset nav__link">
-                      Технологии <svg class="">
+                      Технологии
+                      <svg class="">
                         <use xlink:href="img/sprite.svg#arrow-dropdown"></use>
                       </svg>
                     </button>
                     <ul class="dropdown__list list-reset">
                       <li class="dropdown__item">
-                        <a href="#" class="nav__link">финская&nbsp;технология</a>
+                        <a href="#" class="nav__link"
+                          >финская&nbsp;технология</a
+                        >
                       </li>
                       <li class="dropdown__item">
                         <a href="#" class="nav__link"
@@ -342,7 +346,9 @@
                         >
                       </li>
                       <li class="dropdown__item">
-                        <a href="#" class="nav__link">Каркасно&nbsp;-&nbsp;брусовые&nbsp;дома</a>
+                        <a href="#" class="nav__link"
+                          >Каркасно&nbsp;-&nbsp;брусовые&nbsp;дома</a
+                        >
                       </li>
                       <li class="dropdown__item">
                         <a href="#" class="nav__link">Каркасные&nbsp;дома</a>
@@ -1379,9 +1385,20 @@
 
         <button class="up-page-btn btn-reset"></button>
         <div class="contact__btns">
-          <button class="contact__btn phone-btn btn-reset mob-dis" data-form-id="call-btn-main"></button>
-          <a href="https://api.whatsapp.com/send?phone=78006007008" target="_blank" class="contact__btn whatsapp-btn btn-reset mob-dis"></a>
-          <a href="tg://resolve?domain=username" target="_blank" class="contact__btn telegram-btn btn-reset mob-dis"></a>
+          <button
+            class="contact__btn phone-btn btn-reset mob-dis"
+            data-form-id="call-btn-main"
+          ></button>
+          <a
+            href="https://api.whatsapp.com/send?phone=78006007008"
+            target="_blank"
+            class="contact__btn whatsapp-btn btn-reset mob-dis"
+          ></a>
+          <a
+            href="tg://resolve?domain=username"
+            target="_blank"
+            class="contact__btn telegram-btn btn-reset mob-dis"
+          ></a>
         </div>
         <section class="cta cta__container">
           <div class="cta__left">
@@ -1394,18 +1411,44 @@
             </h2>
           </div>
           <form class="cta__form form cta__form--catalogue">
+            <h4 class="form__title desc-dis">Свяжитесь с нами</h4>
+            <address class="cta__address address desc-dis">
+              <a
+                class="address__tel"
+                href="tel:+78006007008"
+                data-aos="custom-fade-up"
+                data-aos-delay="300"
+                >+7 800 600 7008</a
+              >
+              <a
+                class="address__whatsapp"
+                href="https://api.whatsapp.com/send?phone=78006007008"
+                target="_blank"
+                data-aos="custom-fade-up"
+                data-aos-delay="300"
+                >Написать в WhatsApp</a
+              >
+              <a
+                class="address__telega"
+                href="tg://resolve?domain=username"
+                target="_blank"
+                data-aos="custom-fade-up"
+                data-aos-delay="300"
+                >Написать в Telegram</a
+              >
+            </address>
             <h4 class="form__title">Написать нам</h4>
             <label class="form__label">
               <span>Имя</span>
-              <input type="text" class="form__input" name="name"/>
+              <input type="text" class="form__input" name="name" />
             </label>
             <label class="form__label">
               <span>Телефон</span>
-              <input type="tel" class="form__input" name="phone"/>
+              <input type="tel" class="form__input" name="phone" />
             </label>
             <label class="form__label">
               <span>Комментарий</span>
-              <input type="text" class="form__input" name="comment"/>
+              <input type="text" class="form__input" name="comment" />
             </label>
             <button class="btn btn--fill form__btn btn-reset" type="submit">
               Отправить
@@ -1472,5 +1515,3 @@
     </div>
   </body>
 </html>
-
-

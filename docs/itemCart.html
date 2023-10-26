@@ -1058,7 +1058,6 @@
   </div>
 </div>
 
-
         <section class="item-hero">
   <ul class="list-reset breadcrumbs item-hero__breadcrumbs">
     <li class="breadcrumbs__item">
@@ -1164,12 +1163,25 @@
           </picture>
         </div>
       </div>
-      <div class="slider-control__btn slider-control__btn--prev item-product-prev">
+      <div
+        class="slider-control__btn slider-control__btn--prev item-product-prev item-product__control-btn"
+      >
         <span></span>
       </div>
-      <div class="slider-control__btn slider-control__btn--next item-product-next">
+      <div
+        class="slider-control__btn slider-control__btn--next item-product-next item-product__control-btn"
+      >
         <span></span>
       </div>
+      <button
+        class="btn-reset btn--fullscreen item-hero__fullscreen"
+        data-gallery="./img/itemCart/01.jpg, ./img/itemCart/02.png, ./img/itemCart/03.png"
+        data-gallery-thumbs="./img/itemCart/01-thumb.jpg, ./img/itemCart/02-thumb.jpg, ./img/itemCart/03-thumb.jpg"
+      >
+        <svg>
+          <use xlink:href="img/sprite.svg#fullscreen-icon"></use>
+        </svg>
+      </button>
       <div class="item-product__preview-wrapper">
         <div class="item-product__preview">
           <div class="item-product__thumbs swiper">
@@ -1246,7 +1258,7 @@
         <div class="item-product__row">
           <a href="#" class="btn btn--fill item-product__btn">Купить проект</a>
           <button
-            class="btn--like btn--like-dark btn btn--stroke btn-reset item-product__btn-fav"
+            class="btn--like btn--like-dark btn btn--stroke btn-reset item-product__btn-fav item-product__btn--white"
           >
             <svg>
               <use xlink:href="img/sprite.svg#like-icon"></use>
@@ -1254,29 +1266,32 @@
           </button>
         </div>
         <div class="item-product__row">
-          <a href="#" class="btn btn--stroke item-product__btn"
+          <a
+            href="#"
+            class="btn btn--stroke item-product__btn item-product__btn--white"
             >Построить дом</a
           >
-          <button
-            class="btn--share btn--share--dark btn btn--stroke btn-reset item-product__btn-share"
+          <a
+            href="#"
+            class="btn--share btn--share--dark btn btn--stroke btn-reset item-product__btn-share item-product__btn--white"
           >
             <svg>
               <use xlink:href="img/sprite.svg#share-icon"></use>
             </svg>
-          </button>
+          </a>
         </div>
       </div>
       <div class="item-product__chars chars">
         <div class="chars-item">
           <dt class="chars__term">Общая площадь</dt>
-          <dd class="chars__val">218 м<sup>2</sup></dd>
+          <dd class="chars__val chars__val--sq">218 м<sup>2</sup></dd>
         </div>
         <div class="chars-item">
-          <dt class="chars__term">Площадь 1 этажа</dt>
+          <dt class="chars__term chars__val--fl">Площадь 1 этажа</dt>
           <dd class="chars__val">133 м<sup>2</sup></dd>
         </div>
         <div class="chars-item">
-          <dt class="chars__term">Площадь 2 этажа</dt>
+          <dt class="chars__term chars__val--fl">Площадь 2 этажа</dt>
           <dd class="chars__val">57 м<sup>2</sup></dd>
         </div>
         <div class="chars-item">
@@ -1285,15 +1300,15 @@
         </div>
         <div class="chars-item">
           <dt class="chars__term">Спален</dt>
-          <dd class="chars__val">4</dd>
+          <dd class="chars__val chars__val--bed">4</dd>
         </div>
         <div class="chars-item">
           <dt class="chars__term">Санузлов</dt>
-          <dd class="chars__val">3</dd>
+          <dd class="chars__val chars__val--bath">3</dd>
         </div>
         <div class="chars-item">
           <dt class="chars__term">Террасы</dt>
-          <dd class="chars__val">50 м<sup>2</sup></dd>
+          <dd class="chars__val chars__val--pl">50 м<sup>2</sup></dd>
         </div>
         <div class="chars-item">
           <dt class="chars__term">Балкон</dt>
@@ -1303,58 +1318,598 @@
     </div>
   </div>
 </section>
-
-        <section class="item-plan">
+ <section class="item-plan">
   <h2 class="title item-plan__title container">Планировка</h2>
   <div class="plan">
     <div class="plan__buttons">
-      <button class="btn btn-reset plan__btn active" data-plan-btn="0">1 этаж</button>
+      <button class="btn btn-reset plan__btn active" data-plan-btn="0">
+        1 этаж
+      </button>
       <button class="btn btn-reset plan__btn" data-plan-btn="1">2 этаж</button>
-      <button class="btn btn-reset plan__btn" data-plan-btn="2">Цокольный этаж</button>
+      <button class="btn btn-reset plan__btn" data-plan-btn="2">
+        Цокольный этаж
+      </button>
     </div>
     <div class="plan__content">
-      <div class="plan__item active" data-plan="0">
-        <picture>
-          <source srcset="./img/plan/01.webp" />
-          <!-- <source srcset="./img/plan/01.webp"> -->
-          <img src="./img/plan/01.png" alt="1 Floor" />
-        </picture>
-      </div>
-      <div class="plan__item" data-plan="1">
-        <picture>
-           <source srcset="./img/plan/01.webp" /> // пока что нет других фото
-           <img src="./img/plan/01.png" alt="1 Floor" /> // пока что нет других фото
-          <!-- <source srcset="./img/plan/02.webp" /> -->
-          <!-- <source srcset="./img/plan/02.webp"> -->
-          <!-- <img src="./img/plan/02.png" alt="2 Floor" /> -->
-        </picture>
-      </div>
-      <div class="plan__item" data-plan="2">
-        <picture>
-          <source srcset="./img/plan/01.webp" /> // пока что нет других фото
-          <img src="./img/plan/01.png" alt="1 Floor" /> // пока что нет других фото
-          <!-- <source srcset="./img/plan/02.webp" /> -->
-          <!-- <source srcset="./img/plan/02.webp"> -->
-          <!-- <img src="./img/plan/03.png" alt="-1 Floor" /> -->
-        </picture>
-      </div>
       <div class="plan__content-buttons">
-        <button class="btn btn-reset btn--print btn--stroke">
+        <button class="btn btn-reset btn--print btn--stroke plan-btn-print">
           <svg>
             <use xlink:href="img/sprite.svg#print-icon"></use>
           </svg>
-          Распечатать</button>
-        <button class="btn btn-reset btn--fullscreen btn--fill">
+          <span>Распечатать</span>
+        </button>
+        <button
+          class="btn btn-reset btn--fullscreen btn--fill"
+          data-gallery="./img/plan/01.png, ./img/plan/01.png, ./img/plan/01.png"
+          data-gallery-thumbs="./img/plan/01-thumb.jpg, ./img/plan/01-thumb.jpg, ./img/plan/01-thumb.jpg"
+        >
           <svg>
             <use xlink:href="img/sprite.svg#fullscreen-icon"></use>
           </svg>
         </button>
       </div>
+      <div class="plan__item active" data-plan-item="0">
+        <picture>
+          <source srcset="./img/plan/01-mob.webp" media="(max-width: 769px)" />
+          <source srcset="./img/plan/01.webp" />
+          <img src="./img/plan/01.png" alt="1 Floor" />
+        </picture>
+      </div>
+      <div class="plan__item" data-plan-item="1">
+        <picture>
+          <source srcset="./img/plan/01-mob.webp" media="(max-width: 769px)" />
+          <source srcset="./img/plan/01.webp" />
+          <img src="./img/plan/01.png" alt="1 Floor" />
+        </picture>
+      </div>
+      <div class="plan__item" data-plan-item="2">
+        <picture>
+          <source srcset="./img/plan/01-mob.webp" media="(max-width: 769px)" />
+          <source srcset="./img/plan/01.webp" />
+          <img src="./img/plan/01.png" alt="1 Floor" />
+        </picture>
+      </div>
     </div>
   </div>
 </section>
 
+        <section class="item-desc">
+  <h2 class="title item-desc__title">Стоимость строительства</h2>
+  <div class="item-desc__buttons">
+    <button
+      class="item-desc__btn btn btn-reset item-desc__btn--active"
+      data-cost-category="1"
+    >
+      Брус
+      <span class="item-desc__price"
+        >115 000
+        <svg class="rub">
+          <use xlink:href="img/sprite.svg#rub"></use>
+        </svg>
+      </span>
+    </button>
+    <button class="item-desc__btn btn btn-reset" data-cost-category="2">
+      Брус + каркас
+      <span class="item-desc__price"
+        >120 000
+        <svg class="rub">
+          <use xlink:href="img/sprite.svg#rub"></use>
+        </svg>
+      </span>
+    </button>
+  </div>
+  <div class="item-desc__main">
+    <div class="item-desc__item desc-item active" data-desc-category="1">
+      <ul class="desc-item__list desc-list list-reset">
+        <li class="desc-list__item">
+          <div class="desc-list__icon">
+            <svg
+              width="96"
+              height="96"
+              viewBox="0 0 96 96"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="Property 1=Default">
+                <circle id="Ellipse 38" cx="48" cy="48" r="47.5" />
+                <path
+                  id="Vector 59"
+                  d="M68.5 68.5H27.5C26.9477 68.5 26.5 68.0523 26.5 67.5V43C26.5 42.4477 26.9477 42 27.5 42H39C39.5523 42 40 42.4477 40 43V46C40 46.5523 39.5523 47 39 47H33C32.4477 47 32 47.4477 32 48V62C32 62.5523 32.4477 63 33 63H63C63.5523 63 64 62.5523 64 62V48.5C64 47.9477 63.5523 47.5 63 47.5H57.5C56.9477 47.5 56.5 47.0523 56.5 46.5V43C56.5 42.4477 56.9477 42 57.5 42H68.5C69.0523 42 69.5 42.4477 69.5 43V67.5C69.5 68.0523 69.0523 68.5 68.5 68.5Z"
+                />
+                <path
+                  id="Vector 60"
+                  d="M35 51V59C35 59.5523 35.4477 60 36 60H60C60.5523 60 61 59.5523 61 59V51C61 50.4477 60.5523 50 60 50H55C54.4477 50 54 49.5523 54 49V25.5C54 24.9477 53.5523 24.5 53 24.5H43.5C42.9477 24.5 42.5 24.9477 42.5 25.5V49C42.5 49.5523 42.0523 50 41.5 50H36C35.4477 50 35 50.4477 35 51Z"
+                />
+              </g>
+            </svg>
+          </div>
+          <span class="desc-list__text">Фундам<wbr />ент</span>
+        </li>
+        <li class="desc-list__item">
+          <div class="desc-list__icon">
+            <svg
+              width="96"
+              height="96"
+              viewBox="0 0 96 96"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="Property 1=Variant2">
+                <circle id="Ellipse 38" cx="48" cy="48" r="47.5" />
+                <path
+                  id="Vector 61"
+                  d="M34.9362 36.1379L24.4532 30.8079C23.788 30.4696 23 30.9529 23 31.6993V65.3176C23 65.694 23.2113 66.0385 23.5468 66.209L34.9362 72M34.9362 36.1379V72M34.9362 36.1379L47.4149 30.1803M34.9362 72L47.4149 66.0424M47.4149 66.0424V30.1803M47.4149 66.0424L60.1649 59.8621M47.4149 30.1803L60.1649 24M60.1649 24L72.4017 29.3679C72.7652 29.5273 73 29.8867 73 30.2836V63.9617C73 64.6833 72.2591 65.1674 71.5983 64.8775L60.1649 59.8621M60.1649 24V59.8621"
+                  stroke="#252321"
+                  stroke-linejoin="round"
+                />
+              </g>
+            </svg>
+          </div>
+          <span class="desc-list__text">Стеновой комплект</span>
+        </li>
+        <li class="desc-list__item">
+          <div class="desc-list__icon">
+            <svg
+              width="96"
+              height="96"
+              viewBox="0 0 96 96"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="Property 1=Variant3">
+                <circle
+                  id="Ellipse 38"
+                  cx="48"
+                  cy="48"
+                  r="47.5"
+                  stroke="#252321"
+                />
+                <path
+                  id="Vector 69"
+                  d="M27.8316 31H62.9793C63.3348 31 63.6635 31.1887 63.8428 31.4956L70.2715 42.5M27.8316 31L13.896 54.4898C13.5005 55.1564 13.9809 56 14.756 56H42.4364M27.8316 31L34.5498 42.5M40.3058 31L59.0172 64M52.0533 31L71.3316 64M42.4364 56L46.8204 63.5044C46.9997 63.8113 47.3328 64 47.6882 64C60.6931 64 68.3926 64 81.0855 64C81.8576 64 82.3422 63.1622 81.9527 62.4956L76.3316 52.8735M42.4364 56L40.61 52.8735M34.5498 42.5H70.2715M34.5498 42.5L40.61 52.8735M70.2715 42.5L76.3316 52.8735M76.3316 52.8735H40.61"
+                  stroke="#252321"
+                  stroke-width="1.13333"
+                  stroke-linejoin="round"
+                />
+              </g>
+            </svg>
+          </div>
+          <span class="desc-list__text">Кровля крыши</span>
+        </li>
+        <li class="desc-list__item">
+          <div class="desc-list__icon">
+            <svg
+              width="96"
+              height="96"
+              viewBox="0 0 96 96"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="48" cy="48" r="47.5" />
+              <path d="M33 22.5V42H63V22.5" stroke="#252321" />
+              <path d="M65 22.3501H31V71.6501H65V22.3501Z" stroke="#252321" />
+              <path d="M48 71.5L48 42L33 42L33 71.5" stroke="#252321" />
+              <path d="M63 71.5L63 42L48 42L48 71" stroke="#252321" />
+            </svg>
+          </div>
+          <span class="desc-list__text">Окна и двери</span>
+        </li>
+        <li class="desc-list__item">
+          <div class="desc-list__icon">
+            <svg
+              width="96"
+              height="96"
+              viewBox="0 0 96 96"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="48" cy="48" r="47.5" />
+              <path
+                d="M39.3817 35.7659L34.9306 40.217M39.3817 35.7659L44.8424 30.3052C45.2067 29.941 45.2067 29.3504 44.8424 28.9862L43.6591 27.8029C43.4224 27.5662 43.0771 27.4745 42.7542 27.5626L37.3951 29.0242C37.2385 29.0669 37.0958 29.1497 36.981 29.2645L34.9306 31.3149M39.3817 35.7659L47.8422 44.2264C48.2064 44.5906 48.2064 45.1812 47.8422 45.5454L44.7101 48.6775C44.3459 49.0417 43.7553 49.0417 43.3911 48.6775L34.9306 40.217M34.9306 40.217L30.3045 44.8432C29.9402 45.2074 29.3497 45.2074 28.9855 44.8432L25.8534 41.7111C25.4892 41.3468 25.4892 40.7563 25.8534 40.3921L30.4796 35.7659M30.4796 35.7659L28.6353 33.9217C28.2711 33.5575 28.2711 32.9669 28.6353 32.6027L31.7674 29.4706C32.1316 29.1064 32.7222 29.1064 33.0864 29.4706L34.9306 31.3149M30.4796 35.7659L34.9306 31.3149M49.2606 54.547L62.0792 67.3656C62.4434 67.7298 63.0339 67.7298 63.3982 67.3656L66.5303 64.2335C66.8945 63.8692 66.8945 63.2787 66.5303 62.9145L53.7117 50.0959C53.3474 49.7317 52.7569 49.7317 52.3927 50.0959L49.2606 53.228C48.8964 53.5922 48.8964 54.1827 49.2606 54.547Z"
+                stroke="#252321"
+              />
+              <path
+                d="M34.0334 66.9897L30.8585 63.8148C30.4943 63.4506 30.4943 62.8601 30.8585 62.4958L54.4536 38.9008C54.6149 38.7395 54.7115 38.5246 54.7251 38.2968L55.0785 32.3645C55.092 32.1367 55.1886 31.9218 55.35 31.7605L58.1775 28.933C58.3448 28.7657 58.5694 28.6682 58.8058 28.6603L62.5366 28.5354C63.3822 28.5071 63.8255 29.5288 63.2273 30.1271L59.9936 33.3608C59.6294 33.725 59.6294 34.3155 59.9936 34.6797L63.1685 37.8546C63.5327 38.2189 64.1232 38.2189 64.4875 37.8546L67.7086 34.6335C68.3084 34.0337 69.3327 34.4813 69.3 35.329L69.1578 39.0136C69.1487 39.2484 69.0514 39.471 68.8853 39.6372L66.0539 42.4685C65.8937 42.6287 65.6807 42.7251 65.4546 42.7397L59.5486 43.1215C59.3226 43.1362 59.1095 43.2326 58.9493 43.3928L35.3524 66.9897C34.9882 67.3539 34.3976 67.3539 34.0334 66.9897Z"
+                stroke="#252321"
+              />
+            </svg>
+          </div>
+          <span class="desc-list__text">Сборка дома</span>
+        </li>
+      </ul>
 
+      <div class="desc-item__content desc-slider">
+        <div class="desc-slider__left">
+          <h4 class="desc-slider__title">Стеновой комплект</h4>
+          <div class="desc-slider__control">
+            <button
+              class="btn-reset desc-slider-control__btn desc-slider-control__btn--left first-desc--prev"
+            ></button>
+            <div
+              class="desc-slider__pagination swiper-pagination first-desc-pagination"
+            ></div>
+            <button
+              class="btn-reset desc-slider-control__btn desc-slider-control__btn--right first-desc--next"
+            ></button>
+          </div>
+          <div class="desc-slider__info desc-info">
+            <div
+              class="swiper desc-slider__slider desc-slider__slider--first swiper-no-swiping"
+            >
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <h5 class="desc-info__title">Домокомплект брус 205*230</h5>
+                  <ul type="square" class="desc-info__list">
+                    <li class="desc-info__item">наружние стены брус</li>
+                    <li class="desc-info__item">
+                      внутренние перегородки брус либо карскас
+                    </li>
+                    <li class="desc-info__item">перекрытия балки + доска</li>
+                    <li class="desc-info__item">стропильно-балочная система</li>
+                    <li class="desc-info__item">террасы: каркасы + покрытие</li>
+                    <li class="desc-info__item">
+                      наружняя отделка: наличники, подзоры, ветровые
+                      доски,откосы
+                    </li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <h5 class="desc-info__title">Сборка</h5>
+                  <ul type="square" class="desc-info__list">
+                    <li class="desc-info__item">монтаж брусовой части</li>
+                    <li class="desc-info__item">монтаж перегородок</li>
+                    <li class="desc-info__item">сборка перекрытия</li>
+                    <li class="desc-info__item">
+                      сборка стропильно-балочной системы
+                    </li>
+                    <li class="desc-info__item">установка окон и дверей</li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <h5 class="desc-info__title">Кровельное покрытие</h5>
+                  <ul type="square" class="desc-info__list">
+                    <li class="desc-info__item">битумная черепица Shinglas</li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <h5 class="desc-info__title">Окраска</h5>
+                  <ul type="square" class="desc-info__list">
+                    <li class="desc-info__item">шлифовка наружного бруса</li>
+                    <li class="desc-info__item">грунтование в 1 слой</li>
+                    <li class="desc-info__item">
+                      окраска финишным антисептиком или кроющим покрытием в 2
+                      слоя
+                    </li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <h5 class="desc-info__title">Окна</h5>
+                  <ul type="square" class="desc-info__list">
+                    <li class="desc-info__item">
+                      металлопластиковые окна Rehau профиль Grazio
+                    </li>
+                    <li class="desc-info__item">стеклопакет двухкамерный</li>
+                    <li class="desc-info__item">цвет единый с двух сторон</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc-slider__right">
+          <div
+            class="swiper desc-slider__image-slider desc-slider__image-slider--first swiper-no-swiping"
+          >
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="desc-slider__img">
+                  <picture>
+                    <source srcset="./img/item-desc/01.webp" />
+                    <img src="./img/item-desc/01.jpg" alt="" />
+                  </picture>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="desc-slider__img">
+                  <picture>
+                    <source srcset="./img/item-desc/01.webp" />
+                    <img src="./img/item-desc/01.jpg" alt="" />
+                  </picture>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="desc-slider__img">
+                  <picture>
+                    <source srcset="./img/item-desc/01.webp" />
+                    <img src="./img/item-desc/01.jpg" alt="" />
+                  </picture>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="desc-slider__img">
+                  <picture>
+                    <source srcset="./img/item-desc/01.webp" />
+                    <img src="./img/item-desc/01.jpg" alt="" />
+                  </picture>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="desc-slider__img">
+                  <picture>
+                    <source srcset="./img/item-desc/01.webp" />
+                    <img src="./img/item-desc/01.jpg" alt="" />
+                  </picture>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item-desc__item desc-item" data-desc-category="2">
+      <ul class="desc-item__list desc-list list-reset">
+        <li class="desc-list__item">
+          <div class="desc-list__icon">
+            <svg
+              width="96"
+              height="96"
+              viewBox="0 0 96 96"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="Property 1=Default">
+                <circle id="Ellipse 38" cx="48" cy="48" r="47.5" />
+                <path
+                  id="Vector 59"
+                  d="M68.5 68.5H27.5C26.9477 68.5 26.5 68.0523 26.5 67.5V43C26.5 42.4477 26.9477 42 27.5 42H39C39.5523 42 40 42.4477 40 43V46C40 46.5523 39.5523 47 39 47H33C32.4477 47 32 47.4477 32 48V62C32 62.5523 32.4477 63 33 63H63C63.5523 63 64 62.5523 64 62V48.5C64 47.9477 63.5523 47.5 63 47.5H57.5C56.9477 47.5 56.5 47.0523 56.5 46.5V43C56.5 42.4477 56.9477 42 57.5 42H68.5C69.0523 42 69.5 42.4477 69.5 43V67.5C69.5 68.0523 69.0523 68.5 68.5 68.5Z"
+                />
+                <path
+                  id="Vector 60"
+                  d="M35 51V59C35 59.5523 35.4477 60 36 60H60C60.5523 60 61 59.5523 61 59V51C61 50.4477 60.5523 50 60 50H55C54.4477 50 54 49.5523 54 49V25.5C54 24.9477 53.5523 24.5 53 24.5H43.5C42.9477 24.5 42.5 24.9477 42.5 25.5V49C42.5 49.5523 42.0523 50 41.5 50H36C35.4477 50 35 50.4477 35 51Z"
+                />
+              </g>
+            </svg>
+          </div>
+          <span class="desc-list__text">Фундам<wbr />ент</span>
+        </li>
+        <li class="desc-list__item">
+          <div class="desc-list__icon">
+            <svg
+              width="96"
+              height="96"
+              viewBox="0 0 96 96"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="Property 1=Variant2">
+                <circle id="Ellipse 38" cx="48" cy="48" r="47.5" />
+                <path
+                  id="Vector 61"
+                  d="M34.9362 36.1379L24.4532 30.8079C23.788 30.4696 23 30.9529 23 31.6993V65.3176C23 65.694 23.2113 66.0385 23.5468 66.209L34.9362 72M34.9362 36.1379V72M34.9362 36.1379L47.4149 30.1803M34.9362 72L47.4149 66.0424M47.4149 66.0424V30.1803M47.4149 66.0424L60.1649 59.8621M47.4149 30.1803L60.1649 24M60.1649 24L72.4017 29.3679C72.7652 29.5273 73 29.8867 73 30.2836V63.9617C73 64.6833 72.2591 65.1674 71.5983 64.8775L60.1649 59.8621M60.1649 24V59.8621"
+                  stroke="#252321"
+                  stroke-linejoin="round"
+                />
+              </g>
+            </svg>
+          </div>
+          <span class="desc-list__text">Стеновой комплект</span>
+        </li>
+        <li class="desc-list__item">
+          <div class="desc-list__icon">
+            <svg
+              width="96"
+              height="96"
+              viewBox="0 0 96 96"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="Property 1=Variant3">
+                <circle
+                  id="Ellipse 38"
+                  cx="48"
+                  cy="48"
+                  r="47.5"
+                  stroke="#252321"
+                />
+                <path
+                  id="Vector 69"
+                  d="M27.8316 31H62.9793C63.3348 31 63.6635 31.1887 63.8428 31.4956L70.2715 42.5M27.8316 31L13.896 54.4898C13.5005 55.1564 13.9809 56 14.756 56H42.4364M27.8316 31L34.5498 42.5M40.3058 31L59.0172 64M52.0533 31L71.3316 64M42.4364 56L46.8204 63.5044C46.9997 63.8113 47.3328 64 47.6882 64C60.6931 64 68.3926 64 81.0855 64C81.8576 64 82.3422 63.1622 81.9527 62.4956L76.3316 52.8735M42.4364 56L40.61 52.8735M34.5498 42.5H70.2715M34.5498 42.5L40.61 52.8735M70.2715 42.5L76.3316 52.8735M76.3316 52.8735H40.61"
+                  stroke="#252321"
+                  stroke-width="1.13333"
+                  stroke-linejoin="round"
+                />
+              </g>
+            </svg>
+          </div>
+          <span class="desc-list__text">Кровля крыши</span>
+        </li>
+        <li class="desc-list__item">
+          <div class="desc-list__icon">
+            <svg
+              width="96"
+              height="96"
+              viewBox="0 0 96 96"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="48" cy="48" r="47.5" />
+              <path d="M33 22.5V42H63V22.5" stroke="#252321" />
+              <path d="M65 22.3501H31V71.6501H65V22.3501Z" stroke="#252321" />
+              <path d="M48 71.5L48 42L33 42L33 71.5" stroke="#252321" />
+              <path d="M63 71.5L63 42L48 42L48 71" stroke="#252321" />
+            </svg>
+          </div>
+          <span class="desc-list__text">Окна и двери</span>
+        </li>
+        <li class="desc-list__item">
+          <div class="desc-list__icon">
+            <svg
+              width="96"
+              height="96"
+              viewBox="0 0 96 96"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="48" cy="48" r="47.5" />
+              <path
+                d="M39.3817 35.7659L34.9306 40.217M39.3817 35.7659L44.8424 30.3052C45.2067 29.941 45.2067 29.3504 44.8424 28.9862L43.6591 27.8029C43.4224 27.5662 43.0771 27.4745 42.7542 27.5626L37.3951 29.0242C37.2385 29.0669 37.0958 29.1497 36.981 29.2645L34.9306 31.3149M39.3817 35.7659L47.8422 44.2264C48.2064 44.5906 48.2064 45.1812 47.8422 45.5454L44.7101 48.6775C44.3459 49.0417 43.7553 49.0417 43.3911 48.6775L34.9306 40.217M34.9306 40.217L30.3045 44.8432C29.9402 45.2074 29.3497 45.2074 28.9855 44.8432L25.8534 41.7111C25.4892 41.3468 25.4892 40.7563 25.8534 40.3921L30.4796 35.7659M30.4796 35.7659L28.6353 33.9217C28.2711 33.5575 28.2711 32.9669 28.6353 32.6027L31.7674 29.4706C32.1316 29.1064 32.7222 29.1064 33.0864 29.4706L34.9306 31.3149M30.4796 35.7659L34.9306 31.3149M49.2606 54.547L62.0792 67.3656C62.4434 67.7298 63.0339 67.7298 63.3982 67.3656L66.5303 64.2335C66.8945 63.8692 66.8945 63.2787 66.5303 62.9145L53.7117 50.0959C53.3474 49.7317 52.7569 49.7317 52.3927 50.0959L49.2606 53.228C48.8964 53.5922 48.8964 54.1827 49.2606 54.547Z"
+                stroke="#252321"
+              />
+              <path
+                d="M34.0334 66.9897L30.8585 63.8148C30.4943 63.4506 30.4943 62.8601 30.8585 62.4958L54.4536 38.9008C54.6149 38.7395 54.7115 38.5246 54.7251 38.2968L55.0785 32.3645C55.092 32.1367 55.1886 31.9218 55.35 31.7605L58.1775 28.933C58.3448 28.7657 58.5694 28.6682 58.8058 28.6603L62.5366 28.5354C63.3822 28.5071 63.8255 29.5288 63.2273 30.1271L59.9936 33.3608C59.6294 33.725 59.6294 34.3155 59.9936 34.6797L63.1685 37.8546C63.5327 38.2189 64.1232 38.2189 64.4875 37.8546L67.7086 34.6335C68.3084 34.0337 69.3327 34.4813 69.3 35.329L69.1578 39.0136C69.1487 39.2484 69.0514 39.471 68.8853 39.6372L66.0539 42.4685C65.8937 42.6287 65.6807 42.7251 65.4546 42.7397L59.5486 43.1215C59.3226 43.1362 59.1095 43.2326 58.9493 43.3928L35.3524 66.9897C34.9882 67.3539 34.3976 67.3539 34.0334 66.9897Z"
+                stroke="#252321"
+              />
+            </svg>
+          </div>
+          <span class="desc-list__text">Сборка дома</span>
+        </li>
+      </ul>
+
+      <div class="desc-item__content desc-slider">
+        <div class="desc-slider__left">
+          <h4 class="desc-slider__title">Стеновой комплект</h4>
+          <div class="desc-slider__control">
+            <button
+              class="btn-reset desc-slider-control__btn desc-slider-control__btn--left second-desc--prev"
+            ></button>
+            <div
+              class="desc-slider__pagination swiper-pagination second-desc-pagination"
+            ></div>
+            <button
+              class="btn-reset desc-slider-control__btn desc-slider-control__btn--right second-desc--next"
+            ></button>
+          </div>
+          <div class="desc-slider__info desc-info">
+            <div
+              class="swiper desc-slider__slider desc-slider__slider--second swiper-no-swiping"
+            >
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <h5 class="desc-info__title">Домокомплект брус + каркас</h5>
+                  <ul type="square" class="desc-info__list">
+                    <li class="desc-info__item">
+                      наружние стены брус 80*230 + доска каркаса 145*45
+                    </li>
+                    <li class="desc-info__item">Lorem ipsum dolor sit amet.</li>
+                    <li class="desc-info__item">Lorem, ipsum dolor.</li>
+                    <li class="desc-info__item">стропильно-балочная система</li>
+                    <li class="desc-info__item">террасы: каркасы + покрытие</li>
+                    <li class="desc-info__item">Lorem ipsum dolor sit.</li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <h5 class="desc-info__title">Сборка</h5>
+                  <ul type="square" class="desc-info__list">
+                    <li class="desc-info__item">монтаж брусовой части</li>
+                    <li class="desc-info__item">монтаж перегородок</li>
+                    <li class="desc-info__item">сборка перекрытия</li>
+                    <li class="desc-info__item">
+                      сборка стропильно-балочной системы
+                    </li>
+                    <li class="desc-info__item">установка окон и дверей</li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <h5 class="desc-info__title">Кровельное покрытие</h5>
+                  <ul type="square" class="desc-info__list">
+                    <li class="desc-info__item">битумная черепица Shinglas</li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <h5 class="desc-info__title">Окраска</h5>
+                  <ul type="square" class="desc-info__list">
+                    <li class="desc-info__item">шлифовка наружного бруса</li>
+                    <li class="desc-info__item">грунтование в 1 слой</li>
+                    <li class="desc-info__item">
+                      окраска финишным антисептиком или кроющим покрытием в 2
+                      слоя
+                    </li>
+                  </ul>
+                </div>
+                <div class="swiper-slide">
+                  <h5 class="desc-info__title">Окна</h5>
+                  <ul type="square" class="desc-info__list">
+                    <li class="desc-info__item">
+                      металлопластиковые окна Rehau профиль Grazio
+                    </li>
+                    <li class="desc-info__item">стеклопакет двухкамерный</li>
+                    <li class="desc-info__item">цвет единый с двух сторон</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="desc-slider__right">
+          <div
+            class="swiper desc-slider__image-slider desc-slider__image-slider--second swiper-no-swiping"
+          >
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="desc-slider__img">
+                  <picture>
+                    <source srcset="./img/item-desc/01.webp" />
+                    <img src="./img/item-desc/01.jpg" alt="" />
+                  </picture>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="desc-slider__img">
+                  <picture>
+                    <source srcset="./img/item-desc/01.webp" />
+                    <img src="./img/item-desc/01.jpg" alt="" />
+                  </picture>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="desc-slider__img">
+                  <picture>
+                    <source srcset="./img/item-desc/01.webp" />
+                    <img src="./img/item-desc/01.jpg" alt="" />
+                  </picture>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="desc-slider__img">
+                  <picture>
+                    <source srcset="./img/item-desc/01.webp" />
+                    <img src="./img/item-desc/01.jpg" alt="" />
+                  </picture>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="desc-slider__img">
+                  <picture>
+                    <source srcset="./img/item-desc/01.webp" />
+                    <img src="./img/item-desc/01.jpg" alt="" />
+                  </picture>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+        <section class="add add--itemCart">
+          <h2 class="visually-hidden">Title</h2>
+          <div class="add__items">
+            <div class="add__item add-item">
+              <h3 class="add-item__title">
+                Внести&nbsp;изменения в&nbsp;этот проект
+              </h3>
+              <a href="#" class="btn btn--fill">связаться с нами</a>
+            </div>
+            <div class="add__item add-item">
+              <h3 class="add-item__title">
+                Индивидуальный проект по&nbsp;вашим параметрам
+              </h3>
+              <a href="#" class="btn btn--fill">заказать расчет</a>
+            </div>
+          </div>
+        </section>
         <section class="built-houses">
   <h2 class="visually-hidden">Title Built Houses</h2>
   <div class="built-houses__content">
@@ -1542,8 +2097,292 @@
   </div>
   <a href="#" class="btn btn-reset btn--fill bulit-houses__btn">готовые дома на продажу</a>
 </section>
+ <section class="similar">
+  <h3 class="subtitle similar__subtitle">Смотрите также</h3>
+  <h2 class="title similar__title">Похожие дома</h2>
 
-        <div class="modal modal-form" data-lenis-prevent>
+  <div class="similar__container">
+    <article class="projects-section__card projects-card">
+      <picture>
+        <source
+          srcset=""
+          data-img-srcset="./img/projects2/projects1.webp"
+          type="image/webp"
+          media="(max-width: 1440px)"
+        />
+        <source
+          srcset=""
+          data-img-srcset="./img/projects2/projects1_2x.webp 2x"
+          type="image/webp"
+          media="(min-width: 1440px)"
+        />
+        <img
+          class="projects-card__img"
+          src=""
+          srcset=""
+          alt="Card"
+          data-img-src="./img/projects2/projects1.jpg"
+          data-img-srcset="./img/projects2/projects1_2x.jpg 2x"
+        />
+      </picture>
+      <div class="projects-card__info">
+        <h3 class="projects-card__title">VALTONEN</h3>
+        <div class="projects-card__details">
+          <ul class="projects-card__list popular-card__list list-reset">
+            <li
+              class="projects-card__item popular-card__item projects-card__item--sq"
+            >
+              <span class="projects-card__figure">400</span
+              ><span>м<sup>2</sup></span>
+            </li>
+            <li
+              class="projects-card__item popular-card__item projects-card__item--fl"
+            >
+              <span class="projects-card__figure">2</span><span>этажа</span>
+            </li>
+            <li
+              class="projects-card__item popular-card__item projects-card__item--bed"
+            >
+              <span class="projects-card__figure">4</span><span>спальни</span>
+            </li>
+            <li
+              class="projects-card__item popular-card__item projects-card__item--bath"
+            >
+              <span class="projects-card__figure">3</span><span>санузла</span>
+            </li>
+            <li
+              class="projects-card__item popular-card__item projects-card__item--pl"
+            >
+              <span class="projects-card__figure">72</span
+              ><span>м<sup>2</sup></span>
+            </li>
+          </ul>
+          <a href="#" class="projects-card__more">Подробнее</a>
+        </div>
+      </div>
+      <button class="projects-card__btn btn btn--like btn--stroke btn-reset">
+        <svg>
+          <use xlink:href="img/sprite.svg#like-icon"></use>
+        </svg>
+      </button>
+    </article>
+    <article class="projects-section__card projects-card">
+      <picture>
+        <source
+          srcset=""
+          data-img-srcset="./img/projects2/projects2.webp"
+          type="image/webp"
+          media="(max-width: 1440px)"
+        />
+        <source
+          srcset=""
+          data-img-srcset="./img//projects2/projects2_2x.webp 2x"
+          type="image/webp"
+          media="(min-width: 1440px)"
+        />
+        <img
+          class="projects-card__img"
+          src=""
+          srcset=""
+          alt="Project 2."
+          data-img-src="./img/projects2/projects2.jpg"
+          data-img-srcset="./img/projects2/projects2_2x.jpg 2x"
+        />
+      </picture>
+      <div class="projects-card__info">
+        <h3 class="projects-card__title">Название проекта</h3>
+        <div class="projects-card__details">
+          <ul class="projects-card__list popular-card__list list-reset">
+            <li
+              class="projects-card__item popular-card__item projects-card__item--sq"
+            >
+              <span class="projects-card__figure">400</span
+              ><span>м<sup>2</sup></span>
+            </li>
+            <li
+              class="projects-card__item popular-card__item projects-card__item--fl"
+            >
+              <span class="projects-card__figure">2</span><span>этажа</span>
+            </li>
+            <li
+              class="projects-card__item popular-card__item projects-card__item--bed"
+            >
+              <span class="projects-card__figure">4</span><span>спальни</span>
+            </li>
+            <li
+              class="projects-card__item popular-card__item projects-card__item--bath"
+            >
+              <span class="projects-card__figure">3</span><span>санузла</span>
+            </li>
+            <li
+              class="projects-card__item popular-card__item projects-card__item--pl"
+            >
+              <span class="projects-card__figure">72</span
+              ><span>м<sup>2</sup></span>
+            </li>
+          </ul>
+          <a href="#" class="projects-card__more">Подробнее</a>
+        </div>
+      </div>
+      <button class="projects-card__btn btn btn--like btn--stroke btn-reset">
+        <svg>
+          <use xlink:href="img/sprite.svg#like-icon"></use>
+        </svg>
+      </button>
+    </article>
+    <article class="projects-section__card projects-card">
+      <picture>
+        <source
+          srcset=""
+          data-img-srcset="./img/projects2/projects3.webp"
+          type="image/webp"
+          media="(max-width: 1440px)"
+        />
+        <source
+          srcset=""
+          data-img-srcset="./img/projects2/projects3_2x.webp 2x"
+          type="image/webp"
+          media="(min-width: 1440px)"
+        />
+        <img
+          class="projects-card__img"
+          src=""
+          srcset=""
+          alt="Card"
+          data-img-src="./img/projects2/projects3.jpg"
+          data-img-srcset="./img/projects2/projects3_2x.jpg 2x"
+        />
+      </picture>
+      <div class="projects-card__info">
+        <h3 class="projects-card__title">Великан</h3>
+        <div class="projects-card__details">
+          <ul class="projects-card__list popular-card__list list-reset">
+            <li
+              class="projects-card__item popular-card__item projects-card__item--sq"
+            >
+              <span class="projects-card__figure">400</span
+              ><span>м<sup>2</sup></span>
+            </li>
+            <li
+              class="projects-card__item popular-card__item projects-card__item--fl"
+            >
+              <span class="projects-card__figure">2</span><span>этажа</span>
+            </li>
+            <li
+              class="projects-card__item popular-card__item projects-card__item--bed"
+            >
+              <span class="projects-card__figure">4</span><span>спальни</span>
+            </li>
+            <li
+              class="projects-card__item popular-card__item projects-card__item--bath"
+            >
+              <span class="projects-card__figure">3</span><span>санузла</span>
+            </li>
+            <li
+              class="projects-card__item popular-card__item projects-card__item--pl"
+            >
+              <span class="projects-card__figure">72</span
+              ><span>м<sup>2</sup></span>
+            </li>
+          </ul>
+          <a href="#" class="projects-card__more">Подробнее</a>
+        </div>
+      </div>
+      <button class="projects-card__btn btn btn--like btn--stroke btn-reset">
+        <svg>
+          <use xlink:href="img/sprite.svg#like-icon"></use>
+        </svg>
+      </button>
+    </article>
+    <article class="projects-section__card projects-card">
+      <picture>
+        <source
+          srcset=""
+          type="image/webp"
+          data-img-srcset="./img/projects2/projects4.webp"
+          media="(max-width: 1440px)"
+        />
+        <source
+          srcset=""
+          type="image/webp"
+          data-img-srcset="./img/projects2/projects4_2x.webp 2x"
+          media="(min-width: 1440px)"
+        />
+        <img
+          class="projects-card__img"
+          src=""
+          alt="Card"
+          data-img-src="./img/projects2/projects4.jpg"
+          data-img-srcset="./img/projects2/projects4_2x.jpg 2x"
+        />
+      </picture>
+      <div class="projects-card__info">
+        <h3 class="projects-card__title">Лофт Хаус</h3>
+        <div class="projects-card__details">
+          <ul class="projects-card__list popular-card__list list-reset">
+            <li
+              class="projects-card__item popular-card__item projects-card__item--sq"
+            >
+              <span class="projects-card__figure">400</span
+              ><span>м<sup>2</sup></span>
+            </li>
+            <li
+              class="projects-card__item popular-card__item projects-card__item--fl"
+            >
+              <span class="projects-card__figure">2</span><span>этажа</span>
+            </li>
+            <li
+              class="projects-card__item popular-card__item projects-card__item--bed"
+            >
+              <span class="projects-card__figure">4</span><span>спальни</span>
+            </li>
+            <li
+              class="projects-card__item popular-card__item projects-card__item--bath"
+            >
+              <span class="projects-card__figure">3</span><span>санузла</span>
+            </li>
+            <li
+              class="projects-card__item popular-card__item projects-card__item--pl"
+            >
+              <span class="projects-card__figure">72</span
+              ><span>м<sup>2</sup></span>
+            </li>
+          </ul>
+          <a href="#" class="projects-card__more">Подробнее</a>
+        </div>
+      </div>
+      <button class="projects-card__btn btn btn--like btn--stroke btn-reset">
+        <svg>
+          <use xlink:href="img/sprite.svg#like-icon"></use>
+        </svg>
+      </button>
+    </article>
+  </div>
+</section>
+
+        <section class="others">
+  <h2 class="title centered others__title">Другие проекты</h2>
+  <ul class="others__list list-reset">
+    <li class="others__item">
+      <a href="#" class="others__link"
+        >Проекты финских домов со вторым светом</a
+      >
+    </li>
+    <li class="others__item">
+      <a href="#" class="others__link">Проекты финских домов с балконом</a>
+    </li>
+    <li class="others__item">
+      <a href="#" class="others__link">Проекты финских домов с террасой</a>
+    </li>
+    <li class="others__item">
+      <a href="#" class="others__link">Проекты финских домов с 3 спальнями</a>
+    </li>
+    <li class="others__item">
+      <a href="#" class="others__link">Проекты финских домов с сауной</a>
+    </li>
+  </ul>
+</section>
+ <div class="modal modal-form" data-lenis-prevent>
   <div class="modal__window--form">
     <form class="cta__form form modal-form__form">
       <div class="form__left">
@@ -1601,7 +2440,105 @@
   </div>
 </div>
 
-        <button class="up-page-btn btn-reset"></button>
+        <div class="modal modal-video">
+  <div class="modal__window">
+    <iframe
+      class="modal-window__video iframe"
+      src=""
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    >
+    </iframe>
+    <button class="modal__close btn-reset"></button>
+  </div>
+</div>
+
+        <div class="modal modal-gallery gallery">
+  <div class="modal__window gallery__window" style="background-color: transparent; border: none">
+    <div class="swiper gallery__slider">
+      <div class="swiper-wrapper">
+
+      </div>
+      <div class="slider-control__btn slider-control__btn--dark btn--fill slider-control__btn--prev gallery__btn--prev">
+        <span></span>
+      </div>
+      <div class="slider-control__btn slider-control__btn--dark btn--fill slider-control__btn--next gallery__btn--next">
+        <span></span>
+      </div>
+    </div>
+    <div class="swiper gallery__slider-mini">
+      <div class="swiper-wrapper">
+
+      </div>
+    </div>
+    <button class="modal__close btn-reset"></button>
+  </div>
+</div>
+
+        <div class="modal modal-tour">
+  <div class="modal__window">
+    <iframe width="100%" height="100%" frameborder="0" allow="xr-spatial-tracking; accelerometer" allowfullscreen scrolling="no" src="https://kuula.co/share/NzlGp?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1"></iframe>
+    <button class="modal__close btn-reset"></button>
+    <div class="mouse-rotate">Вращать</div>
+  </div>
+</div>
+ <section class="faq">
+  <h2 class="title faq__title centered">Вопросы и ответы</h2>
+  <ul class="faq__accordion accordion list-reset">
+    <li class="accordion__item">
+      <div class="accordion__header">
+        <h4 class="accordion__title">По какой технологии сделан дом?</h4>
+        <span class="accordion__icon"> </span>
+      </div>
+      <p class="accordion__content">
+        Дом сделан по финской технологии по особенной методикеДом сделан по
+        финской технологии по особенной методикеДом сделан по финской технологии
+        по особенной методикеДом сделан по финской технологии по особенной
+        методике
+      </p>
+    </li>
+    <li class="accordion__item">
+      <div class="accordion__header">
+        <h4 class="accordion__title">
+          Можно ли заказать готовый дом под ключ на моем участке?
+        </h4>
+        <span class="accordion__icon"> </span>
+      </div>
+      <p class="accordion__content">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis,
+        repudiandae.
+      </p>
+    </li>
+    <li class="accordion__item">
+      <div class="accordion__header">
+        <h4 class="accordion__title">
+          Можно лм внести изменения и пожелания в проект?
+        </h4>
+        <span class="accordion__icon"> </span>
+      </div>
+      <p class="accordion__content">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum placeat
+        praesentium, perspiciatis dolorum libero iste eveniet. Porro nobis qui
+        aliquid voluptatibus illum debitis dolorum quisquam, autem delectus! Ut,
+        quos maiores?
+      </p>
+    </li>
+    <li class="accordion__item">
+      <div class="accordion__header">
+        <h4 class="accordion__title">По какой технологии сделан дом?</h4>
+        <span class="accordion__icon"> </span>
+      </div>
+      <p class="accordion__content">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam neque
+        praesentium eligendi nesciunt?
+      </p>
+    </li>
+  </ul>
+</section>
+
+        <!-- <button class="up-page-btn btn-reset"></button> -->
         <div class="contact__btns">
           <button
             class="contact__btn phone-btn btn-reset mob-dis"
@@ -1625,33 +2562,25 @@
               data-aos="custom-custom-fade-up"
               data-aos-offset="20"
             >
-              Заказать индивидуальный расчет
+              Спроектировать и&nbsp;построить ваш деревянный&nbsp;дом
             </h2>
           </div>
           <form class="cta__form form cta__form--catalogue">
             <h4 class="form__title desc-dis">Свяжитесь с нами</h4>
             <address class="cta__address address desc-dis">
-              <a
-                class="address__tel"
-                href="tel:+78006007008"
-                data-aos="custom-fade-up"
-                data-aos-delay="300"
+              <a class="address__tel" href="tel:+78006007008"
                 >+7 800 600 7008</a
               >
               <a
                 class="address__whatsapp"
                 href="https://api.whatsapp.com/send?phone=78006007008"
                 target="_blank"
-                data-aos="custom-fade-up"
-                data-aos-delay="300"
                 >Написать в WhatsApp</a
               >
               <a
                 class="address__telega"
                 href="tg://resolve?domain=username"
                 target="_blank"
-                data-aos="custom-fade-up"
-                data-aos-delay="300"
                 >Написать в Telegram</a
               >
             </address>

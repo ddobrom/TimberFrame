@@ -1166,15 +1166,28 @@
       >
         <span></span>
       </div>
-      <button
+      <a
         class="btn-reset btn--fullscreen item-hero__fullscreen"
         data-gallery="./img/itemCart/01.png, ./img/itemCart/02.png, ./img/itemCart/03.png"
         data-gallery-thumbs="./img/itemCart/01-thumb.jpg, ./img/itemCart/02-thumb.jpg, ./img/itemCart/03-thumb.jpg"
+        href="./img/itemCart/01-2x.png"
+        data-fancybox="images-preview"
+        data-caption=""
       >
         <svg>
           <use xlink:href="img/sprite.svg#fullscreen-icon"></use>
         </svg>
-      </button>
+      </a>
+      <a
+        href="./img/itemCart/02-2x.png"
+        data-fancybox="images-preview"
+        style="display: none"
+      ></a>
+      <a
+        href="./img/itemCart/03-2x.png"
+        data-fancybox="images-preview"
+        style="display: none"
+      ></a>
       <div class="item-product__preview-wrapper">
         <div class="item-product__preview">
           <div class="item-product__thumbs swiper">
@@ -1331,31 +1344,47 @@
           </svg>
           <span>Распечатать</span>
         </button>
-        <button
+        <a
+          href="./img/plan/01-source.webp"
           class="btn btn-reset btn--fullscreen btn--fill"
-          data-gallery="./img/plan/01.png, ./img/plan/01.png, ./img/plan/01.png"
-          data-gallery-thumbs="./img/plan/01-thumb.jpg, ./img/plan/01-thumb.jpg, ./img/plan/01-thumb.jpg"
+          data-fancybox="fancy-plan"
+          data-caption=""
+          data-print="plan"
         >
           <svg>
             <use xlink:href="img/sprite.svg#fullscreen-icon"></use>
           </svg>
-        </button>
+        </a>
+        <div class="gallery-plan" style="display: none">
+          <a
+            href="./img/plan/01-source.webp"
+            data-fancybox="fancy-plan"
+            data-caption=""
+            data-print="plan"
+          ></a>
+          <a
+            href="./img/plan/01-source.webp"
+            data-fancybox="fancy-plan"
+            data-caption=""
+            data-print="plan"
+          ></a>
+        </div>
       </div>
-      <div class="plan__item active" data-plan-item="0">
+      <div class="plan__item active" data-plan-item="0" data-plan-src="./img/plan/01-source.webp">
         <picture>
           <source srcset="./img/plan/01-mob.webp" media="(max-width: 769px)" />
           <source srcset="./img/plan/01.webp" />
           <img src="./img/plan/01.png" alt="1 Floor" />
         </picture>
       </div>
-      <div class="plan__item" data-plan-item="1">
+      <div class="plan__item" data-plan-item="1" data-plan-src="./img/plan/01-source.webp">
         <picture>
           <source srcset="./img/plan/01-mob.webp" media="(max-width: 769px)" />
           <source srcset="./img/plan/01.webp" />
           <img src="./img/plan/01.png" alt="1 Floor" />
         </picture>
       </div>
-      <div class="plan__item" data-plan-item="2">
+      <div class="plan__item" data-plan-item="2" data-plan-src="./img/plan/01-source.webp">
         <picture>
           <source srcset="./img/plan/01-mob.webp" media="(max-width: 769px)" />
           <source srcset="./img/plan/01.webp" />
@@ -2448,22 +2477,25 @@
 </div>
 
         <div class="modal modal-gallery gallery">
-  <div class="modal__window gallery__window" style="background-color: transparent; border: none">
+  <div
+    class="modal__window gallery__window"
+    style="background-color: transparent; border: none"
+  >
     <div class="swiper gallery__slider">
-      <div class="swiper-wrapper">
-
-      </div>
-      <div class="slider-control__btn slider-control__btn--dark btn--fill slider-control__btn--prev gallery__btn--prev">
+      <div class="swiper-wrapper"></div>
+      <div
+        class="slider-control__btn slider-control__btn--dark btn--fill slider-control__btn--prev gallery__btn--prev"
+      >
         <span></span>
       </div>
-      <div class="slider-control__btn slider-control__btn--dark btn--fill slider-control__btn--next gallery__btn--next">
+      <div
+        class="slider-control__btn slider-control__btn--dark btn--fill slider-control__btn--next gallery__btn--next"
+      >
         <span></span>
       </div>
     </div>
     <div class="swiper gallery__slider-mini">
-      <div class="swiper-wrapper">
-
-      </div>
+      <div class="swiper-wrapper"></div>
     </div>
     <button class="modal__close btn-reset"></button>
   </div>

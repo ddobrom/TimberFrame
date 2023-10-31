@@ -1071,7 +1071,7 @@
       <a class="breadcrumbs__link">Valtonen</a>
     </li>
   </ul>
-  <h1 class="title item-hero__title">Valtonen</h1>
+  <h1>Valtonen</h1>
   <div class="item-hero__product item-product">
     <div class="item-product__slider swiper">
       <div class="swiper-wrapper">
@@ -1179,16 +1179,28 @@
           <use xlink:href="img/sprite.svg#fullscreen-icon"></use>
         </svg>
       </a>
-      <a
-        href="./img/itemCart/02-2x.png"
-        data-fancybox="images-preview"
-        style="display: none"
-      ></a>
-      <a
-        href="./img/itemCart/03-2x.png"
-        data-fancybox="images-preview"
-        style="display: none"
-      ></a>
+      <div class="hero__links" style="display: none;">
+        <a
+          href="./img/itemCart/02-2x.png"
+          data-fancybox="images-preview"
+        ></a>
+        <a
+          href="./img/itemCart/03-2x.png"
+          data-fancybox="images-preview"
+        ></a>
+        <a
+          href="./img/itemCart/01-2x.png"
+          data-fancybox="images-preview"
+        ></a>
+        <a
+          href="./img/itemCart/02-2x.png"
+          data-fancybox="images-preview"
+        ></a>
+        <a
+          href="./img/itemCart/03-2x.png"
+          data-fancybox="images-preview"
+        ></a>
+      </div>
       <div class="item-product__preview-wrapper">
         <div class="item-product__preview">
           <div class="item-product__thumbs swiper">
@@ -1289,37 +1301,37 @@
         </div>
       </div>
       <div class="item-product__chars chars">
-        <div class="chars-item">
+        <div class="chars-item chars-item--sq">
           <dt class="chars__term">Общая площадь</dt>
-          <dd class="chars__val chars__val--sq">218 м<sup>2</sup></dd>
+          <dd>218 м<sup>2</sup></dd>
         </div>
-        <div class="chars-item">
-          <dt class="chars__term chars__val--fl">Площадь 1 этажа</dt>
-          <dd class="chars__val">133 м<sup>2</sup></dd>
+        <div class="chars-item chars-item--fl">
+          <dt class="chars__term">Площадь 1 этажа</dt>
+          <dd>133 м<sup>2</sup></dd>
         </div>
-        <div class="chars-item">
-          <dt class="chars__term chars__val--fl">Площадь 2 этажа</dt>
-          <dd class="chars__val">57 м<sup>2</sup></dd>
+        <div class="chars-item chars-item--fl">
+          <dt class="chars__term">Площадь 2 этажа</dt>
+          <dd>57 м<sup>2</sup></dd>
         </div>
         <div class="chars-item">
           <dt class="chars__term">Второй свет</dt>
-          <dd class="chars__val">да</dd>
+          <dd>да</dd>
         </div>
-        <div class="chars-item">
+        <div class="chars-item chars-item--bed">
           <dt class="chars__term">Спален</dt>
-          <dd class="chars__val chars__val--bed">4</dd>
+          <dd>4</dd>
         </div>
-        <div class="chars-item">
+        <div class="chars-item chars-item--bath">
           <dt class="chars__term">Санузлов</dt>
-          <dd class="chars__val chars__val--bath">3</dd>
+          <dd>3</dd>
         </div>
-        <div class="chars-item">
+        <div class="chars-item chars-item--pl">
           <dt class="chars__term">Террасы</dt>
-          <dd class="chars__val chars__val--pl">50 м<sup>2</sup></dd>
+          <dd>50 м<sup>2</sup></dd>
         </div>
         <div class="chars-item">
           <dt class="chars__term">Балкон</dt>
-          <dd class="chars__val">8,6 м<sup>2</sup></dd>
+          <dd>8,6 м<sup>2</sup></dd>
         </div>
       </div>
     </div>
@@ -1329,11 +1341,11 @@
   <h2 class="title item-plan__title container">Планировка</h2>
   <div class="plan">
     <div class="plan__buttons">
-      <button class="btn btn-reset plan__btn active" data-plan-btn="0">
+      <button>
         1 этаж
       </button>
-      <button class="btn btn-reset plan__btn" data-plan-btn="1">2 этаж</button>
-      <button class="btn btn-reset plan__btn" data-plan-btn="2">
+      <button>2 этаж</button>
+      <button>
         Цокольный этаж
       </button>
     </div>
@@ -1397,23 +1409,21 @@
 </section>
 
         <section class="item-desc">
-  <h2 class="title item-desc__title">Стоимость строительства</h2>
+  <h2 class="title item-desc__title centered">Стоимость строительства</h2>
   <div class="item-desc__buttons">
     <button
-      class="item-desc__btn btn btn-reset item-desc__btn--active"
-      data-cost-category="1"
     >
       Брус
-      <span class="item-desc__price"
+      <span
         >115 000
         <svg class="rub">
           <use xlink:href="img/sprite.svg#rub"></use>
         </svg>
       </span>
     </button>
-    <button class="item-desc__btn btn btn-reset" data-cost-category="2">
+    <button>
       Брус + каркас
-      <span class="item-desc__price"
+      <span
         >120 000
         <svg class="rub">
           <use xlink:href="img/sprite.svg#rub"></use>
@@ -1562,15 +1572,15 @@
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <h5 class="desc-info__title">Домокомплект брус 205*230</h5>
-                  <ul type="square" class="desc-info__list">
-                    <li class="desc-info__item">наружние стены брус</li>
-                    <li class="desc-info__item">
+                  <ul>
+                    <li>наружние стены брус</li>
+                    <li>
                       внутренние перегородки брус либо карскас
                     </li>
-                    <li class="desc-info__item">перекрытия балки + доска</li>
-                    <li class="desc-info__item">стропильно-балочная система</li>
-                    <li class="desc-info__item">террасы: каркасы + покрытие</li>
-                    <li class="desc-info__item">
+                    <li>перекрытия балки + доска</li>
+                    <li>стропильно-балочная система</li>
+                    <li>террасы: каркасы + покрытие</li>
+                    <li>
                       наружняя отделка: наличники, подзоры, ветровые
                       доски,откосы
                     </li>
@@ -1578,28 +1588,28 @@
                 </div>
                 <div class="swiper-slide">
                   <h5 class="desc-info__title">Сборка</h5>
-                  <ul type="square" class="desc-info__list">
-                    <li class="desc-info__item">монтаж брусовой части</li>
-                    <li class="desc-info__item">монтаж перегородок</li>
-                    <li class="desc-info__item">сборка перекрытия</li>
-                    <li class="desc-info__item">
+                  <ul>
+                    <li>монтаж брусовой части</li>
+                    <li>монтаж перегородок</li>
+                    <li>сборка перекрытия</li>
+                    <li>
                       сборка стропильно-балочной системы
                     </li>
-                    <li class="desc-info__item">установка окон и дверей</li>
+                    <li>установка окон и дверей</li>
                   </ul>
                 </div>
                 <div class="swiper-slide">
                   <h5 class="desc-info__title">Кровельное покрытие</h5>
-                  <ul type="square" class="desc-info__list">
-                    <li class="desc-info__item">битумная черепица Shinglas</li>
+                  <ul>
+                    <li>битумная черепица Shinglas</li>
                   </ul>
                 </div>
                 <div class="swiper-slide">
                   <h5 class="desc-info__title">Окраска</h5>
-                  <ul type="square" class="desc-info__list">
-                    <li class="desc-info__item">шлифовка наружного бруса</li>
-                    <li class="desc-info__item">грунтование в 1 слой</li>
-                    <li class="desc-info__item">
+                  <ul>
+                    <li>шлифовка наружного бруса</li>
+                    <li>грунтование в 1 слой</li>
+                    <li>
                       окраска финишным антисептиком или кроющим покрытием в 2
                       слоя
                     </li>
@@ -1607,12 +1617,12 @@
                 </div>
                 <div class="swiper-slide">
                   <h5 class="desc-info__title">Окна</h5>
-                  <ul type="square" class="desc-info__list">
-                    <li class="desc-info__item">
+                  <ul>
+                    <li>
                       металлопластиковые окна Rehau профиль Grazio
                     </li>
-                    <li class="desc-info__item">стеклопакет двухкамерный</li>
-                    <li class="desc-info__item">цвет единый с двух сторон</li>
+                    <li>стеклопакет двухкамерный</li>
+                    <li>цвет единый с двух сторон</li>
                   </ul>
                 </div>
               </div>
@@ -1809,41 +1819,41 @@
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <h5 class="desc-info__title">Домокомплект брус + каркас</h5>
-                  <ul type="square" class="desc-info__list">
-                    <li class="desc-info__item">
+                  <ul>
+                    <li>
                       наружние стены брус 80*230 + доска каркаса 145*45
                     </li>
-                    <li class="desc-info__item">Lorem ipsum dolor sit amet.</li>
-                    <li class="desc-info__item">Lorem, ipsum dolor.</li>
-                    <li class="desc-info__item">стропильно-балочная система</li>
-                    <li class="desc-info__item">террасы: каркасы + покрытие</li>
-                    <li class="desc-info__item">Lorem ipsum dolor sit.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>стропильно-балочная система</li>
+                    <li>террасы: каркасы + покрытие</li>
+                    <li>Lorem ipsum dolor sit.</li>
                   </ul>
                 </div>
                 <div class="swiper-slide">
                   <h5 class="desc-info__title">Сборка</h5>
-                  <ul type="square" class="desc-info__list">
-                    <li class="desc-info__item">монтаж брусовой части</li>
-                    <li class="desc-info__item">монтаж перегородок</li>
-                    <li class="desc-info__item">сборка перекрытия</li>
-                    <li class="desc-info__item">
+                  <ul>
+                    <li>монтаж брусовой части</li>
+                    <li>монтаж перегородок</li>
+                    <li>сборка перекрытия</li>
+                    <li>
                       сборка стропильно-балочной системы
                     </li>
-                    <li class="desc-info__item">установка окон и дверей</li>
+                    <li>установка окон и дверей</li>
                   </ul>
                 </div>
                 <div class="swiper-slide">
                   <h5 class="desc-info__title">Кровельное покрытие</h5>
-                  <ul type="square" class="desc-info__list">
-                    <li class="desc-info__item">битумная черепица Shinglas</li>
+                  <ul>
+                    <li>битумная черепица Shinglas</li>
                   </ul>
                 </div>
                 <div class="swiper-slide">
                   <h5 class="desc-info__title">Окраска</h5>
-                  <ul type="square" class="desc-info__list">
-                    <li class="desc-info__item">шлифовка наружного бруса</li>
-                    <li class="desc-info__item">грунтование в 1 слой</li>
-                    <li class="desc-info__item">
+                  <ul>
+                    <li>шлифовка наружного бруса</li>
+                    <li>грунтование в 1 слой</li>
+                    <li>
                       окраска финишным антисептиком или кроющим покрытием в 2
                       слоя
                     </li>
@@ -1851,12 +1861,12 @@
                 </div>
                 <div class="swiper-slide">
                   <h5 class="desc-info__title">Окна</h5>
-                  <ul type="square" class="desc-info__list">
-                    <li class="desc-info__item">
+                  <ul>
+                    <li>
                       металлопластиковые окна Rehau профиль Grazio
                     </li>
-                    <li class="desc-info__item">стеклопакет двухкамерный</li>
-                    <li class="desc-info__item">цвет единый с двух сторон</li>
+                    <li>стеклопакет двухкамерный</li>
+                    <li>цвет единый с двух сторон</li>
                   </ul>
                 </div>
               </div>
@@ -1920,13 +1930,13 @@
           <h2 class="visually-hidden">Title</h2>
           <div class="add__items">
             <div class="add__item add-item">
-              <h3 class="add-item__title">
+              <h3>
                 Внести&nbsp;изменения в&nbsp;этот проект
               </h3>
               <a href="#" class="btn btn--fill">связаться с нами</a>
             </div>
             <div class="add__item add-item">
-              <h3 class="add-item__title">
+              <h3>
                 Индивидуальный проект по&nbsp;вашим параметрам
               </h3>
               <a href="#" class="btn btn--fill">заказать расчет</a>
@@ -2539,7 +2549,7 @@
     <li class="accordion__item">
       <div class="accordion__header">
         <h4 class="accordion__title">
-          Можно лм внести изменения и пожелания в проект?
+          Можно ли внести изменения и пожелания в проект?
         </h4>
         <span class="accordion__icon"> </span>
       </div>

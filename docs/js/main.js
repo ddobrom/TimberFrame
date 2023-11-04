@@ -1686,7 +1686,6 @@ if (itemsTexts.length > 0) {
       offsetSize += items[i].offsetHeight;
     }
     scrollOffset = document.querySelector('.services-section__container').scrollHeight - offsetSize;
-    console.log(scrollOffset);
     gsap_all__WEBPACK_IMPORTED_MODULE_6__.ScrollTrigger.create({
       trigger: ".services-section__container",
       start: "top top+=80px",
@@ -2908,12 +2907,12 @@ if (text.length > 0) {
 let activePlanIndex = 0;
 const plan = document.querySelector(".plan");
 if (plan) {
-  const planBtn = plan.querySelectorAll("button");
+  const planBtn = plan.querySelector(".plan__buttons").querySelectorAll("button");
   const planItems = plan.querySelectorAll(".plan__item[data-plan-item]");
   const planFullScreen = plan.querySelector(".btn--fullscreen");
-  planBtn.forEach((el, index) => {
-    el.setAttribute('data-plan-btn', index);
-    if (index === 0) el.classList.add('active');
+  planBtn.forEach((el, idx) => {
+    el.setAttribute('data-plan-btn', idx);
+    if (idx === 0) el.classList.add('active');
     el.addEventListener("click", e => {
       e.preventDefault();
       if (e.currentTarget.classList.contains("active")) return;
@@ -2921,7 +2920,7 @@ if (plan) {
       planBtn.forEach(el => el.classList.remove("active"));
       planItems.forEach(el => el.classList.remove("active"));
       e.currentTarget.classList.add("active");
-      plan.querySelector(`.plan__item[data-plan-item="${index}"]`).classList.add("active");
+      plan.querySelector(`.plan__item[data-plan-item="${idx}"]`).classList.add("active");
       activePlanIndex = index;
     });
   });
@@ -3068,10 +3067,10 @@ if (itemDescPriceButtons && itemDescPriceButtons.length > 0) {
 // print popup
 
 const itemPrintBtn = document.querySelector(".plan-btn-print");
+const planContent = document.querySelector(".plan__content");
 if (itemPrintBtn) {
   itemPrintBtn.addEventListener("click", e => {
-    e.preventDefault();
-    const activePlan = document.querySelector(".plan__item.active");
+    const activePlan = planContent.querySelector(`.plan__item[data-plan-item="${activePlanIndex}"`);
     const srcImgPlan = activePlan.dataset.planSrc;
     const w = window.open("about:blank", "new image");
     w.document.write("<html><head>");

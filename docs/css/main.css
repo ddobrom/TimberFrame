@@ -937,10 +937,12 @@ html.lenis {
   }
 }
 
-.up-content {
-  -webkit-transform: translateY(-15%);
-  -ms-transform: translateY(-15%);
-  transform: translateY(-15%);
+@media (min-width: 769px) {
+  .up-content {
+    -webkit-transform: translateY(-15%);
+    -ms-transform: translateY(-15%);
+    transform: translateY(-15%);
+  }
 }
 
 [data-aos=custom-fade-up] {
@@ -1144,7 +1146,17 @@ html.lenis {
     margin-right: 4.3rem;
   }
 }
+@media screen and (min-width: 1024px) and (max-width: 1240px) {
+  .header__navigation {
+    margin-right: unset;
+  }
+}
 @media (max-width: 768px) {
+  .header__nav {
+    display: none;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1240px) {
   .header__nav {
     display: none;
   }
@@ -1171,6 +1183,11 @@ html.lenis {
   .header__phone {
     font-size: 1.2rem;
     letter-spacing: 0.12rem;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1240px) {
+  .header__phone {
+    margin-right: 40px;
   }
 }
 @media (max-width: 768px) {
@@ -1742,6 +1759,8 @@ html.lenis {
   background-repeat: no-repeat;
   -webkit-transition: height 0.3s ease-in, bottom 0.3s ease-in;
   transition: height 0.3s ease-in, bottom 0.3s ease-in;
+  -webkit-animation: arrowAnchorAnim 3s infinite ease-out;
+  animation: arrowAnchorAnim 3s infinite ease-out;
 }
 @media (min-width: 1440px) {
   .hero__btn-down span::before {
@@ -1760,16 +1779,36 @@ html.lenis {
     height: 9.6rem;
   }
 }
-@media (any-hover: hover) {
-  .hero__btn-down:hover span {
-    border-color: var(--focus-active-color);
+
+@-webkit-keyframes arrowAnchorAnim {
+  0% {
+    -webkit-transform: translateY(0px) translateX(-50%);
+    transform: translateY(0px) translateX(-50%);
   }
-  .hero__btn-down:hover span::before {
-    height: 28px;
-    bottom: 25%;
+  50% {
+    -webkit-transform: translateY(10px) translateX(-50%);
+    transform: translateY(10px) translateX(-50%);
+  }
+  100% {
+    -webkit-transform: translateY(0px) translateX(-50%);
+    transform: translateY(0px) translateX(-50%);
   }
 }
 
+@keyframes arrowAnchorAnim {
+  0% {
+    -webkit-transform: translateY(0px) translateX(-50%);
+    transform: translateY(0px) translateX(-50%);
+  }
+  50% {
+    -webkit-transform: translateY(10px) translateX(-50%);
+    transform: translateY(10px) translateX(-50%);
+  }
+  100% {
+    -webkit-transform: translateY(0px) translateX(-50%);
+    transform: translateY(0px) translateX(-50%);
+  }
+}
 .move-background {
   -webkit-animation: move-bg 7s linear 1;
   animation: move-bg 7s linear 1;
@@ -2590,10 +2629,6 @@ html.lenis {
 @media (max-width: 768px) {
   .favorites-menu__window {
     padding: 0;
-    -webkit-box-orient: unset;
-    -webkit-box-direction: unset;
-    -ms-flex-direction: unset;
-    flex-direction: unset;
   }
 }
 
@@ -3034,10 +3069,10 @@ html.lenis {
   }
 }
 .popular__img img {
-  -webkit-transition: -webkit-transform 1s ease-in;
-  transition: -webkit-transform 1s ease-in;
-  transition: transform 1s ease-in;
-  transition: transform 1s ease-in, -webkit-transform 1s ease-in;
+  -webkit-transition: -webkit-transform 3s ease-in;
+  transition: -webkit-transform 3s ease-in;
+  transition: transform 3s ease-in;
+  transition: transform 3s ease-in, -webkit-transform 3s ease-in;
   height: 100%;
   width: 100%;
   -o-object-fit: contain;
@@ -3048,13 +3083,6 @@ html.lenis {
   .popular__img img {
     -o-object-fit: cover;
     object-fit: cover;
-  }
-}
-@media (any-hover: hover) {
-  .popular__img:hover img {
-    -webkit-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    transform: scale(1.05);
   }
 }
 @media (max-width: 768px) {
@@ -3541,7 +3569,7 @@ span.popular-card__figure {
 }
 @media (max-width: 768px) {
   .video-section {
-    height: 166px;
+    height: unset;
   }
 }
 .video-section video {
@@ -3549,6 +3577,12 @@ span.popular-card__figure {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+}
+@media (max-width: 768px) {
+  .video-section video {
+    -o-object-fit: contain;
+    object-fit: contain;
+  }
 }
 
 .projects-section {
@@ -4064,6 +4098,7 @@ span.popular-card__figure {
 .house-content__content--small {
   -ms-grid-column-span: 4;
   grid-column: 4 span;
+  align-self: flex-end;
 }
 @media (max-width: 768px) {
   .house-content__content--small {
@@ -4412,11 +4447,13 @@ span.popular-card__figure {
 }
 @media (any-hover: hover) {
   .tech__text:hover .tech__paragraph--right {
-    -webkit-text-fill-color: unset;
+    -webkit-text-fill-color: unset !important;
+    -webkit-text-stroke: unset !important;
     color: var(--focus-color);
   }
   .tech__text:hover .tech__paragraph--left {
-    -webkit-text-fill-color: unset;
+    -webkit-text-fill-color: unset !important;
+    -webkit-text-stroke: unset !important;
     color: var(--black-brand-color);
   }
 }
@@ -4599,6 +4636,7 @@ span.popular-card__figure {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  max-width: 400px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4634,12 +4672,9 @@ span.popular-card__figure {
     font-size: 24px;
   }
 }
-.add-item:not(:last-child) {
-  margin-right: 268px;
-}
 @media (min-width: 1440px) {
   .add-item:not(:last-child) {
-    margin-right: 26.8rem;
+    max-width: 40rem;
   }
 }
 @media (max-width: 768px) {

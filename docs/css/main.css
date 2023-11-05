@@ -4440,6 +4440,10 @@ span.popular-card__figure {
 .tech__text:not(:last-child) {
   margin-bottom: 60px;
 }
+.tech__text:last-child a {
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
 @media (max-width: 768px) {
   .tech__text {
     position: relative;

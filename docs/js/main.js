@@ -3228,7 +3228,14 @@ _fancyapps_ui__WEBPACK_IMPORTED_MODULE_15__.Fancybox.bind('[data-fancybox="hero-
 //   }
 // });
 
-// popular
+const designItems = document.querySelectorAll('.design-section__right li');
+for (let i = 0; i < designItems.length; i++) {
+  if (window.matchMedia("(max-width: 1440px)").matches) {
+    designItems[i].style.paddingLeft = `${i * 30}px`;
+  } else if (window.matchMedia("(min-width: 1441px)").matches) {
+    designItems[i].style.paddingLeft = `${i * 3}rem`;
+  }
+}
 
 /***/ }),
 

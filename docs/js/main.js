@@ -3229,12 +3229,46 @@ _fancyapps_ui__WEBPACK_IMPORTED_MODULE_15__.Fancybox.bind('[data-fancybox="hero-
 // });
 
 const designItems = document.querySelectorAll('.design-section__right li');
-for (let i = 0; i < designItems.length; i++) {
-  if (window.matchMedia("(max-width: 1440px)").matches) {
-    designItems[i].style.paddingLeft = `${i * 30}px`;
-  } else if (window.matchMedia("(min-width: 1441px)").matches) {
-    designItems[i].style.paddingLeft = `${i * 3}rem`;
-  }
+
+// if(designItems && designItems.length > 0){
+//   for(let i = 0; i < designItems.length; i++){
+//     if(window.matchMedia("(max-width: 1440px)").matches){
+//       designItems[i].style.paddingLeft = `${i * 30}px`
+//     } else if (window.matchMedia("(min-width: 1441px)").matches) {
+//       designItems[i].style.paddingLeft = `${i * 3}rem`
+//     }
+//   }
+// }
+
+const designStepsTimeline = gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.timeline();
+// designItems.forEach((el, i) => {
+// })
+gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.set('.design-section__right li', {
+  xPercent: 50
+});
+designStepsTimeline.to('.design-section__right li', {
+  xPercent: 0,
+  duration: 1,
+  stagger: 0.2,
+  ease: "power1.out"
+});
+if (window.matchMedia("(min-width: 1440px)").matches) {
+  gsap_all__WEBPACK_IMPORTED_MODULE_6__.ScrollTrigger.create({
+    animation: designStepsTimeline,
+    trigger: '.design-section__pin',
+    start: 'top top+=80%',
+    end: "+=60% top+=25%",
+    scrub: 0.5
+  });
+} else {
+  gsap_all__WEBPACK_IMPORTED_MODULE_6__.ScrollTrigger.create({
+    animation: designStepsTimeline,
+    trigger: '.design-section__pin',
+    start: 'top top+=45%',
+    end: "+=60% top+=25%",
+    scrub: 0.5,
+    markers: true
+  });
 }
 
 /***/ }),

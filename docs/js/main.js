@@ -1899,6 +1899,9 @@ window.onload = () => {
         if (entry.target.dataset.videoSrc) {
           entry.target.src = entry.target.dataset.videoSrc;
         }
+        if (entry.target.dataset.srcBg) {
+          entry.target.style = `background-image: url(${entry.target.dataset.srcBg})`;
+        }
         observer.unobserve(entry.target);
         aos__WEBPACK_IMPORTED_MODULE_3___default().refresh();
         onResize();
@@ -1906,9 +1909,9 @@ window.onload = () => {
     });
   }, {
     threshold: 0.1,
-    rootMargin: "300px"
+    rootMargin: "600px"
   });
-  document.querySelectorAll("img[data-img-src], source[data-img-srcset], video[data-video-src]").forEach(img => observer.observe(img));
+  document.querySelectorAll("img[data-img-src], source[data-img-srcset], video[data-video-src], [data-src-bg]").forEach(img => observer.observe(img));
   let video = document.querySelector("video");
   if (video) {
     let videoObserver = new IntersectionObserver((entries, opt) => {
@@ -3266,8 +3269,7 @@ if (window.matchMedia("(min-width: 1440px)").matches) {
     trigger: '.design-section__pin',
     start: 'top top+=45%',
     end: "+=60% top+=25%",
-    scrub: 0.5,
-    markers: true
+    scrub: 0.5
   });
 }
 

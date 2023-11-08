@@ -4320,7 +4320,6 @@ span.popular-card__figure {
 
 .eco-house {
   padding-top: 120px;
-  background-image: url("./../img/forest.webp");
   background-position: top -15% center;
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -5282,7 +5281,6 @@ span.popular-card__figure {
   padding: 173px 0 137px;
   padding-left: 140px;
   padding-right: 270px;
-  background-image: url("./../img/cta-bg.webp");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;

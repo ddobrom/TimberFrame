@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
-  <head>
+
+
+<head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="content-type" content="text/html; charset=utf8">
@@ -11,26 +13,47 @@
   <meta name="theme-color" content="#111111">
   <meta name="robots" content="noindex,nofollow">
   <title>Timber Frame</title>
-  <link rel="preload" href="fonts/Aeonik-Pro-Bold.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="fonts/Aeonik-Pro-Regular-Italic.woff2" as="font" type="font/woff2" crossorigin />
-  <link href="fonts/AeonikProTRIALBold.woff2" as="font" type="font/woff2" crossorigin />
+
+  <link rel="prefetch prerender" href="./img/logo-square.svg" />
+
   <link rel="preload" href="fonts/PPNeueMontrealBold.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="fonts/PPNeueMontrealMedium.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="fonts/PPNeueMontrealRegular.woff2" as="font" type="font/woff2" crossorigin />
-  <link href="fonts/PPNeueMontrealBold.ttf" as="font" type="font/ttf" crossorigin />
-  <link href="fonts/PPNeueMontrealMedium.ttf" as="font" type="font/ttf" crossorigin />
-  <link href="fonts/PPNeueMontrealRegular.ttf" as="font" type="font/ttf" crossorigin />
-  <link rel="preload" href="fonts/PPTelegraf-UltraBold.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="fonts/PPTelegrafRegular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/PPNeueMontrealBold.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="fonts/PPNeueMontrealMedium.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="fonts/PPNeueMontrealRegular.ttf" as="font" type="font/ttf" crossorigin />
+
   <link rel="stylesheet" href="css/vendor.css" />
   <link rel="stylesheet" href="css/main.css" />
+  <script>
+    window.addEventListener('load', () => {
+      let preloader = null
+      while (!preloader) {
+        preloader = document.querySelector('.preloader')
+      }
+      if (preloader) {
+        preloader.querySelector('.preloader__row').style.animation = "none"
+        preloader.querySelector('.preloader__text').style.transform = "translateX(0%)"
+        preloader.querySelector('.preloader__row').style.maxWidth = preloader.querySelector('.preloader__row').scrollWidth + 'px'
+        setTimeout(() => {
+          preloader.style.opacity = 0
+        }, 2000)
+
+        setTimeout(() => {
+          preloader.remove()
+        }, 3000)
+
+      }
+
+    })
+  </script>
   <script src="js/main.js" defer></script>
   <script src="https://yastatic.net/share2/share.js" async></script>
 </head>
 
-  <body class="page__body">
-    <div class="site-container">
-      <header class="header">
+<body class="page__body">
+  <div class="site-container">
+    <header class="header">
   <div class="header__container main-container">
     <a class="header__logo logo">
       <svg width="200" height="47" viewBox="0 0 200 47" xmlns="http://www.w3.org/2000/svg">
@@ -236,8 +259,30 @@
     </div>
   </div>
 </header>
-      <main class="main">
-        <div class="menu menu--main menu-disable main-menu" data-lenis-prevent>
+    <main class="main">
+      <div class="preloader">
+        <div class="preloader__row">
+          <div class="preloader__img">
+            <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="Logo">
+                <path id="border" fill-rule="evenodd" clip-rule="evenodd" stroke-dasharray="40"
+                  d="M0 0H46.9998V46.9999H0V0ZM3.65201 3.65201V43.3478H43.3478V3.65201H3.65201Z" />
+                <g id="TF">
+                  <path d="M8.33618 16.8608V13.0203H24.8596V16.8608H18.8159V33.8606H14.3501V16.8608H8.33618Z"
+                    fill="#252321" />
+                  <path
+                    d="M24.8514 33.8606V13.0203H38.606V16.8608H29.3172V21.7434H36.9388V25.4054H29.3172V33.8606H24.8514Z"
+                    fill="#252321" />
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="preloader__text">
+            <img src="./img/logo-text.svg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="menu menu--main menu-disable main-menu" data-lenis-prevent>
   <a class="menu__logo logo mob-dis">
     <svg
       width="200"
@@ -908,7 +953,7 @@
   </div>
 </div>
 
-        <section class="hero">
+      <section class="hero">
   <div class="swiper hero__slider swiper-no-swiping">
     <div class="swiper-wrapper">
       <div class="swiper-slide" style="width: 100%">
@@ -1154,7 +1199,7 @@
     </li>
   </ul>
 </section>
-        <section class="tour">
+      <section class="tour">
   <div class="tour__overlay">
       <iframe
         width="100%"
@@ -1324,7 +1369,7 @@
     <a href="#" class="btn btn--fill">Подобрать проект</a>
   </div>
 </section>
-        <section class="services-section main-container--left">
+      <section class="services-section main-container--left">
   <h2 class="title services-section__title container" data-aos="custom-fade-up">
     Сложное&nbsp;&mdash; это тысяча маленьких шагов, сделанных професионалами
   </h2>
@@ -1452,7 +1497,7 @@
     </div>
   </div>
 </section>
-        <section class="video-section">
+      <section class="video-section">
   <video
     class="video"
     src=""
@@ -1465,7 +1510,7 @@
   ></video>
 </section>
 
-        <section class="projects-section main-container">
+      <section class="projects-section main-container">
   <h2 class="title projects-section__title centered" data-aos="custom-fade-up">
     Проекты и цены
   </h2>
@@ -1625,7 +1670,7 @@
   </div>
   <a href="#" class="btn btn--fill">все проекты</a>
 </section>
-        <section class="benefits-house">
+      <section class="benefits-house">
   <div class="wrapper">
     <h2 class="title centered benefits-house__title container" data-aos="custom-fade-up" data-aos-easing="ease-in-sine"
       data-aos-duration="800">
@@ -1734,7 +1779,7 @@
     </picture>
   </div>
 </section>
-        <section class="eco-house" data-src-bg="./img/forest.webp">
+      <section class="eco-house" data-src-bg="./img/forest.webp">
   <div class="eco-house__header container">
     <h3 class="subtitle centered" data-aos="custom-fade-up">Эко-среда</h3>
     <h2 class="title centered eco-house__title" data-aos="custom-fade-up">
@@ -1879,10 +1924,10 @@
     </div>
   </div>
 </section>
-        <div class="shadow">
-          <div class="shadow__body"></div>
-        </div>
-        <section class="tech">
+      <div class="shadow">
+        <div class="shadow__body"></div>
+      </div>
+      <section class="tech">
   <h2 class="title centered tech__title">Технологии строительства</h2>
   <div class="tech__container">
     <div class="tech__text">
@@ -1939,7 +1984,7 @@
     </div>
   </div>
 </section>
-        <div class="responsibility">
+      <div class="responsibility">
   <div class="responsibility__wrapper">
 
     <h2 class="title centered responsibility__title container" data-aos="custom-fade-up">
@@ -2064,7 +2109,7 @@
     <div class="responsibility__line responsibility__line--3" data-res-line="4"></div>
   </div>
 </div>
-        <section class="office">
+      <section class="office">
   <div class="main-container">
 
     <h3 class="subtitle centered office__subtitle container" data-aos="custom-fade-up" data-aos-delay="300">
@@ -2184,24 +2229,14 @@
     </form>
   </div>
 </section>
-        <button class="up-page-btn btn-reset"></button>
-        <div class="contact__btns">
-          <button
-            class="contact__btn phone-btn btn-reset mob-dis"
-            data-form-id="call-btn-main"
-          ></button>
-          <a
-            href="https://api.whatsapp.com/send?phone=78006007008"
-            target="_blank"
-            class="contact__btn whatsapp-btn btn-reset mob-dis"
-          ></a>
-          <a
-            href="tg://resolve?domain=username"
-            target="_blank"
-            class="contact__btn telegram-btn btn-reset mob-dis"
-          ></a>
-        </div>
-        <div class="modal modal-form" data-lenis-prevent>
+      <button class="up-page-btn btn-reset"></button>
+      <div class="contact__btns">
+        <button class="contact__btn phone-btn btn-reset mob-dis" data-form-id="call-btn-main"></button>
+        <a href="https://api.whatsapp.com/send?phone=78006007008" target="_blank"
+          class="contact__btn whatsapp-btn btn-reset mob-dis"></a>
+        <a href="tg://resolve?domain=username" target="_blank" class="contact__btn telegram-btn btn-reset mob-dis"></a>
+      </div>
+      <div class="modal modal-form" data-lenis-prevent>
   <div class="modal__window--form">
     <form class="cta__form form modal-form__form">
       <div class="form__left">
@@ -2259,44 +2294,32 @@
   </div>
 </div>
 
-        <div class="mobile-menu">
-          <ul class="mobile-menu__list list-reset">
-            <li class="mobile-menu__item">
-              <button
-                class="mobile-menu__btn mobile-menu__btn--call btn-reset"
-                data-form-id="call-btn-main-mob"
-              ></button>
-            </li>
-            <li class="mobile-menu__item">
-              <a
-                href="https://api.whatsapp.com/send?phone=78006007008"
-                class="mobile-menu__btn mobile-menu__btn--whatsapp btn-reset"
-              >
-              </a>
-            </li>
-            <li class="mobile-menu__item">
-              <a
-                href="tg://resolve?domain=username"
-                class="mobile-menu__btn mobile-menu__btn--telegram btn-reset"
-              >
-              </a>
-            </li>
-            <li class="mobile-menu__item">
-              <button
-                class="mobile-menu__btn mobile-menu__btn--search btn-reset"
-              ></button>
-            </li>
-            <li class="mobile-menu__item">
-              <button
-                class="mobile-menu__btn mobile-menu__btn--favorites btn-reset"
-              >
-                <span class="favorites-btn__quantity">0</span>
-              </button>
-            </li>
-          </ul>
-        </div>
-      </main>
-      <footer class="footer">
+      <div class="mobile-menu">
+        <ul class="mobile-menu__list list-reset">
+          <li class="mobile-menu__item">
+            <button class="mobile-menu__btn mobile-menu__btn--call btn-reset" data-form-id="call-btn-main-mob"></button>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="https://api.whatsapp.com/send?phone=78006007008"
+              class="mobile-menu__btn mobile-menu__btn--whatsapp btn-reset">
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="tg://resolve?domain=username" class="mobile-menu__btn mobile-menu__btn--telegram btn-reset">
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <button class="mobile-menu__btn mobile-menu__btn--search btn-reset"></button>
+          </li>
+          <li class="mobile-menu__item">
+            <button class="mobile-menu__btn mobile-menu__btn--favorites btn-reset">
+              <span class="favorites-btn__quantity">0</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </main>
+    <footer class="footer">
   <div class="main-container">
     <div class="footer__row">
       <a href="#" class="footer__logo logo">
@@ -2319,7 +2342,8 @@
     </div>
   </div>
 </footer>
-      <div class="plug"></div>
-    </div>
-  </body>
+    <div class="plug"></div>
+  </div>
+</body>
+
 </html>

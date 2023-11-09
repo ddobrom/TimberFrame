@@ -1416,6 +1416,23 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
+// let preloader = document.querySelector('.preloader')
+
+// window.addEventListener('load', () => {
+//   preloader.querySelector('.preloader__row').style.animation = "none"
+//   preloader.querySelector('.preloader__text').style.transform = "translateX(0%)"
+//   preloader.querySelector('.preloader__row').style.maxWidth = preloader.querySelector('.preloader__row').scrollWidth + 'px'
+//   setTimeout(() => {
+//     preloader.style.opacity = 0
+//   }, 1000)
+
+//   setTimeout(()=>{
+//     preloader.remove()
+//   }, 2000)
+
+// })
+
+
 // import { Navigation, Thumbs, Pagination, Autoplay } from "swiper";
 // Swiper.use([Navigation, Thumbs, Autoplay, Pagination]);
 

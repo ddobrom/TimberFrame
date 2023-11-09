@@ -1100,6 +1100,125 @@ html.lenis {
   }
 }
 
+.preloader {
+  position: fixed;
+  z-index: 99;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--white-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-transition: opacity 1s linear;
+  transition: opacity 1s linear;
+}
+.preloader__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 100px;
+  -webkit-transition: max-width 1s linear;
+  transition: max-width 1s linear;
+  overflow: hidden;
+  -webkit-animation: shadowAnim 3s linear 0s infinite;
+  animation: shadowAnim 3s linear 0s infinite;
+}
+@media (min-width: 1441px) {
+  .preloader__row {
+    max-width: 10rem;
+  }
+}
+@media (max-width: 768px) {
+  .preloader__row {
+    max-width: 50px;
+  }
+}
+.preloader__img {
+  position: relative;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  z-index: 2;
+  display: block;
+  background-color: var(--white-color);
+  width: 100px;
+  height: 100px;
+  -webkit-transition: -webkit-transform 1s linear;
+  transition: -webkit-transform 1s linear;
+  transition: transform 1s linear;
+  transition: transform 1s linear, -webkit-transform 1s linear;
+}
+.preloader__img svg {
+  width: 100%;
+  height: 100%;
+}
+.preloader__img svg #border {
+  fill: var(--focus-color);
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
+}
+@media (min-width: 1441px) {
+  .preloader__img {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+@media (max-width: 768px) {
+  .preloader__img {
+    width: 50px;
+    height: 50px;
+  }
+}
+.preloader__text {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  display: block;
+  height: 100px;
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 1s linear;
+  transition: -webkit-transform 1s linear;
+  transition: transform 1s linear;
+  transition: transform 1s linear, -webkit-transform 1s linear;
+}
+.preloader__text img {
+  height: 100%;
+}
+@media (min-width: 1441px) {
+  .preloader__text {
+    height: 10rem;
+  }
+}
+@media (max-width: 768px) {
+  .preloader__text {
+    height: 50px;
+  }
+}
+
+@-webkit-keyframes shadowAnim {
+  100% {
+    -webkit-box-shadow: 0 0 20px #000;
+    box-shadow: 0 0 20px #000;
+  }
+}
+
+@keyframes shadowAnim {
+  100% {
+    -webkit-box-shadow: 0 0 20px #000;
+    box-shadow: 0 0 20px #000;
+  }
+}
 .header {
   position: fixed;
   z-index: 10;

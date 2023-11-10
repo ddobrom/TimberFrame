@@ -1383,12 +1383,12 @@ function declOfNum(number, words) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _studio_freight_lenis__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @studio-freight/lenis */ "./node_modules/@studio-freight/lenis/dist/lenis.modern.mjs");
 /* harmony import */ var _catalogueData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./catalogueData */ "./src/js/components/catalogueData.js");
-/* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/bundle */ "./node_modules/swiper/swiper-bundle.esm.js");
-/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
-/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
+/* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper/bundle */ "./node_modules/swiper/swiper-bundle.esm.js");
+/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
+/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
 /* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/CSSRulePlugin.js");
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var rellax__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rellax */ "./node_modules/rellax/rellax.js");
 /* harmony import */ var rellax__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(rellax__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./../_vars */ "./src/js/_vars.js");
@@ -1410,7 +1410,6 @@ const lenis = new _studio_freight_lenis__WEBPACK_IMPORTED_MODULE_1__["default"](
   infinite: false,
   breakpoints: [0, 768, 1201]
 });
-document.body.style.overflow = 'hidden';
 lenis.stop();
 function raf(time) {
   lenis.raf(time);
@@ -1430,7 +1429,9 @@ if (preloader) {
     setTimeout(() => {
       preloader.remove();
       document.body.style.overflow = null;
+      onResize();
       lenis.start();
+      gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.update();
     }, 5000);
   });
 }
@@ -1445,7 +1446,7 @@ const moveBg = () => {
   const activeSlide = heroSlider.querySelector(".swiper-slide-active").querySelector(".hero-slide__image");
   activeSlide.style.transform = "translate(-45%, -50%)";
 };
-const heroslider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.Swiper(".hero__slider", {
+const heroslider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".hero__slider", {
   slidesPerView: "auto",
   navigation: {
     nextEl: ".slider-control__btn--next",
@@ -1465,7 +1466,7 @@ const heroslider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.Swiper(".hero_
   }
 });
 let popularImages = null;
-const popularImagesSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.Swiper(".slider-popular__images", {
+const popularImagesSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".slider-popular__images", {
   slidesPerView: 1,
   navigation: {
     nextEl: ".popular-slider-btn--next",
@@ -1489,7 +1490,7 @@ const popularImagesSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.Swipe
     }
   }
 });
-const popularContentSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.Swiper(".slider-popular__content", {
+const popularContentSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".slider-popular__content", {
   slidesPerView: 1,
   navigation: {
     nextEl: ".popular-slider-btn--next",
@@ -1537,7 +1538,7 @@ if (heroSlider) {
 }
 
 // office__slider
-const officeSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.Swiper(".office__slider", {
+const officeSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".office__slider", {
   loop: true,
   slidesPerView: "auto",
   spaceBetween: 8,
@@ -1547,7 +1548,7 @@ const officeSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.Swiper(".off
   },
   speed: 5000
 });
-const gallerySliderMini = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.Swiper(".gallery__slider-mini", {
+const gallerySliderMini = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".gallery__slider-mini", {
   slidesPerView: "auto",
   spaceBetween: 5,
   on: {
@@ -1558,7 +1559,7 @@ const gallerySliderMini = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.Swiper(
     }
   }
 });
-const gallerySlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.Swiper(".gallery__slider", {
+const gallerySlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".gallery__slider", {
   loop: true,
   slidesPerView: 1,
   navigation: {
@@ -1569,14 +1570,14 @@ const gallerySlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.Swiper(".ga
     swiper: gallerySliderMini
   }
 });
-const responsibilitySlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.Swiper(".responsibility__items", {
+const responsibilitySlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".responsibility__items", {
   slidesPerView: 1,
   effect: "fade",
   fadeEffect: {
     crossFade: true
   }
 });
-const builtHouseSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.Swiper(".built-houses__slider", {
+const builtHouseSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".built-houses__slider", {
   slidesPerView: "auto",
   spaceBetween: 30,
   loop: true,
@@ -1598,11 +1599,11 @@ const builtHouseSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.Swiper("
 window.addEventListener("refresh", () => {
   builtHouseSlider.update();
 });
-const itemProductSliderThumbs = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.Swiper(".item-product__thumbs", {
+const itemProductSliderThumbs = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".item-product__thumbs", {
   slidesPerView: 3,
   spaceBetween: 8
 });
-const itemProductSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.Swiper(".item-product__slider", {
+const itemProductSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".item-product__slider", {
   slidesPerView: 1,
   navigation: {
     nextEl: ".item-product-next",
@@ -1617,7 +1618,7 @@ const itemProductSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.Swiper(
 // const productSliders = document.querySelectorAll(".product__slider");
 const initProductSliders = productSliders => {
   productSliders.forEach(el => {
-    new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.Swiper(el, {
+    new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(el, {
       slidesPerView: "auto",
       pagination: {
         el: ".product-slider__pagination"
@@ -1638,7 +1639,7 @@ const initProductSliders = productSliders => {
   });
 };
 
-aos__WEBPACK_IMPORTED_MODULE_3___default().init({
+aos__WEBPACK_IMPORTED_MODULE_4___default().init({
   disable: false,
   startEvent: "DOMContentLoaded",
   initClassName: "aos-init",
@@ -1656,18 +1657,18 @@ aos__WEBPACK_IMPORTED_MODULE_3___default().init({
   anchorPlacement: "top-bottom"
 });
 window.addEventListener("DOMContentLoaded", () => {
-  setTimeout(() => aos__WEBPACK_IMPORTED_MODULE_3___default().refresh(), 50);
+  setTimeout(() => aos__WEBPACK_IMPORTED_MODULE_4___default().refresh(), 50);
 });
 
 
-gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger);
+gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
 
 // services section
 
 const itemsTexts = document.querySelectorAll(".services-section__text");
 function onResize() {
-  gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.refresh(true);
-  gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.update();
+  gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.refresh(true);
+  gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.update();
 }
 if (itemsTexts.length > 0) {
   const textItems = document.querySelectorAll(".services-section__item");
@@ -1683,7 +1684,7 @@ if (itemsTexts.length > 0) {
     imageItems.forEach(el => el.style.opacity = 0);
     imageItems[current].style.opacity = 1;
   }
-  gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.addEventListener("refreshInit", onResize);
+  gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.addEventListener("refreshInit", onResize);
   const line = document.querySelector(".services-section__line");
   const firstItem = document.querySelector(".services-section__item");
   changeSlide();
@@ -1700,15 +1701,15 @@ if (itemsTexts.length > 0) {
     changeSlide();
   });
   changeSlide();
-  let mm = gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.matchMedia();
+  let mm = gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.matchMedia();
   mm.add("(min-width: 769px)", () => {
-    let t1 = gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.timeline();
+    let t1 = gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.timeline();
     t1.fromTo(".services-section__list", {
       y: () => -document.querySelector(".services-section__item").offsetHeight
     }, {
       y: () => -document.querySelector(".services-section__list").scrollHeight
     });
-    gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
+    gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
       animation: t1,
       trigger: ".services-section__line",
       start: "center center",
@@ -1727,7 +1728,7 @@ if (itemsTexts.length > 0) {
       offsetSize += items[i].offsetHeight;
     }
     scrollOffset = document.querySelector('.services-section__container').scrollHeight - offsetSize;
-    gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
+    gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
       trigger: ".services-section__container",
       start: "top top+=80px",
       end: "bottom bottom",
@@ -1743,9 +1744,9 @@ if (itemsTexts.length > 0) {
 // background parallax
 setTimeout(() => {
   if (document.querySelector(".parallax")) {
-    gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_6__.CSSRulePlugin);
+    gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_6__.CSSRulePlugin);
     let rule = gsap_all__WEBPACK_IMPORTED_MODULE_6__.CSSRulePlugin.getRule(".parallax__wrapper::before");
-    const timeLine1 = gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.timeline();
+    const timeLine1 = gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.timeline();
     timeLine1.fromTo(".parallax__body", {
       scale: 0.5
     }, {
@@ -1755,7 +1756,7 @@ setTimeout(() => {
         opacity: 1
       }
     });
-    gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
+    gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
       animation: timeLine1,
       trigger: ".parallax__wrapper",
       start: "top top",
@@ -1769,13 +1770,13 @@ setTimeout(() => {
 
 // shadow transition
 if (document.querySelector(".shadow")) {
-  const shadowAnim = gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.timeline();
+  const shadowAnim = gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.timeline();
   shadowAnim.fromTo(".shadow__body", {
     backgroundColor: "#02090e"
   }, {
     backgroundColor: "#e4e4e4"
   });
-  gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
+  gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
     animation: shadowAnim,
     trigger: ".eco-house",
     start: "bottom-=25% top",
@@ -1916,7 +1917,7 @@ window.onload = () => {
           entry.target.style = `background-image: url(${entry.target.dataset.srcBg})`;
         }
         observer.unobserve(entry.target);
-        aos__WEBPACK_IMPORTED_MODULE_3___default().refresh();
+        aos__WEBPACK_IMPORTED_MODULE_4___default().refresh();
         onResize();
       }
     });
@@ -2986,7 +2987,7 @@ if (plan) {
 }
 const firstDescList = document.querySelectorAll('[data-desc-category="1"] .desc-list__item');
 const secondDescList = document.querySelectorAll('[data-desc-category="2"] .desc-list__item');
-const firstDescSliderItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.Swiper(".desc-slider__slider--first", {
+const firstDescSliderItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".desc-slider__slider--first", {
   slidesPerView: 1,
   navigation: {
     nextEl: ".first-desc--next",
@@ -3011,7 +3012,7 @@ const firstDescSliderItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.S
     }
   }
 });
-const secondDescSliderItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.Swiper(".desc-slider__slider--second", {
+const secondDescSliderItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".desc-slider__slider--second", {
   slidesPerView: 1,
   navigation: {
     nextEl: ".second-desc--next",
@@ -3036,7 +3037,7 @@ const secondDescSliderItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.
     }
   }
 });
-const firstDescSliderImageItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.Swiper(".desc-slider__image-slider--first", {
+const firstDescSliderImageItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".desc-slider__image-slider--first", {
   slidesPerView: 1,
   navigation: {
     nextEl: ".first-desc--next",
@@ -3047,7 +3048,7 @@ const firstDescSliderImageItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_
     crossFade: true
   }
 });
-const secondDescSliderImageItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.Swiper(".desc-slider__image-slider--second", {
+const secondDescSliderImageItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".desc-slider__image-slider--second", {
   slidesPerView: 1,
   navigation: {
     nextEl: ".second-desc--next",
@@ -3256,10 +3257,10 @@ const designItems = document.querySelectorAll('.design-section__right li');
 //   }
 // }
 
-const designStepsTimeline = gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.timeline();
+const designStepsTimeline = gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.timeline();
 // designItems.forEach((el, i) => {
 // })
-gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.set('.design-section__right li', {
+gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.set('.design-section__right li', {
   xPercent: 50
 });
 designStepsTimeline.to('.design-section__right li', {
@@ -3269,7 +3270,7 @@ designStepsTimeline.to('.design-section__right li', {
   ease: "power1.out"
 });
 if (window.matchMedia("(min-width: 1440px)").matches) {
-  gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
+  gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
     animation: designStepsTimeline,
     trigger: '.design-section__pin',
     start: 'top top+=80%',
@@ -3277,7 +3278,7 @@ if (window.matchMedia("(min-width: 1440px)").matches) {
     scrub: 0.5
   });
 } else {
-  gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
+  gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
     animation: designStepsTimeline,
     trigger: '.design-section__pin',
     start: 'top top+=45%',

@@ -1386,12 +1386,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/bundle */ "./node_modules/swiper/swiper-bundle.esm.js");
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
-/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/CSSRulePlugin.js");
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* harmony import */ var rellax__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rellax */ "./node_modules/rellax/rellax.js");
-/* harmony import */ var rellax__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(rellax__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./../_vars */ "./src/js/_vars.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/CSSRulePlugin.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var rellax__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rellax */ "./node_modules/rellax/rellax.js");
+/* harmony import */ var rellax__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(rellax__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./../_vars */ "./src/js/_vars.js");
 /* harmony import */ var simplebar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! simplebar */ "./node_modules/simplebar/dist/simplebar.esm.js");
 /* harmony import */ var _main_houses_data_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./main-houses-data.js */ "./src/js/components/main-houses-data.js");
 /* harmony import */ var _functions_throttle__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./../functions/throttle */ "./src/js/functions/throttle.js");
@@ -1415,23 +1415,21 @@ function raf(time) {
   requestAnimationFrame(raf);
 }
 requestAnimationFrame(raf);
-
-// let preloader = document.querySelector('.preloader')
-
-// window.addEventListener('load', () => {
-//   preloader.querySelector('.preloader__row').style.animation = "none"
-//   preloader.querySelector('.preloader__text').style.transform = "translateX(0%)"
-//   preloader.querySelector('.preloader__row').style.maxWidth = preloader.querySelector('.preloader__row').scrollWidth + 'px'
-//   setTimeout(() => {
-//     preloader.style.opacity = 0
-//   }, 1000)
-
-//   setTimeout(()=>{
-//     preloader.remove()
-//   }, 2000)
-
-// })
-
+let preloader = document.querySelector('.preloader');
+if (preloader) {
+  window.addEventListener('DOMContentLoaded', () => {
+    preloader.querySelector('.preloader__row').style.animation = "none";
+    preloader.querySelector('.preloader__text').style.transform = "translateX(0%)";
+    preloader.style.maxHeight = preloader.scrollHeight + 'px';
+    preloader.querySelector('.preloader__row').style.maxWidth = preloader.querySelector('.preloader__row').scrollWidth + 'px';
+    setTimeout(() => {
+      preloader.style.maxHeight = 0 + 'px';
+    }, 4000);
+    setTimeout(() => {
+      preloader.remove();
+    }, 5000);
+  });
+}
 
 // import { Navigation, Thumbs, Pagination, Autoplay } from "swiper";
 // Swiper.use([Navigation, Thumbs, Autoplay, Pagination]);
@@ -1656,41 +1654,35 @@ aos__WEBPACK_IMPORTED_MODULE_3___default().init({
 window.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => aos__WEBPACK_IMPORTED_MODULE_3___default().refresh(), 50);
 });
-if (_vars__WEBPACK_IMPORTED_MODULE_4__.servicesSection) {
-  const textItems = [...document.querySelectorAll(".services-section__item")];
-  const imageItems = [...document.querySelectorAll(".services-section__item-image")];
-  window.addEventListener("scroll", () => {
-    setTimeout(() => {
-      changeSlide();
-    }, 0);
-  });
-  function changeSlide() {
-    let current = 0;
-    textItems.forEach((el, index) => {
-      if (el.classList.contains("active")) {
-        current = index;
-      }
-    });
-    imageItems.forEach(el => el.classList.remove("active"));
-    imageItems[current].classList.add("active");
-  }
-}
 
 
-gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_6__.ScrollTrigger);
+gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger);
 
 // services section
 
 const itemsTexts = document.querySelectorAll(".services-section__text");
 function onResize() {
-  gsap_all__WEBPACK_IMPORTED_MODULE_6__.ScrollTrigger.refresh(true);
-  gsap_all__WEBPACK_IMPORTED_MODULE_6__.ScrollTrigger.update();
+  gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.refresh(true);
+  gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.update();
 }
 if (itemsTexts.length > 0) {
-  gsap_all__WEBPACK_IMPORTED_MODULE_6__.ScrollTrigger.addEventListener("refreshInit", onResize);
+  const textItems = document.querySelectorAll(".services-section__item");
+  const imageItems = document.querySelectorAll(".services-section__item-image");
+  function changeSlide() {
+    let current = 0;
+    let previous = 0;
+    textItems.forEach((el, index) => {
+      if (el.classList.contains("active")) {
+        current = index;
+      }
+    });
+    imageItems.forEach(el => el.style.opacity = 0);
+    imageItems[current].style.opacity = 1;
+  }
+  gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.addEventListener("refreshInit", onResize);
   const line = document.querySelector(".services-section__line");
   const firstItem = document.querySelector(".services-section__item");
-  let listHeight = document.querySelector(".services-section__list").scrollHeight;
+  changeSlide();
   window.addEventListener("scroll", () => {
     itemsTexts.forEach(el => {
       if (el.getBoundingClientRect().bottom < line.getBoundingClientRect().bottom) {
@@ -1701,18 +1693,18 @@ if (itemsTexts.length > 0) {
         }
       }
     });
-  }, {
-    passive: true
+    changeSlide();
   });
-  let mm = gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.matchMedia();
+  changeSlide();
+  let mm = gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.matchMedia();
   mm.add("(min-width: 769px)", () => {
-    let t1 = gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.timeline();
+    let t1 = gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.timeline();
     t1.fromTo(".services-section__list", {
       y: () => -document.querySelector(".services-section__item").offsetHeight
     }, {
       y: () => -document.querySelector(".services-section__list").scrollHeight
     });
-    gsap_all__WEBPACK_IMPORTED_MODULE_6__.ScrollTrigger.create({
+    gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
       animation: t1,
       trigger: ".services-section__line",
       start: "center center",
@@ -1731,7 +1723,7 @@ if (itemsTexts.length > 0) {
       offsetSize += items[i].offsetHeight;
     }
     scrollOffset = document.querySelector('.services-section__container').scrollHeight - offsetSize;
-    gsap_all__WEBPACK_IMPORTED_MODULE_6__.ScrollTrigger.create({
+    gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
       trigger: ".services-section__container",
       start: "top top+=80px",
       end: "bottom bottom",
@@ -1747,9 +1739,9 @@ if (itemsTexts.length > 0) {
 // background parallax
 setTimeout(() => {
   if (document.querySelector(".parallax")) {
-    gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_7__.CSSRulePlugin);
-    let rule = gsap_all__WEBPACK_IMPORTED_MODULE_7__.CSSRulePlugin.getRule(".parallax__wrapper::before");
-    const timeLine1 = gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.timeline();
+    gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_6__.CSSRulePlugin);
+    let rule = gsap_all__WEBPACK_IMPORTED_MODULE_6__.CSSRulePlugin.getRule(".parallax__wrapper::before");
+    const timeLine1 = gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.timeline();
     timeLine1.fromTo(".parallax__body", {
       scale: 0.5
     }, {
@@ -1759,7 +1751,7 @@ setTimeout(() => {
         opacity: 1
       }
     });
-    gsap_all__WEBPACK_IMPORTED_MODULE_6__.ScrollTrigger.create({
+    gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
       animation: timeLine1,
       trigger: ".parallax__wrapper",
       start: "top top",
@@ -1773,13 +1765,13 @@ setTimeout(() => {
 
 // shadow transition
 if (document.querySelector(".shadow")) {
-  const shadowAnim = gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.timeline();
+  const shadowAnim = gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.timeline();
   shadowAnim.fromTo(".shadow__body", {
     backgroundColor: "#02090e"
   }, {
     backgroundColor: "#e4e4e4"
   });
-  gsap_all__WEBPACK_IMPORTED_MODULE_6__.ScrollTrigger.create({
+  gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
     animation: shadowAnim,
     trigger: ".eco-house",
     start: "bottom-=25% top",
@@ -1790,7 +1782,7 @@ if (document.querySelector(".shadow")) {
 }
 
 try {
-  var rellax = new (rellax__WEBPACK_IMPORTED_MODULE_8___default())(".rellax", {
+  var rellax = new (rellax__WEBPACK_IMPORTED_MODULE_7___default())(".rellax", {
     breakpoints: [768,, 1201],
     center: true
   });
@@ -1815,10 +1807,10 @@ if (circles) {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  if (_vars__WEBPACK_IMPORTED_MODULE_4__.responsibility) {
+  if (_vars__WEBPACK_IMPORTED_MODULE_8__.responsibility) {
     const responsItems = document.querySelector(".responsibility__items");
-    const resLines = _vars__WEBPACK_IMPORTED_MODULE_4__.responsibility.querySelectorAll(".responsibility__line");
-    const resTriggers = _vars__WEBPACK_IMPORTED_MODULE_4__.responsibility.querySelectorAll(".responsibility__trigger");
+    const resLines = _vars__WEBPACK_IMPORTED_MODULE_8__.responsibility.querySelectorAll(".responsibility__line");
+    const resTriggers = _vars__WEBPACK_IMPORTED_MODULE_8__.responsibility.querySelectorAll(".responsibility__trigger");
     const resContainer = document.querySelector(".responsibility__wrapper");
     const setHeightOfWrapper = () => {
       resContainer.style.removeProperty("--wrapper-height");
@@ -1851,7 +1843,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     const office = document.querySelector(".office");
     observer.observe(document.querySelector(".add"));
-    observer.observe(_vars__WEBPACK_IMPORTED_MODULE_4__.responsibility);
+    observer.observe(_vars__WEBPACK_IMPORTED_MODULE_8__.responsibility);
     observer.observe(office);
     function getTopOfItems() {
       const rect = responsItems.getBoundingClientRect();
@@ -2235,11 +2227,11 @@ const initialState = () => {
     randId = parseInt(localStorage.getItem("randId"));
   }
 };
-if (_vars__WEBPACK_IMPORTED_MODULE_4__.catalogue) {
+if (_vars__WEBPACK_IMPORTED_MODULE_8__.catalogue) {
   _catalogueData__WEBPACK_IMPORTED_MODULE_0__["default"].forEach(el => {
     el.id = ++randId;
   });
-  _vars__WEBPACK_IMPORTED_MODULE_4__.catalogue.addEventListener("click", e => {
+  _vars__WEBPACK_IMPORTED_MODULE_8__.catalogue.addEventListener("click", e => {
     e.preventDefault();
     if (e.target.classList.contains("btn--like")) {
       const el = e.target;
@@ -2423,7 +2415,7 @@ document.querySelectorAll(".modal__close").forEach(el => {
 
 let menuItem = document.querySelectorAll(".tech__text");
 let menuImage = document.querySelectorAll(".tech__img");
-if (_vars__WEBPACK_IMPORTED_MODULE_4__.techSection) {
+if (_vars__WEBPACK_IMPORTED_MODULE_8__.techSection) {
   const points = [];
   for (let i = 0; i <= 1.0; i += 0.005) {
     points.push(i);
@@ -2431,12 +2423,12 @@ if (_vars__WEBPACK_IMPORTED_MODULE_4__.techSection) {
   const textObserver = new IntersectionObserver(callbackObs, {
     threshold: points
   });
-  textObserver.observe(_vars__WEBPACK_IMPORTED_MODULE_4__.techSection);
+  textObserver.observe(_vars__WEBPACK_IMPORTED_MODULE_8__.techSection);
   textObserver.observe(menuItem[0]);
   textObserver.observe(menuItem[1]);
   function callbackObs(entries, observer) {
     let percent = 1;
-    percent = window.scrollY / _vars__WEBPACK_IMPORTED_MODULE_4__.techSection.scrollHeight * 10;
+    percent = window.scrollY / _vars__WEBPACK_IMPORTED_MODULE_8__.techSection.scrollHeight * 10;
     if (window.matchMedia("(min-width: 769px)")) {
       menuItem[0].querySelector(".tech__paragraph").style.transform = `translateX(-${percent / 3}%)`;
       menuItem[1].querySelector(".tech__paragraph").style.transform = `translateX(${percent / 3}%)`;
@@ -2445,7 +2437,7 @@ if (_vars__WEBPACK_IMPORTED_MODULE_4__.techSection) {
       menuItem[1].querySelector(".tech__paragraph").style.transform = `translateX(${percent / 2}%)`;
     }
   }
-  _vars__WEBPACK_IMPORTED_MODULE_4__.techSection.addEventListener("wheel", () => {
+  _vars__WEBPACK_IMPORTED_MODULE_8__.techSection.addEventListener("wheel", () => {
     callbackObs();
   });
   document.querySelector(".tech").addEventListener("touchmove", () => {
@@ -2491,24 +2483,24 @@ const belowEcoCenter = (el1, el2) => {
 };
 const setHeaderTheme = () => {
   if (window.matchMedia("(min-width: 1440px)").matches) {
-    if (isInto(_vars__WEBPACK_IMPORTED_MODULE_4__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_4__.benefitsSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_4__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_4__.popularSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_4__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_4__.servicesSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_4__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_4__.projectSection) || getCoord(_vars__WEBPACK_IMPORTED_MODULE_4__.headerNav) >= getCoord(_vars__WEBPACK_IMPORTED_MODULE_4__.ecoHouseSection) && getCoord(_vars__WEBPACK_IMPORTED_MODULE_4__.headerNav) <= getCoord(_vars__WEBPACK_IMPORTED_MODULE_4__.houseExpanded) || getCoord(_vars__WEBPACK_IMPORTED_MODULE_4__.headerNav) >= getCoord(_vars__WEBPACK_IMPORTED_MODULE_4__.houseCentered) || isInto(_vars__WEBPACK_IMPORTED_MODULE_4__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_4__.techSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_4__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_4__.addSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_4__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_4__.officeSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_4__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_4__.resSection)) {
-      _vars__WEBPACK_IMPORTED_MODULE_4__.header.classList.add("dark");
+    if (isInto(_vars__WEBPACK_IMPORTED_MODULE_8__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_8__.benefitsSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_8__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_8__.popularSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_8__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_8__.servicesSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_8__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_8__.projectSection) || getCoord(_vars__WEBPACK_IMPORTED_MODULE_8__.headerNav) >= getCoord(_vars__WEBPACK_IMPORTED_MODULE_8__.ecoHouseSection) && getCoord(_vars__WEBPACK_IMPORTED_MODULE_8__.headerNav) <= getCoord(_vars__WEBPACK_IMPORTED_MODULE_8__.houseExpanded) || getCoord(_vars__WEBPACK_IMPORTED_MODULE_8__.headerNav) >= getCoord(_vars__WEBPACK_IMPORTED_MODULE_8__.houseCentered) || isInto(_vars__WEBPACK_IMPORTED_MODULE_8__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_8__.techSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_8__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_8__.addSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_8__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_8__.officeSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_8__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_8__.resSection)) {
+      _vars__WEBPACK_IMPORTED_MODULE_8__.header.classList.add("dark");
     } else {
-      _vars__WEBPACK_IMPORTED_MODULE_4__.header.classList.remove("dark");
+      _vars__WEBPACK_IMPORTED_MODULE_8__.header.classList.remove("dark");
     }
   } else {
-    if (isInto(_vars__WEBPACK_IMPORTED_MODULE_4__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_4__.benefitsSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_4__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_4__.popularSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_4__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_4__.servicesSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_4__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_4__.projectSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_4__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_4__.ecoHouseSection) && !belowEcoCenter(_vars__WEBPACK_IMPORTED_MODULE_4__.headerNav, document.querySelector(".house-content--expanded")) || belowEcoCenter(_vars__WEBPACK_IMPORTED_MODULE_4__.headerNav, document.querySelector(".house-content__image--big")) || isInto(_vars__WEBPACK_IMPORTED_MODULE_4__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_4__.techSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_4__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_4__.addSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_4__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_4__.officeSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_4__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_4__.resSection)) {
-      _vars__WEBPACK_IMPORTED_MODULE_4__.header.classList.add("dark");
+    if (isInto(_vars__WEBPACK_IMPORTED_MODULE_8__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_8__.benefitsSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_8__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_8__.popularSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_8__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_8__.servicesSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_8__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_8__.projectSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_8__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_8__.ecoHouseSection) && !belowEcoCenter(_vars__WEBPACK_IMPORTED_MODULE_8__.headerNav, document.querySelector(".house-content--expanded")) || belowEcoCenter(_vars__WEBPACK_IMPORTED_MODULE_8__.headerNav, document.querySelector(".house-content__image--big")) || isInto(_vars__WEBPACK_IMPORTED_MODULE_8__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_8__.techSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_8__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_8__.addSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_8__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_8__.officeSection) || isInto(_vars__WEBPACK_IMPORTED_MODULE_8__.headerNav, _vars__WEBPACK_IMPORTED_MODULE_8__.resSection)) {
+      _vars__WEBPACK_IMPORTED_MODULE_8__.header.classList.add("dark");
     } else {
-      _vars__WEBPACK_IMPORTED_MODULE_4__.header.classList.remove("dark");
+      _vars__WEBPACK_IMPORTED_MODULE_8__.header.classList.remove("dark");
     }
   }
-  if (getCoord(_vars__WEBPACK_IMPORTED_MODULE_4__.mobileMenu) >= getBottom(heroSection)) {
-    _vars__WEBPACK_IMPORTED_MODULE_4__.mobileMenu.style.opacity = "1";
-    _vars__WEBPACK_IMPORTED_MODULE_4__.mobileMenu.style.zIndex = "20";
+  if (getCoord(_vars__WEBPACK_IMPORTED_MODULE_8__.mobileMenu) >= getBottom(heroSection)) {
+    _vars__WEBPACK_IMPORTED_MODULE_8__.mobileMenu.style.opacity = "1";
+    _vars__WEBPACK_IMPORTED_MODULE_8__.mobileMenu.style.zIndex = "20";
   } else {
-    _vars__WEBPACK_IMPORTED_MODULE_4__.mobileMenu.style.opacity = null;
-    _vars__WEBPACK_IMPORTED_MODULE_4__.mobileMenu.style.zIndex = null;
+    _vars__WEBPACK_IMPORTED_MODULE_8__.mobileMenu.style.opacity = null;
+    _vars__WEBPACK_IMPORTED_MODULE_8__.mobileMenu.style.zIndex = null;
   }
 };
 let func = (0,_functions_throttle__WEBPACK_IMPORTED_MODULE_11__.throttle)(setHeaderTheme);
@@ -2662,13 +2654,13 @@ async function main() {
   let currentPage = 1;
   let rows = 10;
   async function displayList(arrData, rowPerPage, page) {
-    _vars__WEBPACK_IMPORTED_MODULE_4__.catalogue.innerHTML = "";
+    _vars__WEBPACK_IMPORTED_MODULE_8__.catalogue.innerHTML = "";
     page--;
     const start = rowPerPage * page;
     const end = start + rowPerPage;
     const paginatedData = arrData.slice(start, end);
     paginatedData.forEach(el => {
-      _vars__WEBPACK_IMPORTED_MODULE_4__.catalogue.innerHTML += createProduct(el.title, el.price, el.square, el.floors, el.bathrooms, el.bedrooms, el.placeSquare, el.imgSrcArray, el.active, el.id);
+      _vars__WEBPACK_IMPORTED_MODULE_8__.catalogue.innerHTML += createProduct(el.title, el.price, el.square, el.floors, el.bathrooms, el.bedrooms, el.placeSquare, el.imgSrcArray, el.active, el.id);
     });
     const products = document.querySelectorAll(".product");
     const productSliders = document.querySelectorAll(".product__slider");
@@ -2898,7 +2890,7 @@ const createProduct = function (title, price, square, floors, bathrooms, bedroom
     </li>
   `;
 };
-if (_vars__WEBPACK_IMPORTED_MODULE_4__.catalogue) {
+if (_vars__WEBPACK_IMPORTED_MODULE_8__.catalogue) {
   main();
 }
 upBtn?.addEventListener("click", () => {
@@ -2909,15 +2901,15 @@ window.addEventListener("scroll", () => {
   if (heroSection) {
     func();
   }
-  if (_vars__WEBPACK_IMPORTED_MODULE_4__.catalogue) {
+  if (_vars__WEBPACK_IMPORTED_MODULE_8__.catalogue) {
     const isOne = [];
     allItems.forEach(el => {
-      isOne.push(isInto(_vars__WEBPACK_IMPORTED_MODULE_4__.headerNav, el));
+      isOne.push(isInto(_vars__WEBPACK_IMPORTED_MODULE_8__.headerNav, el));
     });
     if (isOne.includes(true)) {
-      _vars__WEBPACK_IMPORTED_MODULE_4__.header.classList.remove("dark");
+      _vars__WEBPACK_IMPORTED_MODULE_8__.header.classList.remove("dark");
     } else {
-      _vars__WEBPACK_IMPORTED_MODULE_4__.header.classList.add("dark");
+      _vars__WEBPACK_IMPORTED_MODULE_8__.header.classList.add("dark");
     }
   }
   if (upBtn) {
@@ -3260,10 +3252,10 @@ const designItems = document.querySelectorAll('.design-section__right li');
 //   }
 // }
 
-const designStepsTimeline = gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.timeline();
+const designStepsTimeline = gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.timeline();
 // designItems.forEach((el, i) => {
 // })
-gsap__WEBPACK_IMPORTED_MODULE_5__.gsap.set('.design-section__right li', {
+gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.set('.design-section__right li', {
   xPercent: 50
 });
 designStepsTimeline.to('.design-section__right li', {
@@ -3273,7 +3265,7 @@ designStepsTimeline.to('.design-section__right li', {
   ease: "power1.out"
 });
 if (window.matchMedia("(min-width: 1440px)").matches) {
-  gsap_all__WEBPACK_IMPORTED_MODULE_6__.ScrollTrigger.create({
+  gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
     animation: designStepsTimeline,
     trigger: '.design-section__pin',
     start: 'top top+=80%',
@@ -3281,12 +3273,32 @@ if (window.matchMedia("(min-width: 1440px)").matches) {
     scrub: 0.5
   });
 } else {
-  gsap_all__WEBPACK_IMPORTED_MODULE_6__.ScrollTrigger.create({
+  gsap_all__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
     animation: designStepsTimeline,
     trigger: '.design-section__pin',
     start: 'top top+=45%',
     end: "+=60% top+=25%",
     scrub: 0.5
+  });
+}
+const panoramaSections = document.querySelectorAll("[data-tour-sec]");
+if (panoramaSections && panoramaSections.length > 0) {
+  panoramaSections.forEach(el => {
+    const cursor = el.querySelector(".mouse-rotate");
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      el.addEventListener("touchstart", () => {
+        cursor.style.opacity = '0';
+      });
+      el.addEventListener("touchend", () => {
+        cursor.style.opacity = '1';
+      });
+    }
+    el.addEventListener("mousemove", e => {
+      const x = e.clientX;
+      const y = e.clientY;
+      cursor.style.left = x + 'px';
+      cursor.style.top = y + 'px';
+    });
   });
 }
 

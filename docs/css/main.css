@@ -1116,8 +1116,10 @@ html.lenis {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-transition: opacity 1s linear;
-  transition: opacity 1s linear;
+  overflow: hidden;
+  -webkit-transition: max-height 0.5s ease-in;
+  transition: max-height 0.5s ease-in;
+  will-change: max-height;
 }
 .preloader__row {
   display: -webkit-box;
@@ -1132,6 +1134,7 @@ html.lenis {
   overflow: hidden;
   -webkit-animation: shadowAnim 3s linear 0s infinite;
   animation: shadowAnim 3s linear 0s infinite;
+  will-change: max-width;
 }
 @media (min-width: 1441px) {
   .preloader__row {
@@ -1208,15 +1211,15 @@ html.lenis {
 
 @-webkit-keyframes shadowAnim {
   100% {
-    -webkit-box-shadow: 0 0 20px #000;
-    box-shadow: 0 0 20px #000;
+    -webkit-box-shadow: 0 -5px 20px var(--focus-color);
+    box-shadow: 0 -5px 20px var(--focus-color);
   }
 }
 
 @keyframes shadowAnim {
   100% {
-    -webkit-box-shadow: 0 0 20px #000;
-    box-shadow: 0 0 20px #000;
+    -webkit-box-shadow: 0 -5px 20px var(--focus-color);
+    box-shadow: 0 -5px 20px var(--focus-color);
   }
 }
 .header {
@@ -2639,16 +2642,7 @@ html.lenis {
   width: 100px;
   height: 100px;
   border-radius: 100%;
-  border: 1px solid #fff6f6;
   pointer-events: none;
-  color: var(--white-color);
-  font-family: "PP Neue Montreal";
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1.32px;
-  text-transform: uppercase;
-  font-style: normal;
-  line-height: normal;
   left: 60%;
   top: 5%;
   -webkit-transform: translate(0, 0);
@@ -3087,6 +3081,10 @@ html.lenis {
   }
 }
 
+.sphere .grab {
+  cursor: pointer !important;
+}
+
 .popular {
   text-align: center;
   padding-top: 160px;
@@ -3469,8 +3467,9 @@ span.popular-card__figure {
   width: 100%;
   height: 100%;
   opacity: 0;
-  -webkit-transition: opacity 0.2s ease-in;
-  transition: opacity 0.2s ease-in;
+  -webkit-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+  will-change: opacity;
 }
 .services-section__item-image.active {
   opacity: 1;
@@ -3690,7 +3689,7 @@ span.popular-card__figure {
 }
 @media (max-width: 768px) {
   .video-section {
-    height: unset;
+    height: 60vh;
   }
 }
 .video-section video {
@@ -3698,12 +3697,6 @@ span.popular-card__figure {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-}
-@media (max-width: 768px) {
-  .video-section video {
-    -o-object-fit: contain;
-    object-fit: contain;
-  }
 }
 
 .projects-section {

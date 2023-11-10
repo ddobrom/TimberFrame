@@ -1410,6 +1410,8 @@ const lenis = new _studio_freight_lenis__WEBPACK_IMPORTED_MODULE_1__["default"](
   infinite: false,
   breakpoints: [0, 768, 1201]
 });
+document.body.style.overflow = 'hidden';
+lenis.stop();
 function raf(time) {
   lenis.raf(time);
   requestAnimationFrame(raf);
@@ -1427,6 +1429,8 @@ if (preloader) {
     }, 4000);
     setTimeout(() => {
       preloader.remove();
+      document.body.style.overflow = null;
+      lenis.start();
     }, 5000);
   });
 }

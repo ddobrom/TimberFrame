@@ -1128,9 +1128,12 @@ html.lenis {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   max-width: 100px;
-  -webkit-transition: max-width 1s linear;
-  transition: max-width 1s linear;
+  -webkit-transition: max-width 0.6s linear;
+  transition: max-width 0.6s linear;
   overflow: hidden;
   -webkit-animation: shadowAnim 3s linear 0s infinite;
   animation: shadowAnim 3s linear 0s infinite;
@@ -1155,10 +1158,10 @@ html.lenis {
   background-color: var(--white-color);
   width: 100px;
   height: 100px;
-  -webkit-transition: -webkit-transform 1s linear;
-  transition: -webkit-transform 1s linear;
-  transition: transform 1s linear;
-  transition: transform 1s linear, -webkit-transform 1s linear;
+  -webkit-transition: -webkit-transform 0.6s linear;
+  transition: -webkit-transform 0.6s linear;
+  transition: transform 0.6s linear;
+  transition: transform 0.6s linear, -webkit-transform 0.6s linear;
 }
 .preloader__img svg {
   width: 100%;
@@ -1190,10 +1193,10 @@ html.lenis {
   -webkit-transform: translateX(-100%);
   -ms-transform: translateX(-100%);
   transform: translateX(-100%);
-  -webkit-transition: -webkit-transform 1s linear;
-  transition: -webkit-transform 1s linear;
-  transition: transform 1s linear;
-  transition: transform 1s linear, -webkit-transform 1s linear;
+  -webkit-transition: -webkit-transform 0.6s linear 0.1s;
+  transition: -webkit-transform 0.6s linear 0.1s;
+  transition: transform 0.6s linear 0.1s;
+  transition: transform 0.6s linear 0.1s, -webkit-transform 0.6s linear 0.1s;
 }
 .preloader__text img {
   height: 100%;
@@ -2655,8 +2658,6 @@ html.lenis {
   .mouse-rotate {
     width: 10rem;
     height: 10rem;
-    font-size: 1.2rem;
-    letter-spacing: 0.132rem;
   }
 }
 @media (max-width: 768px) {
@@ -5661,6 +5662,56 @@ span.popular-card__figure {
     color: var(--focus-color);
   }
 }
+.product__header {
+  text-align: center;
+  padding: 16px 32px;
+}
+@media (max-width: 768px) {
+  .product__header {
+    padding: 16px;
+  }
+}
+.product__header h3 {
+  margin: 0;
+  margin-bottom: 16px;
+  color: var(--black-brand-color);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.2px;
+}
+@media (max-width: 768px) {
+  .product__header h3 {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+}
+.product__header a {
+  display: inline-block;
+  padding: 16px 32px;
+  border-radius: 4px;
+  font-family: "PP Neue Montreal";
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.44px;
+  text-transform: uppercase;
+  -webkit-transition: background-color 0.3s ease-in, color 0.3s ease-in;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in;
+  color: var(--black-brand-color);
+  background-color: var(--focus-color);
+}
+.product__header a:focus {
+  background-color: var(--focus-active-color);
+}
+@media (any-hover: hover) {
+  .product__header a:hover {
+    background-color: var(--focus-active-color);
+  }
+}
+.product__header a:active {
+  background-color: var(--focus-active-color);
+}
 .product__slider {
   display: none;
   height: 100%;
@@ -8327,6 +8378,292 @@ span.popular-card__figure {
   .design-section__image {
     position: static;
     height: unset;
+  }
+}
+
+.implemPhoto-section h1 {
+  margin: 0;
+  margin-bottom: 16px;
+  color: var(--black-brand-color);
+  text-align: center;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.28px;
+}
+@media (min-width: 1441px) {
+  .implemPhoto-section h1 {
+    margin-bottom: 1.6rem;
+    font-size: 2.8rem;
+    letter-spacing: 0.028rem;
+  }
+}
+@media (max-width: 768px) {
+  .implemPhoto-section h1 {
+    font-size: 20px;
+    letter-spacing: 0.2px;
+  }
+}
+.implemPhoto-section__btn {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 15;
+}
+@media (min-width: 1441px) {
+  .implemPhoto-section__btn {
+    right: 2rem;
+    bottom: 2rem;
+  }
+}
+.implemPhoto-section__btn--fullscreen a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  width: 40px;
+  height: 40px;
+  padding: 0px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  background-color: var(--focus-color);
+  -webkit-transition: background-color 0.3s ease-in;
+  transition: background-color 0.3s ease-in;
+}
+@media (min-width: 1440px) {
+  .implemPhoto-section__btn--fullscreen a {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+.implemPhoto-section__btn--fullscreen a svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2px;
+  fill: none;
+  fill: var(--black-brand-color);
+  -webkit-transition: stroke 0.3s ease-in;
+  transition: stroke 0.3s ease-in;
+  pointer-events: none;
+  fill: none;
+  stroke: var(--black-brand-color);
+  stroke-width: 1.125px;
+}
+@media (min-width: 1440px) {
+  .implemPhoto-section__btn--fullscreen a svg {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
+.implemPhoto-section__btn--fullscreen a:focus {
+  background-color: unset;
+  outline: 1px solid var(--focus-color);
+}
+.implemPhoto-section__btn--fullscreen a:focus svg {
+  stroke: var(--focus-color);
+}
+@media (any-hover: hover) {
+  .implemPhoto-section__btn--fullscreen a:hover {
+    background-color: var(--focus-active-color);
+    outline: 1px solid var(--focus-color);
+  }
+}
+.implemPhoto-section__btn--fullscreen a:active {
+  background-color: unset;
+}
+.implemPhoto-section__btn--fullscreen a:active svg {
+  stroke: var(--focus-active-color);
+}
+.implemPhoto-section__btn--fullscreen a-dark svg {
+  stroke: var(--black-brand-color);
+}
+.implemPhoto-section__filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 10px 30px;
+  margin-bottom: 20px;
+}
+@media (min-width: 1441px) {
+  .implemPhoto-section__filters {
+    padding: 1rem 3rem;
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .implemPhoto-section__filters {
+    display: none;
+  }
+}
+.implemPhoto-section__list {
+  padding-top: 30px;
+  padding-bottom: 60px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 5px;
+}
+@media (min-width: 1441px) {
+  .implemPhoto-section__list {
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+    gap: 4rem 0.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .implemPhoto-section__list {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+.implemTours-section h1 {
+  margin: 0;
+  text-align: center;
+  padding: 16px 32px;
+  padding-top: 0;
+  color: var(--black-brand-color);
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.28px;
+}
+@media (min-width: 1441px) {
+  .implemTours-section h1 {
+    padding: 1.6rem 3.2rem;
+    font-size: 2.8rem;
+    letter-spacing: 0.028rem;
+  }
+}
+@media (max-width: 768px) {
+  .implemTours-section h1 {
+    font-size: 20px;
+    letter-spacing: 0.2px;
+    padding: 16px;
+    padding-top: 0;
+  }
+}
+.implemTours-section__container {
+  padding-top: 30px;
+  padding-bottom: 120px;
+}
+@media (min-width: 1441px) {
+  .implemTours-section__container {
+    padding-top: 3rem;
+    padding-bottom: 12rem;
+  }
+}
+@media (max-width: 768px) {
+  .implemTours-section__container {
+    padding-bottom: 30px;
+  }
+}
+
+.implemTours-item:not(:last-child) {
+  margin-bottom: 60px;
+}
+@media (min-width: 1441px) {
+  .implemTours-item:not(:last-child) {
+    margin-bottom: 6rem;
+  }
+}
+@media (max-width: 768px) {
+  .implemTours-item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+.implemTours-item__tour {
+  margin-bottom: 30px;
+}
+@media (max-width: 768px) {
+  .implemTours-item__tour {
+    margin-bottom: 0;
+  }
+}
+.implemTours-item__info {
+  text-align: center;
+  max-width: 653px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .implemTours-item__info {
+    padding: 16px;
+  }
+}
+@media (min-width: 1441px) {
+  .implemTours-item__info {
+    max-width: 65.3rem;
+  }
+}
+.implemTours-item__info h3 {
+  margin: 0;
+  margin-bottom: 16px;
+  color: var(--black-brand-color);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.2px;
+}
+@media (max-width: 768px) {
+  .implemTours-item__info h3 {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+}
+@media (min-width: 1441px) {
+  .implemTours-item__info h3 {
+    margin-bottom: 1.6rem;
+    font-size: 2.4rem;
+    letter-spacing: 0.12rem;
+  }
+}
+.implemTours-item__info a {
+  display: inline-block;
+  padding: 16px 32px;
+  border-radius: 4px;
+  font-family: "PP Neue Montreal";
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.44px;
+  text-transform: uppercase;
+  -webkit-transition: background-color 0.3s ease-in, color 0.3s ease-in;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in;
+  color: var(--black-brand-color);
+  background-color: var(--focus-color);
+}
+.implemTours-item__info a:focus {
+  background-color: var(--focus-active-color);
+}
+@media (any-hover: hover) {
+  .implemTours-item__info a:hover {
+    background-color: var(--focus-active-color);
+  }
+}
+.implemTours-item__info a:active {
+  background-color: var(--focus-active-color);
+}
+@media (min-width: 1441px) {
+  .implemTours-item__info a {
+    font-size: 1.2rem;
+    letter-spacing: 0.144rem;
+    padding: 1.6rem 3.2rem;
+    border-radius: 0.4rem;
   }
 }
 /*# sourceMappingURL=main.css.map */

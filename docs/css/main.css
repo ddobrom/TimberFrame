@@ -6796,6 +6796,11 @@ span.popular-card__figure {
     gap: 32px;
   }
 }
+@media (max-width: 375px) {
+  .item-product__refers {
+    gap: 3.2rem;
+  }
+}
 .item-product__ref {
   padding: 0;
   padding: 5px 0;

@@ -5517,16 +5517,6 @@ span.popular-card__figure {
   -ms-flex-align: start;
   align-items: flex-start;
 }
-@media (max-width: 768px) {
-  .cta__form {
-    -webkit-box-flex: 0;
-    -ms-flex-positive: 0;
-    flex-grow: 0;
-    -ms-flex-negative: 1;
-    flex-shrink: 1;
-    margin: 0 auto;
-  }
-}
 @media (min-width: 1441px) {
   .cta__form {
     max-width: 45rem;
@@ -5535,6 +5525,17 @@ span.popular-card__figure {
 @media (max-width: 1300px) {
   .cta__form {
     max-width: 45rem;
+  }
+}
+@media (max-width: 768px) {
+  .cta__form {
+    -webkit-box-flex: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+    margin: 0 auto;
+    max-width: 450px;
   }
 }
 .cta__form--catalogue .form__title {

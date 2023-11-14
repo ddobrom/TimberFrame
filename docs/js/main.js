@@ -2075,39 +2075,22 @@ favBtns.forEach(el => {
       }
     });
   }
-
-  // if (el.closest(".hero")) {
-  //   el.closest(".hero__slide").setAttribute("data-id", ++randId);
-  //   el.addEventListener("click", (e) => {
-  //     let self = e.currentTarget;
-  //     if (!self.classList.contains("active")) {
-  //       self.classList.add("active");
-  //       let id = el.closest(".hero__slide").dataset.id;
-  //       let title = el
-  //         .closest(".hero__slide")
-  //         .querySelector(".slide__title")
-  //         .textContent.toLowerCase()
-  //         .trim();
-
-  //       favContent.insertAdjacentHTML(
-  //         "afterbegin",
-  //         generateFavoriteItem(
-  //           data[title].img,
-  //           data[title].srcset,
-  //           data[title].title,
-  //           data[title].info,
-  //           data[title].link,
-  //           id
-  //         )
-  //       );
-  //       updateStorage();
-  //       printQuantity();
-  //     } else {
-  //       deleteFav(el.closest(".hero__slide"));
-  //     }
-  //   });
-  // }
-
+  if (el.closest(".hero")) {
+    el.closest(".hero").setAttribute("data-id", ++randId);
+    el.addEventListener("click", e => {
+      let self = e.currentTarget;
+      if (!self.classList.contains("active")) {
+        self.classList.add("active");
+        let id = el.closest(".hero").dataset.id;
+        let title = el.closest(".hero").querySelector(".slide__title").textContent.toLowerCase().trim();
+        favContent.insertAdjacentHTML("afterbegin", generateFavoriteItem(_main_houses_data_js__WEBPACK_IMPORTED_MODULE_10__["default"][title].img, _main_houses_data_js__WEBPACK_IMPORTED_MODULE_10__["default"][title].srcset, _main_houses_data_js__WEBPACK_IMPORTED_MODULE_10__["default"][title].title, _main_houses_data_js__WEBPACK_IMPORTED_MODULE_10__["default"][title].info, _main_houses_data_js__WEBPACK_IMPORTED_MODULE_10__["default"][title].link, id));
+        updateStorage();
+        printQuantity();
+      } else {
+        deleteFav(el.closest(".hero"));
+      }
+    });
+  }
   if (el.closest(".popular-card")) {
     el.closest(".popular-card").setAttribute("data-id", ++randId);
     el.addEventListener("click", e => {

@@ -3322,17 +3322,22 @@ if (implemObjectsSection) {
     slider.on('slideChange', () => {
       productSlidersArray[i] = slider.activeIndex - 1;
     });
+    const pagination = el.querySelector(".product-slider__pagination");
     el.addEventListener("touchmove", e => {
       e.preventDefault();
-      const pagination = el.querySelector(".product-slider__pagination");
       pagination.classList.add("product-slider__pagination--active");
     });
     el.addEventListener("touchend", e => {
       e.preventDefault();
-      const pagination = el.querySelector(".product-slider__pagination");
       setTimeout(() => {
         pagination.classList.remove("product-slider__pagination--active");
       }, 500);
+    });
+    el.addEventListener("mouseenter", e => {
+      pagination.classList.add("product-slider__pagination--active");
+    });
+    el.addEventListener("mouseleave", e => {
+      pagination.classList.remove("product-slider__pagination--active");
     });
   });
 }

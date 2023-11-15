@@ -3315,6 +3315,41 @@ if (products && products.length > 0) {
 }
 const implemPhotoSection = document.querySelector('.implemPhoto-section');
 if (implemPhotoSection) {
+  const filters = document.querySelector('.filters');
+  const filtersBtns = filters.querySelectorAll("button");
+  const allBtn = document.querySelector('button[data-filter="all"]');
+  filtersBtns.forEach((el, i) => {
+    if (i === 0) {
+      el.classList.add('active');
+    }
+    el.addEventListener("click", e => {
+      e.preventDefault();
+      e.stopPropagation();
+      let currentCategory = null;
+      e.currentTarget.classList.toggle("active");
+      if (e.currentTarget.dataset.filter != "all") {
+        allBtn.classList.remove('active');
+        currentCategory = e.currentTarget.dataset.filter;
+      } else {
+        clearActive(filtersBtns);
+        allBtn.classList.add('active');
+        currentCategory = 'all';
+      }
+      let flag = false;
+      for (let i = 0; i < filtersBtns.length; i++) {
+        flag = false;
+        if (filtersBtns[i].classList.contains("active")) flag = true;
+        if (flag) break;
+      }
+      if (!flag) {
+        currentCategory = "all";
+        allBtn.classList.add("active");
+      }
+    });
+  });
+  const clearActive = items => {
+    items.forEach(item => item.classList.remove("active"));
+  };
   document.querySelectorAll('.product').forEach((item, index) => {
     _fancyapps_ui__WEBPACK_IMPORTED_MODULE_15__.Fancybox.bind(`[data-fancybox="gal-${index + 1}"]`, {
       Thumbs: {
@@ -3334,7 +3369,11 @@ if (contactBtns) {
   contactBtns.addEventListener('mouseenter', e => {
     e.preventDefault();
     e.stopPropagation();
-    contactBtns.style.maxHeight = contactBtns.scrollHeight + 'px';
+    let S = 0;
+    contactBtns.querySelectorAll('.contact__btn').forEach(btn => {
+      S += btn.scrollHeight;
+    });
+    contactBtns.style.maxHeight = S + 'px';
   });
   contactBtns.addEventListener('mouseleave', e => {
     e.preventDefault();
@@ -3556,10 +3595,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 const initFilters = () => {
-  const filtersBtns = document.querySelectorAll(".filters__btn");
+  const filters = document.querySelector('.filters');
+  const filtersBtns = filters.querySelectorAll("button");
   const cards = document.querySelectorAll(".catalogue__item");
-  const allBtn = document.querySelector('.filters__btn[data-filter="all"]');
-  filtersBtns.forEach(el => {
+  const allBtn = document.querySelector('button[data-filter="all"]');
+  filtersBtns.forEach((el, i) => {
+    if (i === 0) {
+      el.classList.add('active');
+    }
     el.addEventListener("click", e => {
       e.preventDefault();
       e.stopPropagation();

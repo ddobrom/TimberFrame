@@ -581,6 +581,9 @@ a {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   overflow: hidden;
   will-change: max-height;
   -webkit-transition: max-height 0.3s ease-in;
@@ -5557,26 +5560,6 @@ span.popular-card__figure {
     padding: 0.7rem 0;
   }
 }
-.catalogue-section__filters {
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 10px 29px;
-  margin-bottom: 28px;
-  overflow: hidden;
-}
-@media (min-width: 1441px) {
-  .catalogue-section__filters {
-    padding: 1rem 2.9rem;
-    margin-bottom: 2.8rem;
-  }
-}
-@media (max-width: 768px) {
-  .catalogue-section__filters {
-    padding: 24px 12px;
-    margin-bottom: 0;
-  }
-}
 .catalogue-section__catalogue {
   padding-bottom: 60px;
   display: -ms-grid;
@@ -6083,19 +6066,51 @@ span.popular-card__figure {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.filters ul {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   gap: 4px;
+  list-style: none;
+  padding: 10px 29px;
+  margin-bottom: 28px;
+  overflow: hidden;
+}
+@media (min-width: 1441px) {
+  .filters ul {
+    padding: 1rem 2.9rem;
+    margin-bottom: 2.8rem;
+  }
+}
+@media (max-width: 768px) {
+  .filters ul {
+    padding: 24px 12px;
+    margin-bottom: 0;
+  }
 }
 @media (min-width: 1440px) {
-  .filters {
+  .filters ul {
     gap: 0.4rem;
   }
 }
-.filters__btn {
+.filters ul > li > button {
+  cursor: pointer;
+  border: none;
+  margin: 0;
+  background: none;
   padding: 8px 24px;
   color: var(--black-brand-color);
   font-family: "PP Neue Montreal";
@@ -6110,11 +6125,11 @@ span.popular-card__figure {
   -webkit-transition: outline 0.2s ease-in;
   transition: outline 0.2s ease-in;
 }
-.filters__btn:active {
+.filters ul > li > button:active {
   outline-color: var(--focus-active-color);
 }
 @media (min-width: 1440px) {
-  .filters__btn {
+  .filters ul > li > button {
     padding: 0.8rem 2.4rem;
     font-size: 1.2rem;
     border-radius: 0.4rem;
@@ -6122,22 +6137,22 @@ span.popular-card__figure {
   }
 }
 @media (max-width: 768px) {
-  .filters__btn {
+  .filters ul > li > button {
     padding: 8px 23.5px;
   }
-  .filters__btn:focus, .filters__btn:active {
+  .filters ul > li > button:focus, .filters ul > li > button:active {
     outline-color: transparent;
   }
 }
 @media (any-hover: hover) {
-  .filters__btn:not(.active):hover {
+  .filters ul > li > button:not(.active):hover {
     outline-color: var(--focus-color);
   }
 }
-.filters__btn.active {
+.filters ul > li > button.active {
   outline-color: var(--focus-active-color) !important;
 }
-.filters__btn.disabled {
+.filters ul > li > button.disabled {
   color: var(--gray-lite-color);
   pointer-events: none;
 }
@@ -8377,6 +8392,14 @@ span.popular-card__figure {
     letter-spacing: 0.2px;
     padding: 16px;
     padding-top: 0;
+  }
+}
+.implemPhoto-section .filters ul {
+  margin-bottom: 20px;
+}
+@media (min-width: 1441px) {
+  .implemPhoto-section .filters ul {
+    margin-bottom: 2rem;
   }
 }
 .implemPhoto-section__btn {

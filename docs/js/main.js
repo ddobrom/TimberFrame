@@ -3338,6 +3338,12 @@ if (implemObjectsSection) {
 }
 const implemPhotoSection = document.querySelector('.implemPhoto-section');
 if (implemPhotoSection) {
+  const products = document.querySelectorAll(".product");
+  const productSliders = document.querySelectorAll(".product__slider");
+  (0,_product__WEBPACK_IMPORTED_MODULE_14__["default"])(products);
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    initProductSliders(productSliders);
+  }
   const filters = document.querySelector('.filters');
   const filtersBtns = filters.querySelectorAll("button");
   const allBtn = document.querySelector('button[data-filter="all"]');
@@ -3469,17 +3475,22 @@ if (implemReadySliders && implemReadySliders.length > 0) {
     slider.on('slideChange', () => {
       readyArray[index] = slider.activeIndex - 1;
     });
+    const pagination = el.querySelector(".product-slider__pagination");
     el.addEventListener("touchmove", e => {
       e.preventDefault();
-      const pagination = el.querySelector(".product-slider__pagination");
       pagination.classList.add("product-slider__pagination--active");
     });
     el.addEventListener("touchend", e => {
       e.preventDefault();
-      const pagination = el.querySelector(".product-slider__pagination");
       setTimeout(() => {
         pagination.classList.remove("product-slider__pagination--active");
       }, 500);
+    });
+    el.addEventListener("mouseenter", e => {
+      pagination.classList.add("product-slider__pagination--active");
+    });
+    el.addEventListener("mouseleave", e => {
+      pagination.classList.remove("product-slider__pagination--active");
     });
   });
 }

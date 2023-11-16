@@ -1453,27 +1453,20 @@ swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper.use([swiper__WEBPACK_IMPORTED_
 //   activeSlide.style.transform = "translate(-45%, -50%)";
 // };
 
-// const heroslider = new Swiper(".hero__slider", {
-//   slidesPerView: "auto",
-//   navigation: {
-//     nextEl: ".slider-control__btn--next",
-//     prevEl: ".slider-control__btn--prev",
-//   },
-//   loop: true,
-//   effect: "fade",
-//   speed: 2000,
-//   autoplay: {
-//     delay: 6300,
-//     disableOnInteraction: false,
-//   },
-
-//   on: {
-//     slideChangeTransitionStart: () => {
-//       requestAnimationFrame(moveBg);
-//     },
-//   },
-// });
-
+const heroslider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".hero__slider", {
+  slidesPerView: 1,
+  navigation: {
+    nextEl: ".slider-control__btn--next",
+    prevEl: ".slider-control__btn--prev"
+  },
+  loop: true,
+  effect: "fade",
+  speed: 2000,
+  autoplay: {
+    delay: 6300,
+    disableOnInteraction: false
+  }
+});
 let popularImages = null;
 const popularImagesSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".slider-popular__images", {
   slidesPerView: 1,

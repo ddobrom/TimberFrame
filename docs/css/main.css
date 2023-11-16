@@ -1777,6 +1777,12 @@ html.lenis {
   -ms-flex-pack: center;
   justify-content: center;
 }
+.hero__slider {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
 .hero__video {
   position: absolute;
   left: 0;
@@ -1785,6 +1791,20 @@ html.lenis {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+}
+.hero .swiper-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 .hero__btn-down {
   width: 48px;

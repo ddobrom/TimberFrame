@@ -1422,20 +1422,20 @@ if (preloader) {
   lenis.stop();
   window.addEventListener('DOMContentLoaded', () => {
     preloader.querySelector('.preloader__row').style.animation = "none";
-    preloader.querySelector('.preloader__row').style.maxWidth = preloader.querySelector('.preloader__row').scrollWidth + 'px';
+    preloader.querySelector('.preloader__row').style.maxWidth = "none";
     preloader.querySelector('.preloader__text').style.transform = "translateX(0%)";
     preloader.style.maxHeight = preloader.scrollHeight + 'px';
     setTimeout(() => {
       preloader.style.maxHeight = 0 + 'px';
+    }, 3000);
+    setTimeout(() => {
       document.body.style.overflow = null;
       onResize();
       lenis.start();
       gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.update();
       rellax.refresh();
-    }, 3500);
-    setTimeout(() => {
       preloader.remove();
-    }, 4100);
+    }, 3500);
   });
 }
 
@@ -1551,13 +1551,14 @@ prevButtonsPopular.forEach(el => el.addEventListener("click", () => {
 const officeSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".office__slider", {
   loop: true,
   slidesPerView: "auto",
-  spaceBetween: 8,
-  autoplay: {
-    delay: 0,
-    disableOnInteraction: false
-  },
-  speed: 5000
+  spaceBetween: 8
+  // autoplay: {
+  //   delay: 0,
+  //   disableOnInteraction: false,
+  // },
+  // speed: 5000,
 });
+
 const gallerySliderMini = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".gallery__slider-mini", {
   slidesPerView: "auto",
   spaceBetween: 5,
@@ -3306,6 +3307,7 @@ if (panoramaSections && panoramaSections.length > 0) {
 }
 if (implemObjectsSection) {
   const productSliders = document.querySelectorAll(".product__slider");
+  const productImages = document.querySelectorAll(".product__image");
   productSliders.forEach((el, i) => {
     const slider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(el, {
       slidesPerView: 1,
@@ -3322,7 +3324,11 @@ if (implemObjectsSection) {
     slider.on('slideChange', () => {
       productSlidersArray[i] = slider.activeIndex - 1;
     });
+  });
+  productImages.forEach((el, i) => {
     const pagination = el.querySelector(".product-slider__pagination");
+    const sliderControlBtns = el.querySelectorAll('.slider-control__btn');
+    const fullscreenBtn = el.querySelector('.implemPhoto-section__btn--fullscreen');
     el.addEventListener("touchmove", e => {
       e.preventDefault();
       pagination.classList.add("product-slider__pagination--active");
@@ -3334,9 +3340,21 @@ if (implemObjectsSection) {
       }, 500);
     });
     el.addEventListener("mouseenter", e => {
+      e.stopPropagation();
+      e.preventDefault();
+      sliderControlBtns.forEach((btn, idx) => {
+        btn.style.opacity = '1';
+        btn.style.transform = 'translateX(0px) translateY(-50%)';
+      });
+      fullscreenBtn.style.opacity = '1';
       pagination.classList.add("product-slider__pagination--active");
     });
     el.addEventListener("mouseleave", e => {
+      sliderControlBtns.forEach(btn => {
+        btn.style.opacity = null;
+        btn.style.transform = null;
+      });
+      fullscreenBtn.style.opacity = null;
       pagination.classList.remove("product-slider__pagination--active");
     });
   });
@@ -3481,6 +3499,8 @@ if (implemReadySliders && implemReadySliders.length > 0) {
       readyArray[index] = slider.activeIndex - 1;
     });
     const pagination = el.querySelector(".product-slider__pagination");
+    const controlBtns = el.querySelectorAll('.slider-control__btn');
+    const fullscreenBtn = el.querySelector('.implemPhoto-section__btn--fullscreen');
     el.addEventListener("touchmove", e => {
       e.preventDefault();
       pagination.classList.add("product-slider__pagination--active");
@@ -3492,9 +3512,19 @@ if (implemReadySliders && implemReadySliders.length > 0) {
       }, 500);
     });
     el.addEventListener("mouseenter", e => {
+      controlBtns.forEach(btn => {
+        btn.style.opacity = '1';
+        btn.style.transform = 'translate(0px, -50%)';
+      });
+      fullscreenBtn.style.opacity = '1';
       pagination.classList.add("product-slider__pagination--active");
     });
     el.addEventListener("mouseleave", e => {
+      controlBtns.forEach(btn => {
+        btn.style.opacity = null;
+        btn.style.transform = null;
+      });
+      fullscreenBtn.style.opacity = null;
       pagination.classList.remove("product-slider__pagination--active");
     });
   });

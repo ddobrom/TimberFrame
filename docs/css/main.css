@@ -8977,11 +8977,35 @@ span.popular-card__figure {
     padding-top: 0;
   }
 }
+.implemObjects-section .slider-control__btn {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in, -webkit-transform 0.3s ease-in;
+  transition: opacity 0.3s ease-in, -webkit-transform 0.3s ease-in;
+  transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+  transition: opacity 0.3s ease-in, transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
+}
+.implemObjects-section .slider-control__btn--prev {
+  -webkit-transform: translateX(-15px) translateY(-50%);
+  -ms-transform: translateX(-15px) translateY(-50%);
+  transform: translateX(-15px) translateY(-50%);
+}
+.implemObjects-section .slider-control__btn--next {
+  -webkit-transform: translateX(15px) translateY(-50%);
+  -ms-transform: translateX(15px) translateY(-50%);
+  transform: translateX(15px) translateY(-50%);
+}
 .implemObjects-section .catalogue__item {
   min-width: 0;
 }
+.implemObjects-section .implemPhoto-section__btn--fullscreen {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
+}
 .implemObjects-section .product__slider {
   display: block;
+  -webkit-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
 }
 
 .implemReady-section h1 {
@@ -9009,6 +9033,28 @@ span.popular-card__figure {
     padding: 16px;
     padding-top: 0;
   }
+}
+.implemReady-section .slider-control__btn {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in, -webkit-transform 0.3s ease-in;
+  transition: opacity 0.3s ease-in, -webkit-transform 0.3s ease-in;
+  transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+  transition: opacity 0.3s ease-in, transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
+}
+.implemReady-section .slider-control__btn--prev {
+  -webkit-transform: translateX(-15px) translateY(-50%);
+  -ms-transform: translateX(-15px) translateY(-50%);
+  transform: translateX(-15px) translateY(-50%);
+}
+.implemReady-section .slider-control__btn--next {
+  -webkit-transform: translateX(15px) translateY(-50%);
+  -ms-transform: translateX(15px) translateY(-50%);
+  transform: translateX(15px) translateY(-50%);
+}
+.implemReady-section .implemPhoto-section__btn--fullscreen {
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in;
+  transition: opacity 0.3s ease-in;
 }
 .implemReady-section__item {
   display: -ms-grid;

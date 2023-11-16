@@ -1946,20 +1946,22 @@ window.onload = () => {
     rootMargin: "600px 0px"
   });
   document.querySelectorAll("img[data-img-src], source[data-img-srcset], video[data-video-src], [data-src-bg]").forEach(img => observer.observe(img));
-  let video = document.querySelector("video");
-  if (video) {
+  let video = document.querySelectorAll("video");
+  if (video && video.length > 0) {
     let videoObserver = new IntersectionObserver((entries, opt) => {
       entries.forEach(el => {
         if (el.isIntersecting) {
-          video.play();
+          el.target.play();
         } else {
-          video.pause();
+          el.target.pause();
         }
       });
     }, {
       threshold: 0.4
     });
-    videoObserver.observe(video);
+    video.forEach(vid => {
+      videoObserver.observe(vid);
+    });
   }
 };
 const menuBtn = document.querySelector(".menu-btn");

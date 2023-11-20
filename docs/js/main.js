@@ -1381,13 +1381,13 @@ function declOfNum(number, words) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _studio_freight_lenis__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @studio-freight/lenis */ "./node_modules/@studio-freight/lenis/dist/lenis.modern.mjs");
+/* harmony import */ var _studio_freight_lenis__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @studio-freight/lenis */ "./node_modules/@studio-freight/lenis/dist/lenis.modern.mjs");
 /* harmony import */ var _catalogueData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./catalogueData */ "./src/js/components/catalogueData.js");
-/* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! swiper/bundle */ "./node_modules/swiper/swiper-bundle.esm.js");
-/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
+/* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/bundle */ "./node_modules/swiper/swiper-bundle.esm.js");
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
+/* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
 /* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/CSSRulePlugin.js");
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var rellax__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rellax */ "./node_modules/rellax/rellax.js");
@@ -1402,7 +1402,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fancyapps_ui__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fancyapps/ui */ "./node_modules/@fancyapps/ui/dist/index.esm.js");
 
 
-const lenis = new _studio_freight_lenis__WEBPACK_IMPORTED_MODULE_1__["default"]({
+
+
+swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper.use([swiper__WEBPACK_IMPORTED_MODULE_2__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_2__.Thumbs, swiper__WEBPACK_IMPORTED_MODULE_2__.Autoplay, swiper__WEBPACK_IMPORTED_MODULE_2__.Pagination]);
+const lenis = new _studio_freight_lenis__WEBPACK_IMPORTED_MODULE_3__["default"]({
   lerp: 0.07,
   wheelMultiplier: 0.7,
   touchMultiplier: 0.7,
@@ -1432,15 +1435,13 @@ if (preloader) {
       document.body.style.overflow = null;
       onResize();
       lenis.start();
-      gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.update();
+      gsap_all__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger.update();
       rellax.refresh();
       preloader.remove();
+      swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper.update();
     }, 3500);
   });
 }
-
-
-swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper.use([swiper__WEBPACK_IMPORTED_MODULE_4__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_4__.Thumbs, swiper__WEBPACK_IMPORTED_MODULE_4__.Autoplay, swiper__WEBPACK_IMPORTED_MODULE_4__.Pagination]);
 
 // const heroSlider = document.querySelector(".hero__slider");
 
@@ -1453,7 +1454,7 @@ swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper.use([swiper__WEBPACK_IMPORTED_
 //   activeSlide.style.transform = "translate(-45%, -50%)";
 // };
 
-const heroslider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".hero__slider", {
+const heroslider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".hero__slider", {
   slidesPerView: 1,
   navigation: {
     nextEl: ".slider-control__btn--next",
@@ -1468,7 +1469,7 @@ const heroslider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".hero_
   }
 });
 let popularImages = null;
-const popularImagesSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".slider-popular__images", {
+const popularImagesSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".slider-popular__images", {
   slidesPerView: 1,
   navigation: {
     nextEl: ".popular-slider-btn--next",
@@ -1492,7 +1493,7 @@ const popularImagesSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swipe
     }
   }
 });
-const popularContentSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".slider-popular__content", {
+const popularContentSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".slider-popular__content", {
   slidesPerView: 1,
   navigation: {
     nextEl: ".popular-slider-btn--next",
@@ -1541,7 +1542,7 @@ prevButtonsPopular.forEach(el => el.addEventListener("click", () => {
 // }
 
 // office__slider
-const officeSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".office__slider", {
+const officeSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".office__slider", {
   loop: true,
   slidesPerView: "auto",
   spaceBetween: 8
@@ -1552,7 +1553,7 @@ const officeSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".off
   // speed: 5000,
 });
 
-const gallerySliderMini = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".gallery__slider-mini", {
+const gallerySliderMini = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".gallery__slider-mini", {
   slidesPerView: "auto",
   spaceBetween: 5,
   on: {
@@ -1563,7 +1564,7 @@ const gallerySliderMini = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(
     }
   }
 });
-const gallerySlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".gallery__slider", {
+const gallerySlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".gallery__slider", {
   loop: true,
   slidesPerView: 1,
   navigation: {
@@ -1574,14 +1575,23 @@ const gallerySlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".ga
     swiper: gallerySliderMini
   }
 });
-const responsibilitySlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".responsibility__items", {
+const responsibilitySlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".responsibility__items", {
   slidesPerView: 1,
   effect: "fade",
   fadeEffect: {
     crossFade: true
   }
 });
-const builtHouseSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".built-houses__slider", {
+const aboutProdSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".about-prod__slider", {
+  slidesPerView: 3,
+  centeredSlides: true,
+  loop: true,
+  navigation: {
+    prevEl: '.slider-control__btn--prev',
+    nextEl: '.slider-control__btn--next'
+  }
+});
+const builtHouseSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".built-houses__slider", {
   slidesPerView: "auto",
   spaceBetween: 30,
   loop: true,
@@ -1600,14 +1610,26 @@ const builtHouseSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper("
     }
   }
 });
+// следим за автоплеем слайдера снизу
+// let builtObserver = new IntersectionObserver((entries, observer) => {
+//   if(entries[0].isIntersecting){
+//     builtHouseSlider.autoplay.start()
+//   } else {
+//     builtHouseSlider.autoplay.stop()
+//   }
+// }, {
+//   threshold: 0.1,
+// })
+// builtObserver.observe(document.querySelector('.built-houses'))
+
 window.addEventListener("refresh", () => {
   builtHouseSlider.update();
 });
-const itemProductSliderThumbs = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".item-product__thumbs", {
+const itemProductSliderThumbs = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".item-product__thumbs", {
   slidesPerView: 3,
   spaceBetween: 8
 });
-const itemProductSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".item-product__slider", {
+const itemProductSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".item-product__slider", {
   slidesPerView: 1,
   navigation: {
     nextEl: ".item-product-next",
@@ -1623,7 +1645,7 @@ const itemProductSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(
 const productSlidersArray = [];
 const initProductSliders = productSliders => {
   productSliders.forEach((el, i) => {
-    new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(el, {
+    new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(el, {
       slidesPerView: "auto",
       pagination: {
         el: `.product-slider__pagination`
@@ -1671,14 +1693,14 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 
-gsap__WEBPACK_IMPORTED_MODULE_6__.gsap.registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger);
+gsap__WEBPACK_IMPORTED_MODULE_6__.gsap.registerPlugin(gsap_all__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger);
 
 // services section
 
 const itemsTexts = document.querySelectorAll(".services-section__text");
 function onResize() {
-  gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.refresh(true);
-  gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.update();
+  gsap_all__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger.refresh(true);
+  gsap_all__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger.update();
 }
 function preloadImage(url) {
   console.log(url);
@@ -1704,7 +1726,7 @@ if (itemsTexts.length > 0) {
     imageItems.forEach(el => el.style.opacity = 0);
     imageItems[current].style.opacity = 1;
   }
-  gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.addEventListener("refreshInit", onResize);
+  gsap_all__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger.addEventListener("refreshInit", onResize);
   const line = document.querySelector(".services-section__line");
   const firstItem = document.querySelector(".services-section__item");
   changeSlide();
@@ -1729,7 +1751,7 @@ if (itemsTexts.length > 0) {
     }, {
       y: () => -document.querySelector(".services-section__list").scrollHeight
     });
-    gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
+    gsap_all__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger.create({
       animation: t1,
       trigger: ".services-section__line",
       start: "center center",
@@ -1748,7 +1770,7 @@ if (itemsTexts.length > 0) {
       offsetSize += items[i].offsetHeight;
     }
     scrollOffset = document.querySelector('.services-section__container').scrollHeight - offsetSize;
-    gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
+    gsap_all__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger.create({
       trigger: ".services-section__container",
       start: "top top+=80px",
       end: "bottom bottom",
@@ -1776,7 +1798,7 @@ setTimeout(() => {
         opacity: 1
       }
     });
-    gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
+    gsap_all__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger.create({
       animation: timeLine1,
       trigger: ".parallax__wrapper",
       start: "top top",
@@ -1796,7 +1818,7 @@ if (document.querySelector(".shadow")) {
   }, {
     backgroundColor: "#e4e4e4"
   });
-  gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
+  gsap_all__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger.create({
     animation: shadowAnim,
     trigger: ".eco-house",
     start: "bottom-=25% top",
@@ -3009,7 +3031,7 @@ if (plan) {
 }
 const firstDescList = document.querySelectorAll('[data-desc-category="1"] .desc-list__item');
 const secondDescList = document.querySelectorAll('[data-desc-category="2"] .desc-list__item');
-const firstDescSliderItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".desc-slider__slider--first", {
+const firstDescSliderItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".desc-slider__slider--first", {
   slidesPerView: 1,
   navigation: {
     nextEl: ".first-desc--next",
@@ -3034,7 +3056,7 @@ const firstDescSliderItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.S
     }
   }
 });
-const secondDescSliderItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".desc-slider__slider--second", {
+const secondDescSliderItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".desc-slider__slider--second", {
   slidesPerView: 1,
   navigation: {
     nextEl: ".second-desc--next",
@@ -3059,7 +3081,7 @@ const secondDescSliderItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.
     }
   }
 });
-const firstDescSliderImageItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".desc-slider__image-slider--first", {
+const firstDescSliderImageItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".desc-slider__image-slider--first", {
   slidesPerView: 1,
   navigation: {
     nextEl: ".first-desc--next",
@@ -3070,7 +3092,7 @@ const firstDescSliderImageItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_
     crossFade: true
   }
 });
-const secondDescSliderImageItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(".desc-slider__image-slider--second", {
+const secondDescSliderImageItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".desc-slider__image-slider--second", {
   slidesPerView: 1,
   navigation: {
     nextEl: ".second-desc--next",
@@ -3264,7 +3286,7 @@ designStepsTimeline.to('.design-section__right li', {
   ease: "power1.out"
 });
 if (window.matchMedia("(min-width: 1440px)").matches) {
-  gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
+  gsap_all__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger.create({
     animation: designStepsTimeline,
     trigger: '.design-section__pin',
     start: 'top top+=80%',
@@ -3272,7 +3294,7 @@ if (window.matchMedia("(min-width: 1440px)").matches) {
     scrub: 0.5
   });
 } else {
-  gsap_all__WEBPACK_IMPORTED_MODULE_2__.ScrollTrigger.create({
+  gsap_all__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger.create({
     animation: designStepsTimeline,
     trigger: '.design-section__pin',
     start: 'top top+=45%',
@@ -3304,7 +3326,7 @@ if (implemObjectsSection) {
   const productSliders = document.querySelectorAll(".product__slider");
   const productImages = document.querySelectorAll(".product__image");
   productSliders.forEach((el, i) => {
-    const slider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(el, {
+    const slider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(el, {
       slidesPerView: 1,
       navigation: {
         prevEl: `.product-slider-btn--prev`,
@@ -3478,7 +3500,7 @@ const implemReadySliders = document.querySelectorAll('.implemReady-item__slider'
 const readyArray = [];
 if (implemReadySliders && implemReadySliders.length > 0) {
   implemReadySliders.forEach((el, index) => {
-    const slider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_3__.Swiper(el, {
+    const slider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(el, {
       slidesPerView: 1,
       navigation: {
         nextEl: `.ready-slider-btn--next-${index + 1}`,
@@ -3545,6 +3567,41 @@ if (implemReadySection) {
         }
       }
     });
+  });
+}
+const annText = document.querySelector('.about-main__ann');
+const aboutMain = document.querySelector('.about-main');
+if (annText) {
+  const points = [];
+  for (let i = 0; i <= 1.0; i += 0.005) {
+    points.push(i);
+  }
+  function callbackObs(entries, observer) {
+    let percent = 1;
+    percent = window.scrollY / aboutMain.scrollHeight * 100;
+    if (window.matchMedia("(min-width: 769px)")) {
+      annText.style.transform = `translateX(-${percent / 3}%)`;
+    } else {
+      annText.style.transform = `translateX(-${percent / 2}%)`;
+    }
+  }
+  const textObserver = new IntersectionObserver(callbackObs, {
+    threshold: points
+  });
+  aboutMain.addEventListener("wheel", () => {
+    callbackObs();
+  });
+  aboutMain.addEventListener("touchmove", () => {
+    callbackObs();
+  });
+  document.querySelectorAll('.about-hero__trigger').forEach(el => {
+    textObserver.observe(el);
+  });
+  aboutMain.querySelectorAll('p').forEach(el => {
+    textObserver.observe(el);
+  });
+  annText.querySelectorAll('span').forEach(el => {
+    textObserver.observe(el);
   });
 }
 

@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
 <head>
-  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
-  <meta http-equiv="content-type" content="text/html; charset=utf8">
+  <!-- <meta http-equiv="content-type" content="text/html; charset=utf8"> -->
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
@@ -12,12 +11,12 @@
   <meta name="robots" content="noindex,nofollow">
   <title>Timber Frame</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="preload" href="fonts/PPNeueMontrealBold.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="fonts/PPNeueMontrealMedium.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="fonts/PPNeueMontrealRegular.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="fonts/PPNeueMontrealBold.ttf" as="font" type="font/ttf" crossorigin />
-  <link rel="preload" href="fonts/PPNeueMontrealMedium.ttf" as="font" type="font/ttf" crossorigin />
-  <link rel="preload" href="fonts/PPNeueMontrealRegular.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="./fonts/PPNeueMontrealBold.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="./fonts/PPNeueMontrealMedium.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="./fonts/PPNeueMontrealRegular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="./fonts/PPNeueMontrealBold.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="./fonts/PPNeueMontrealMedium.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="./fonts/PPNeueMontrealRegular.ttf" as="font" type="font/ttf" crossorigin />
 
   <link rel="stylesheet" href="css/vendor.css" />
   <link rel="stylesheet" href="css/main.css" />
@@ -209,10 +208,10 @@
               <a href="#" class="nav__link">Технологии</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link">О компании</a>
+              <a href="./about.html" class="nav__link">О компании</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link">контакты</a>
+              <a href="./contacts.html" class="nav__link">контакты</a>
             </li>
           </ul>
         </div>
@@ -486,17 +485,17 @@
     </a>
     <div class="menu-window__left menu-left">
       <ul class="list-reset menu-left__list">
-        <li class="menu-left__item mob-dis">
+        <li class="menu-left__item">
           <a href="./catalogue.html" class="menu-left__link">проекты домов</a>
         </li>
         <li class="menu-left__item">
-          <a href="#" class="menu-left__link">о компании</a>
+          <a href="./about.html" class="menu-left__link">о компании</a>
         </li>
         <li class="menu-left__item">
           <a href="#" class="menu-left__link">реализации</a>
         </li>
         <li class="menu-left__item">
-          <a href="#" class="menu-left__link">контакты</a>
+          <a href="./contacts.html" class="menu-left__link">контакты</a>
         </li>
       </ul>
       <address class="menu__address address">
@@ -507,11 +506,8 @@
     </div>
     <div class="menu-window__right menu-right">
       <ul class="menu-right__list list-reset">
-        <li class="menu-left__item menu-left__item--mob">
-          <a href="./catalogue.html" class="menu-left__link">проекты домов</a>
-        </li>
         <li class="menu-right__heading">
-          услуги
+          <a href="#" class="menu-right__heading">услуги</a>
         </li>
         <li class="menu-right__item">
           <a href="./designStep.html" class="menu-right__link">выбор участка</a>
@@ -533,9 +529,11 @@
         </li>
       </ul>
       <ul class="menu-right list-reset">
-        <h3 class="menu-right__heading">
-          реализации
-        </h3>
+        <li class="menu-right__heading">
+          <a href="#" class="menu-right__heading">
+            реализации
+          </a>
+        </li>
         <li class="menu-right__item">
           <a href="./implemPhoto.html" class="menu-right__link">фото</a>
         </li>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,17 +13,18 @@
   <meta name="robots" content="noindex,nofollow">
   <title>Timber Frame</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="preload" href="fonts/PPNeueMontrealBold.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="fonts/PPNeueMontrealMedium.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="fonts/PPNeueMontrealRegular.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="fonts/PPNeueMontrealBold.ttf" as="font" type="font/ttf" crossorigin />
-  <link rel="preload" href="fonts/PPNeueMontrealMedium.ttf" as="font" type="font/ttf" crossorigin />
-  <link rel="preload" href="fonts/PPNeueMontrealRegular.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="./fonts/PPNeueMontrealBold.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="./fonts/PPNeueMontrealMedium.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="./fonts/PPNeueMontrealRegular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="./fonts/PPNeueMontrealBold.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="./fonts/PPNeueMontrealMedium.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="./fonts/PPNeueMontrealRegular.ttf" as="font" type="font/ttf" crossorigin />
 
   <link rel="stylesheet" href="css/vendor.css" />
   <link rel="stylesheet" href="css/main.css" />
-  <script src="js/main.js" defer></script>
   <script src="https://yastatic.net/share2/share.js" async></script>
+  <script src="https://api-maps.yandex.ru/v3/?apikey=8c9bb3f5-07ef-4aa2-8a70-b84bc9e8879b&lang=ru_RU"></script>
+  <script src="js/main.js" defer></script>
 </head>
 
 <body class="page__body">
@@ -211,10 +213,10 @@
               <a href="#" class="nav__link">Технологии</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link">О компании</a>
+              <a href="./about.html" class="nav__link">О компании</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link">контакты</a>
+              <a href="./contacts.html" class="nav__link">контакты</a>
             </li>
           </ul>
         </div>
@@ -236,6 +238,98 @@
   </div>
 </header>
     <main class="main smooth-scroll">
+
+      <section class="contacts">
+  <div class="contacts__container main-container">
+    <h3>
+      Удобный офис и персональная парковка
+    </h3>
+    <h1>
+      Добро пожаловаться к нам в TF House
+    </h1>
+    <div class="office__row">
+      <address class="office__address address">
+        <a href="tel:+78006007008"><img src="./img/call-orange-icon.svg" alt="Tel">+7 800 600 7008</a>
+        <a href="https://api.whatsapp.com/send?phone=78006007008" target="_blank"><img src="./img/whatsapp-icon.svg"
+            alt="whats app">Написать в
+          WhatsApp</a>
+        <a href="tg://resolve?domain=username" target="_blank" data-aos="custom-fade-up"><img
+            src="./img/telegram-icon.svg" alt="">Написать в Telegram</a>
+      </address>
+      <address class="office__address address">
+        <a href="mailto:infohelf@tfhouse.com" target="_blank"><img src="./img/mail-orange-icon.svg"
+            alt="mail">infohelf@tfhouse.com</a>
+        <span><img src="./img/map-orange-icon.svg" alt="address">Санкт-Петербург ул.&nbsp;Савушкина, 104</span>
+      </address>
+    </div>
+    <button class="btn-reset btn btn--fill office__btn">
+      Связаться с нами
+    </button>
+  </div>
+  <div class="map__container map-data main-container">
+    <div class="map-data__left">
+      <div class="map-data__info">
+        <h3>Как добраться</h3>
+        <ul>
+          <li>Проехать на право на проспекте повернуть налево и во двор</li>
+          <li>Проехать на другой маршрут повернуть налвео проехать направо позвонить заехать</li>
+        </ul>
+      </div>
+    </div>
+    <div class="map-data__right">
+      <div class="map" id="map"></div>
+    </div>
+  </div>
+  <div class="office__slider swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="office__img">
+          <picture>
+            <source srcset="" type="image/webp" media="(max-width: 1440px)" data-img-srcset="./img/office1.webp" />
+            <source srcset="" type="image/webp" media="(min-width: 1440px)"
+              data-img-srcset="./img/office1_2x.webp 2x" />
+            <img src="" srcset="" alt="office image 1" data-img-src="./img/office1.jpg"
+              data-img-srcset="./img/office1_2x.jpg 2x" />
+          </picture>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="office__img">
+          <picture>
+            <source srcset="" type="image/webp" media="(max-width: 1440px)" data-img-srcset="./img/office2.webp" />
+            <source srcset="" type="image/webp" media="(min-width: 1440px)"
+              data-img-srcset="./img/office2_2x.webp 2x" />
+            <img src="" srcset="" alt="office image 2" data-img-src="./img/office2.jpg"
+              data-img-srcset="./img/office2_2x.jpg 2x" />
+          </picture>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="office__img">
+          <picture>
+            <source srcset="" type="image/webp" media="(max-width: 1440px)" data-img-srcset="./img/office1.webp" />
+            <source srcset="" type="image/webp" media="(min-width: 1440px)"
+              data-img-srcset="./img/office1_2x.webp 2x" />
+            <img src="" srcset="" alt="office image 1" data-img-src="./img/office1.jpg"
+              data-img-srcset="./img/office1_2x.jpg 2x" />
+          </picture>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="office__img">
+          <picture>
+            <source srcset="" type="image/webp" media="(max-width: 1440px)" data-img-srcset="./img/office2.webp" />
+            <source srcset="" type="image/webp" media="(min-width: 1440px)"
+              data-img-srcset="./img/office2_2x.webp 2x" />
+            <img src="" srcset="" alt="office image 2" data-img-src="./img/office2.jpg"
+              data-img-srcset="./img/office2_2x.jpg 2x" />
+          </picture>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
       <div class="menu menu--main menu-disable main-menu" data-lenis-prevent>
   <a class="menu__logo logo mob-dis">
     <svg width="200" height="47" viewBox="0 0 200 47" xmlns="http://www.w3.org/2000/svg">
@@ -466,17 +560,17 @@
     </a>
     <div class="menu-window__left menu-left">
       <ul class="list-reset menu-left__list">
-        <li class="menu-left__item mob-dis">
+        <li class="menu-left__item">
           <a href="./catalogue.html" class="menu-left__link">проекты домов</a>
         </li>
         <li class="menu-left__item">
-          <a href="#" class="menu-left__link">о компании</a>
+          <a href="./about.html" class="menu-left__link">о компании</a>
         </li>
         <li class="menu-left__item">
           <a href="#" class="menu-left__link">реализации</a>
         </li>
         <li class="menu-left__item">
-          <a href="#" class="menu-left__link">контакты</a>
+          <a href="./contacts.html" class="menu-left__link">контакты</a>
         </li>
       </ul>
       <address class="menu__address address">
@@ -487,11 +581,8 @@
     </div>
     <div class="menu-window__right menu-right">
       <ul class="menu-right__list list-reset">
-        <li class="menu-left__item menu-left__item--mob">
-          <a href="./catalogue.html" class="menu-left__link">проекты домов</a>
-        </li>
         <li class="menu-right__heading">
-          услуги
+          <a href="#" class="menu-right__heading">услуги</a>
         </li>
         <li class="menu-right__item">
           <a href="./designStep.html" class="menu-right__link">выбор участка</a>
@@ -513,9 +604,11 @@
         </li>
       </ul>
       <ul class="menu-right list-reset">
-        <h3 class="menu-right__heading">
-          реализации
-        </h3>
+        <li class="menu-right__heading">
+          <a href="#" class="menu-right__heading">
+            реализации
+          </a>
+        </li>
         <li class="menu-right__item">
           <a href="./implemPhoto.html" class="menu-right__link">фото</a>
         </li>
@@ -912,6 +1005,62 @@
 </footer>
     <div class="plug"></div>
   </div>
+
+  <script>
+    initMap();
+
+    async function initMap() {
+      await ymaps3.ready;
+
+      const { YMap, YMapDefaultSchemeLayer, YMapMarker, YMapControls, YMapDefaultFeaturesLayer } = ymaps3;
+
+      const { YMapZoomControl } = await ymaps3.import('@yandex/ymaps3-controls@0.0.1');
+      const { YMapDefaultMarker } = await ymaps3.import('@yandex/ymaps3-markers@0.0.1');
+      let zoom = 14;
+      if (window.matchMedia("(min-width: 2560px)").matches) {
+        zoom = 15;
+      }
+      if (window.matchMedia("(max-width: 425px)").matches) {
+        zoom = 13;
+      }
+
+
+      // Иницилиазируем карту
+      const map = new YMap(
+        document.getElementById('map'),
+        {
+          location: {
+            center: [30.249716, 59.984076],
+
+            zoom: zoom
+          }
+        }
+      );
+      // const point = document.createElement('img');
+      // point.className = 'my-marker';
+      // point.src = './img/placemark-icon.svg';
+      let title = `
+        <div class="search-title">
+          <strong>Тимбер Фрейм<strong>
+          <div class="search-placemark-title__title-rating">
+            <span class="search-title-star"><svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.99 9.19l-2.711 1.744c-.304.195-.687-.083-.603-.435l.792-3.323-2.32-1.9c-.279-.229-.14-.685.218-.716l3.018-.262L5.625 1.25a.398.398 0 0 1 .739.001l1.231 3.047 3.04.262c.358.031.496.488.216.717l-2.33 1.9.792 3.324c.084.352-.3.63-.603.435L5.99 9.189z" fill="currentColor"></path><svg></span>
+            <span>4.4</span>
+          </div>
+        </div>`
+      const point = {
+        coordinates: [30.249716, 59.984076],
+        color: '#ed3833',
+        title: title,
+        subtitle: 'До 18:30',
+      }
+
+      map.addChild((scheme = new YMapDefaultSchemeLayer()));
+      map.addChild(new YMapControls({ position: 'right' }));
+      map.addChild(new YMapDefaultFeaturesLayer({ id: 'features' }))
+      map.addChild(new YMapDefaultMarker(point))
+      // map.addChild(new YMapMarker({ coordinates: [30.249716, 59.984076] }, point))
+    }
+  </script>
 </body>
 
 </html>

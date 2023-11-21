@@ -1583,7 +1583,7 @@ const responsibilitySlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swip
   }
 });
 const aboutProdSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".about-prod__slider", {
-  slidesPerView: 3,
+  slidesPerView: 2.5,
   centeredSlides: true,
   loop: true,
   navigation: {
@@ -3602,6 +3602,13 @@ if (annText) {
   });
   annText.querySelectorAll('span').forEach(el => {
     textObserver.observe(el);
+  });
+}
+const aboutVideoBtn = document.querySelector('.about-video__wrapper button');
+if (aboutVideoBtn) {
+  aboutVideoBtn.addEventListener('click', e => {
+    const modal = document.querySelector('.modal-video');
+    modal.classList.add('active');
   });
 }
 

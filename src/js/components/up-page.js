@@ -14,7 +14,7 @@ if(upBtn){
       upBtn.style.display = null
       upBtn.style.opacity = null
     }
-  })
+  }, {passive: true})
 
 }
 if(downBtn){

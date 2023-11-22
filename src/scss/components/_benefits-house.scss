@@ -4,54 +4,69 @@
   padding-bottom: 120px;
 
   align-items: flex-start;
+
   // background-color: ;
   @media (min-width: 1440px) {
     padding-top: 3.7rem;
     padding-bottom: 12rem;
   }
+
   &__title {
+    position: absolute;
+    width: 100%;
+    top: 0;
     margin: 0 auto;
     margin-bottom: 77px;
+
     @media (min-width: 1440px) {
       margin-bottom: 7.7rem;
     }
+
     @include mobile {
       margin-bottom: 0;
     }
   }
+
   &__mob-photo {
     display: none;
+
     @include mobile {
       display: block;
       position: absolute;
+      z-index: 7;
       width: 240px;
       height: 240px;
       bottom: 0;
       left: 0;
       transform: translateY(-20%);
+
       img {
         width: 100%;
         height: 100%;
       }
     }
   }
+
   &__content {
-    padding-top: 190px;
     transition: opacity 1s ease;
-    will-change: transform;
     // display: flex;
     // flex-direction: column;
     max-width: 100%;
     width: 100%;
+
     // overflow: hidden;
     &.active {
       background-image: none;
+
       &::before {
         opacity: 1;
       }
     }
+
     @include mobile {
       padding-bottom: 100px;
+      display: flex;
+      flex-direction: column;
     }
   }
 }
@@ -61,12 +76,12 @@
     transition: opacity 0.3s ease-in 0.5s, max-height 0.3s;
   }
 }
+
 .wrapper {
   width: 100%;
-  // height: 100vh;
   position: relative;
-
 }
+
 .parallax {
   position: sticky;
   top: 0;
@@ -74,6 +89,7 @@
   max-width: 100% !important;
   width: 100% !important;
   overflow: hidden !important;
+
   &__wrapper {
     position: relative;
     height: 100%;
@@ -87,11 +103,9 @@
       z-index: 1;
       inset: 0;
       opacity: 0;
-      background: linear-gradient(
-          0deg,
+      background: linear-gradient(0deg,
           rgba(0, 0, 0, 0.6) 0%,
-          rgba(0, 0, 0, 0.6) 100%
-        );
+          rgba(0, 0, 0, 0.6) 100%);
 
       background-size: 100% 100%;
       background-attachment: fixed;
@@ -100,6 +114,7 @@
 
     }
   }
+
   &__body {
     width: 100% !important;
     position: absolute;
@@ -108,9 +123,10 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
+
+    // transform-origin: top center;
     @include mobile {
       background-image: url("./../img/benefits-house-bg-mob.jpg");
     }
   }
 }
-

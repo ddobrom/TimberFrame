@@ -1,32 +1,83 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
-  @include('partials/head.html')
+@include('partials/head.html')
 
-  <body class="page__body">
-    <div class="site-container">
-      @include('partials/header.html')
-      <main class="main">
-        @include('partials/menu.html') @include('partials/favorites.html')
-        @include('partials/hero.html') @include('partials/benefit.html')
-        @include('partials/3dtour.html') @include('partials/popular.html')
-        @include('partials/services-section.html')
-        @include('partials/main-video.html')
-        @include('partials/projects-section.html')
-        @include('partials/benefits-house.html')
-        @include('partials/eco-house.html')
-        <div class="shadow">
-          <div class="shadow__body"></div>
+<body class="page__body" style="overflow: hidden;">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main class="main">
+      <div class="preloader">
+        <div class="preloader__row">
+          <div class="preloader__img">
+            <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="Logo">
+                <path id="border" fill-rule="evenodd" clip-rule="evenodd" stroke-dasharray="40"
+                  d="M0 0H46.9998V46.9999H0V0ZM3.65201 3.65201V43.3478H43.3478V3.65201H3.65201Z" />
+                <g id="TF">
+                  <path d="M8.33618 16.8608V13.0203H24.8596V16.8608H18.8159V33.8606H14.3501V16.8608H8.33618Z"
+                    fill="#252321" />
+                  <path
+                    d="M24.8514 33.8606V13.0203H38.606V16.8608H29.3172V21.7434H36.9388V25.4054H29.3172V33.8606H24.8514Z"
+                    fill="#252321" />
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="preloader__text">
+            <img src="./img/logo-text.svg" alt="">
+          </div>
         </div>
-        @include('partials/tech.html') @include('partials/add.html')
-        @include('partials/responsibility.html')
-        @include('partials/office.html') @include('partials/cta.html')
-        <button class="up-page-btn btn-reset"></button>
-        <button class="phone-btn btn-reset mob-dis" data-form-id="call-btn-main"></button>
-        @include('partials/modal-form.html')
-        @include('partials/mobile-menu.html')
-      </main>
-      @include('partials/footer.html')
-      <div class="plug"></div>
-    </div>
-  </body>
+      </div>
+      @include('partials/menu.html') @include('partials/favorites.html')
+      @include('partials/hero.html') @include('partials/benefit.html')
+      @include('partials/3dtour.html') @include('partials/popular.html')
+      @include('partials/services-section.html')
+      @include('partials/main-video.html')
+      @include('partials/projects-section.html')
+      @include('partials/benefits-house.html')
+      @include('partials/eco-house.html')
+      <div class="shadow">
+        <div class="shadow__body"></div>
+      </div>
+      @include('partials/tech.html') @include('partials/add.html')
+      @include('partials/responsibility.html')
+      @include('partials/office.html') @include('partials/cta.html')
+      <button class="up-page-btn btn-reset"></button>
+      <div class="contact__btns">
+        <button class="contact__btn phone-btn btn-reset mob-dis" data-form-id="call-btn-main"></button>
+        <a href="https://api.whatsapp.com/send?phone=78006007008" target="_blank"
+          class="contact__btn whatsapp-btn btn-reset mob-dis"></a>
+        <a href="tg://resolve?domain=username" target="_blank" class="contact__btn telegram-btn btn-reset mob-dis"></a>
+      </div>
+      @include('partials/modal-form.html')
+      <div class="mobile-menu">
+        <ul class="mobile-menu__list list-reset">
+          <li class="mobile-menu__item">
+            <button class="mobile-menu__btn mobile-menu__btn--call btn-reset" data-form-id="call-btn-main-mob"></button>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="https://api.whatsapp.com/send?phone=78006007008"
+              class="mobile-menu__btn mobile-menu__btn--whatsapp btn-reset">
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a href="tg://resolve?domain=username" class="mobile-menu__btn mobile-menu__btn--telegram btn-reset">
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <button class="mobile-menu__btn mobile-menu__btn--search btn-reset"></button>
+          </li>
+          <li class="mobile-menu__item">
+            <button class="mobile-menu__btn mobile-menu__btn--favorites btn-reset">
+              <span class="favorites-btn__quantity">0</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </main>
+    @include('partials/footer.html')
+    <div class="plug"></div>
+  </div>
+</body>
+
 </html>

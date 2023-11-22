@@ -1,9 +1,10 @@
 import data from "./catalogueData";
-import initProductSliders from "./sliders";
+import { initProductSliders } from "./sliders";
 import initFilters from "./sortCatalogue";
 import imagePagination from "./product";
 import lenis from "./smooth-scroll";
 import declOfNum from "./declOfNum";
+import { catalogue } from "./../_vars";
 async function getData() {
   // const response = await fetch('ваш url к базе со списком объектов. пример таких объектов есть в файле catalogueData') // раскомментировать при работе с бд
   // const d = await response.json()
@@ -16,7 +17,6 @@ async function main() {
   let currentPage = 1;
   let rows = 10;
   async function displayList(arrData, rowPerPage, page) {
-    const catalogue = document.querySelector(".catalogue");
     catalogue.innerHTML = "";
     page--;
     const start = rowPerPage * page;
@@ -237,7 +237,9 @@ const createProduct = (
             <div class="product-info__left">
               <h3 class="product-info__title">${title}</h3>
               <span class="product-info__price"
-                >от ${price} ₽</span
+                >от ${price} <svg class="rub">
+                <use xlink:href="img/sprite.svg#rub"></use>
+              </svg></span
               >
             </div>
             <ul class="product-info__right list-reset">
@@ -278,6 +280,6 @@ const createProduct = (
   `;
 };
 
-if (document.querySelector(".catalogue")) {
+if (catalogue) {
   main();
 }

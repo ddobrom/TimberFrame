@@ -1,7 +1,10 @@
 .projects-section {
-  padding: 100px 30px; // переделать
+  padding: 120px 30px 60px;
   text-align: center;
   overflow: hidden;
+  @media (min-width: 1440px){
+    padding: 12rem 3rem 6rem;
+  }
   &__container {
     text-align-last: left;
     margin-bottom: 60px;
@@ -64,14 +67,20 @@
     top: 30px;
     right: 30px;
 
-    width: 46px;
-    height: 46px;
+    width: 30px;
+    height: 30px;
     border-color: var(--white-color);
     border: none;
     svg {
       padding: 0;
-      width: 30px;
-      height: 30px;
+      width: 100%;
+      height: 100%;
+    }
+    @media (min-width: 1440px){
+      width: 3rem;
+      height: 3rem;
+      top: 3rem;
+      right: 3rem;
     }
   }
   &__img {
@@ -137,6 +146,7 @@
     letter-spacing: 1.6px;
     @media (min-width: 1440px){
       font-size: 3.2rem;
+      letter-spacing: 0.16rem;
     }
     @include mobile {
       font-size: 24px;
@@ -156,6 +166,7 @@
     @media (min-width: 1440px){
       font-size: 1.2rem;
       padding-right: 6.65rem;
+      letter-spacing: 0.144rem;
     }
     &::before {
       content: '';
@@ -190,7 +201,7 @@
     opacity: 0;
     overflow: hidden;
     will-change: max-height;
-    transition: opacity .3s ease-in, max-height .3s ease-in, margin-top .3s ease-in;
+    transition: opacity .3s ease-in .1s, max-height .3s linear, margin-top .3s ease-in;
     &.active {
       opacity: 1;
       margin-top: 16px;
@@ -201,8 +212,6 @@
 
     @include mobile {
       margin-top: 16px;
-      opacity: 1;
-      max-height: unset;
     }
   }
 }

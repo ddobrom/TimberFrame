@@ -10,7 +10,7 @@
   bottom: 0;
   opacity: 0;
   width: 100%;
-  transition: opacity .3s ease-in, z-index .3s;
+  transition: opacity 0.3s ease-in, z-index 0.3s;
   &__list {
     display: flex;
     align-items: center;
@@ -29,17 +29,26 @@
     // background-size: cover;
     background-repeat: no-repeat;
     &--home {
-      background-image: url('./../img/mobile-tap/tap-2.svg');
+      background-image: url("./../img/mobile-tap/tap-2.svg");
+    }
+    &--whatsapp {
+      background-image: url("./../img/mobile-tap/tap-5.svg");
+    }
+    &--telegram {
+      background-image: url("./../img/mobile-tap/tap-6.png");
     }
     &--search {
-      background-image: url('./../img/mobile-tap/tap-1.svg');
+      background-image: url("./../img/mobile-tap/tap-1.svg");
     }
     &--favorites {
-      background-image: url('./../img/mobile-tap/tap-3.svg');
+      background-image: url("./../img/mobile-tap/tap-3.svg");
       padding: 7px 5px;
     }
     &--call {
-      background-image: url('./../img/mobile-tap/tap-4.svg');
+      background-image: url("./../img/mobile-tap/tap-4.svg");
+    }
+    svg {
+      fill: var(--focus-active-color) !important;
     }
   }
   &--active {

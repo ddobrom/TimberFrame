@@ -3,4 +3,21 @@
   background-color: #ccc;
   cursor: none;
   overflow: hidden;
+
+  iframe {
+    height: 640px;
+
+    @include mobile {
+      height: 320px;
+    }
+
+    @media (min-width: 1440px) {
+      height: 64rem;
+    }
+
+  }
+}
+
+.sphere .grab {
+  cursor: pointer !important;
 }

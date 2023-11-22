@@ -1,7 +1,7 @@
 const products = [
   {
     title: "vaskela",
-    price: 12000,
+    price: 120000,
     square: 190,
     floors: 1,
     bathrooms: 2,
@@ -112,7 +112,7 @@ const products = [
   },
   {
     title: "loftonen",
-    price: 19000,
+    price: 1900000,
     square: 350,
     floors: 3,
     bathrooms: 3,
@@ -139,7 +139,7 @@ const products = [
   },
   {
     title: "ostamo",
-    price: 17000,
+    price: 1900000,
     square: 400,
     floors: 3,
     bathrooms: 3,

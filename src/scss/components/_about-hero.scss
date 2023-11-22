@@ -1,0 +1,132 @@
+.about-hero {
+  background-image: url('./../img/bh2/bh3_2x.webp');
+  background-position: center, center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+
+  &__trigger {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    // background-color: blue; //debug
+
+    &--1 {
+      top: 0;
+    }
+
+    &--2 {
+      top: 15%;
+    }
+
+    // &--3 {
+    //   top: 30%;
+    // }
+
+    // &--4 {
+    //   top: 45%;
+    // }
+
+    &--5 {
+      top: 60%;
+    }
+
+    &--6 {
+      top: 75%;
+    }
+  }
+
+  h1 {
+    letter-spacing: 0.24px;
+    margin-bottom: 43px;
+
+    @media (min-width: 1441px) {
+      letter-spacing: 0.024rem;
+      margin-bottom: 4.3rem;
+    }
+
+    @include mobile {}
+  }
+}
+
+.about-main {
+  overflow: hidden;
+  background: rgba(37, 35, 33, 0.70);
+  width: 100%;
+  max-width: 50%;
+  padding: 30px 60px;
+
+  @media (min-width: 1441px) {
+    padding: 3rem 6rem;
+  }
+
+  @include mobile {
+    max-width: unset;
+    padding-left: 27px;
+    padding-right: 18px;
+  }
+
+  &__ann {
+    margin: 0;
+    margin-bottom: 30px;
+    margin-left: -60px;
+    margin-right: -60px;
+    text-align: center;
+    text-wrap: nowrap;
+    white-space: nowrap;
+    font-size: 180px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    -webkit-text-stroke: var(--white-color);
+    -webkit-text-stroke-width: 1.6px;
+    -webkit-text-fill-color: transparent;
+    transition: transform linear;
+
+    @media (min-width: 1441px) {
+      margin-bottom: 3rem;
+      margin-left: -6rem;
+      margin-right: -6rem;
+      font-size: 18rem;
+    }
+
+    @include mobile {
+      font-size: 40px;
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 60px;
+
+    @media (min-width: 1441px) {
+      margin-bottom: 6rem;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-bottom: 120px;
+    }
+
+    p {
+      margin: 0;
+      padding-right: 45px;
+      color: var(--white-color);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+      letter-spacing: 0.32px;
+
+      @media (min-width: 1441px) {
+        font-size: 1.6rem;
+        letter-spacing: 0.032rem;
+        padding-right: 4.5rem;
+      }
+    }
+  }
+}

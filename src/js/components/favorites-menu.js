@@ -2,7 +2,7 @@ const fMenuBtn = document.querySelector('.favorites-btn')
 const fMenu = document.querySelector('.favorites-menu')
 const menuBtn = document.querySelector('.menu-btn')
 const mobileFavoritesMenu = document.querySelector('.mobile-menu__btn--favorites')
-import lenis from "./smooth-scroll"
+// import lenis from "./smooth-scroll"
 fMenuBtn.addEventListener('click', (e) => {
   e.stopPropagation()
   menuBtn.classList.add('disabled')
@@ -34,5 +34,5 @@ closeBtn.addEventListener('click', () => {
 
 if(fMenu.classList.contains('menu-active')){
   document.body.style.overflow = 'hidden'
-  lenis.stop()
+  // lenis.stop()
 }

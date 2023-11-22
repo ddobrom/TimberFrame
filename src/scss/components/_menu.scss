@@ -11,24 +11,29 @@
   &__window {
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
+
     &--favorites {
       background-color: var(--white-color);
     }
+
     &--main {
       background-color: var(--focus-color);
     }
   }
+
   &__logo {
     position: absolute;
     left: 30px;
     top: 30px;
     opacity: 0;
     transition: opacity 0.3s ease-in;
+
     @include mobile {
       left: 16px;
       top: 32px;
     }
   }
+
   &__close-btn {
     position: absolute;
     top: 40px;
@@ -39,23 +44,28 @@
     background-position: center center;
     background-size: 13px 13px;
     background-repeat: no-repeat;
+
     @media (min-width: 1440px) {
       width: 3.2rem;
       height: 3.2rem;
       background-size: 1.3rem 1.3rem;
     }
+
     @include mobile {
       top: 32px;
       right: 16px;
     }
   }
 }
+
 .menu-active {
   opacity: 1;
   z-index: 30;
+
   .menu__logo {
     opacity: 1;
     z-index: 30;
+
     @include mobile {
       svg {
         path {
@@ -65,40 +75,53 @@
       }
     }
   }
+
   .menu-window {
     transform: translateX(0);
   }
 }
+
 .menu-disabled {
   opacity: 0;
+
   .menu-window {
     transition: transform 0.3s ease-in;
     transform: translateX(100%);
   }
+
   .menu__logo {
     transition: opacity 0.3s ease-in;
     opacity: 0;
   }
 }
+
 .menu-window {
   width: 75%;
   padding: 90px 120px;
   padding-right: 77px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 12rem;
   overflow: auto;
+
   @media (min-width: 1440px) {
     padding: 9rem 12rem;
   }
+
   @include mobile {
+    grid-template-columns: 1fr;
     width: 100%;
     padding: 96px 40px 0 0;
     padding-left: 16px;
     padding-bottom: 50px;
     flex-wrap: wrap;
     align-items: center;
+    gap: 0 0;
   }
+
   &__left {
     margin-right: 120px;
+
     @include mobile {
       margin-right: 0;
     }
@@ -108,7 +131,9 @@
 .menu-right {
   @include mobile {
     order: -1;
+    margin-bottom: 24px;
   }
+
   &__heading {
     margin: 0;
     margin-bottom: 16px;
@@ -119,24 +144,36 @@
     letter-spacing: 0.96px;
     text-transform: uppercase;
     padding: unset;
+
     @media (min-width: 1440px) {
       font-size: 3.2rem;
       margin-bottom: 1.6rem;
+      letter-spacing: 0.096rem;
     }
+
     @include mobile {
       font-size: 24px;
     }
   }
+
   &__list {
     &:not(:last-child) {
       margin-bottom: 40px;
+
       @media (min-width: 1440px) {
         margin-bottom: 4rem;
       }
+
+      @include mobile {
+        order: -1;
+        margin-bottom: 24px;
+      }
     }
   }
+
   &__item {
     padding: 12px 0;
+
     &--up {
       padding: unset;
       color: var(--black-brand-color);
@@ -145,10 +182,13 @@
       text-transform: uppercase;
       margin-bottom: 16px;
     }
+
     @media (min-width: 1440px) {
       padding: 1.2rem 0;
+      letter-spacing: 0.096rem;
     }
   }
+
   &__link {
     color: var(--black---brand, #252321);
     font-family: "PP Neue Montreal";
@@ -156,30 +196,40 @@
     font-weight: 500;
     letter-spacing: 1.2px;
     text-transform: uppercase;
+
     @media (min-width: 1440px) {
       font-size: 1.2rem;
+      letter-spacing: 0.12rem;
     }
+
     @include mobile {
       font-size: 14px;
     }
   }
+
   &:not(:last-child) {
     margin-bottom: 40px;
+
     @media (min-width: 1440px) {
       margin-bottom: 4rem;
     }
   }
 }
+
 .menu-left {
   &__list {
     margin-bottom: 60px;
+
     @media (min-width: 1440px) {
       margin-bottom: 6rem;
     }
+
     @include mobile {
       margin-bottom: 24px;
+      order: -1;
     }
   }
+
   &__item {
     color: var(--black-brand-color);
     font-family: "PP Neue Montreal";
@@ -187,23 +237,34 @@
     font-weight: 700;
     letter-spacing: 0.96px;
     text-transform: uppercase;
+
     &--mob {
       display: none;
+
       @include mobile {
         display: block;
       }
     }
+
     @media (min-width: 1440px) {
       font-size: 3.2rem;
+      letter-spacing: 0.096rem;
     }
+
     @include mobile {
       font-size: 24px;
     }
+
     a {
       color: inherit;
     }
+
     &:not(:last-child) {
       margin-bottom: 40px;
+
+      @include mobile {
+        margin-bottom: 24px;
+      }
     }
   }
 }

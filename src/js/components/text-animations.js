@@ -10,7 +10,7 @@ AOS.init({
   debounceDelay: 50,
   throttleDelay: 99,
 
-  offset: 100,
+  offset: 150,
   delay: 0,
   duration: 500,
   easing: "ease",
@@ -21,3 +21,4 @@ AOS.init({
 window.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => AOS.refresh(), 50);
 });
+export default AOS

@@ -1,14 +1,41 @@
 const initFilters = () => {
-  const filtersBtns = document.querySelectorAll(".filters__btn");
+  const filters = document.querySelector('.filters')
+  const filtersBtns = filters.querySelectorAll("button");
   const cards = document.querySelectorAll(".catalogue__item");
-
-  filtersBtns.forEach((el) => {
+  const allBtn = document.querySelector('button[data-filter="all"]');
+  filtersBtns.forEach((el, i) => {
+    if(i === 0){
+      el.classList.add('active')
+    }
     el.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
-      clearActive(filtersBtns);
-      e.currentTarget.classList.add("active");
-      const currentCategory = e.currentTarget.dataset.filter;
+
+      let currentCategory = null
+
+      e.currentTarget.classList.toggle("active");
+      if (e.currentTarget.dataset.filter != "all") {
+        allBtn.classList.remove('active')
+        currentCategory = e.currentTarget.dataset.filter;
+      } else {
+        clearActive(filtersBtns)
+        allBtn.classList.add('active')
+        currentCategory = 'all'
+      }
+
+
+      let flag = false;
+      for (let i = 0; i < filtersBtns.length; i++) {
+        flag = false;
+        if (filtersBtns[i].classList.contains("active")) flag = true;
+        if(flag) break
+      }
+
+      if (!flag) {
+        currentCategory = "all";
+        allBtn.classList.add("active");
+      }
+
       filter(currentCategory, cards);
     });
   });
@@ -71,5 +98,5 @@ const initFilters = () => {
   const clearActive = (items) => {
     items.forEach((item) => item.classList.remove("active"));
   };
-}
-export default initFilters
+};
+export default initFilters;

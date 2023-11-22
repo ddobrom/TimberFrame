@@ -1,27 +1,36 @@
 .mouse-rotate {
   position: absolute;
-  z-index: 99;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100px;
   height: 100px;
   border-radius: 100%;
-  border: 1px solid #fff6f6;
+  // border: 1px solid #fff6f6;
   pointer-events: none;
-  color: var(--white-color);
-  font-family: "PP Telegraf";
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1.32px;
-  text-transform: uppercase;
-  left: 0;
-  top: 0;
-  transform: translate(-50%, -50%);
+  // color: var(--white-color);
+  // font-family: "PP Neue Montreal";
+  // font-size: 12px;
+  // font-weight: 700;
+  // letter-spacing: 1.32px;
+  // text-transform: uppercase;
+  // font-style: normal;
+  // line-height: normal;
+  left: 60%;
+  top: 5%;
+  transform: translate(0, 0);
+  transition: opacity .3s linear;
 
-  @media (min-width: 1440px){
+  @media (min-width: 1440px) {
     width: 10rem;
     height: 10rem;
-    font-size: 1.2rem;
+    // font-size: 1.2rem;
+    // letter-spacing: 0.132rem;
+  }
+
+  @include mobile {
+    left: unset;
+    right: 20px;
   }
 }

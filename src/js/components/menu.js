@@ -1,7 +1,7 @@
 const menuBtn = document.querySelector('.menu-btn')
 const menu = document.querySelector('.main-menu')
 const fMenuBtn = document.querySelector('.favorites-btn')
-import lenis from './smooth-scroll'
+// import lenis from './smooth-scroll'
 menuBtn.addEventListener('click', (e) => {
   e.stopPropagation()
   fMenuBtn.classList.add('disabled')

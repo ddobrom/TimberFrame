@@ -4,9 +4,6 @@
   @include hover {
     .dropdown__btn {
       color: var(--focus-color);
-      span {
-        border-color: var(--focus-color);
-      }
     }
   }
   &__list {
@@ -20,7 +17,7 @@
   &__item {
     padding: 12px 0;
     position: relative;
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       padding: 1.2rem 0;
     }
     @include hover {
@@ -30,26 +27,35 @@
     }
   }
   &__btn {
+    position: relative;
     color: var(--white-color);
     display: flex;
-    span {
-      margin-left: 4px;
+    svg {
       display: inline-block;
-      width: 8px;
-      height: 8px;
-      border-bottom: 1px solid var(--white-color);
-      border-left: 1px solid var(--white-color);
-      transform: rotate(-45deg);
-      transition: border-color .3s ease-in;
+      margin-left: 4px;
+      height: 12px;
+      width: 12px;
+      fill: none;
+      stroke: currentColor;
+      transition: transform linear;
+
+      @media (min-width: 1440px){
+        margin-left: 0.4rem;
+        height: 1.2rem;
+        width: 1.2rem;
+        stroke-width: 0.1rem;
+      }
     }
     @include hover {
       .dropdown__list {
         display: block;
       }
-      span {
-        border-color: var(--focus-color) !important;
+      svg {
+        transform: rotateX(180deg);
       }
     }
   }
 }
-.dropdown:hover .dropdown__list {display: block;}
+.dropdown:hover .dropdown__list {
+  display: block;
+}

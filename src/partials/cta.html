@@ -1,29 +1,41 @@
-<section class="cta cta__container">
-  <div class="cta__left">
-    <h2 class="title cta__title title--white" data-aos="fade-up" data-aos-offset="20">
-      Спроектировать и&nbsp;построить ваш деревянный дом
-    </h2>
+<section class="cta" data-src-bg="./img/cta-bg.webp">
+  <h2 class="visually-hidden">title</h2>
+  <div class="main-container cta__container">
+    <div class="cta__left">
+      <h2 class="title cta__title title--white" data-aos="custom-fade-up">
+        Спроектировать и&nbsp;построить ваш деревянный&nbsp;дом
+      </h2>
+    </div>
+    <form class="cta__form form">
+      <h4 class="form__title desc-dis">Свяжитесь с нами</h4>
+      <address class="cta__address address desc-dis">
+        <a class="address__tel" href="tel:+78006007008" data-aos="custom-fade-up" data-aos-delay="300">+7 800 600
+          7008</a>
+        <a class="address__whatsapp" href="https://api.whatsapp.com/send?phone=78006007008" target="_blank"
+          data-aos="custom-fade-up" data-aos-delay="300">Написать в WhatsApp</a>
+        <a class="address__telega" href="tg://resolve?domain=username" target="_blank" data-aos="custom-fade-up"
+          data-aos-delay="300">Написать в Telegram</a>
+      </address>
+      <h4 class="form__title">Написать нам</h4>
+      <label class="form__label">
+        <span>Имя</span>
+        <input type="text" class="form__input" name="name" />
+      </label>
+      <label class="form__label">
+        <span>Телефон</span>
+        <input type="tel" name="phone" class="form__input" />
+      </label>
+      <label class="form__label">
+        <span>Комментарий</span>
+        <input type="text" class="form__input" name="comment" />
+      </label>
+      <button class="btn btn--fill form__btn btn-reset" type="submit">
+        Отправить
+      </button>
+      <p class="form__privacy">
+        Нажимая кнопку “Отправить”, вы принимаете условия
+        <a href="#" target="_blank">Политики конфиденциальности</a>
+      </p>
+    </form>
   </div>
-  <form class="cta__form form">
-    <h4 class="form__title">Свяжитесь с нами</h4>
-    <label class="form__label">
-      <span>Имя</span>
-      <input type="text" class="form__input" />
-    </label>
-    <label class="form__label">
-      <span>Телефон</span>
-      <input type="phone" class="form__input" />
-    </label>
-    <label class="form__label">
-      <span>Комментарий</span>
-      <input type="text" class="form__input" />
-    </label>
-    <button class="btn btn--fill form__btn btn-reset" type="submit">
-      Отправить
-    </button>
-    <p class="form__privacy">
-      Нажимая кнопку “Отправить”, вы принимаете условия
-      <a href="#">Политики конфиденциальности</a>
-    </p>
-  </form>
 </section>

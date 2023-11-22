@@ -1,20 +1,22 @@
-const cursorRounded = document.querySelectorAll(".mouse-rotate");
-
 const panoramaSection = document.querySelector(".tour");
 
+if (panoramaSection) {
+  const cursor = panoramaSection.querySelector(".mouse-rotate")
 
-if(cursorRounded){
-  const modalTour = document.querySelectorAll('.modal-tour')
-  if(panoramaSection){
-    const moveCursor = (e) => {
-      cursorRounded.forEach(el => el.style.left = e.pageX - panoramaSection.offsetLeft + 'px')
-      cursorRounded.forEach(el => el.style.top = e.pageY -  panoramaSection.offsetTop  + 'px')
-    };
-    panoramaSection.addEventListener("mousemove", moveCursor);
-    modalTour.forEach(el => {
-      el.addEventListener("mousemove", moveCursor)
-    })
+
+  if(window.matchMedia("(max-width: 768px)").matches){
+    panoramaSection.addEventListener("touchstart", () => {
+      cursor.style.opacity = '0'
+    });
+    panoramaSection.addEventListener("touchend", () => {
+      cursor.style.opacity = '1'
+    });
+  } else {
+    panoramaSection.addEventListener("mouseenter", () => {
+      cursor.style.opacity = '0'
+    });
+    panoramaSection.addEventListener("mouseleave", () => {
+      cursor.style.opacity = '1'
+    });
   }
-
-
 }

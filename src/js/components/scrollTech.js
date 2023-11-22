@@ -1,7 +1,9 @@
+import { techSection } from "../_vars";
+
 let menuItem = document.querySelectorAll(".tech__text");
 let menuImage = document.querySelectorAll(".tech__img");
 
-if(document.querySelector('.tech')){
+if(techSection){
 
   const points = []
 
@@ -11,13 +13,13 @@ if(document.querySelector('.tech')){
   const textObserver = new IntersectionObserver(callbackObs, {
     threshold: points,
   })
-  textObserver.observe(document.querySelector('.tech'))
+  textObserver.observe(techSection)
   textObserver.observe(menuItem[0])
   textObserver.observe(menuItem[1])
   function callbackObs(entries, observer){
     let percent = 1;
 
-    percent = window.scrollY / document.querySelector('.tech').scrollHeight * 10
+    percent = window.scrollY / techSection.scrollHeight * 10
     if(window.matchMedia("(min-width: 769px)")){
       menuItem[0].querySelector('.tech__paragraph').style.transform = `translateX(-${percent / 3}%)`
       menuItem[1].querySelector('.tech__paragraph').style.transform = `translateX(${percent / 3}%)`
@@ -28,7 +30,7 @@ if(document.querySelector('.tech')){
   }
 
 
-  document.querySelector('.tech').addEventListener('wheel', () => {
+  techSection.addEventListener('wheel', () => {
     callbackObs()
   })
 

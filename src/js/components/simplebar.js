@@ -1,13 +1,18 @@
+import SimpleBar from "simplebar";
+const wrapper = document.querySelector(".favorites-menu__wrapper");
+const favtitle = document.querySelector(".favorites-menu__favtitle");
+new SimpleBar(document.getElementById("fav-scroll"));
 
-import SimpleBar from 'simplebar';
-import ResizeObserver from 'resize-observer-polyfill';
-window.ResizeObserver = ResizeObserver;
+window.matchMedia("(min-width: 769px)").matches
+  ? (wrapper.style.maxHeight = `${
+      document.documentElement.clientHeight - wrapper.offsetTop
+    }px`)
+  : (wrapper.style.maxHeight = `${
+      document.documentElement.clientHeight - favtitle.scrollHeight
+    }px`);
 
-new SimpleBar(document.getElementById('fav-scroll'));
-
-
-document.querySelector('.favorites-menu__wrapper').style.maxHeight = `${document.documentElement.clientHeight - document.querySelector('.favorites-menu__wrapper').offsetTop}px`
-
-window.addEventListener('resize', () => {
-  document.querySelector('.favorites-menu__wrapper').style.maxHeight = `${document.documentElement.clientHeight - document.querySelector('.favorites-menu__wrapper').offsetTop}px`
-})
+window.addEventListener("resize", () => {
+  wrapper.style.maxHeight = `${
+    document.documentElement.clientHeight - wrapper.offsetTop
+  }px`;
+});

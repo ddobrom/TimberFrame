@@ -1,32 +1,35 @@
-import Swiper from "swiper/bundle";
-import { Navigation, Thumbs, Pagination } from "swiper";
-Swiper.use([Navigation, Thumbs]);
+import {Swiper} from "swiper/bundle";
+import { Navigation, Thumbs, Pagination, Autoplay } from "swiper";
+Swiper.use([Navigation, Thumbs, Autoplay, Pagination]);
+
 const heroSlider = document.querySelector(".hero__slider");
+
 const moveBg = () => {
-  const slides = heroSlider.querySelectorAll(".hero__slide");
-  slides.forEach((item) => (item.style.backgroundPositionX = null));
+  const slides = heroSlider.querySelectorAll(".hero-slide__image");
+  slides.forEach((item) => (item.style.transform = null));
   const activeSlide = heroSlider
     .querySelector(".swiper-slide-active")
-    .querySelector(".hero__slide");
-
-  activeSlide.style.backgroundPositionX = "0";
+    .querySelector(".hero-slide__image");
+  activeSlide.style.transform = "translate(-45%, -50%)";
 };
+
+
 const heroslider = new Swiper(".hero__slider", {
   slidesPerView: "auto",
-  loop: true,
   navigation: {
     nextEl: ".slider-control__btn--next",
     prevEl: ".slider-control__btn--prev",
   },
   effect: "fade",
   speed: 1500,
-  // lazy: true,
   autoplay: {
-    delay: 7000,
+    delay: 6500,
+    disableOnInteraction: false,
   },
+
   on: {
     slideChangeTransitionStart: () => {
-      moveBg();
+      requestAnimationFrame(moveBg);
     },
   },
 });
@@ -39,6 +42,9 @@ const popularImagesSlider = new Swiper(".slider-popular__images", {
   },
   loop: true,
   effect: "fade",
+  fadeEffect: {
+    crossFade: true,
+  },
   lazy: true,
 });
 const popularContentSlider = new Swiper(".slider-popular__content", {
@@ -74,7 +80,9 @@ prevButtonsPopular.forEach((el) =>
 );
 
 if (heroSlider) {
-  moveBg();
+  window.addEventListener('DOMContentLoaded', () => {
+    requestAnimationFrame(moveBg)
+  })
 }
 
 // office__slider
@@ -86,6 +94,15 @@ const officeSlider = new Swiper(".office__slider", {
 const gallerySliderMini = new Swiper(".gallery__slider-mini", {
   slidesPerView: "auto",
   spaceBetween: 5,
+  on: {
+    touchEnd: function (s, e) {
+      let range = 5;
+      let diff = (s.touches.diff = s.isHorizontal()
+        ? s.touches.currentX - s.touches.startX
+        : s.touches.currentY - s.touches.startY);
+      if (diff < range || diff > -range) s.allowClick = true;
+    },
+  },
 });
 const gallerySlider = new Swiper(".gallery__slider", {
   loop: true,
@@ -102,16 +119,9 @@ const gallerySlider = new Swiper(".gallery__slider", {
 const responsibilitySlider = new Swiper(".responsibility__items", {
   slidesPerView: 1,
   effect: "fade",
-  loop: true,
   fadeEffect: {
     crossFade: true,
   },
-});
-
-document.querySelectorAll(".res-control-btn").forEach((el) => {
-  el.addEventListener("click", () => {
-    responsibilitySlider.slideNext();
-  });
 });
 
 const builtHouseSlide = new Swiper(".built-houses__slider", {
@@ -153,4 +163,4 @@ const initProductSliders = (productSliders) => {
     });
   });
 };
-export default initProductSliders;
+export {responsibilitySlider}

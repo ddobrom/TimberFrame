@@ -12,7 +12,7 @@ if(ecoHouse){
   function callback(entries, observer) {
     let movingPercent =
       (window.scrollY / ecoHouse.scrollHeight) * 100;
-    moveClouds(movingPercent);
+    requestAnimationFrame(moveClouds(movingPercent));
   }
 
   const observer = new IntersectionObserver(callback, {

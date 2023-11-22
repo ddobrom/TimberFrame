@@ -1,26 +1,56 @@
-<div class="modal modal-form">
+<div class="modal modal-form" data-lenis-prevent>
   <div class="modal__window--form">
-    <form class="cta__form form">
-      <h4 class="form__title">Свяжитесь с нами</h4>
-      <label class="form__label">
-        <span>Имя</span>
-        <input type="text" class="form__input" />
-      </label>
-      <label class="form__label">
-        <span>Телефон</span>
-        <input type="phone" class="form__input" />
-      </label>
-      <label class="form__label">
-        <span>Комментарий</span>
-        <input type="text" class="form__input" />
-      </label>
-      <button class="btn btn--fill form__btn btn-reset" type="submit">
-        Отправить
-      </button>
-      <p class="form__privacy">
-        Нажимая кнопку “Отправить”, вы принимаете условия
-        <a href="#">Политики конфиденциальности</a>
-      </p>
+    <form class="cta__form form modal-form__form">
+      <div class="form__left">
+        <h4 class="form__title">Свяжитесь с нами</h4>
+        <address class="cta__address address">
+          <a
+            class="address__tel"
+            href="tel:+78006007008"
+            data-aos="custom-fade-up"
+            data-aos-delay="300"
+            >+7 800 600 7008</a
+          >
+          <a
+            class="address__whatsapp"
+            href="https://api.whatsapp.com/send?phone=78006007008"
+            target="_blank"
+            data-aos="custom-fade-up"
+            data-aos-delay="300"
+            >Написать в WhatsApp</a
+          >
+          <a
+            class="address__telega"
+            href="tg://resolve?domain=username"
+            target="_blank"
+            data-aos="custom-fade-up"
+            data-aos-delay="300"
+            >Написать в Telegram</a
+          >
+        </address>
+      </div>
+      <div class="form__right">
+        <h4 class="form__title">Написать нам</h4>
+        <label class="form__label">
+          <span>Имя</span>
+          <input type="text" class="form__input" name="name"/>
+        </label>
+        <label class="form__label">
+          <span>Телефон</span>
+          <input type="tel" class="form__input" name="phone"/>
+        </label>
+        <label class="form__label">
+          <span>Комментарий</span>
+          <input type="text" class="form__input" name="comment"/>
+        </label>
+        <button class="btn btn--fill form__btn btn-reset" type="submit">
+          Отправить
+        </button>
+        <p class="form__privacy">
+          Нажимая кнопку “Отправить”, вы принимаете условия
+          <a href="#" target="_blank">Политики конфиденциальности</a>
+        </p>
+      </div>
     </form>
     <button class="modal__close btn-reset form-close"></button>
   </div>

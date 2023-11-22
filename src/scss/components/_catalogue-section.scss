@@ -1,38 +1,50 @@
 .catalogue-section {
-  &__breadcrumbs {
-    padding: 7px 0;
+  &__title {
+    margin: 0 auto;
+    margin-bottom: 16px;
+    max-width: 800px;
+    color: var(--black-brand-color);
+    text-align: center;
+    font-family: "PP Neue Montreal";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.28px;
 
-    @media (min-width: 1440px){
+    @media(min-width: 1440px) {
+      font-size: 2.8rem;
+      letter-spacing: 0.028rem;
+      margin-bottom: 1.6rem;
+      max-width: 80rem;
+    }
+
+    @include mobile {
+      font-size: 20px;
+      letter-spacing: 0.2px;
+    }
+  }
+
+  &__breadcrumbs {
+    padding-top: 7px;
+
+    @media (min-width: 1440px) {
       padding: 0.7rem 0;
     }
-    @include mobile {
-      margin-bottom: 4px;
-    }
   }
-  &__filters {
-    justify-content: center;
-    padding: 10px 30px;
-    margin-bottom: 28px;
-    overflow: hidden;
-    @media (min-width: 1440px){
-      padding: 1rem 3rem;
-      margin-bottom: 2.8rem;
-    }
-    @include mobile {
-      padding: 10px 16px;
-      margin-bottom: 13px;
-    }
-  }
+
   &__catalogue {
     padding-bottom: 60px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px 5px;
     overflow: hidden;
-    @media (min-width: 1440px){
+
+    @media (min-width: 1440px) {
       padding-bottom: 6rem;
       gap: 3rem 0.5rem;
     }
+
     @include mobile {
       grid-template-columns: 1fr;
     }

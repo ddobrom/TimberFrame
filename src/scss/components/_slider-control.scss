@@ -1,9 +1,10 @@
 .slider-control__btn {
   cursor: pointer;
+  border-radius: 2px;
   width: 48px;
   height: 48px;
   padding: 0 13.5px;
-  border: 1px solid rgba(255, 150, 92, 0.6);
+  border: 1px solid rgba(255, 150, 92, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,6 +12,7 @@
   z-index: 8;
   top: 50%;
   transform: translateY(-50%);
+  filter: contrast(120%) saturate(110%);
   span {
     position: relative;
     &::before {
@@ -26,6 +28,10 @@
       background-size: cover;
       background-repeat: no-repeat;
       transition: width .3s ease-in, transform .3s ease-in;
+      @media (min-width: 1440px){
+        width: 2.1rem;
+        height: 0.8rem;
+      }
     }
   }
   &--dark {
@@ -35,15 +41,17 @@
       }
     }
   }
-  @include hover {
-    span {
-      &::before {
-        width: 35px;
-        transform: translate(0, -50%);
-      }
-      @media (min-width: 1440px){
+  @media (min-width: 769px){
+    @include hover {
+      span {
         &::before {
-          width: 3.5rem;
+          width: 35px;
+          transform: translate(0, -50%);
+        }
+        @media (min-width: 1440px){
+          &::before {
+            width: 3.5rem;
+          }
         }
       }
     }
@@ -72,5 +80,6 @@
   @media (min-width: 1440px) {
     width: 4.8rem;
     height: 4.8rem;
+    border: 0.1rem solid rgba(255, 150, 92, 0.7);
   }
 }

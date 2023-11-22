@@ -3580,9 +3580,9 @@ if (annText) {
     let percent = 1;
     percent = window.scrollY / aboutMain.scrollHeight * 100;
     if (window.matchMedia("(min-width: 769px)")) {
-      annText.style.transform = `translateX(-${percent / 3}%)`;
+      annText.style.transform = `translateX(-${percent}%)`;
     } else {
-      annText.style.transform = `translateX(-${percent / 2}%)`;
+      annText.style.transform = `translateX(-${percent * 4}%)`;
     }
   }
   const textObserver = new IntersectionObserver(callbackObs, {

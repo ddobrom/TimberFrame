@@ -9785,6 +9785,10 @@ span.popular-card__figure {
   -webkit-text-stroke: var(--white-color);
   -webkit-text-stroke-width: 1.6px;
   -webkit-text-fill-color: transparent;
+  -webkit-transition: -webkit-transform linear;
+  transition: -webkit-transform linear;
+  transition: transform linear;
+  transition: transform linear, -webkit-transform linear;
 }
 @media (min-width: 1441px) {
   .about-main__ann {
@@ -9848,6 +9852,11 @@ span.popular-card__figure {
 @media (max-width: 768px) {
   .about-buttons {
     margin-top: -120px;
+  }
+}
+@media (max-width: 374px) {
+  .about-buttons {
+    padding: 60px 16px;
   }
 }
 .about-buttons__container {
@@ -9925,6 +9934,11 @@ span.popular-card__figure {
 @media (max-width: 768px) {
   .about-btn {
     padding-right: 30px;
+  }
+}
+@media (max-width: 374px) {
+  .about-btn {
+    padding: 32px 16px;
   }
 }
 @media (any-hover: hover) {
@@ -10424,6 +10438,7 @@ span.popular-card__figure {
 @media (max-width: 768px) {
   .gift-forest__window {
     height: auto;
+    aspect-ratio: 1/1;
   }
 }
 .gift-forest__window > svg {
@@ -10438,6 +10453,7 @@ span.popular-card__figure {
 @media (max-width: 768px) {
   .gift-forest__window > svg {
     max-width: 70vw;
+    height: auto;
   }
 }
 .gift-forest__block {

@@ -1583,7 +1583,7 @@ const responsibilitySlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swip
   }
 });
 const aboutProdSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".about-prod__slider", {
-  slidesPerView: 2.5,
+  slidesPerView: 2.4,
   centeredSlides: true,
   loop: true,
   navigation: {

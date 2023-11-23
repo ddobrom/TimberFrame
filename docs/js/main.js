@@ -1442,6 +1442,13 @@ if (preloader) {
     }, 3500);
   });
 }
+window.addEventListener('DOMContentLoaded', () => {
+  onResize();
+  lenis.start();
+  gsap_all__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger.update();
+  rellax.refresh();
+  swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper.update();
+});
 
 // const heroSlider = document.querySelector(".hero__slider");
 

@@ -139,8 +139,13 @@
 
     .dropdown__list {
       background-color: var(--white-color);
-      padding: 0 15px;
-      margin-left: -15px;
+      padding: 0 20px;
+      margin-left: -20px;
+
+      @media (min-width: 1441px) {
+        padding: 0 2rem;
+        margin-left: calc(-1 * 2rem);
+      }
     }
   }
 }

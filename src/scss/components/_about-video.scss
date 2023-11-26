@@ -2,11 +2,11 @@
   &__container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 240px 0px;
+    padding: 180px 0px;
     position: relative;
 
     @media (min-width: 1441px) {
-      padding: 24rem 0;
+      padding: 18rem 0;
     }
 
     @include mobile {
@@ -31,6 +31,9 @@
   &__video {
     padding: 0 120px;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     @media (min-width: 1441px) {
       padding: 0 12rem;

@@ -1421,9 +1421,9 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 let preloader = document.querySelector('.preloader');
-if (preloader) {
-  lenis.stop();
-  window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', () => {
+  if (preloader) {
+    lenis.stop();
     preloader.querySelector('.preloader__row').style.animation = "none";
     preloader.querySelector('.preloader__row').style.maxWidth = "none";
     preloader.querySelector('.preloader__text').style.transform = "translateX(0%)";
@@ -1440,14 +1440,11 @@ if (preloader) {
       preloader.remove();
       swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper.update();
     }, 3500);
-  });
-}
-window.addEventListener('DOMContentLoaded', () => {
-  onResize();
-  lenis.start();
-  gsap_all__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger.update();
-  rellax.refresh();
-  swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper.update();
+  } else {
+    onResize();
+    lenis.start();
+    gsap_all__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger.update();
+  }
 });
 
 // const heroSlider = document.querySelector(".hero__slider");
@@ -3587,9 +3584,9 @@ if (annText) {
     let percent = 1;
     percent = window.scrollY / aboutMain.scrollHeight * 100;
     if (window.matchMedia("(min-width: 769px)")) {
-      annText.style.transform = `translateX(-${percent}%)`;
+      annText.style.transform = `translateX(calc(-${percent + 70}%))`;
     } else {
-      annText.style.transform = `translateX(-${percent * 4}%)`;
+      annText.style.transform = `translateX(calc(-${percent * 4}% + 5rem))`;
     }
   }
   const textObserver = new IntersectionObserver(callbackObs, {
@@ -3618,6 +3615,53 @@ if (aboutVideoBtn) {
     modal.classList.add('active');
   });
 }
+const frameCount = 3;
+const currentFrame = index => {
+  return `./../img/timber/${(index + 1).toString().padStart(2, '0')}.png`;
+};
+const preloadImages = () => {
+  for (let i = 0; i < frameCount; i++) {
+    const img = new Image();
+    img.src = currentFrame(i);
+  }
+};
+const techMainSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper('.timber-main__slider', {
+  slidesPerView: 1,
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  }
+});
+preloadImages();
+const mainTriggers = document.querySelectorAll('.timber-main__trigger[data-trig]');
+const secTriggers = document.querySelectorAll('.timber-main__trigger');
+const offsetTriggers = [];
+mainTriggers.forEach(el => {
+  const elRect = el.getBoundingClientRect();
+  offsetTriggers.push(elRect.y + (window.pageY || document.documentElement.scrollTop));
+});
+const timberSlider = document.querySelector('.timber-main__slider');
+const techObserver = new IntersectionObserver((entries, observer) => {
+  const rect = timberSlider.getBoundingClientRect();
+  let offsetItems = rect.y + (window.pageY || document.documentElement.scrollTop);
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      offsetTriggers.forEach((el, index) => {
+        if (offsetItems > el) {
+          techMainSlider.slideTo(index);
+        }
+      });
+    }
+  });
+}, {
+  threshold: 0
+});
+mainTriggers.forEach(el => {
+  techObserver.observe(el);
+});
+secTriggers.forEach(el => {
+  techObserver.observe(el);
+});
 
 /***/ }),
 

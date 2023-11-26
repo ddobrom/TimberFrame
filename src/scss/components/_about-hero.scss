@@ -5,6 +5,23 @@
   background-repeat: no-repeat;
   position: relative;
 
+  &__title {
+    color: var(--white-color);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.24px;
+    text-transform: uppercase;
+
+    @media (min-width: 1441px) {
+      font-size: 2.4rem;
+      letter-spacing: 0.024rem;
+    }
+
+    @include mobile {}
+  }
+
   &__trigger {
     position: absolute;
     left: 0;

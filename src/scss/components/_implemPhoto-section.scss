@@ -1,4 +1,12 @@
 .implemPhoto-section {
+  .product__image {
+    @include hover {
+      .implemPhoto-section__btn {
+        opacity: 1;
+      }
+    }
+  }
+
   h1 {
     margin: 0;
     margin-bottom: 16px;
@@ -39,6 +47,8 @@
     right: 20px;
     bottom: 20px;
     z-index: 9;
+    opacity: 0;
+    transition: opacity .3s ease-in;
 
     @media (min-width: 1441px) {
       right: 2rem;
@@ -113,6 +123,8 @@
 
     }
   }
+
+
 
   &__filters {
     display: flex;

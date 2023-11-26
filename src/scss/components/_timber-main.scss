@@ -1,0 +1,143 @@
+.timber-main {
+  &__trigger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    // background-color: blue;
+
+    &--1 {}
+
+    &--2 {
+      top: 33%;
+    }
+
+    &--3 {
+      top: 66%;
+    }
+
+    &.sec-1 {
+      top: 12.5%;
+    }
+
+    &.sec-2 {
+      top: 25%;
+    }
+
+    &.sec-3 {
+      top: 37.5%;
+    }
+
+    &.sec-4 {
+      top: 50%;
+    }
+
+    &.sec-5 {
+      top: 100%;
+    }
+  }
+
+  &__slider {
+    position: sticky;
+    top: 0;
+    min-width: 0;
+    max-width: 100%;
+
+    & .swiper-slide {
+      width: 100%;
+    }
+  }
+
+  &__header {
+    text-align: center;
+    max-width: 1050px;
+    margin: 0 auto;
+
+    h1 {
+      margin: 0;
+      padding: 30px;
+      overflow: hidden;
+      color: var(--black-brand-color);
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+      font-size: 115px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 3.45px;
+    }
+
+    h4 {
+      margin: 0;
+      color: var(--focus-color);
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 5.4px;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 0;
+      color: var(--black-brand-color);
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 1.6px;
+    }
+  }
+
+  &__content {
+    position: relative;
+    min-height: 300vh;
+    padding-bottom: 50px;
+  }
+}
+
+
+
+.timber-item {
+
+  // padding: 100px 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 30px;
+  align-items: center;
+  max-height: 100vh;
+
+  &__image {
+    grid-column: 8 span;
+    height: 100%;
+    // canvas {
+    //   width: 100%;
+    //   height: 100%;
+    // }
+  }
+
+  &__content {
+    grid-column: 4 span;
+    color: var(--black-brand-color);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.24px;
+    padding-right: 30px;
+
+
+
+    h4 {
+      margin: 0;
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0;
+
+    }
+  }
+}

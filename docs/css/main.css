@@ -3244,6 +3244,7 @@ html.lenis {
 @media (max-width: 768px) {
   .popular {
     padding-top: 120px;
+    padding-left: 0;
   }
 }
 @media (min-width: 1440px) {

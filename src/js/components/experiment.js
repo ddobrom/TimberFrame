@@ -426,17 +426,12 @@ if (itemsTexts.length > 0) {
 
   if (window.matchMedia("(max-width: 768px)").matches) {
     firstItem.classList.add("active");
-    let offsetSize = 0;
-    let scrollOffset = null
     const items = document.querySelectorAll('.services-section__item')
-    for(let i = 0; i < Math.ceil(items.length); i++){
-      offsetSize += items[i].offsetHeight
-    }
-    scrollOffset = document.querySelector('.services-section__container').scrollHeight - offsetSize
+    let scrollOffset = document.querySelector('.services-section__container').scrollHeight - items[8].scrollHeight - items[7].scrollHeight - items[6].scrollHeight - document.querySelector('.services-section__left').scrollHeight
     ScrollTrigger.create({
       trigger: ".services-section__container",
       start: "top top+=80px",
-      end: "bottom bottom",
+      end: "+=" + scrollOffset,
       scrub: 0.1,
       pin: ".services-section__left",
       invalidateOnRefresh: true,

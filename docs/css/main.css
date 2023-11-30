@@ -5655,6 +5655,8 @@ span.popular-card__figure {
   }
 }
 .cta__form {
+  position: relative;
+  z-index: 6;
   max-width: 450px;
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;

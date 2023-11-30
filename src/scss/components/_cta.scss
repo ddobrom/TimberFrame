@@ -98,6 +98,8 @@
   }
 
   &__form {
+    position: relative;
+    z-index: 6;
     max-width: 450px;
     flex-grow: 1;
     flex-shrink: 0;

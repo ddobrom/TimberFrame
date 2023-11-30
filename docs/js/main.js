@@ -1051,328 +1051,6 @@ const responsibility = document.querySelector('.responsibility');
 
 /***/ }),
 
-/***/ "./src/js/components/catalogueData.js":
-/*!********************************************!*\
-  !*** ./src/js/components/catalogueData.js ***!
-  \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-const products = [{
-  title: "vaskela",
-  price: 120000,
-  square: 190,
-  floors: 1,
-  bathrooms: 2,
-  bedrooms: 5,
-  placeSquare: 100,
-  imgSrcArray: {
-    webp: ["./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp", "./img/catalogue/01-2-2x.webp", "./img/catalogue/01-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
-    jpg: ["./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg", "./img/catalogue/01-2.jpg", "./img/catalogue/01-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
-  }
-}, {
-  title: "loftonen",
-  price: 19000,
-  square: 350,
-  floors: 3,
-  bathrooms: 3,
-  bedrooms: 4,
-  placeSquare: 100,
-  imgSrcArray: {
-    webp: ["./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp", "./img/catalogue/02-2-2x.webp", "./img/catalogue/02-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
-    jpg: ["./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg", "./img/catalogue/02-2.jpg", "./img/catalogue/02-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
-  }
-}, {
-  title: "ostamo",
-  price: 17000,
-  square: 400,
-  floors: 3,
-  bathrooms: 3,
-  bedrooms: 1,
-  placeSquare: 200,
-  imgSrcArray: {
-    webp: ["./img/catalogue/03-1-2x.webp", "./img/catalogue/03-1.webp", "./img/catalogue/03-2-2x.webp", "./img/catalogue/03-2.webp", "./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp"],
-    jpg: ["./img/catalogue/03-1.jpg", "./img/catalogue/03-1-2x.jpg", "./img/catalogue/03-2.jpg", "./img/catalogue/03-2-2x.jpg", "./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg"]
-  }
-}, {
-  title: "vaskela",
-  price: 12000,
-  square: 190,
-  floors: 2,
-  bathrooms: 2,
-  bedrooms: 3,
-  placeSquare: 100,
-  imgSrcArray: {
-    webp: ["./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp", "./img/catalogue/01-2-2x.webp", "./img/catalogue/01-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
-    jpg: ["./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg", "./img/catalogue/01-2.jpg", "./img/catalogue/01-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
-  }
-}, {
-  title: "loftonen",
-  price: 1900000,
-  square: 350,
-  floors: 3,
-  bathrooms: 3,
-  bedrooms: 4,
-  placeSquare: 100,
-  imgSrcArray: {
-    webp: ["./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp", "./img/catalogue/02-2-2x.webp", "./img/catalogue/02-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
-    jpg: ["./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg", "./img/catalogue/02-2.jpg", "./img/catalogue/02-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
-  }
-}, {
-  title: "ostamo",
-  price: 1900000,
-  square: 400,
-  floors: 3,
-  bathrooms: 3,
-  bedrooms: 2,
-  placeSquare: 200,
-  imgSrcArray: {
-    webp: ["./img/catalogue/03-1-2x.webp", "./img/catalogue/03-1.webp", "./img/catalogue/03-2-2x.webp", "./img/catalogue/03-2.webp", "./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp"],
-    jpg: ["./img/catalogue/03-1.jpg", "./img/catalogue/03-1-2x.jpg", "./img/catalogue/03-2.jpg", "./img/catalogue/03-2-2x.jpg", "./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg"]
-  }
-}, {
-  title: "vaskela",
-  price: 12000,
-  square: 190,
-  floors: 2,
-  bathrooms: 2,
-  bedrooms: 3,
-  placeSquare: 100,
-  imgSrcArray: {
-    webp: ["./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp", "./img/catalogue/01-2-2x.webp", "./img/catalogue/01-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
-    jpg: ["./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg", "./img/catalogue/01-2.jpg", "./img/catalogue/01-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
-  }
-}, {
-  title: "loftonen",
-  price: 19000,
-  square: 350,
-  floors: 3,
-  bathrooms: 3,
-  bedrooms: 4,
-  placeSquare: 100,
-  imgSrcArray: {
-    webp: ["./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp", "./img/catalogue/02-2-2x.webp", "./img/catalogue/02-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
-    jpg: ["./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg", "./img/catalogue/02-2.jpg", "./img/catalogue/02-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
-  }
-}, {
-  title: "ostamo",
-  price: 17000,
-  square: 400,
-  floors: 3,
-  bathrooms: 3,
-  bedrooms: 2,
-  placeSquare: 200,
-  imgSrcArray: {
-    webp: ["./img/catalogue/03-1-2x.webp", "./img/catalogue/03-1.webp", "./img/catalogue/03-2-2x.webp", "./img/catalogue/03-2.webp", "./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp"],
-    jpg: ["./img/catalogue/03-1.jpg", "./img/catalogue/03-1-2x.jpg", "./img/catalogue/03-2.jpg", "./img/catalogue/03-2-2x.jpg", "./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg"]
-  }
-}, {
-  title: "vaskela",
-  price: 12000,
-  square: 190,
-  floors: 2,
-  bathrooms: 2,
-  bedrooms: 3,
-  placeSquare: 100,
-  imgSrcArray: {
-    webp: ["./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp", "./img/catalogue/01-2-2x.webp", "./img/catalogue/01-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
-    jpg: ["./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg", "./img/catalogue/01-2.jpg", "./img/catalogue/01-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
-  }
-}, {
-  title: "loftonen",
-  price: 19000,
-  square: 350,
-  floors: 3,
-  bathrooms: 3,
-  bedrooms: 4,
-  placeSquare: 100,
-  imgSrcArray: {
-    webp: ["./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp", "./img/catalogue/02-2-2x.webp", "./img/catalogue/02-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
-    jpg: ["./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg", "./img/catalogue/02-2.jpg", "./img/catalogue/02-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
-  }
-}, {
-  title: "ostamo",
-  price: 17000,
-  square: 400,
-  floors: 3,
-  bathrooms: 3,
-  bedrooms: 2,
-  placeSquare: 200,
-  imgSrcArray: {
-    webp: ["./img/catalogue/03-1-2x.webp", "./img/catalogue/03-1.webp", "./img/catalogue/03-2-2x.webp", "./img/catalogue/03-2.webp", "./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp"],
-    jpg: ["./img/catalogue/03-1.jpg", "./img/catalogue/03-1-2x.jpg", "./img/catalogue/03-2.jpg", "./img/catalogue/03-2-2x.jpg", "./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg"]
-  }
-}, {
-  title: "vaskela",
-  price: 12000,
-  square: 190,
-  floors: 2,
-  bathrooms: 2,
-  bedrooms: 3,
-  placeSquare: 100,
-  imgSrcArray: {
-    webp: ["./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp", "./img/catalogue/01-2-2x.webp", "./img/catalogue/01-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
-    jpg: ["./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg", "./img/catalogue/01-2.jpg", "./img/catalogue/01-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
-  }
-}, {
-  title: "loftonen",
-  price: 19000,
-  square: 350,
-  floors: 3,
-  bathrooms: 3,
-  bedrooms: 4,
-  placeSquare: 100,
-  imgSrcArray: {
-    webp: ["./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp", "./img/catalogue/02-2-2x.webp", "./img/catalogue/02-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
-    jpg: ["./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg", "./img/catalogue/02-2.jpg", "./img/catalogue/02-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
-  }
-}, {
-  title: "ostamo",
-  price: 17000,
-  square: 400,
-  floors: 3,
-  bathrooms: 3,
-  bedrooms: 2,
-  placeSquare: 200,
-  imgSrcArray: {
-    webp: ["./img/catalogue/03-1-2x.webp", "./img/catalogue/03-1.webp", "./img/catalogue/03-2-2x.webp", "./img/catalogue/03-2.webp", "./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp"],
-    jpg: ["./img/catalogue/03-1.jpg", "./img/catalogue/03-1-2x.jpg", "./img/catalogue/03-2.jpg", "./img/catalogue/03-2-2x.jpg", "./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg"]
-  }
-}, {
-  title: "vaskela",
-  price: 12000,
-  square: 190,
-  floors: 2,
-  bathrooms: 2,
-  bedrooms: 3,
-  placeSquare: 100,
-  imgSrcArray: {
-    webp: ["./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp", "./img/catalogue/01-2-2x.webp", "./img/catalogue/01-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
-    jpg: ["./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg", "./img/catalogue/01-2.jpg", "./img/catalogue/01-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
-  }
-}, {
-  title: "loftonen",
-  price: 19000,
-  square: 350,
-  floors: 3,
-  bathrooms: 3,
-  bedrooms: 4,
-  placeSquare: 100,
-  imgSrcArray: {
-    webp: ["./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp", "./img/catalogue/02-2-2x.webp", "./img/catalogue/02-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
-    jpg: ["./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg", "./img/catalogue/02-2.jpg", "./img/catalogue/02-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
-  }
-}, {
-  title: "ostamo",
-  price: 17000,
-  square: 400,
-  floors: 3,
-  bathrooms: 3,
-  bedrooms: 2,
-  placeSquare: 200,
-  imgSrcArray: {
-    webp: ["./img/catalogue/03-1-2x.webp", "./img/catalogue/03-1.webp", "./img/catalogue/03-2-2x.webp", "./img/catalogue/03-2.webp", "./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp"],
-    jpg: ["./img/catalogue/03-1.jpg", "./img/catalogue/03-1-2x.jpg", "./img/catalogue/03-2.jpg", "./img/catalogue/03-2-2x.jpg", "./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg"]
-  }
-}, {
-  title: "vaskela",
-  price: 12000,
-  square: 190,
-  floors: 2,
-  bathrooms: 2,
-  bedrooms: 3,
-  placeSquare: 100,
-  imgSrcArray: {
-    webp: ["./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp", "./img/catalogue/01-2-2x.webp", "./img/catalogue/01-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
-    jpg: ["./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg", "./img/catalogue/01-2.jpg", "./img/catalogue/01-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
-  }
-}, {
-  title: "loftonen",
-  price: 19000,
-  square: 350,
-  floors: 3,
-  bathrooms: 3,
-  bedrooms: 4,
-  placeSquare: 100,
-  imgSrcArray: {
-    webp: ["./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp", "./img/catalogue/02-2-2x.webp", "./img/catalogue/02-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
-    jpg: ["./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg", "./img/catalogue/02-2.jpg", "./img/catalogue/02-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
-  }
-}, {
-  title: "ostamo",
-  price: 17000,
-  square: 400,
-  floors: 3,
-  bathrooms: 3,
-  bedrooms: 2,
-  placeSquare: 200,
-  imgSrcArray: {
-    webp: ["./img/catalogue/03-1-2x.webp", "./img/catalogue/03-1.webp", "./img/catalogue/03-2-2x.webp", "./img/catalogue/03-2.webp", "./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp"],
-    jpg: ["./img/catalogue/03-1.jpg", "./img/catalogue/03-1-2x.jpg", "./img/catalogue/03-2.jpg", "./img/catalogue/03-2-2x.jpg", "./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg"]
-  }
-}, {
-  title: "vaskela",
-  price: 12000,
-  square: 190,
-  floors: 2,
-  bathrooms: 2,
-  bedrooms: 3,
-  placeSquare: 100,
-  imgSrcArray: {
-    webp: ["./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp", "./img/catalogue/01-2-2x.webp", "./img/catalogue/01-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
-    jpg: ["./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg", "./img/catalogue/01-2.jpg", "./img/catalogue/01-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
-  }
-}, {
-  title: "loftonen",
-  price: 19000,
-  square: 350,
-  floors: 3,
-  bathrooms: 3,
-  bedrooms: 4,
-  placeSquare: 100,
-  imgSrcArray: {
-    webp: ["./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp", "./img/catalogue/02-2-2x.webp", "./img/catalogue/02-2.webp", "./img/catalogue/01-1-2x.webp", "./img/catalogue/01-1.webp"],
-    jpg: ["./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg", "./img/catalogue/02-2.jpg", "./img/catalogue/02-2-2x.jpg", "./img/catalogue/01-1.jpg", "./img/catalogue/01-1-2x.jpg"]
-  }
-}, {
-  title: "ostamo",
-  price: 17000,
-  square: 400,
-  floors: 3,
-  bathrooms: 3,
-  bedrooms: 2,
-  placeSquare: 200,
-  imgSrcArray: {
-    webp: ["./img/catalogue/03-1-2x.webp", "./img/catalogue/03-1.webp", "./img/catalogue/03-2-2x.webp", "./img/catalogue/03-2.webp", "./img/catalogue/02-1-2x.webp", "./img/catalogue/02-1.webp"],
-    jpg: ["./img/catalogue/03-1.jpg", "./img/catalogue/03-1-2x.jpg", "./img/catalogue/03-2.jpg", "./img/catalogue/03-2-2x.jpg", "./img/catalogue/02-1.jpg", "./img/catalogue/02-1-2x.jpg"]
-  }
-}];
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (products);
-
-/***/ }),
-
-/***/ "./src/js/components/declOfNum.js":
-/*!****************************************!*\
-  !*** ./src/js/components/declOfNum.js ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-function declOfNum(number, words) {
-  return words[number % 100 > 4 && number % 100 < 20 ? 2 : [2, 0, 1, 1, 1, 2][number % 10 < 5 ? Math.abs(number) % 10 : 5]];
-}
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (declOfNum);
-
-/***/ }),
-
 /***/ "./src/js/components/experiment.js":
 /*!*****************************************!*\
   !*** ./src/js/components/experiment.js ***!
@@ -1382,9 +1060,9 @@ function declOfNum(number, words) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _studio_freight_lenis__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @studio-freight/lenis */ "./node_modules/@studio-freight/lenis/dist/lenis.modern.mjs");
-/* harmony import */ var _catalogueData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./catalogueData */ "./src/js/components/catalogueData.js");
-/* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/bundle */ "./node_modules/swiper/swiper-bundle.esm.js");
-/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
+/* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/bundle */ "./node_modules/swiper/swiper-bundle.esm.js");
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
+/* harmony import */ var _initFilters_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./initFilters.js */ "./src/js/components/initFilters.js");
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var gsap_all__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/ScrollTrigger.js");
@@ -1396,15 +1074,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var simplebar__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! simplebar */ "./node_modules/simplebar/dist/simplebar.esm.js");
 /* harmony import */ var _main_houses_data_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./main-houses-data.js */ "./src/js/components/main-houses-data.js");
 /* harmony import */ var _functions_throttle__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./../functions/throttle */ "./src/js/functions/throttle.js");
-/* harmony import */ var _sortCatalogue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./sortCatalogue */ "./src/js/components/sortCatalogue.js");
-/* harmony import */ var _product__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./product */ "./src/js/components/product.js");
-/* harmony import */ var _declOfNum__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./declOfNum */ "./src/js/components/declOfNum.js");
-/* harmony import */ var _fancyapps_ui__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @fancyapps/ui */ "./node_modules/@fancyapps/ui/dist/index.esm.js");
+/* harmony import */ var _fancyapps_ui__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @fancyapps/ui */ "./node_modules/@fancyapps/ui/dist/index.esm.js");
 
 
 
+swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper.use([swiper__WEBPACK_IMPORTED_MODULE_1__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_1__.Thumbs, swiper__WEBPACK_IMPORTED_MODULE_1__.Autoplay, swiper__WEBPACK_IMPORTED_MODULE_1__.Pagination]);
 
-swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper.use([swiper__WEBPACK_IMPORTED_MODULE_2__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_2__.Thumbs, swiper__WEBPACK_IMPORTED_MODULE_2__.Autoplay, swiper__WEBPACK_IMPORTED_MODULE_2__.Pagination]);
 const lenis = new _studio_freight_lenis__WEBPACK_IMPORTED_MODULE_3__["default"]({
   lerp: 0.07,
   wheelMultiplier: 0.7,
@@ -1438,7 +1113,6 @@ window.addEventListener('DOMContentLoaded', () => {
       gsap_all__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger.update();
       rellax.refresh();
       preloader.remove();
-      swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper.update();
     }, 3500);
   } else {
     onResize();
@@ -1446,19 +1120,7 @@ window.addEventListener('DOMContentLoaded', () => {
     gsap_all__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger.update();
   }
 });
-
-// const heroSlider = document.querySelector(".hero__slider");
-
-// const moveBg = () => {
-//   const slides = heroSlider.querySelectorAll(".hero-slide__image");
-//   slides.forEach((item) => (item.style.transform = null));
-//   const activeSlide = heroSlider
-//     .querySelector(".swiper-slide-active")
-//     .querySelector(".hero-slide__image");
-//   activeSlide.style.transform = "translate(-45%, -50%)";
-// };
-
-const heroslider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".hero__slider", {
+const heroslider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(".hero__slider", {
   slidesPerView: 1,
   navigation: {
     nextEl: ".slider-control__btn--next",
@@ -1473,7 +1135,7 @@ const heroslider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".hero_
   }
 });
 let popularImages = null;
-const popularImagesSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".slider-popular__images", {
+const popularImagesSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(".slider-popular__images", {
   slidesPerView: 1,
   navigation: {
     nextEl: ".popular-slider-btn--next",
@@ -1497,7 +1159,7 @@ const popularImagesSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swipe
     }
   }
 });
-const popularContentSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".slider-popular__content", {
+const popularContentSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(".slider-popular__content", {
   slidesPerView: 1,
   navigation: {
     nextEl: ".popular-slider-btn--next",
@@ -1546,7 +1208,7 @@ prevButtonsPopular.forEach(el => el.addEventListener("click", () => {
 // }
 
 // office__slider
-const officeSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".office__slider", {
+const officeSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(".office__slider", {
   loop: true,
   slidesPerView: "auto",
   spaceBetween: 8
@@ -1557,7 +1219,7 @@ const officeSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".off
   // speed: 5000,
 });
 
-const gallerySliderMini = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".gallery__slider-mini", {
+const gallerySliderMini = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(".gallery__slider-mini", {
   slidesPerView: "auto",
   spaceBetween: 5,
   on: {
@@ -1568,7 +1230,7 @@ const gallerySliderMini = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(
     }
   }
 });
-const gallerySlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".gallery__slider", {
+const gallerySlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(".gallery__slider", {
   loop: true,
   slidesPerView: 1,
   navigation: {
@@ -1579,14 +1241,14 @@ const gallerySlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".ga
     swiper: gallerySliderMini
   }
 });
-const responsibilitySlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".responsibility__items", {
+const responsibilitySlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(".responsibility__items", {
   slidesPerView: 1,
   effect: "fade",
   fadeEffect: {
     crossFade: true
   }
 });
-const aboutProdSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".about-prod__slider", {
+const aboutProdSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(".about-prod__slider", {
   slidesPerView: 2.4,
   centeredSlides: true,
   loop: true,
@@ -1595,7 +1257,7 @@ const aboutProdSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".
     nextEl: '.slider-control__btn--next'
   }
 });
-const builtHouseSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".built-houses__slider", {
+const builtHouseSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(".built-houses__slider", {
   slidesPerView: "auto",
   spaceBetween: 30,
   loop: true,
@@ -1629,11 +1291,11 @@ const builtHouseSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper("
 window.addEventListener("refresh", () => {
   builtHouseSlider.update();
 });
-const itemProductSliderThumbs = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".item-product__thumbs", {
+const itemProductSliderThumbs = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(".item-product__thumbs", {
   slidesPerView: 3,
   spaceBetween: 8
 });
-const itemProductSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".item-product__slider", {
+const itemProductSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(".item-product__slider", {
   slidesPerView: 1,
   navigation: {
     nextEl: ".item-product-next",
@@ -1649,7 +1311,7 @@ const itemProductSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(
 const productSlidersArray = [];
 const initProductSliders = productSliders => {
   productSliders.forEach((el, i) => {
-    new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(el, {
+    new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(el, {
       slidesPerView: "auto",
       pagination: {
         el: `.product-slider__pagination`
@@ -2265,20 +1927,21 @@ const initialState = () => {
       if (document.querySelector(`.product[data-id="${id}"]`)) {
         document.querySelector(`.product[data-id="${id}"]`).querySelector(".btn--like").classList.add("active");
       }
-      let catalogueItem = _catalogueData__WEBPACK_IMPORTED_MODULE_0__["default"].find(el => el.id == id);
-      if (catalogueItem) {
-        catalogueItem.active = true;
-      }
+      // let catalogueItem = catalogueData.find((el) => el.id == id);
+      // if (catalogueItem) {
+      //   catalogueItem.active = true;
+      // }
     });
   }
+
   if (localStorage.getItem("randId")) {
     randId = parseInt(localStorage.getItem("randId"));
   }
 };
 if (_vars__WEBPACK_IMPORTED_MODULE_9__.catalogue) {
-  _catalogueData__WEBPACK_IMPORTED_MODULE_0__["default"].forEach(el => {
-    el.id = ++randId;
-  });
+  // catalogueData.forEach((el) => {
+  //   el.id = ++randId;
+  // });
   _vars__WEBPACK_IMPORTED_MODULE_9__.catalogue.addEventListener("click", e => {
     e.preventDefault();
     if (e.target.classList.contains("btn--like")) {
@@ -2306,11 +1969,13 @@ if (_vars__WEBPACK_IMPORTED_MODULE_9__.catalogue) {
         } else {
           deleteFav(parent);
         }
-        _catalogueData__WEBPACK_IMPORTED_MODULE_0__["default"].find(elem => elem.id == parent.dataset.id).active = self.classList.contains("active");
+        // catalogueData.find((elem) => elem.id == parent.dataset.id).active =
+        //   self.classList.contains("active");
       }
     }
   });
 }
+
 const updateStorage = () => {
   let parent = favContent;
   let html = parent.innerHTML;
@@ -2325,9 +1990,6 @@ const updateStorage = () => {
 initialState();
 const modalButtons = document.querySelectorAll(".slide__item");
 const heroSection = document.querySelector(".hero");
-// import { gallerySliderMini } from "./sliders";
-// import lenis from "./smooth-scroll";
-
 if (modalButtons.length > 0) {
   modalButtons.forEach(el => {
     el.addEventListener("click", e => {
@@ -2347,54 +2009,9 @@ if (modalButtons.length > 0) {
         document.body.classList.add("dis-scroll");
         lenis.stop();
       }
-      // if (e.currentTarget.dataset.gallery) {
-      //   const sources = Array.from(e.currentTarget.dataset.gallery.split(","));
-      //   const sourcesThumbs = Array.from(
-      //     e.currentTarget.dataset.galleryThumbs.split(",")
-      //   );
-      //   const modalGallery = document.querySelector(".modal-gallery");
-      //   sources.forEach((src) => {
-      //     document
-      //       .querySelector(".gallery__slider")
-      //       .querySelector(".swiper-wrapper")
-      //       .insertAdjacentHTML("beforeend", generateGallerySlides(src));
-      //   });
-      //   sourcesThumbs.forEach((src) => {
-      //     document
-      //       .querySelector(".gallery__slider-mini")
-      //       .querySelector(".swiper-wrapper")
-      //       .insertAdjacentHTML("beforeend", generateGallerySlidesMini(src));
-      //   });
-      //   // update slider
-      //   gallerySliderMini.update();
-      //   modalGallery.classList.add("active");
-      //   modalGallery.addEventListener("click", (e) => e.stopPropagation());
-      //   document.body.classList.add("dis-scroll");
-      //   lenis.stop();
-      // }
     });
   });
 }
-
-const generateGallerySlides = src => {
-  let index = 0;
-  return `
-    <div class="swiper-slide">
-      <div class="gallery__item" >
-        <img src="${src}" alt="Photo of House">
-      </div>
-    </div>
-  `;
-};
-const generateGallerySlidesMini = src => {
-  return `
-  <div class="swiper-slide">
-    <div class="gallery__item-mini">
-      <img src="${src}" alt="Photo of House">
-    </div>
-  </div>
-  `;
-};
 if (document.querySelector(".phone-btn")) {
   document.querySelector(".phone-btn").addEventListener("click", e => {
     const modalForm = document.querySelector(".modal-form");
@@ -2688,259 +2305,6 @@ if (downBtn) {
 
 // Catalogue
 
-
-
-
-async function getData() {
-  // const response = await fetch('ваш url к базе со списком объектов. пример таких объектов есть в файле catalogueData') // раскомментировать при работе с бд
-  // const d = await response.json()
-  const d = _catalogueData__WEBPACK_IMPORTED_MODULE_0__["default"]; // удалить при работе с бд
-  return d;
-}
-async function main() {
-  const productsData = await getData();
-  let currentPage = 1;
-  let rows = 10;
-  async function displayList(arrData, rowPerPage, page) {
-    _vars__WEBPACK_IMPORTED_MODULE_9__.catalogue.innerHTML = "";
-    page--;
-    const start = rowPerPage * page;
-    const end = start + rowPerPage;
-    const paginatedData = arrData.slice(start, end);
-    paginatedData.forEach(el => {
-      _vars__WEBPACK_IMPORTED_MODULE_9__.catalogue.innerHTML += createProduct(el.title, el.price, el.square, el.floors, el.bathrooms, el.bedrooms, el.placeSquare, el.imgSrcArray, el.active, el.id);
-    });
-    const products = document.querySelectorAll(".product");
-    const productSliders = document.querySelectorAll(".product__slider");
-    (0,_product__WEBPACK_IMPORTED_MODULE_14__["default"])(products);
-    if (window.matchMedia("(max-width: 768px)").matches) {
-      initProductSliders(productSliders);
-    }
-    (0,_sortCatalogue__WEBPACK_IMPORTED_MODULE_13__["default"])();
-  }
-  function displayPagination(arrData, rowPerPage) {
-    const paginationEl = document.querySelector(".pagination");
-    const pagesCount = Math.ceil(arrData.length / rowPerPage);
-    for (let i = 0; i < pagesCount; i++) {
-      paginationEl.appendChild(createPaginationBtn(i + 1));
-    }
-  }
-  function createPaginationBtn(page) {
-    const liEl = document.createElement("li");
-    const btnPagination = document.createElement("button");
-    liEl.classList.add("pagination__item");
-    btnPagination.classList.add("btn-reset");
-    btnPagination.classList.add("pagination__btn");
-    if (currentPage == page) btnPagination.classList.add("active");
-    btnPagination.innerText = page;
-    liEl.appendChild(btnPagination);
-    btnPagination.addEventListener("click", () => {
-      currentPage = page;
-      lenis.scrollTo("html");
-      displayList(productsData, rows, currentPage);
-      let currentItemLi = document.querySelector(".pagination__btn.active");
-      currentItemLi.classList.remove("active");
-      btnPagination.classList.add("active");
-      document.querySelector(".filters__btn.active").click();
-    });
-    return liEl;
-  }
-  displayList(productsData, rows, currentPage);
-  displayPagination(productsData, rows);
-}
-const normalPrice = str => {
-  return String(str).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ");
-};
-const createProduct = function (title, price, square, floors, bathrooms, bedrooms, placeSquare, imgSrcArray) {
-  let active = arguments.length > 8 && arguments[8] !== undefined ? arguments[8] : false;
-  let id = arguments.length > 9 ? arguments[9] : undefined;
-  const floorsWord = (0,_declOfNum__WEBPACK_IMPORTED_MODULE_15__["default"])(floors, ["этаж", "этажа", "этажей"]);
-  const bathroomsWord = (0,_declOfNum__WEBPACK_IMPORTED_MODULE_15__["default"])(bathrooms, ["санузел", "санузла", "санузлов"]);
-  const bedroomsWord = (0,_declOfNum__WEBPACK_IMPORTED_MODULE_15__["default"])(bedrooms, ["спальня", "спальни", "спален"]);
-  const isActive = active ? "active" : null;
-  return `
-    <li class="catalogue__item">
-      <article class="catalogue__product product" data-id="${id}">
-      <button class="product__btn btn btn--like btn--stroke btn-reset ${isActive}">
-        <svg>
-          <use xlink:href="img/sprite.svg#like-icon"></use>
-        </svg>
-      </button>
-      <a href="#" class="product__link">
-          <div class="product__image">
-            <div class="product__switch image-switch">
-              <div class="image-switch__item">
-                <div class="image-switch__img">
-                  <picture>
-                    <source
-                      srcset="${imgSrcArray["webp"][0]}"
-                      type="image/webp"
-                      media="(min-width: 1440px)"
-                    />
-                    <source
-                      srcset="${imgSrcArray["webp"][1]}"
-                      type="image/webp"
-                    />
-                    <img
-                      src="${imgSrcArray["jpg"][0]}"
-                      srcset="${imgSrcArray["jpg"][1]}"
-                      alt="Product 1"
-                    />
-                  </picture>
-                </div>
-              </div>
-              <div class="image-switch__item">
-                <div class="image-switch__img">
-                  <picture>
-                    <source
-                      srcset="${imgSrcArray["webp"][2]}"
-                      type="image/webp"
-                      media="(min-width: 1440px)"
-                    />
-                    <source
-                      srcset="${imgSrcArray["webp"][3]}"
-                      type="image/webp"
-                    />
-                    <img
-                      src="${imgSrcArray["jpg"][2]}"
-                      srcset="${imgSrcArray["jpg"][3]}"
-                      alt="Product 1"
-                    />
-                  </picture>
-                </div>
-              </div>
-              <div class="image-switch__item">
-                <div class="image-switch__img">
-                  <picture>
-                    <source
-                      srcset="${imgSrcArray["webp"][4]}"
-                      type="image/webp"
-                      media="(min-width: 1440px)"
-                    />
-                    <source
-                      srcset="${imgSrcArray["webp"][5]}"
-                      type="image/webp"
-                    />
-                    <img
-                      src="${imgSrcArray["jpg"][4]}"
-                      srcset="${imgSrcArray["jpg"][5]}"
-                      alt="Product 1"
-                    />
-                  </picture>
-                </div>
-              </div>
-            </div>
-            <div class="product__slider swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <picture>
-                    <source
-                      srcset="${imgSrcArray["webp"][0]}"
-                      type="image/webp"
-                      media="(min-width: 1440px)"
-                    />
-                    <source
-                      srcset="${imgSrcArray["webp"][1]}"
-                      type="image/webp"
-                    />
-                    <img
-                      src="${imgSrcArray["jpg"][0]}"
-                      srcset="${imgSrcArray["jpg"][1]}"
-                      alt="Product 1"
-                    />
-                  </picture>
-                </div>
-                <div class="swiper-slide">
-                  <picture>
-                    <source
-                      srcset="${imgSrcArray["webp"][2]}"
-                      type="image/webp"
-                      media="(min-width: 1440px)"
-                    />
-                    <source
-                      srcset="${imgSrcArray["webp"][3]}"
-                      type="image/webp"
-                    />
-                    <img
-                      src="${imgSrcArray["jpg"][2]}"
-                      srcset="${imgSrcArray["jpg"][3]} 2x"
-                      alt="Product 1"
-                    />
-                  </picture>
-                </div>
-                <div class="swiper-slide">
-                  <picture>
-                    <source
-                      srcset="${imgSrcArray["webp"][4]}"
-                      type="image/webp"
-                      media="(min-width: 1440px)"
-                    />
-                    <source
-                      srcset="${imgSrcArray["webp"][5]}"
-                      type="image/webp"
-                    />
-                    <img
-                      src="${imgSrcArray["jpg"][4]}"
-                      srcset="${imgSrcArray["jpg"][4]} 2x"
-                      alt="Product 1"
-                    />
-                  </picture>
-                </div>
-              </div>
-              <div class="swiper-pagination product-slider__pagination"></div>
-            </div>
-            <ul
-              class="pruoduct__image-pagination image-pagination list-reset"
-            ></ul>
-          </div>
-          <div class="product__info product-info">
-            <div class="product-info__left">
-              <h3 class="product-info__title">${title}</h3>
-              <span class="product-info__price"
-                >от ${normalPrice(price)} <svg class="">
-                <use xlink:href="img/sprite.svg#rub"></use>
-              </svg></span>
-            </div>
-            <ul class="product-info__right list-reset">
-              <li
-                class="product-info__item product-info__item--sq"
-                data-sq="${square}"
-              >
-                <div class="product-info__figure">
-                  ${square} <span>м<sup>2</sup></span>
-                </div>
-              </li>
-              <li class="product-info__item product-info__item--fl" data-fl="${floors}">
-                <div class="product-info__figure">${floors} <span>${floorsWord}</span></div>
-              </li>
-              <li
-                class="product-info__item product-info__item--bed"
-                data-bed="${bedrooms}"
-              >
-                <div class="product-info__figure">${bedrooms} <span>${bedroomsWord}</span></div>
-              </li>
-              <li
-                class="product-info__item product-info__item--bath"
-                data-bath="${bathrooms}"
-              >
-                <div class="product-info__figure">${bathrooms} <span>${bathroomsWord}</span></div>
-              </li>
-              <li
-                class="product-info__item product-info__item--pl visually-hidden"
-                data-pl="${placeSquare}"
-              >
-                <div class="product-info__figure">${placeSquare} <span>площадь</span></div>
-              </li>
-            </ul>
-          </div>
-        </a>
-      </article>
-    </li>
-  `;
-};
-if (_vars__WEBPACK_IMPORTED_MODULE_9__.catalogue) {
-  main();
-}
 upBtn?.addEventListener("click", () => {
   lenis.scrollTo(".site-container");
 });
@@ -3030,7 +2394,7 @@ if (plan) {
 }
 const firstDescList = document.querySelectorAll('[data-desc-category="1"] .desc-list__item');
 const secondDescList = document.querySelectorAll('[data-desc-category="2"] .desc-list__item');
-const firstDescSliderItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".desc-slider__slider--first", {
+const firstDescSliderItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(".desc-slider__slider--first", {
   slidesPerView: 1,
   navigation: {
     nextEl: ".first-desc--next",
@@ -3055,7 +2419,7 @@ const firstDescSliderItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.S
     }
   }
 });
-const secondDescSliderItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".desc-slider__slider--second", {
+const secondDescSliderItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(".desc-slider__slider--second", {
   slidesPerView: 1,
   navigation: {
     nextEl: ".second-desc--next",
@@ -3080,7 +2444,7 @@ const secondDescSliderItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.
     }
   }
 });
-const firstDescSliderImageItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".desc-slider__image-slider--first", {
+const firstDescSliderImageItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(".desc-slider__image-slider--first", {
   slidesPerView: 1,
   navigation: {
     nextEl: ".first-desc--next",
@@ -3091,7 +2455,7 @@ const firstDescSliderImageItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_
     crossFade: true
   }
 });
-const secondDescSliderImageItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(".desc-slider__image-slider--second", {
+const secondDescSliderImageItemCart = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(".desc-slider__image-slider--second", {
   slidesPerView: 1,
   navigation: {
     nextEl: ".second-desc--next",
@@ -3196,7 +2560,7 @@ if (itemProdButtons && window.matchMedia("(max-width: 768px)").matches) {
   });
 }
 
-_fancyapps_ui__WEBPACK_IMPORTED_MODULE_16__.Fancybox.bind('[data-fancybox="images-preview"]', {
+_fancyapps_ui__WEBPACK_IMPORTED_MODULE_13__.Fancybox.bind('[data-fancybox="images-preview"]', {
   Carousel: {
     Navigation: {
       prevTpl: '<div class="slider-control__btn slider-control__btn--prev item-hero__btn" data-carousel-prev="true">' + " <span></span>" + "</div>",
@@ -3214,7 +2578,7 @@ _fancyapps_ui__WEBPACK_IMPORTED_MODULE_16__.Fancybox.bind('[data-fancybox="image
     }
   }
 });
-_fancyapps_ui__WEBPACK_IMPORTED_MODULE_16__.Fancybox.bind('[data-fancybox="fancy-plan"]', {
+_fancyapps_ui__WEBPACK_IMPORTED_MODULE_13__.Fancybox.bind('[data-fancybox="fancy-plan"]', {
   Carousel: {
     Navigation: {
       prevTpl: '<div class="slider-control__btn slider-control__btn--dark btn--fill slider-control__btn--prev item-plan__btn" data-carousel-prev="true">' + " <span></span>" + "</div>",
@@ -3230,7 +2594,7 @@ _fancyapps_ui__WEBPACK_IMPORTED_MODULE_16__.Fancybox.bind('[data-fancybox="fancy
     }
   }
 });
-_fancyapps_ui__WEBPACK_IMPORTED_MODULE_16__.Fancybox.bind('[data-fancybox="hero-images-preview-nis"]', {
+_fancyapps_ui__WEBPACK_IMPORTED_MODULE_13__.Fancybox.bind('[data-fancybox="hero-images-preview-nis"]', {
   Carousel: {
     Navigation: {
       prevTpl: '<div class="slider-control__btn slider-control__btn--dark btn--fill slider-control__btn--prev item-plan__btn" data-carousel-prev="true">' + " <span></span>" + "</div>",
@@ -3241,7 +2605,7 @@ _fancyapps_ui__WEBPACK_IMPORTED_MODULE_16__.Fancybox.bind('[data-fancybox="hero-
     type: "classic"
   }
 });
-_fancyapps_ui__WEBPACK_IMPORTED_MODULE_16__.Fancybox.bind('[data-fancybox="hero-images-preview-vas"]', {
+_fancyapps_ui__WEBPACK_IMPORTED_MODULE_13__.Fancybox.bind('[data-fancybox="hero-images-preview-vas"]', {
   Carousel: {
     Navigation: {
       prevTpl: '<div class="slider-control__btn slider-control__btn--dark btn--fill slider-control__btn--prev item-plan__btn" data-carousel-prev="true">' + " <span></span>" + "</div>",
@@ -3252,7 +2616,7 @@ _fancyapps_ui__WEBPACK_IMPORTED_MODULE_16__.Fancybox.bind('[data-fancybox="hero-
     type: "classic"
   }
 });
-_fancyapps_ui__WEBPACK_IMPORTED_MODULE_16__.Fancybox.bind('[data-fancybox="hero-images-preview-ostamo"]', {
+_fancyapps_ui__WEBPACK_IMPORTED_MODULE_13__.Fancybox.bind('[data-fancybox="hero-images-preview-ostamo"]', {
   Carousel: {
     Navigation: {
       prevTpl: '<div class="slider-control__btn slider-control__btn--dark btn--fill slider-control__btn--prev item-plan__btn" data-carousel-prev="true">' + " <span></span>" + "</div>",
@@ -3263,7 +2627,7 @@ _fancyapps_ui__WEBPACK_IMPORTED_MODULE_16__.Fancybox.bind('[data-fancybox="hero-
     type: "classic"
   }
 });
-_fancyapps_ui__WEBPACK_IMPORTED_MODULE_16__.Fancybox.bind('[data-fancybox="hero-images-preview-laut"]', {
+_fancyapps_ui__WEBPACK_IMPORTED_MODULE_13__.Fancybox.bind('[data-fancybox="hero-images-preview-laut"]', {
   Carousel: {
     Navigation: {
       prevTpl: '<div class="slider-control__btn slider-control__btn--dark btn--fill slider-control__btn--prev item-plan__btn" data-carousel-prev="true">' + " <span></span>" + "</div>",
@@ -3325,7 +2689,7 @@ if (implemObjectsSection) {
   const productSliders = document.querySelectorAll(".product__slider");
   const productImages = document.querySelectorAll(".product__image");
   productSliders.forEach((el, i) => {
-    const slider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(el, {
+    const slider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(el, {
       slidesPerView: 1,
       navigation: {
         prevEl: `.product-slider-btn--prev`,
@@ -3375,51 +2739,18 @@ if (implemObjectsSection) {
     });
   });
 }
+const filters = document.querySelector('.filters');
+if (filters) {
+  (0,_initFilters_js__WEBPACK_IMPORTED_MODULE_2__["default"])();
+}
 const implemPhotoSection = document.querySelector('.implemPhoto-section');
 if (implemPhotoSection) {
-  const products = document.querySelectorAll(".product");
   const productSliders = document.querySelectorAll(".product__slider");
-  (0,_product__WEBPACK_IMPORTED_MODULE_14__["default"])(products);
   if (window.matchMedia("(max-width: 768px)").matches) {
     initProductSliders(productSliders);
   }
-  const filters = document.querySelector('.filters');
-  const filtersBtns = filters.querySelectorAll("button");
-  const allBtn = document.querySelector('button[data-filter="all"]');
-  filtersBtns.forEach((el, i) => {
-    if (i === 0) {
-      el.classList.add('active');
-    }
-    el.addEventListener("click", e => {
-      e.preventDefault();
-      e.stopPropagation();
-      let currentCategory = null;
-      e.currentTarget.classList.toggle("active");
-      if (e.currentTarget.dataset.filter != "all") {
-        allBtn.classList.remove('active');
-        currentCategory = e.currentTarget.dataset.filter;
-      } else {
-        clearActive(filtersBtns);
-        allBtn.classList.add('active');
-        currentCategory = 'all';
-      }
-      let flag = false;
-      for (let i = 0; i < filtersBtns.length; i++) {
-        flag = false;
-        if (filtersBtns[i].classList.contains("active")) flag = true;
-        if (flag) break;
-      }
-      if (!flag) {
-        currentCategory = "all";
-        allBtn.classList.add("active");
-      }
-    });
-  });
-  const clearActive = items => {
-    items.forEach(item => item.classList.remove("active"));
-  };
   document.querySelectorAll('.product').forEach((item, index) => {
-    _fancyapps_ui__WEBPACK_IMPORTED_MODULE_16__.Fancybox.bind(`[data-fancybox="gal-${index + 1}"]`, {
+    _fancyapps_ui__WEBPACK_IMPORTED_MODULE_13__.Fancybox.bind(`[data-fancybox="gal-${index + 1}"]`, {
       Thumbs: {
         type: "classic"
       },
@@ -3475,7 +2806,7 @@ if (implemObjectsSection) {
   const sliders = document.querySelectorAll('.product__slider');
   // initProductSliders(sliders)
   document.querySelectorAll('.product').forEach((item, index) => {
-    _fancyapps_ui__WEBPACK_IMPORTED_MODULE_16__.Fancybox.bind(`[data-fancybox="objects-${index + 1}"]`, {
+    _fancyapps_ui__WEBPACK_IMPORTED_MODULE_13__.Fancybox.bind(`[data-fancybox="objects-${index + 1}"]`, {
       Thumbs: {
         type: "classic"
       },
@@ -3499,7 +2830,7 @@ const implemReadySliders = document.querySelectorAll('.implemReady-item__slider'
 const readyArray = [];
 if (implemReadySliders && implemReadySliders.length > 0) {
   implemReadySliders.forEach((el, index) => {
-    const slider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper(el, {
+    const slider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(el, {
       slidesPerView: 1,
       navigation: {
         nextEl: `.ready-slider-btn--next-${index + 1}`,
@@ -3548,7 +2879,7 @@ if (implemReadySliders && implemReadySliders.length > 0) {
 const implemReadySection = document.querySelector('.implemReady-section');
 if (implemReadySection) {
   document.querySelectorAll('.implemReady-item__slider').forEach((item, index) => {
-    _fancyapps_ui__WEBPACK_IMPORTED_MODULE_16__.Fancybox.bind(`[data-fancybox="ready-${index + 1}"]`, {
+    _fancyapps_ui__WEBPACK_IMPORTED_MODULE_13__.Fancybox.bind(`[data-fancybox="ready-${index + 1}"]`, {
       Thumbs: {
         type: "classic"
       },
@@ -3620,7 +2951,7 @@ const preloadImages = () => {
     img.src = currentFrame(i);
   }
 };
-const techMainSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_1__.Swiper('.timber-main__slider', {
+const techMainSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper('.timber-main__slider', {
   slidesPerView: 1,
   effect: 'fade',
   fadeEffect: {
@@ -3657,6 +2988,58 @@ mainTriggers.forEach(el => {
 secTriggers.forEach(el => {
   techObserver.observe(el);
 });
+
+/***/ }),
+
+/***/ "./src/js/components/initFilters.js":
+/*!******************************************!*\
+  !*** ./src/js/components/initFilters.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const initFilters = () => {
+  const filters = document.querySelector('.filters');
+  const filtersBtns = filters.querySelectorAll("button");
+  const allBtn = document.querySelector('button[data-filter="all"]');
+  filtersBtns.forEach((el, i) => {
+    if (i === 0) {
+      el.classList.add('active');
+    }
+    el.addEventListener("click", e => {
+      e.preventDefault();
+      e.stopPropagation();
+      let currentCategory = null;
+      e.currentTarget.classList.toggle("active");
+      if (e.currentTarget.dataset.filter != "all") {
+        allBtn.classList.remove('active');
+        currentCategory = e.currentTarget.dataset.filter;
+      } else {
+        clearActive(filtersBtns);
+        allBtn.classList.add('active');
+        currentCategory = 'all';
+      }
+      let flag = false;
+      for (let i = 0; i < filtersBtns.length; i++) {
+        flag = false;
+        if (filtersBtns[i].classList.contains("active")) flag = true;
+        if (flag) break;
+      }
+      if (!flag) {
+        currentCategory = "all";
+        allBtn.classList.add("active");
+      }
+    });
+  });
+  const clearActive = items => {
+    items.forEach(item => item.classList.remove("active"));
+  };
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initFilters);
 
 /***/ }),
 
@@ -3726,145 +3109,6 @@ const mainHousesData = {
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mainHousesData);
-
-/***/ }),
-
-/***/ "./src/js/components/product.js":
-/*!**************************************!*\
-  !*** ./src/js/components/product.js ***!
-  \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-const addImagePagination = products => {
-  products.forEach(el => {
-    const imageSwitchItems = el.querySelectorAll(".image-switch__item");
-    const imagePagination = el.querySelector(".image-pagination");
-    if (imageSwitchItems.length > 1) {
-      imageSwitchItems.forEach((item, index) => {
-        item.setAttribute("data-index", index);
-        imagePagination.innerHTML += `<li class="image-pagination__item ${index == 0 ? "image-pagination__item--active" : ""}" data-index="${index}"></li>`;
-        item.addEventListener("mouseenter", e => {
-          el.querySelectorAll(".image-pagination__item").forEach(el => {
-            el.classList.remove("image-pagination__item--active");
-          });
-          el.querySelector(`.image-pagination__item[data-index="${e.currentTarget.dataset.index}"]`).classList.add('image-pagination__item--active');
-        });
-        item.addEventListener("mouseleave", e => {
-          el.querySelectorAll(".image-pagination__item").forEach(el => {
-            el.classList.remove("image-pagination__item--active");
-          });
-          el.querySelector(`.image-pagination__item[data-index="0"]`).classList.add('image-pagination__item--active');
-        });
-      });
-    }
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addImagePagination);
-
-/***/ }),
-
-/***/ "./src/js/components/sortCatalogue.js":
-/*!********************************************!*\
-  !*** ./src/js/components/sortCatalogue.js ***!
-  \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-const initFilters = () => {
-  const filters = document.querySelector('.filters');
-  const filtersBtns = filters.querySelectorAll("button");
-  const cards = document.querySelectorAll(".catalogue__item");
-  const allBtn = document.querySelector('button[data-filter="all"]');
-  filtersBtns.forEach((el, i) => {
-    if (i === 0) {
-      el.classList.add('active');
-    }
-    el.addEventListener("click", e => {
-      e.preventDefault();
-      e.stopPropagation();
-      let currentCategory = null;
-      e.currentTarget.classList.toggle("active");
-      if (e.currentTarget.dataset.filter != "all") {
-        allBtn.classList.remove('active');
-        currentCategory = e.currentTarget.dataset.filter;
-      } else {
-        clearActive(filtersBtns);
-        allBtn.classList.add('active');
-        currentCategory = 'all';
-      }
-      let flag = false;
-      for (let i = 0; i < filtersBtns.length; i++) {
-        flag = false;
-        if (filtersBtns[i].classList.contains("active")) flag = true;
-        if (flag) break;
-      }
-      if (!flag) {
-        currentCategory = "all";
-        allBtn.classList.add("active");
-      }
-      filter(currentCategory, cards);
-    });
-  });
-  const filter = (category, items) => {
-    clearHidden(items);
-    if (category == "1-floor") {
-      items.forEach(item => {
-        const isFiltered = parseInt(item.querySelector(".product-info__item--fl").dataset.fl) === 1;
-        if (!isFiltered) {
-          item.classList.add("is-hidden");
-        }
-      });
-    }
-    if (category == "2-floors") {
-      items.forEach(item => {
-        const isFiltered = parseInt(item.querySelector(".product-info__item--fl").dataset.fl) === 2;
-        if (!isFiltered) {
-          item.classList.add("is-hidden");
-        }
-      });
-    }
-    if (category == "3-floors") {
-      items.forEach(item => {
-        const isFiltered = parseInt(item.querySelector(".product-info__item--fl").dataset.fl) === 3;
-        if (!isFiltered) {
-          item.classList.add("is-hidden");
-        }
-      });
-    }
-    if (category == "up-200-sq") {
-      items.forEach(item => {
-        const isFiltered = parseInt(item.querySelector(".product-info__item--sq").dataset.sq) <= 200;
-        if (!isFiltered) {
-          item.classList.add("is-hidden");
-        }
-      });
-    }
-    if (category == "from-200-sq") {
-      items.forEach(item => {
-        const isFiltered = parseInt(item.querySelector(".product-info__item--sq").dataset.sq) >= 200;
-        if (!isFiltered) {
-          item.classList.add("is-hidden");
-        }
-      });
-    }
-  };
-  const clearHidden = items => {
-    items.forEach(item => item.classList.remove("is-hidden"));
-  };
-  const clearActive = items => {
-    items.forEach(item => item.classList.remove("active"));
-  };
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initFilters);
 
 /***/ }),
 

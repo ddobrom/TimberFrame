@@ -1,10 +1,9 @@
 import Lenis from "@studio-freight/lenis";
-import catalogueData from "./catalogueData";
 
 import { Swiper } from "swiper/bundle";
 import { Navigation, Thumbs, Pagination, Autoplay } from "swiper";
 Swiper.use([Navigation, Thumbs, Autoplay, Pagination]);
-
+import initFilters from "./initFilters.js";
 const lenis = new Lenis({
   lerp: 0.07,
   wheelMultiplier: 0.7,
@@ -44,7 +43,6 @@ window.addEventListener('DOMContentLoaded', () => {
       ScrollTrigger.update()
       rellax.refresh()
       preloader.remove()
-      Swiper.update()
     }, 3500)
   } else {
     onResize()
@@ -52,21 +50,6 @@ window.addEventListener('DOMContentLoaded', () => {
       ScrollTrigger.update()
   }
 })
-
-
-
-
-
-// const heroSlider = document.querySelector(".hero__slider");
-
-// const moveBg = () => {
-//   const slides = heroSlider.querySelectorAll(".hero-slide__image");
-//   slides.forEach((item) => (item.style.transform = null));
-//   const activeSlide = heroSlider
-//     .querySelector(".swiper-slide-active")
-//     .querySelector(".hero-slide__image");
-//   activeSlide.style.transform = "translate(-45%, -50%)";
-// };
 
 const heroslider = new Swiper(".hero__slider", {
   slidesPerView: 1,
@@ -1082,10 +1065,10 @@ const initialState = () => {
             .querySelector(".btn--like")
             .classList.add("active");
         }
-        let catalogueItem = catalogueData.find((el) => el.id == id);
-        if (catalogueItem) {
-          catalogueItem.active = true;
-        }
+        // let catalogueItem = catalogueData.find((el) => el.id == id);
+        // if (catalogueItem) {
+        //   catalogueItem.active = true;
+        // }
       });
   }
   if (localStorage.getItem("randId")) {
@@ -1093,9 +1076,9 @@ const initialState = () => {
   }
 };
 if (catalogue) {
-  catalogueData.forEach((el) => {
-    el.id = ++randId;
-  });
+  // catalogueData.forEach((el) => {
+  //   el.id = ++randId;
+  // });
   catalogue.addEventListener("click", (e) => {
     e.preventDefault();
     if (e.target.classList.contains("btn--like")) {
@@ -1131,8 +1114,8 @@ if (catalogue) {
         } else {
           deleteFav(parent);
         }
-        catalogueData.find((elem) => elem.id == parent.dataset.id).active =
-          self.classList.contains("active");
+        // catalogueData.find((elem) => elem.id == parent.dataset.id).active =
+        //   self.classList.contains("active");
       }
     }
   });
@@ -1152,8 +1135,6 @@ const updateStorage = () => {
 initialState();
 const modalButtons = document.querySelectorAll(".slide__item");
 const heroSection = document.querySelector(".hero");
-// import { gallerySliderMini } from "./sliders";
-// import lenis from "./smooth-scroll";
 
 if (modalButtons.length > 0) {
   modalButtons.forEach((el) => {
@@ -1174,54 +1155,9 @@ if (modalButtons.length > 0) {
         document.body.classList.add("dis-scroll");
         lenis.stop();
       }
-      // if (e.currentTarget.dataset.gallery) {
-      //   const sources = Array.from(e.currentTarget.dataset.gallery.split(","));
-      //   const sourcesThumbs = Array.from(
-      //     e.currentTarget.dataset.galleryThumbs.split(",")
-      //   );
-      //   const modalGallery = document.querySelector(".modal-gallery");
-      //   sources.forEach((src) => {
-      //     document
-      //       .querySelector(".gallery__slider")
-      //       .querySelector(".swiper-wrapper")
-      //       .insertAdjacentHTML("beforeend", generateGallerySlides(src));
-      //   });
-      //   sourcesThumbs.forEach((src) => {
-      //     document
-      //       .querySelector(".gallery__slider-mini")
-      //       .querySelector(".swiper-wrapper")
-      //       .insertAdjacentHTML("beforeend", generateGallerySlidesMini(src));
-      //   });
-      //   // update slider
-      //   gallerySliderMini.update();
-      //   modalGallery.classList.add("active");
-      //   modalGallery.addEventListener("click", (e) => e.stopPropagation());
-      //   document.body.classList.add("dis-scroll");
-      //   lenis.stop();
-      // }
     });
   });
 }
-
-const generateGallerySlides = (src) => {
-  let index = 0;
-  return `
-    <div class="swiper-slide">
-      <div class="gallery__item" >
-        <img src="${src}" alt="Photo of House">
-      </div>
-    </div>
-  `;
-};
-const generateGallerySlidesMini = (src) => {
-  return `
-  <div class="swiper-slide">
-    <div class="gallery__item-mini">
-      <img src="${src}" alt="Photo of House">
-    </div>
-  </div>
-  `;
-};
 
 if (document.querySelector(".phone-btn")) {
   document.querySelector(".phone-btn").addEventListener("click", (e) => {
@@ -1618,293 +1554,14 @@ if (downBtn) {
 
 // Catalogue
 
-import initFilters from "./sortCatalogue";
-import imagePagination from "./product";
-import declOfNum from "./declOfNum";
-async function getData() {
-  // const response = await fetch('ваш url к базе со списком объектов. пример таких объектов есть в файле catalogueData') // раскомментировать при работе с бд
-  // const d = await response.json()
-  const d = catalogueData; // удалить при работе с бд
-  return d;
-}
 
-async function main() {
-  const productsData = await getData();
-  let currentPage = 1;
-  let rows = 10;
-  async function displayList(arrData, rowPerPage, page) {
-    catalogue.innerHTML = "";
-    page--;
-    const start = rowPerPage * page;
-    const end = start + rowPerPage;
-    const paginatedData = arrData.slice(start, end);
 
-    paginatedData.forEach((el) => {
-      catalogue.innerHTML += createProduct(
-        el.title,
-        el.price,
-        el.square,
-        el.floors,
-        el.bathrooms,
-        el.bedrooms,
-        el.placeSquare,
-        el.imgSrcArray,
-        el.active,
-        el.id
-      );
-    });
-    const products = document.querySelectorAll(".product");
-    const productSliders = document.querySelectorAll(".product__slider");
-    imagePagination(products);
-    if (window.matchMedia("(max-width: 768px)").matches) {
-      initProductSliders(productSliders);
-    }
-    initFilters();
-  }
-  function displayPagination(arrData, rowPerPage) {
-    const paginationEl = document.querySelector(".pagination");
-    const pagesCount = Math.ceil(arrData.length / rowPerPage);
 
-    for (let i = 0; i < pagesCount; i++) {
-      paginationEl.appendChild(createPaginationBtn(i + 1));
-    }
-  }
-  function createPaginationBtn(page) {
-    const liEl = document.createElement("li");
-    const btnPagination = document.createElement("button");
-    liEl.classList.add("pagination__item");
-    btnPagination.classList.add("btn-reset");
-    btnPagination.classList.add("pagination__btn");
 
-    if (currentPage == page) btnPagination.classList.add("active");
 
-    btnPagination.innerText = page;
-    liEl.appendChild(btnPagination);
-    btnPagination.addEventListener("click", () => {
-      currentPage = page;
-      lenis.scrollTo("html");
-      displayList(productsData, rows, currentPage);
 
-      let currentItemLi = document.querySelector(".pagination__btn.active");
-      currentItemLi.classList.remove("active");
 
-      btnPagination.classList.add("active");
 
-      document.querySelector(".filters__btn.active").click();
-    });
-    return liEl;
-  }
-  displayList(productsData, rows, currentPage);
-  displayPagination(productsData, rows);
-}
-
-const normalPrice = (str) => {
-  return String(str).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, "$1 ");
-};
-const createProduct = (
-  title,
-  price,
-  square,
-  floors,
-  bathrooms,
-  bedrooms,
-  placeSquare,
-  imgSrcArray,
-  active = false,
-  id
-) => {
-  const floorsWord = declOfNum(floors, ["этаж", "этажа", "этажей"]);
-  const bathroomsWord = declOfNum(bathrooms, [
-    "санузел",
-    "санузла",
-    "санузлов",
-  ]);
-  const bedroomsWord = declOfNum(bedrooms, ["спальня", "спальни", "спален"]);
-  const isActive = active ? "active" : null;
-  return `
-    <li class="catalogue__item">
-      <article class="catalogue__product product" data-id="${id}">
-      <button class="product__btn btn btn--like btn--stroke btn-reset ${isActive}">
-        <svg>
-          <use xlink:href="img/sprite.svg#like-icon"></use>
-        </svg>
-      </button>
-      <a href="#" class="product__link">
-          <div class="product__image">
-            <div class="product__switch image-switch">
-              <div class="image-switch__item">
-                <div class="image-switch__img">
-                  <picture>
-                    <source
-                      srcset="${imgSrcArray["webp"][0]}"
-                      type="image/webp"
-                      media="(min-width: 1440px)"
-                    />
-                    <source
-                      srcset="${imgSrcArray["webp"][1]}"
-                      type="image/webp"
-                    />
-                    <img
-                      src="${imgSrcArray["jpg"][0]}"
-                      srcset="${imgSrcArray["jpg"][1]}"
-                      alt="Product 1"
-                    />
-                  </picture>
-                </div>
-              </div>
-              <div class="image-switch__item">
-                <div class="image-switch__img">
-                  <picture>
-                    <source
-                      srcset="${imgSrcArray["webp"][2]}"
-                      type="image/webp"
-                      media="(min-width: 1440px)"
-                    />
-                    <source
-                      srcset="${imgSrcArray["webp"][3]}"
-                      type="image/webp"
-                    />
-                    <img
-                      src="${imgSrcArray["jpg"][2]}"
-                      srcset="${imgSrcArray["jpg"][3]}"
-                      alt="Product 1"
-                    />
-                  </picture>
-                </div>
-              </div>
-              <div class="image-switch__item">
-                <div class="image-switch__img">
-                  <picture>
-                    <source
-                      srcset="${imgSrcArray["webp"][4]}"
-                      type="image/webp"
-                      media="(min-width: 1440px)"
-                    />
-                    <source
-                      srcset="${imgSrcArray["webp"][5]}"
-                      type="image/webp"
-                    />
-                    <img
-                      src="${imgSrcArray["jpg"][4]}"
-                      srcset="${imgSrcArray["jpg"][5]}"
-                      alt="Product 1"
-                    />
-                  </picture>
-                </div>
-              </div>
-            </div>
-            <div class="product__slider swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <picture>
-                    <source
-                      srcset="${imgSrcArray["webp"][0]}"
-                      type="image/webp"
-                      media="(min-width: 1440px)"
-                    />
-                    <source
-                      srcset="${imgSrcArray["webp"][1]}"
-                      type="image/webp"
-                    />
-                    <img
-                      src="${imgSrcArray["jpg"][0]}"
-                      srcset="${imgSrcArray["jpg"][1]}"
-                      alt="Product 1"
-                    />
-                  </picture>
-                </div>
-                <div class="swiper-slide">
-                  <picture>
-                    <source
-                      srcset="${imgSrcArray["webp"][2]}"
-                      type="image/webp"
-                      media="(min-width: 1440px)"
-                    />
-                    <source
-                      srcset="${imgSrcArray["webp"][3]}"
-                      type="image/webp"
-                    />
-                    <img
-                      src="${imgSrcArray["jpg"][2]}"
-                      srcset="${imgSrcArray["jpg"][3]} 2x"
-                      alt="Product 1"
-                    />
-                  </picture>
-                </div>
-                <div class="swiper-slide">
-                  <picture>
-                    <source
-                      srcset="${imgSrcArray["webp"][4]}"
-                      type="image/webp"
-                      media="(min-width: 1440px)"
-                    />
-                    <source
-                      srcset="${imgSrcArray["webp"][5]}"
-                      type="image/webp"
-                    />
-                    <img
-                      src="${imgSrcArray["jpg"][4]}"
-                      srcset="${imgSrcArray["jpg"][4]} 2x"
-                      alt="Product 1"
-                    />
-                  </picture>
-                </div>
-              </div>
-              <div class="swiper-pagination product-slider__pagination"></div>
-            </div>
-            <ul
-              class="pruoduct__image-pagination image-pagination list-reset"
-            ></ul>
-          </div>
-          <div class="product__info product-info">
-            <div class="product-info__left">
-              <h3 class="product-info__title">${title}</h3>
-              <span class="product-info__price"
-                >от ${normalPrice(price)} <svg class="">
-                <use xlink:href="img/sprite.svg#rub"></use>
-              </svg></span>
-            </div>
-            <ul class="product-info__right list-reset">
-              <li
-                class="product-info__item product-info__item--sq"
-                data-sq="${square}"
-              >
-                <div class="product-info__figure">
-                  ${square} <span>м<sup>2</sup></span>
-                </div>
-              </li>
-              <li class="product-info__item product-info__item--fl" data-fl="${floors}">
-                <div class="product-info__figure">${floors} <span>${floorsWord}</span></div>
-              </li>
-              <li
-                class="product-info__item product-info__item--bed"
-                data-bed="${bedrooms}"
-              >
-                <div class="product-info__figure">${bedrooms} <span>${bedroomsWord}</span></div>
-              </li>
-              <li
-                class="product-info__item product-info__item--bath"
-                data-bath="${bathrooms}"
-              >
-                <div class="product-info__figure">${bathrooms} <span>${bathroomsWord}</span></div>
-              </li>
-              <li
-                class="product-info__item product-info__item--pl visually-hidden"
-                data-pl="${placeSquare}"
-              >
-                <div class="product-info__figure">${placeSquare} <span>площадь</span></div>
-              </li>
-            </ul>
-          </div>
-        </a>
-      </article>
-    </li>
-  `;
-};
-
-if (catalogue) {
-  main();
-}
 
 upBtn?.addEventListener("click", () => {
   lenis.scrollTo(".site-container");
@@ -2483,56 +2140,17 @@ if(implemObjectsSection){
     })
   })
 }
-
+const filters = document.querySelector('.filters')
+if(filters){
+  initFilters()
+}
 
 const implemPhotoSection = document.querySelector('.implemPhoto-section')
 if(implemPhotoSection) {
-  const products = document.querySelectorAll(".product");
   const productSliders = document.querySelectorAll(".product__slider");
-  imagePagination(products);
   if (window.matchMedia("(max-width: 768px)").matches) {
     initProductSliders(productSliders);
   }
-  const filters = document.querySelector('.filters')
-  const filtersBtns = filters.querySelectorAll("button");
-  const allBtn = document.querySelector('button[data-filter="all"]');
-  filtersBtns.forEach((el, i) => {
-    if(i === 0){
-      el.classList.add('active')
-    }
-    el.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-
-      let currentCategory = null
-
-      e.currentTarget.classList.toggle("active");
-      if (e.currentTarget.dataset.filter != "all") {
-        allBtn.classList.remove('active')
-        currentCategory = e.currentTarget.dataset.filter;
-      } else {
-        clearActive(filtersBtns)
-        allBtn.classList.add('active')
-        currentCategory = 'all'
-      }
-
-
-      let flag = false;
-      for (let i = 0; i < filtersBtns.length; i++) {
-        flag = false;
-        if (filtersBtns[i].classList.contains("active")) flag = true;
-        if(flag) break
-      }
-
-      if (!flag) {
-        currentCategory = "all";
-        allBtn.classList.add("active");
-      }
-    });
-  });
-  const clearActive = (items) => {
-    items.forEach((item) => item.classList.remove("active"));
-  };
 
 
 

@@ -8,12 +8,6 @@ const favContent = document.querySelector(".favorites-content");
 
 let randId = 1133521;
 
-const randomId = () => {
-  return (
-    Math.random().toString(36).substring(2, 15) +
-    Math.random().toString(36).substring(2, 15)
-  );
-};
 if (favBtns) {
   favBtns.forEach((el) => {
     if (el.closest(".projects-card")) {

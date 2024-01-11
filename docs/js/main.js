@@ -2153,7 +2153,7 @@ if (document.querySelector('.timber-main__content--main')) {
     trigger: '.timber-main__content',
     start: startPos,
     end: "bottom",
-    scrub: true,
+    scrub: 1,
     ease: 'none',
     invalidateOnRefresh: true
   });

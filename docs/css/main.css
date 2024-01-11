@@ -1336,17 +1336,15 @@ html.lenis {
   justify-content: center;
 }
 
-.sample {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-  grid-template-columns: 1fr;
-  gap: 12px;
-}
-
 .simple {
   width: 70%;
   margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .simple {
+    width: unset;
+    padding: 0 16px;
+  }
 }
 .simple h2 {
   text-align: center;
@@ -1364,6 +1362,12 @@ html.lenis {
   .simple h2 {
     font-size: 4.8rem;
     letter-spacing: 0.24rem;
+  }
+}
+@media (max-width: 768px) {
+  .simple h2 {
+    font-size: 24px;
+    letter-spacing: 0.48px;
   }
 }
 .simple h3 {
@@ -1398,6 +1402,12 @@ html.lenis {
   .simple h5 {
     font-size: 2.4rem;
     letter-spacing: 0.024rem;
+  }
+}
+@media (max-width: 768px) {
+  .simple h5 {
+    font-size: 20px;
+    letter-spacing: normal;
   }
 }
 .simple h4 {
@@ -1503,6 +1513,15 @@ html.lenis {
     letter-spacing: 0.032rem;
   }
 }
+.simple table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
 .simple table caption {
   color: var(--black-brand-color);
   font-size: 16px;
@@ -1520,8 +1539,15 @@ html.lenis {
     padding: 1.6rem;
   }
 }
+.simple table tbody {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
 .simple table tbody tr,
 .simple table tbody td {
+  display: block;
+  width: 100%;
   color: var(--black-brand-color);
   font-size: 16px;
   font-style: normal;

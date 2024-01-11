@@ -65,6 +65,8 @@
     align-items: flex-start;
     padding-right: 0;
     padding-bottom: 0;
+    grid-template-columns: 1fr;
+    gap: 0;
 
     @include mobile {
       padding: 0;

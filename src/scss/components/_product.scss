@@ -2,7 +2,7 @@
   position: relative;
 
   @include hover {
-    .product-info__title {
+    h3 {
       color: var(--focus-color);
     }
   }
@@ -175,9 +175,66 @@
       align-items: flex-end;
       margin-bottom: 8px;
     }
+
+    &>h3 {
+      margin: 0;
+      margin-bottom: 4px;
+      color: var(--black-brand-color);
+      font-family: "PP Neue Montreal";
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 1.6px;
+      text-transform: capitalize;
+      transition: color 0.2s ease-in;
+
+      @media (min-width: 1440px) {
+        margin-bottom: 0.4rem;
+        font-size: 3.2rem;
+        letter-spacing: 0.16rem;
+      }
+
+      @include mobile {
+        font-size: 28px;
+        letter-spacing: 1.4px;
+      }
+    }
+
+    &>span {
+      display: inline-block;
+      color: var(--gray-middle-color);
+      font-family: "PP Neue Montreal";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      letter-spacing: 0.32px;
+      line-height: 160%;
+      display: flex;
+      align-items: center;
+
+      &>svg {
+        height: 26px;
+        width: 15px;
+        fill: currentColor;
+
+        @media (min-width: 1440px) {
+          height: 2.6rem;
+          width: 1.5rem;
+        }
+      }
+
+      @media (min-width: 1440px) {
+        font-size: 1.6rem;
+        letter-spacing: 0.032rem;
+      }
+    }
   }
 
-  &__right {
+  &>ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 4px 26px;
@@ -186,74 +243,87 @@
       gap: 4px 5px;
       max-width: 231px;
     }
-  }
 
-  &__item {
-    position: relative;
-    padding: 3px 0;
-    padding-left: 50px;
-    display: flex;
-    align-items: center;
+    &>li {
+      position: relative;
+      padding: 3px 0;
+      padding-left: 50px;
+      display: flex;
+      align-items: center;
 
-    @media (min-width: 1440px) {
-      padding: 0.3rem;
-      padding-left: 5rem;
-    }
-
-    @include mobile {
-      padding: 1px 0;
-      padding-left: 36px;
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 36px;
-      height: 36px;
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
+      &:last-child {
+        position: absolute;
+        overflow: hidden;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        width: 1px;
+        height: 1px;
+        clip: rect(0 0 0 0);
+      }
 
       @media (min-width: 1440px) {
-        width: 3.6rem;
-        height: 3.6rem;
+        padding: 0.3rem;
+        padding-left: 5rem;
       }
 
       @include mobile {
-        width: 24px;
-        height: 24px;
-        top: 50%;
-        transform: translateY(-50%);
+        padding: 1px 0;
+        padding-left: 36px;
       }
-    }
 
-    &--sq {
       &::before {
-        background-image: url("./../img/house-icon/house-icon-sq-black.svg");
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 36px;
+        height: 36px;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        @media (min-width: 1440px) {
+          width: 3.6rem;
+          height: 3.6rem;
+        }
+
+        @include mobile {
+          width: 24px;
+          height: 24px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
       }
-    }
 
-    &--fl {
-      &::before {
-        background-image: url("./../img/house-icon/house-icon-fl-black.svg");
+      &[data-sq] {
+        &::before {
+          background-image: url("./../img/house-icon/house-icon-sq-black.svg");
+        }
       }
-    }
 
-    &--bed {
-      &::before {
-        background-size: contain;
-        background-image: url("./../img/house-icon/house-icon-bed-black.svg");
+      &[data-fl] {
+        &::before {
+          background-image: url("./../img/house-icon/house-icon-fl-black.svg");
+        }
       }
-    }
 
-    &--bath {
-      &::before {
-        background-image: url("./../img/house-icon/house-icon-bath-black.svg");
+      &[data-bed] {
+        &::before {
+          background-size: contain;
+          background-image: url("./../img/house-icon/house-icon-bed-black.svg");
+        }
+      }
+
+      &[data-bath] {
+        &::before {
+          background-image: url("./../img/house-icon/house-icon-bath-black.svg");
+        }
       }
     }
   }
+
+
 
   &__figure {
     color: var(--black-brand-color);
@@ -293,59 +363,7 @@
     }
   }
 
-  &__title {
-    margin: 0;
-    margin-bottom: 4px;
-    color: var(--black-brand-color);
-    font-family: "PP Neue Montreal";
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 1.6px;
-    text-transform: capitalize;
-    transition: color 0.2s ease-in;
 
-    @media (min-width: 1440px) {
-      margin-bottom: 0.4rem;
-      font-size: 3.2rem;
-      letter-spacing: 0.16rem;
-    }
-
-    @include mobile {
-      font-size: 28px;
-      letter-spacing: 1.4px;
-    }
-  }
-
-  &__price {
-    display: inline-block;
-    color: var(--gray-middle-color);
-    font-family: "PP Neue Montreal";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    letter-spacing: 0.32px;
-    line-height: 160%;
-    display: flex;
-    align-items: center;
-
-    svg {
-      height: 26px;
-      width: 15px;
-      fill: currentColor;
-
-      @media (min-width: 1440px) {
-        height: 2.6rem;
-        width: 1.5rem;
-      }
-    }
-
-    @media (min-width: 1440px) {
-      font-size: 1.6rem;
-      letter-spacing: 0.032rem;
-    }
-  }
 }
 
 .image-switch {

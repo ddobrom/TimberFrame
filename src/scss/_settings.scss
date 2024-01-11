@@ -59,6 +59,9 @@ a {
 .site-container {
   // overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
   background-color: var(--white-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .main-container {
@@ -143,6 +146,7 @@ a {
 
 .main {
   position: relative;
+  flex: 1;
 }
 
 .dis-scroll {
@@ -161,6 +165,7 @@ a {
 
 .swiper-slide {
   width: auto;
+  box-sizing: border-box;
 }
 
 .btn {
@@ -1167,3 +1172,237 @@ html.lenis {
   align-items: center;
   justify-content: center;
 }
+
+
+
+.sample {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+
+}
+
+.simple {
+  width: 70%;
+  margin: 0 auto;
+
+  h2 {
+    text-align: center;
+    margin: 0;
+    color: var(--black---brand, #252321);
+    text-align: center;
+    font-family: PP Neue Montreal;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 2.4px;
+
+    @media (min-width: 1441px) {
+      font-size: 4.8rem;
+      letter-spacing: 0.24rem;
+    }
+  }
+
+  h3 {
+    text-align: center;
+    margin: 0;
+    color: var(--black---brand, #252321);
+    text-align: center;
+
+    font-family: PP Neue Montreal;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    @media (min-width: 1441px) {
+      font-size: 4rem;
+    }
+  }
+
+  h5 {
+    text-align: center;
+    margin: 0;
+    color: var(--black---brand, #252321);
+    text-align: center;
+
+    font-family: PP Neue Montreal;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.24px;
+
+    @media (min-width: 1441px) {
+      font-size: 2.4rem;
+      letter-spacing: 0.024rem;
+    }
+  }
+
+  h4 {
+    text-align: center;
+    margin: 0;
+    color: var(--black---brand, #252321);
+    text-align: center;
+    font-family: PP Neue Montreal;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.6px;
+
+    @media (min-width: 1441px) {
+      font-size: 3.2rem;
+      letter-spacing: 0.16rem;
+    }
+  }
+
+  p {
+    margin: 0;
+    color: var(--black-brand-color);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0.32px;
+
+    @media (min-width: 1441px) {
+      font-size: 1.6rem;
+      letter-spacing: 0.032rem;
+    }
+  }
+
+  table {
+    color: var(--black-brand-color);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0.32px;
+
+    @media (min-width: 1441px) {
+      font-size: 1.6rem;
+      letter-spacing: 0.032rem;
+    }
+  }
+
+  b {
+    color: var(--black-brand-color);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 160%;
+    letter-spacing: 0.32px;
+
+    @media (min-width: 1441px) {
+      font-size: 1.6rem;
+      letter-spacing: 0.032rem;
+    }
+  }
+
+  i {
+    color: var(--black-brand-color);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0.32px;
+
+    @media (min-width: 1441px) {
+      font-size: 1.6rem;
+      letter-spacing: 0.032rem;
+    }
+  }
+
+  ul {
+    li {
+      color: var(--black-brand-color);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+      letter-spacing: 0.32px;
+
+      @media (min-width: 1441px) {
+        font-size: 1.6rem;
+        letter-spacing: 0.032rem;
+      }
+    }
+  }
+
+  ol {
+    li {
+      color: var(--black-brand-color);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+      letter-spacing: 0.32px;
+
+      @media (min-width: 1441px) {
+        font-size: 1.6rem;
+        letter-spacing: 0.032rem;
+      }
+    }
+  }
+
+  table {
+
+
+    caption {
+      color: var(--black-brand-color);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 160%;
+      letter-spacing: 0.32px;
+      border: 1px solid var(--Gray-Middle, #79716C);
+      padding: 16px;
+
+      @media (min-width: 1441px) {
+        font-size: 1.6rem;
+        letter-spacing: 0.032rem;
+        padding: 1.6rem;
+      }
+    }
+
+    tbody {
+
+      tr,
+      td {
+        color: var(--black-brand-color);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%;
+        letter-spacing: 0.32px;
+        border: 1px solid var(--Gray-Middle, #79716C);
+        padding: 16px;
+
+        @media (min-width: 1441px) {
+          font-size: 1.6rem;
+          letter-spacing: 0.032rem;
+          padding: 1.6rem;
+        }
+      }
+    }
+  }
+
+  a {
+    color: var(--black-brand-color);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 160%;
+    letter-spacing: 0.32px;
+    text-decoration-line: underline;
+
+    @media (min-width: 1441px) {
+      font-size: 1.6rem;
+      letter-spacing: 0.032rem;
+    }
+  }
+}
+
+//test

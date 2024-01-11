@@ -22,6 +22,9 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
+if(document.querySelector('.filters')){
+  initFilters()
+}
 
 let preloader = document.querySelector('.preloader')
 
@@ -50,6 +53,9 @@ window.addEventListener('DOMContentLoaded', () => {
       ScrollTrigger.update()
   }
 })
+
+
+
 
 const heroslider = new Swiper(".hero__slider", {
   slidesPerView: 1,
@@ -144,15 +150,6 @@ prevButtonsPopular.forEach((el) =>
   })
 );
 
-// if (heroSlider) {
-//   window.addEventListener("DOMContentLoaded", () => {
-//     requestAnimationFrame(moveBg);
-//     setTimeout(() => {
-//       rellax.refresh()
-//     }, 50)
-//   });
-// }
-
 // office__slider
 const officeSlider = new Swiper(".office__slider", {
   loop: true,
@@ -227,17 +224,6 @@ const builtHouseSlider = new Swiper(".built-houses__slider", {
     },
   },
 });
-// следим за автоплеем слайдера снизу
-// let builtObserver = new IntersectionObserver((entries, observer) => {
-//   if(entries[0].isIntersecting){
-//     builtHouseSlider.autoplay.start()
-//   } else {
-//     builtHouseSlider.autoplay.stop()
-//   }
-// }, {
-//   threshold: 0.1,
-// })
-// builtObserver.observe(document.querySelector('.built-houses'))
 
 
 window.addEventListener("refresh", () => {
@@ -333,7 +319,6 @@ function onResize() {
 }
 function preloadImage(url)
 {
-  console.log(url);
     var img=new Image();
     img.src=url;
 }
@@ -593,7 +578,8 @@ window.addEventListener("DOMContentLoaded", () => {
     setHeightOfWrapper();
   }
 });
-
+var favElements = JSON.parse(localStorage.getItem("goods")) ? JSON.parse(localStorage.getItem("goods")) : []
+var favId = JSON.parse(localStorage.getItem("id")) ? JSON.parse(localStorage.getItem("id")) : []
 window.onload = () => {
   const observer = new IntersectionObserver(
     (entries, observer) => {
@@ -666,93 +652,35 @@ closeBtn.addEventListener("click", () => {
     document.body.style.overflow = null;
   }, 500);
 });
-// const fMenuBtn = document.querySelector('.favorites-btn')
-const fMenu = document.querySelector(".favorites-menu");
-// const menuBtn = document.querySelector('.menu-btn')
-const mobileFavoritesMenu = document.querySelector(
-  ".mobile-menu__btn--favorites"
-);
-// import lenis from "./smooth-scroll"
-fMenuBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
-  menuBtn.classList.add("disabled");
-  fMenu.classList.add("menu-active");
-  fMenu.classList.remove("menu-disabled");
-  document.body.style.overflow = "hidden";
-  // lenis.stop()
-});
-mobileFavoritesMenu.addEventListener("click", (e) => {
-  e.stopPropagation();
-  menuBtn.classList.add("disabled");
-  fMenu.classList.add("menu-active");
-  fMenu.classList.remove("menu-disabled");
-  document.body.style.overflow = "hidden";
-  // lenis.stop()
-});
-const fcloseBtn = fMenu.querySelector(".menu__close-btn");
 
-fcloseBtn.addEventListener("click", () => {
-  fMenu.classList.add("menu-disabled");
-  setTimeout(() => {
-    fMenu.classList.remove("menu-active");
-    menuBtn.classList.remove("disabled");
-    document.body.style.overflow = null;
-    lenis.start();
-  }, 500);
-});
-
-if (fMenu.classList.contains("menu-active")) {
-  document.body.style.overflow = "hidden";
-  // lenis.stop()
-}
-
-import SimpleBar from "simplebar";
-const wrapper = document.querySelector(".favorites-menu__wrapper");
-const favtitle = document.querySelector(".favorites-menu__title");
-
-new SimpleBar(document.getElementById("fav-scroll"));
-
-window.matchMedia("(min-width: 769px)").matches
-  ? (wrapper.style.maxHeight = `${
-      document.documentElement.clientHeight - wrapper.offsetTop
-    }px`)
-  : (wrapper.style.maxHeight = `${
-      document.documentElement.clientHeight - favtitle.offsetHeight
-    }px`);
-
-window.addEventListener("resize", () => {
-  wrapper.style.maxHeight = `${
-    document.documentElement.clientHeight - wrapper.offsetTop
-  }px`;
-});
 
 import data from "./main-houses-data.js";
 
 const favBtns = document.querySelectorAll(".btn--like");
-const favMenuBtn = document.querySelector(".favorites-btn");
 const favQuantity = document.querySelector(".favorites-menu__count");
 const favBtnQuantity = document.querySelectorAll(".favorites-btn__quantity");
-const favContent = document.querySelector(".favorites-content");
 
-let randId = 1133521;
 
-const randomId = () => {
-  return (
-    Math.random().toString(36).substring(2, 15) +
-    Math.random().toString(36).substring(2, 15)
-  );
+
+
+const deleteFav = (id) => {
+  console.log(id);
+  updateStorage(null, null, id);
+  document
+    .querySelector(`[data-id="${id}"]`)
+    .querySelector(".btn--like")
+    .classList.remove("active");
+  printQuantity();
 };
-if (localStorage.getItem("randId")) {
-  randId = localStorage.getItem("randId");
-}
+
 favBtns.forEach((el) => {
   if (el.closest(".projects-card")) {
-    el.closest(".projects-card").setAttribute("data-id", ++randId);
+    el.closest(".projects-card").setAttribute("data-id", new Date().getTime());
     el.addEventListener("click", (e) => {
       let self = e.currentTarget;
       let parent = self.closest(".projects-card");
+      let id = parent.dataset.id;
       if (!self.classList.contains("active")) {
-        let id = parent.dataset.id;
         let img = parent.querySelector(".projects-card__img").src;
         let srcset = parent.querySelector("source").getAttribute("srcset");
         let title = parent.querySelector(".projects-card__title").textContent;
@@ -777,57 +705,50 @@ favBtns.forEach((el) => {
             .querySelector(".projects-card__figure").textContent,
         };
         self.classList.add("active");
-        favContent.insertAdjacentHTML(
-          "afterbegin",
-          generateFavoriteItem(img, srcset, title, info, link, id)
-        );
-        updateStorage();
+
+        updateStorage(generateFavoriteItem(img, srcset, title, info, link, id), id);
         printQuantity();
       } else {
-        deleteFav(parent);
+        deleteFav(id);
       }
     });
   }
 
-  if (el.closest(".hero")) {
-    el.closest(".hero").setAttribute("data-id", ++randId);
+  if (el.closest(".hero__slider")) {
+    el.closest(".swiper-slide").setAttribute("data-id", new Date().getTime());
     el.addEventListener("click", (e) => {
       let self = e.currentTarget;
+      let id = el.closest(".swiper-slide").dataset.id;
       if (!self.classList.contains("active")) {
         self.classList.add("active");
-        let id = el.closest(".hero").dataset.id;
         let title = el
-          .closest(".hero")
+          .closest(".swiper-slide")
           .querySelector(".slide__title")
           .textContent.toLowerCase()
           .trim();
-
-        favContent.insertAdjacentHTML(
-          "afterbegin",
-          generateFavoriteItem(
-            data[title].img,
-            data[title].srcset,
-            data[title].title,
-            data[title].info,
-            data[title].link,
-            id
-          )
-        );
-        updateStorage();
+        console.log(title);
+        updateStorage(generateFavoriteItem(
+          data[title].img,
+          data[title].srcset,
+          data[title].title,
+          data[title].info,
+          data[title].link,
+          id
+        ), id);
         printQuantity();
       } else {
-        deleteFav(el.closest(".hero"));
+        deleteFav(id);
       }
     });
   }
 
   if (el.closest(".popular-card")) {
-    el.closest(".popular-card").setAttribute("data-id", ++randId);
+    el.closest(".popular-card").setAttribute("data-id", new Date().getTime());
     el.addEventListener("click", (e) => {
       let self = e.currentTarget;
+      let id = el.closest(".popular-card").dataset.id;
       if (!self.classList.contains("active")) {
         self.classList.add("active");
-        let id = el.closest(".popular-card").dataset.id;
         let title = el
           .closest(".popular-card")
           .querySelector(".popular-card__title").textContent;
@@ -862,20 +783,16 @@ favBtns.forEach((el) => {
             .querySelector(".popular-card__item--pl")
             .querySelector(".popular-card__figure").textContent,
         };
-        favContent.insertAdjacentHTML(
-          "afterbegin",
-          generateFavoriteItem(img, srcset, title, info, link, id)
-        );
-        updateStorage();
+        updateStorage(generateFavoriteItem(img, srcset, title, info, link, id), id);
         printQuantity();
       } else {
-        deleteFav(el.closest(".popular-card"));
+        deleteFav(id);
       }
     });
   }
 
   if (el.closest(".popular__images")) {
-    el.closest(".swiper-slide").setAttribute("data-id", ++randId);
+    el.closest(".swiper-slide").setAttribute("data-id", new Date().getTime());
 
     el.addEventListener("click", (e) => {
       let self = e.currentTarget;
@@ -913,15 +830,10 @@ favBtns.forEach((el) => {
             .querySelector(".popular-card__item--pl")
             .querySelector(".popular-card__figure").textContent,
         };
-        favContent.insertAdjacentHTML(
-          "afterbegin",
-          generateFavoriteItem(img, srcset, title, info, link, id)
-        );
-        updateStorage();
+        updateStorage(generateFavoriteItem(img, srcset, title, info, link, id), id);
         printQuantity();
       } else {
         let id = el.closest(".swiper-slide").dataset.id;
-        favContent.querySelector(`[data-id="${id}"]`).remove();
         document
           .querySelector(`[data-id="${id}"]`)
           .querySelector(".btn--like")
@@ -932,12 +844,12 @@ favBtns.forEach((el) => {
   }
 
   if (el.closest(".item-product")) {
-    el.closest(".item-product").setAttribute("data-id", ++randId);
+    el.closest(".item-product").setAttribute("data-id", new Date().getTime());
     el.addEventListener("click", (e) => {
       let self = e.currentTarget;
       let parent = self.closest(".item-product");
+      let id = parent.dataset.id;
       if (!self.classList.contains("active")) {
-        let id = parent.dataset.id;
         let img = parent.querySelector(".card").querySelector("img").src;
         let srcset = parent
           .querySelector(".card")
@@ -957,184 +869,219 @@ favBtns.forEach((el) => {
           place: parseInt(parent.querySelector(".chars-item--pl dd").textContent),
         };
         self.classList.add("active");
-        favContent.insertAdjacentHTML(
-          "afterbegin",
-          generateFavoriteItem(img, srcset, title, info, link, id)
-        );
-        updateStorage();
+        updateStorage(generateFavoriteItem(img, srcset, title, info, link, id), id);
         printQuantity();
       } else {
-        deleteFav(parent);
+        deleteFav(id);
+      }
+    });
+  }
+  if (el.closest(".product")) {
+
+    el.closest(".product").setAttribute("data-id", new Date().getTime());
+    el.addEventListener("click", (e) => {
+      console.log('closest product');
+      let self = e.currentTarget;
+      let parent = self.closest(".product");
+      let id = parent.dataset.id;
+      if (!self.classList.contains("active")) {
+        let img = parent.querySelector("img").src;
+        let srcset = parent
+          .querySelector("source")
+          .getAttribute("srcset");
+
+          const data = parent.querySelector('.product-info')
+        let title = data.querySelector("h3").textContent;
+        let link = parent.querySelector(".product__link").getAttribute("href");
+        let info = {
+          square: parent.querySelector("[data-sq]").dataset.sq,
+          floors: parent.querySelector("[data-fl]").dataset.fl,
+          bedrooms: parent.querySelector("[data-bed]").dataset.bed,
+          bathrooms: parent.querySelector("[data-bath]").dataset.bath,
+          place: parent.querySelector("[data-pl]").dataset.pl
+        }
+        self.classList.add("active");
+        updateStorage(generateFavoriteItem(img, srcset, title, info, link, id), id);
+        printQuantity();
+      } else {
+        deleteFav(id);
       }
     });
   }
 });
 const printQuantity = () => {
-  let length = favContent.children.length;
-  favQuantity.textContent = length;
+  let length = JSON.parse(localStorage.getItem("goods")) ? JSON.parse(localStorage.getItem("goods")).length : 0;
   favBtnQuantity.forEach((el) => (el.textContent = length));
 };
 
-const deleteFav = (fav) => {
-  let id = fav.dataset.id;
 
-  favContent.querySelector(`[data-id="${id}"]`)?.remove();
-  updateStorage();
-  document
-    .querySelector(`[data-id="${id}"]`)
-    .querySelector(".btn--like")
-    .classList.remove("active");
-  printQuantity();
-};
-favContent.addEventListener("click", (e) => {
-  if (e.target.classList.contains("btn--like")) {
-    deleteFav(e.target.closest(".projects-card"));
-  }
-});
 const generateFavoriteItem = (img, srcset, title, info, link, id) => {
   return `
-    <article class="projects-section__card projects-card" data-id="${id}">
-    <picture>
-      <source srcset="${srcset}" type=image/webp>
-      <img class="projects-card__img" src="${img}" alt="Card">
-    </picture>
-        <div class="projects-card__info">
-          <h3 class="projects-card__title">${title.toUpperCase()}</h3>
-          <div class="projects-card__details">
-            <ul class="projects-card__list popular-card__list list-reset">
-              <li class="projects-card__item popular-card__item projects-card__item--sq">
-                ${info.square}<span>м<sup>2</sup></span>
-              </li>
-              <li class="projects-card__item popular-card__item projects-card__item--fl">
-              ${info.floors}<span>этажа</span>
-              </li>
-              <li class="projects-card__item popular-card__item projects-card__item--bed">
-                ${info.bedrooms}<span>спальни</span>
-              </li>
-              <li class="projects-card__item popular-card__item projects-card__item--bath">
-                ${info.bathrooms}<span>санузла</span>
-              </li>
-              <li class="projects-card__item popular-card__item projects-card__item--pl">
-                ${info.place}<span>м<sup>2</sup></span>
-              </li>
-            </ul>
-            <a href="${link}" class="projects-card__more">Подробнее</a>
-          </div>
-        </div>
-        <button class="projects-card__btn btn btn--like btn--stroke btn-reset active">
-          <svg>
-            <use xlink:href="img/sprite.svg#like-icon"></use>
-          </svg>
-        </button>
-      </article>
+      <li class="catalogue__item">
+          <article class="catalogue__product product" data-id="${id}">
+            <button class="product__btn btn btn--like btn--stroke btn-reset active">
+              <svg>
+                <use xlink:href="img/sprite.svg#like-icon"></use>
+              </svg>
+            </button>
+            <a href="#" class="product__link">
+              <div class="product__image">
+                <div class="product__switch image-switch">
+                  <div class="image-switch__item">
+                    <div class="image-switch__img">
+                      <picture>
+                        <source srcset="${srcset}" type="image/jpg" media="(min-width: 1440px)" />
+                        <source srcset="${srcset}" type="image/jpg" />
+                        <img src="${img}" srcset="${img}" alt="Product 1" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="image-switch__item">
+                    <div class="image-switch__img">
+                      <picture>
+                        <source srcset="${srcset}" type="image/jpg" media="(min-width: 1440px)" />
+                        <source srcset="${srcset}" type="image/jpg" />
+                        <img src="${img}" srcset="${img}" alt="Product 1" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="image-switch__item">
+                    <div class="image-switch__img">
+                      <picture>
+                        <source srcset="${srcset}" type="image/jpg" media="(min-width: 1440px)" />
+                        <source srcset="${srcset}" type="image/jpg" />
+                        <img src="${img}" srcset="${img}" alt="Product 1" />
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+                <div class="product__slider swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <picture>
+                        <source srcset="${srcset}" type="image/jpg" media="(min-width: 1440px)" />
+                        <source srcset="${srcset}" type="image/jpg" />
+                        <img src="${img}" srcset="${img}" alt="Product 1" />
+                      </picture>
+                    </div>
+                    <div class="swiper-slide">
+                      <picture>
+                        <source srcset="${srcset}" type="image/jpg" media="(min-width: 1440px)" />
+                        <source srcset="${srcset}" type="image/jpg" />
+                        <img src="${img}" srcset="${img}" alt="Product 1" />
+                      </picture>
+                    </div>
+                    <div class="swiper-slide">
+                      <picture>
+                        <source srcset="${srcset}" type="image/jpg" media="(min-width: 1440px)" />
+                        <source srcset="${srcset}" type="image/jpg" />
+                        <img src="${img}" srcset="${img}" alt="Product 1" />
+                      </picture>
+                    </div>
+                  </div>
+                  <div class="swiper-pagination product-slider__pagination"></div>
+                </div>
+                <ul class="pruoduct__image-pagination image-pagination list-reset"></ul>
+              </div>
+              <div class="product__info product-info">
+                <div class="product-info__left">
+                  <h3>${title}</h3>
+                  <span>от 12000 <svg class="">
+                      <use xlink:href="img/sprite.svg#rub"></use>
+                    </svg></span>
+                </div>
+                <ul>
+                  <li class="product-info__item product-info__item--sq" data-sq="200">
+                    <div class="product-info__figure">
+                      ${info.square} <span>м<sup>2</sup></span>
+                    </div>
+                  </li>
+                  <li data-fl="2">
+                    <div class="product-info__figure">${info.floors} <span>${declOfNum(info.floors, ['этаж', 'этажа', 'этажей'])}</span></div>
+                  </li>
+                  <li data-bed="5">
+                    <div class="product-info__figure">${info.bedrooms} <span>${declOfNum(info.floors, ['спальня', 'спальни', 'спален'])}</span></div>
+                  </li>
+                  <li data-bath="2">
+                    <div class="product-info__figure">${info.bathrooms} <span>${declOfNum(info.bedrooms, ['ванная', 'ванных', 'ванн'])}</span></div>
+                  </li>
+                  <li data-pl="100">
+                    <div class="product-info__figure">${info.place} <span>площадь</span></div>
+                  </li>
+                </ul>
+              </div>
+            </a>
+          </article>
+        </li>
     `;
 };
+const catalogueContent = document.querySelector('.catalogue--favorites')
+
+catalogueContent?.addEventListener('click', e => {
+  if(e.target.classList.contains('btn--like')){
+    e.target.classList.remove('active')
+    deleteFav(e.target.closest('[data-id]').dataset.id)
+
+    catalogueContent.removeChild(e.target.closest('li'))
+    printQuantity()
+  }
+})
 const initialState = () => {
   if (localStorage.getItem("goods")) {
-    favContent.innerHTML = localStorage.getItem("goods");
+    JSON.parse(localStorage.getItem("goods"))?.forEach(item => {
+      if(catalogueContent){
+        catalogueContent.innerHTML += item
+      }
+    })}
+
     printQuantity();
-
     document
-      .querySelectorAll(".favorites-content .projects-section__card")
-      .forEach((el) => {
-        let id = el.dataset.id;
-
-        if (
-          document.querySelector(`.projects-section__card[data-id="${id}"]`)
-        ) {
-          document
-            .querySelector(`.projects-section__card[data-id="${id}"]`)
-            .querySelector(".btn--like")
-            .classList.add("active");
-        }
-        if (document.querySelector(`.popular-content__item[data-id="${id}"]`)) {
-          document
-            .querySelector(`.popular-content__item[data-id="${id}"]`)
-            .querySelector(".btn--like")
-            .classList.add("active");
-        }
-        if (document.querySelector(`.hero__slide[data-id="${id}"]`)) {
-          document
-            .querySelector(`.hero__slide[data-id="${id}"]`)
-            .querySelector(".btn--like")
-            .classList.add("active");
-        }
-        if (document.querySelector(`.product[data-id="${id}"]`)) {
-          document
-            .querySelector(`.product[data-id="${id}"]`)
-            .querySelector(".btn--like")
-            .classList.add("active");
-        }
-        // let catalogueItem = catalogueData.find((el) => el.id == id);
-        // if (catalogueItem) {
-        //   catalogueItem.active = true;
-        // }
-      });
-  }
-  if (localStorage.getItem("randId")) {
-    randId = parseInt(localStorage.getItem("randId"));
-  }
+      .querySelectorAll("[data-id]")
+      .forEach(el => {
+        JSON.parse(localStorage.getItem("id"))?.forEach(id => {
+          if(el.dataset.id == id){
+            el.querySelector('.btn--like').classList.add('active')
+          }
+        })
+      })
 };
-if (catalogue) {
-  // catalogueData.forEach((el) => {
-  //   el.id = ++randId;
-  // });
-  catalogue.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (e.target.classList.contains("btn--like")) {
-      const el = e.target;
-      if (el.closest(".product")) {
-        let self = el;
-        let parent = self.closest(".product");
-        if (!self.classList.contains("active")) {
-          let id = parent.dataset.id;
-          let img = parent.querySelector("img").src;
-          let srcset = parent.querySelector("source").getAttribute("srcset");
-          let title = parent.querySelector(".product-info__title").textContent;
-          let link = parent
-            .querySelector(".product__image")
-            .getAttribute("href");
-          let info = {
-            square: parent.querySelector(".product-info__item--sq").dataset.sq,
 
-            floors: parent.querySelector(".product-info__item--fl").dataset.fl,
-            bedrooms: parent.querySelector(".product-info__item--bed").dataset
-              .bed,
-            bathrooms: parent.querySelector(".product-info__item--bath").dataset
-              .bath,
-            place: parent.querySelector(".product-info__item--pl").dataset.pl,
-          };
-          self.classList.add("active");
-          favContent.insertAdjacentHTML(
-            "afterbegin",
-            generateFavoriteItem(img, srcset, title, info, link, id)
-          );
-          updateStorage();
-          printQuantity();
-        } else {
-          deleteFav(parent);
-        }
-        // catalogueData.find((elem) => elem.id == parent.dataset.id).active =
-        //   self.classList.contains("active");
+const updateStorage = (element = '', id = null, delId = null) => {
+  console.log(delId);
+  if(element && id){
+    favElements.push(element)
+    favId.push(id)
+  }
+
+  if(delId){
+    let index = -1;
+    for(let i = 0; i < favElements.length; i++){
+      if(favId[i] == delId){
+        index = i;
       }
     }
-  });
-}
-const updateStorage = () => {
-  let parent = favContent;
-  let html = parent.innerHTML;
-  html = html.trim();
-  localStorage.setItem("randId", randId);
-  if (html.length) {
-    localStorage.setItem("goods", html);
+    favElements.splice(index, 1)
+    favId.splice(index, 1)
+    console.log('sdkfjsdfijsdifsdjf');
+  }
+
+  if (favElements.length) {
+    localStorage.setItem("goods", JSON.stringify(favElements));
   } else {
     localStorage.removeItem("goods");
+  }
+  if (favId.length) {
+    localStorage.setItem("id", JSON.stringify(favId));
+  } else {
+    localStorage.removeItem("id");
   }
 };
 
 initialState();
 const modalButtons = document.querySelectorAll(".slide__item");
 const heroSection = document.querySelector(".hero");
+// import { gallerySliderMini } from "./sliders";
+// import lenis from "./smooth-scroll";
 
 if (modalButtons.length > 0) {
   modalButtons.forEach((el) => {
@@ -1158,6 +1105,7 @@ if (modalButtons.length > 0) {
     });
   });
 }
+
 
 if (document.querySelector(".phone-btn")) {
   document.querySelector(".phone-btn").addEventListener("click", (e) => {
@@ -1572,17 +1520,6 @@ const allItems = document.querySelectorAll(".product__image");
 window.addEventListener("scroll", () => {
   if (heroSection) {
     func();
-  }
-  if (catalogue) {
-    const isOne = [];
-    allItems.forEach((el) => {
-      isOne.push(isInto(headerNav, el));
-    });
-    if (isOne.includes(true)) {
-      header.classList.remove("dark");
-    } else {
-      header.classList.add("dark");
-    }
   }
 
   if (upBtn) {
@@ -2140,11 +2077,12 @@ if(implemObjectsSection){
     })
   })
 }
-const filters = document.querySelector('.filters')
-if(filters){
-  initFilters()
+import imagePagination from './imagePagination.js'
+import declOfNum from "./declOfNum.js";
+const products = document.querySelectorAll('.product')
+if(products && products.length > 0){
+  imagePagination(products)
 }
-
 const implemPhotoSection = document.querySelector('.implemPhoto-section')
 if(implemPhotoSection) {
   const productSliders = document.querySelectorAll(".product__slider");
@@ -2348,11 +2286,11 @@ if(annText){
     points.push(i);
   }
   function callbackObs(entries, observer) {
-    let percent = 1;
+    let percent = -10;
 
     percent = (window.scrollY / aboutMain.scrollHeight) * 100;
     if (window.matchMedia("(min-width: 769px)")) {
-      annText.style.transform = `translateX(calc(-${percent + 70}%))`;
+      annText.style.transform = `translateX(calc(-${percent}%))`;
 
     } else {
       annText.style.transform = `translateX(calc(-${percent * 4}% + 5rem))`;
@@ -2395,57 +2333,257 @@ if(aboutVideoBtn) {
 }
 
 
-const frameCount = 3
-const currentFrame = index => {
-  return `./../img/timber/${(index + 1).toString().padStart(2, '0')}.png`
-}
+// const frameCount = 3
+// const currentFrame = index => {
+//   return `./../img/timber/${(index + 1).toString().padStart(2, '0')}.png`
+// }
 
-const preloadImages = () => {
-  for(let i = 0; i < frameCount; i++){
-    const img = new Image()
-    img.src = currentFrame(i)
+// const preloadImages = () => {
+//   for(let i = 0; i < frameCount; i++){
+//     const img = new Image()
+//     img.src = currentFrame(i)
+//   }
+// }
+
+// const techMainSlider = new Swiper('.timber-main__slider', {
+//   slidesPerView: 1,
+//   effect: 'fade',
+//   fadeEffect: {
+//     crossFade: true,
+//   },
+// })
+// const techSecSlider = new Swiper('.timber-sec__slider', {
+//   slidesPerView: 1,
+//   effect: 'fade',
+//   fadeEffect: {
+//     crossFade: true,
+//   },
+// })
+
+
+// preloadImages()
+
+// const mainTriggers = document.querySelectorAll('.timber-main__trigger[data-trig]')
+// const secTriggers = document.querySelectorAll('.timber-main__trigger')
+
+// const techSecTriggers = document.querySelectorAll('.timber-sec__trigger[data-trig]')
+// const techAddTriggers = document.querySelectorAll('.timber-sec__trigger')
+
+// const offsetAddTriggers = []
+
+// const offsetTriggers = []
+
+// mainTriggers.forEach(el => {
+//     const elRect = el.getBoundingClientRect();
+//     offsetTriggers.push(
+//       elRect.y + (window.pageY || document.documentElement.scrollTop)
+//     );
+// })
+
+// techSecTriggers.forEach(el => {
+//     const elRect = el.getBoundingClientRect();
+//     offsetAddTriggers.push(
+//       elRect.y + (window.pageY || document.documentElement.scrollTop)
+//     );
+// })
+
+
+// const timberSlider = document.querySelector('.timber-main__slider')
+// const timberSecSlider = document.querySelector('.timber-sec__slider')
+
+// function observeTimber(sliderSection, slider, offset, triggers, triggersSec){
+//   const points = []
+//   for(let i = 0; i < 1.0; i+= 0.05){
+//     points.push(i)
+//   }
+
+//   const techObserver = new IntersectionObserver((entries, observer) => {
+//     const rect = sliderSection.getBoundingClientRect();
+//     let offsetItems = rect.y + (window.pageY || document.documentElement.scrollTop);
+//     entries.forEach(entry => {
+//       if(entry.isIntersecting){
+//         offset.forEach((el, index) => {
+//           if (offsetItems > el) {
+//             slider.slideTo(index);
+//           }
+//         });
+//       }
+//     })
+//   }, {
+//     threshold: points,
+//   })
+
+//   triggers.forEach(el => {
+//     techObserver.observe(el)
+//   })
+//   triggersSec.forEach(el => {
+//     techObserver.observe(el)
+//   })
+// }
+
+
+// observeTimber(timberSlider, techMainSlider, offsetTriggers, mainTriggers, secTriggers)
+// observeTimber(timberSecSlider, techSecSlider, offsetAddTriggers, techSecTriggers, techAddTriggers)
+
+
+if(document.querySelector('.timber-main__content--main')){
+
+  const timelineMain = gsap.timeline()
+
+  const images = document.querySelectorAll('.timber-main__content--main .timber-item__image')
+  const imagesContainer = document.querySelector('.timber-main__content--main .timber-item__images')
+
+  const texts = document.querySelectorAll('.timber-main__content--main .timber-item__text')
+  const textsContainer = document.querySelectorAll('.timber-main__content--main .timber-item__content')
+
+
+  const timelineImages = gsap.timeline()
+  const timelineText = gsap.timeline()
+  gsap.set([texts[0], texts[1], texts[2]], {y: "2rem", opacity: 0})
+  timelineText.to(texts[0], {y: "-1rem", opacity: 1, duration: 1})
+  timelineText.to(texts[0], {y: "-3rem", opacity: 0})
+  timelineText.to(texts[1], {y: "-1rem", opacity: 1, duration: 1})
+  timelineText.to(texts[1], {y: "-3rem", opacity: 0})
+  timelineText.to(texts[2], {y: "-1rem", opacity: 1, duration: 1})
+  let startPos = 'top top'
+  if(window.matchMedia('(max-width: 768px)').matches){
+    startPos = 'top top+=70'
   }
+  ScrollTrigger.create({
+    animation: timelineText,
+    trigger: '.timber-main__content',
+    start: startPos,
+    end: "bottom",
+    scrub: 1,
+    ease: 'ease-out',
+    invalidateOnRefresh: true
+  })
+
+  timelineImages.to(images[0], {visibility: 'visible'})
+  timelineImages.set(images[0], {visibility: 'hidden'})
+  timelineImages.to(images[1], {visibility: 'visible'})
+  timelineImages.set(images[1], {visibility: 'hidden'})
+  timelineImages.to(images[2], {visibility: 'visible'})
+
+  ScrollTrigger.create({
+    animation: timelineImages,
+    trigger: '.timber-main__content',
+    start: startPos,
+    end: "bottom",
+    scrub: true,
+    ease: 'none',
+    invalidateOnRefresh: true
+  })
+
+
+  ScrollTrigger.create({
+    animation: timelineMain,
+    trigger: '.timber-main__content',
+    start: startPos,
+    bottom: "+=250%",
+    pin: true,
+    scrub: 1,
+    invalidateOnRefresh: true
+  })
+
+  gsap.to(imagesContainer, {yPercent: -5, scrollTrigger: {
+    trigger: '.timber-main__content',
+    start: startPos,
+    bottom: "+=250%",
+    scrub: 1,
+    invalidateOnRefresh: true
+  }})
+
+
+
+
+  const timelineSec = gsap.timeline()
+
+  const imagesSec = document.querySelectorAll('.timber-main__content--sec .timber-item__image')
+  const imagesContainerSec = document.querySelector('.timber-main__content--sec .timber-item__images')
+
+  const textsSec = document.querySelectorAll('.timber-main__content--sec .timber-item__text')
+  const textsContainerSec = document.querySelectorAll('.timber-main__content--sec .timber-item__content')
+
+
+  const timelineImagesSec = gsap.timeline()
+  const timelineTextSec = gsap.timeline()
+
+  gsap.set([textsSec[0], textsSec[1], textsSec[2]], {y: "1rem", opacity: 0})
+
+  timelineTextSec.to(textsSec[0], {y: "-1rem", opacity: 1, duration: 0.8})
+  timelineTextSec.to(textsSec[0], {y: "-3rem", opacity: 0})
+  timelineTextSec.to(textsSec[1], {y: "-1rem", opacity: 1, duration: 0.8})
+  timelineTextSec.to(textsSec[1], {y: "-3rem", opacity: 0})
+  timelineTextSec.to(textsSec[2], {y: "-1rem", opacity: 1, duration: 0.8})
+
+  ScrollTrigger.create({
+    animation: timelineTextSec,
+    trigger: '.timber-main__content--sec',
+    start: startPos,
+    end: "bottom",
+    scrub: 1,
+    ease: 'ease-out',
+    invalidateOnRefresh: true,
+    toggleActions:"play none none reverse",
+  })
+
+  timelineImagesSec.to(imagesSec[0], {visibility: 'visible'})
+  timelineImagesSec.to(imagesSec[1], {visibility: 'visible'})
+  timelineImagesSec.to(imagesSec[2], {visibility: 'visible'})
+
+  ScrollTrigger.create({
+    animation: timelineImagesSec,
+    trigger: '.timber-main__content--sec',
+    start: startPos,
+    end: "bottom",
+    scrub: 1,
+    ease: 'none',
+    invalidateOnRefresh: true,
+    toggleActions:"play none none reverse",
+    pinSpacing: true
+  })
+
+
+  ScrollTrigger.create({
+    animation: timelineSec,
+    trigger: '.timber-main__content--sec',
+    start: startPos,
+    bottom: "+=250%",
+    pin: true,
+    scrub: 1,
+    invalidateOnRefresh: true
+  })
+
+  gsap.to(imagesContainerSec, {yPercent: -5, scrollTrigger: {
+    trigger: '.timber-main__content--sec',
+    start: startPos,
+    bottom: "+=250%",
+    scrub: 1,
+    invalidateOnRefresh: true
+  }})
+
+
+  const readyTl = gsap.timeline()
+  const items = document.querySelectorAll('.timber-ready li')
+
+  items.forEach(item => {
+    readyTl.fromTo(item, {xPercent: 50, opacity: 0}, {xPercent: 0, opacity: 1, scrollTrigger : {
+      trigger: item,
+      start: 'bottom bottom-=25%',
+      end: '+=200',
+      scrub: 1
+    }})
+    // ScrollTrigger.create({
+    //   trigger: item,
+    //   start: 'bottom center',
+    //   end: '+=200',
+    //   animation: readyTl,
+    //   scrub: 1
+    // })
+  })
+
 }
 
-const techMainSlider = new Swiper('.timber-main__slider', {
-  slidesPerView: 1,
-  effect: 'fade',
-  fadeEffect: {
-    crossFade: true,
-  },
-})
 
 
-preloadImages()
-const mainTriggers = document.querySelectorAll('.timber-main__trigger[data-trig]')
-const secTriggers = document.querySelectorAll('.timber-main__trigger')
-const offsetTriggers = []
-
-mainTriggers.forEach(el => {
-    const elRect = el.getBoundingClientRect();
-    offsetTriggers.push(
-      elRect.y + (window.pageY || document.documentElement.scrollTop)
-    );
-})
-const timberSlider = document.querySelector('.timber-main__slider')
-const techObserver = new IntersectionObserver((entries, observer) => {
-  const rect = timberSlider.getBoundingClientRect();
-  let offsetItems = rect.y + (window.pageY || document.documentElement.scrollTop);
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      offsetTriggers.forEach((el, index) => {
-        if (offsetItems > el) {
-          techMainSlider.slideTo(index);
-        }
-      });
-    }
-  })
-}, {
-  threshold: 0,
-})
-mainTriggers.forEach(el => {
-  techObserver.observe(el)
-})
-secTriggers.forEach(el => {
-  techObserver.observe(el)
-})

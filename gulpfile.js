@@ -242,18 +242,16 @@ const resources = () => {
 
 const images = () => {
   return src([`${paths.srcImgFolder}/**/**.{jpg,jpeg,png,svg}`])
-    .pipe(
-      image([
-        image.mozjpeg({
-          quality: 80,
-          progressive: true,
-        }),
-        image.optipng({
-          optimizationLevel: 3,
-        }),
-      ])
-    )
-    .pipe(dest(paths.buildImgFolder));
+    .pipe(gulpif(isProd, image([
+      image.mozjpeg({
+        quality: 80,
+        progressive: true
+      }),
+      image.optipng({
+        optimizationLevel: 2
+      }),
+    ])))
+    .pipe(dest(paths.buildImgFolder))
 };
 
 const webpImages = () => {

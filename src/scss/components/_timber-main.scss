@@ -1,58 +1,18 @@
 .timber-main {
-  &__trigger {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 90px;
-    // background-color: blue;
 
-    &--1 {}
+  position: relative;
+  overflow: hidden;
 
-    &--2 {
-      top: 33%;
-    }
-
-    &--3 {
-      top: 66%;
-    }
-
-    &.sec-1 {
-      top: 12.5%;
-    }
-
-    &.sec-2 {
-      top: 25%;
-    }
-
-    &.sec-3 {
-      top: 37.5%;
-    }
-
-    &.sec-4 {
-      top: 50%;
-    }
-
-    &.sec-5 {
-      top: 100%;
-    }
-  }
-
-  &__slider {
-    position: sticky;
-    top: 0;
-    min-width: 0;
-    max-width: 100%;
-
-    & .swiper-slide {
-      width: 100%;
-    }
-  }
 
   &__header {
     text-align: center;
     max-width: 1050px;
     margin: 0 auto;
+    padding: 0 16px;
+
+    @media (min-width: 1441px) {
+      max-width: 105rem;
+    }
 
     h1 {
       margin: 0;
@@ -66,6 +26,18 @@
       font-weight: 700;
       line-height: normal;
       letter-spacing: 3.45px;
+
+      @media (min-width: 1441px) {
+        padding: 3rem;
+        font-size: 11.5rem;
+        letter-spacing: 0.345rem;
+      }
+
+      @include mobile {
+        font-size: 48px;
+        letter-spacing: 1.44px;
+        padding: 10px 16px 30px;
+      }
     }
 
     h4 {
@@ -77,6 +49,17 @@
       line-height: normal;
       letter-spacing: 5.4px;
       text-transform: uppercase;
+
+      @media (min-width: 1441px) {
+        font-size: 1.8rem;
+        letter-spacing: 0.54rem;
+      }
+
+      @include mobile {
+        font-size: 14px;
+        letter-spacing: 4.2px;
+        margin-bottom: 10px;
+      }
     }
 
     p {
@@ -87,13 +70,45 @@
       font-weight: 700;
       line-height: normal;
       letter-spacing: 1.6px;
+
+      @media (min-width: 1441px) {
+        font-size: 3.2rem;
+        letter-spacing: 0.16rem;
+      }
+
+      @include mobile {
+        font-size: 18px;
+        letter-spacing: 0.9px;
+      }
     }
   }
 
   &__content {
     position: relative;
-    min-height: 300vh;
-    padding-bottom: 50px;
+
+    // @media (min-width: 1441px) {
+    //   padding-bottom: 5rem;
+    // }
+  }
+
+  &__items {
+    height: 100vh;
+    // position: sticky;
+    top: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 50px;
+
+    @media (min-width: 1441px) {
+      gap: 5rem;
+    }
+
+    @include mobile {
+      height: 80vh;
+      grid-template-columns: 1fr;
+      align-items: flex-start;
+      gap: 0;
+    }
   }
 }
 
@@ -101,43 +116,314 @@
 
 .timber-item {
 
-  // padding: 100px 0;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 30px;
-  align-items: center;
-  max-height: 100vh;
+
+
+  &__images {
+    position: relative;
+    min-height: 100%;
+    grid-column: 8 span;
+
+    @include mobile {
+      grid-column: 1;
+    }
+  }
 
   &__image {
-    grid-column: 8 span;
+    position: absolute;
+    left: 0;
+    top: 0;
     height: 100%;
-    // canvas {
-    //   width: 100%;
-    //   height: 100%;
-    // }
+    width: 100%;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    &:nth-child(1) {}
+
+    &:nth-child(2) {
+      visibility: hidden;
+
+    }
+
+    &:nth-child(3) {
+      visibility: hidden;
+
+    }
   }
 
   &__content {
-    grid-column: 4 span;
-    color: var(--black-brand-color);
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: 0.24px;
-    padding-right: 30px;
+    position: relative;
+    width: 100%;
+    height: 100%;
 
+    grid-column: 4 span;
+
+    @include mobile {
+      grid-column: 1;
+      height: auto;
+    }
+  }
+
+  &__text {
+    width: 100%;
+    height: 100%;
+    // background-color: var(--white-color);
+    padding-right: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+
+    @media (min-width: 1441px) {
+      padding-right: 3rem;
+    }
+
+    @include mobile {
+      padding: 64px 0;
+      margin: 0 16px;
+      height: auto;
+    }
+
+    @media (max-width: 374px) {
+      padding: 32px 16px;
+      height: auto;
+    }
 
 
     h4 {
       margin: 0;
       margin-bottom: 4px;
+      color: var(--black-brand-color);
+      font-size: 24px;
+      font-style: normal;
       font-weight: 700;
+      line-height: normal;
+      letter-spacing: 0.24px;
+
+      @media (min-width: 1441px) {
+        font-size: 2.4rem;
+        letter-spacing: 0.024rem;
+        margin-bottom: 0.4rem;
+      }
+
+      @include mobile {
+        font-size: 20px;
+        letter-spacing: normal;
+      }
     }
 
-    p {
-      margin: 0;
+    ul {
+      list-style: square;
+      padding-left: 3rem;
 
+      @include mobile {
+        padding-left: 10rem;
+      }
+    }
+
+    p,
+    li {
+      margin: 0;
+      color: var(--black-brand-color);
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 0.24px;
+
+      span {
+        font-weight: 700;
+      }
+
+      @media (min-width: 1441px) {
+        font-size: 2.4rem;
+        letter-spacing: 0.024rem;
+        margin-bottom: 0.4rem;
+      }
+
+      @include mobile {
+        font-size: 20px;
+        letter-spacing: normal;
+      }
+    }
+
+    &>div {
+      padding: 30px;
+      border-radius: 15px;
+      background: var(--focus-color);
+      margin-bottom: 90px;
+
+      @media (min-width: 1441px) {
+        padding: 3rem;
+        border-radius: 1.5rem;
+        margin-bottom: 9rem;
+      }
+
+      @include mobile {
+        display: none;
+      }
+
+      &>p {
+        color: var(--black-brand-color);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%;
+        letter-spacing: 0.36px;
+
+        span {
+          font-weight: 700;
+        }
+
+        @media (min-width: 1441px) {
+          font-size: 1.8rem;
+          letter-spacing: 0.036rem;
+        }
+      }
+    }
+  }
+}
+
+.timber-main__content--sec {
+  .timber-item__images {
+    grid-column: 6 span;
+  }
+
+  .timber-item__content {
+    grid-column: 6 span;
+
+  }
+
+  .timber-item__text {
+    padding-left: 60px;
+
+    @include mobile {
+      padding-left: 0;
+    }
+
+    @media (min-width: 1441px) {
+      padding-left: 6rem;
+    }
+  }
+}
+
+
+.timber-item__text--mob {
+  margin: 16px;
+  padding: 30px;
+  border-radius: 15px;
+  background: var(--focus-color);
+  margin-bottom: 90px;
+  display: none;
+
+
+
+  @include mobile {
+    display: block;
+  }
+
+  p {
+    color: var(--black-brand-color);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0.36px;
+
+    span {
+      font-weight: 700;
+    }
+  }
+}
+
+
+.timber-ready {
+  padding-top: 120px;
+  padding-bottom: 120px;
+
+  @media (min-width: 1441px) {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+  }
+
+  h2 {
+    margin: 0 auto;
+    padding-bottom: 120px;
+    max-width: 800px;
+    color: var(--black-brand-color);
+    text-align: center;
+
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 2.4px;
+
+    @media (min-width: 1441px) {
+      font-size: 4.8rem;
+      letter-spacing: 0.24rem;
+      padding-bottom: 12rem;
+      max-width: 80rem;
+    }
+
+    @include mobile {
+      font-size: 24px;
+      letter-spacing: 0.48px;
+    }
+  }
+
+  ul {
+    margin-left: 700px;
+    max-width: 585px;
+    list-style: square;
+
+    @include mobile {
+      margin-left: 0;
+    }
+
+    @media (min-width: 1441px) {
+      margin-left: 70rem;
+      max-width: 58.5rem;
+    }
+
+    li {
+      max-width: 500px;
+      color: var(--black-brand-color);
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 0.24px;
+
+      @media (min-width: 1441px) {
+        font-size: 2.4rem;
+        max-width: 50rem;
+        letter-spacing: 0.024rem;
+      }
+
+      @include mobile {
+        font-size: 20px;
+        letter-spacing: normal;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 12px;
+
+        @media (min-width: 1441px) {
+          margin-bottom: 1.2rem;
+        }
+      }
     }
   }
 }

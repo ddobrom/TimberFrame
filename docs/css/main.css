@@ -11838,7 +11838,7 @@ span.popular-card__figure {
   }
 }
 .timber-ready ul {
-  margin-left: 700px;
+  margin-left: 70rem;
   max-width: 585px;
   list-style: square;
 }
@@ -11849,7 +11849,6 @@ span.popular-card__figure {
 }
 @media (min-width: 1441px) {
   .timber-ready ul {
-    margin-left: 70rem;
     max-width: 58.5rem;
   }
 }

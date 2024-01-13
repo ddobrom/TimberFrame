@@ -11441,6 +11441,17 @@ span.popular-card__figure {
 .timber-main {
   position: relative;
   overflow: hidden;
+  padding-bottom: 72px;
+}
+@media (min-width: 1441px) {
+  .timber-main {
+    padding-bottom: 7.2rem;
+  }
+}
+@media (max-width: 768px) {
+  .timber-main {
+    padding-bottom: 0;
+  }
 }
 .timber-main__header {
   text-align: center;

@@ -2,7 +2,15 @@
 
   position: relative;
   overflow: hidden;
+  padding-bottom: 72px;
 
+  @media (min-width: 1441px) {
+    padding-bottom: 7.2rem;
+  }
+
+  @include mobile {
+    padding-bottom: 0;
+  }
 
   &__header {
     text-align: center;
@@ -122,6 +130,7 @@
     position: relative;
     min-height: 100%;
     grid-column: 8 span;
+    // transform: translateY(10%);
 
     @include mobile {
       grid-column: 1;

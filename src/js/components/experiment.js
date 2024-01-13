@@ -2486,7 +2486,7 @@ if(document.querySelector('.timber-main__content--main')){
     invalidateOnRefresh: true
   })
 
-  gsap.to(imagesContainer, {yPercent: -5, scrollTrigger: {
+  gsap.fromTo(imagesContainer,{yPercent: 10}, {yPercent: 5, scrollTrigger: {
     trigger: '.timber-main__content',
     start: startPos,
     bottom: "+=250%",
@@ -2555,7 +2555,7 @@ if(document.querySelector('.timber-main__content--main')){
     invalidateOnRefresh: true
   })
 
-  gsap.to(imagesContainerSec, {yPercent: -5, scrollTrigger: {
+  gsap.fromTo(imagesContainerSec,{yPercent: 10}, {yPercent: 5, scrollTrigger: {
     trigger: '.timber-main__content--sec',
     start: startPos,
     bottom: "+=250%",

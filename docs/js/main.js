@@ -2166,8 +2166,10 @@ if (document.querySelector('.timber-main__content--main')) {
     scrub: 1,
     invalidateOnRefresh: true
   });
-  gsap__WEBPACK_IMPORTED_MODULE_6__.gsap.to(imagesContainer, {
-    yPercent: -5,
+  gsap__WEBPACK_IMPORTED_MODULE_6__.gsap.fromTo(imagesContainer, {
+    yPercent: 10
+  }, {
+    yPercent: 5,
     scrollTrigger: {
       trigger: '.timber-main__content',
       start: startPos,
@@ -2249,8 +2251,10 @@ if (document.querySelector('.timber-main__content--main')) {
     scrub: 1,
     invalidateOnRefresh: true
   });
-  gsap__WEBPACK_IMPORTED_MODULE_6__.gsap.to(imagesContainerSec, {
-    yPercent: -5,
+  gsap__WEBPACK_IMPORTED_MODULE_6__.gsap.fromTo(imagesContainerSec, {
+    yPercent: 10
+  }, {
+    yPercent: 5,
     scrollTrigger: {
       trigger: '.timber-main__content--sec',
       start: startPos,

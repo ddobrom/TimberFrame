@@ -2558,8 +2558,8 @@ if(document.querySelector('.timber-main__content--main')){
   gsap.to(imagesContainerSec, {yPercent: 5, scrollTrigger: {
     trigger: '.timber-main__content--sec',
     start: startPos,
-    bottom: "+=250%",
-    scrub: 1,
+    bottom: "+=300%",
+    scrub: 0.8,
     invalidateOnRefresh: true
   }})
 

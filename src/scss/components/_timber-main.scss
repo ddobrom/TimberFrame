@@ -271,16 +271,22 @@
       }
     }
 
-    &>div {
+    &--orange {
+      position: absolute;
+      width: 100%;
+      max-width: 540px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, calc(-100% - 90px));
       padding: 30px;
       border-radius: 15px;
       background: var(--focus-color);
-      margin-bottom: 90px;
 
       @media (min-width: 1441px) {
         padding: 3rem;
         border-radius: 1.5rem;
-        margin-bottom: 9rem;
+        max-width: 54rem;
+        transform: translate(-50%, calc(-100% - 9rem));
       }
 
       @include mobile {
@@ -320,6 +326,7 @@
 
   .timber-item__text {
     padding-left: 60px;
+    margin-top: 94px;
 
     @include mobile {
       padding-left: 0;
@@ -327,6 +334,7 @@
 
     @media (min-width: 1441px) {
       padding-left: 6rem;
+      margin-top: 9.4rem;
     }
   }
 }

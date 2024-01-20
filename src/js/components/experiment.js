@@ -326,7 +326,7 @@ if (itemsTexts.length > 0) {
   const textItems = document.querySelectorAll(".services-section__item");
   const imageItems = document.querySelectorAll(".services-section__item-image");
   for(let i = 0; i < imageItems.length; i++){
-      if(imageItems[0].querySelector('img').src){
+      if(imageItems[i].querySelector('img').src){
       preloadImage(imageItems[i].querySelector('source').srcset)
     }
   }

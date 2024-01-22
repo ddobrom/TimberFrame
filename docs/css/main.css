@@ -6340,16 +6340,6 @@ span.popular-card__figure {
   -ms-flex-align: center;
   align-items: center;
 }
-.product-info > ul > li:last-child {
-  position: absolute;
-  overflow: hidden;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  clip: rect(0 0 0 0);
-}
 @media (min-width: 1440px) {
   .product-info > ul > li {
     padding: 0.3rem;
@@ -11900,14 +11890,15 @@ span.popular-card__figure {
   display: grid;
   -ms-grid-columns: (1fr)[2];
   grid-template-columns: repeat(2, 1fr);
-  padding: 182px 0;
-  max-width: 1026px;
+  gap: 20rem;
+  padding: 182px 206px;
+  padding-top: 80px;
   margin: 0 auto;
 }
 @media (min-width: 1441px) {
   .not-found404__container {
-    padding: 18.2rem;
-    max-width: 102.6rem;
+    padding: 18.2rem 20.6rem;
+    padding-top: 8rem;
   }
 }
 @media (max-width: 768px) {

@@ -1,16 +1,18 @@
 .about-gift {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
 
-  @media (min-width: 1441px) {
-    gap: 3rem;
-  }
+    @media (min-width: 1441px) {
+      gap: 3rem;
+    }
 
-  @include mobile {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    padding-bottom: 120px;
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding-bottom: 120px;
+    }
   }
 
   &__forest {

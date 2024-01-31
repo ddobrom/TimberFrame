@@ -532,7 +532,7 @@ if (document.querySelector(".shadow")) {
   shadowAnim.fromTo(".shadow__body", {
     backgroundColor: "#02090e"
   }, {
-    backgroundColor: "#e4e4e4"
+    backgroundColor: "#e8e8e8"
   });
   gsap_all__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger.create({
     animation: shadowAnim,
@@ -635,15 +635,6 @@ window.addEventListener("DOMContentLoaded", () => {
     resLines.forEach(el => resObserver.observe(el));
     resTriggers.forEach(el => resObserver.observe(el));
     resObserver.observe(document.querySelector('.res__left'));
-    // window.addEventListener("scroll", () => {
-    //   offset = getTopOfItems();
-    //   offsetLines.forEach((el, index) => {
-    //     if (offset > el) {
-    //       responsibilitySlider.slideTo(index);
-    //     }
-    //   });
-    // });
-
     window.addEventListener("resize", () => {
       setHeightOfWrapper();
     });

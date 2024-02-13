@@ -1,8 +1,11 @@
 .about-mon {
-  padding: 142px 0;
+  padding: 100px 0;
+
+  padding-top: 0;
 
   @media (min-width: 1441px) {
-    padding: 14.2rem 0;
+    padding: 10rem 0;
+    padding-top: 0;
   }
 
   @include mobile {

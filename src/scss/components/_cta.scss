@@ -79,7 +79,8 @@
     width: 100%;
 
     @include mobile {
-      flex-wrap: wrap;
+      flex-direction: column;
+
     }
 
     @media (min-width: 2560px) {

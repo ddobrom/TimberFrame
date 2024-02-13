@@ -154,8 +154,13 @@
       height: 100%;
       object-fit: contain;
 
+
       @include mobile {
         object-fit: cover;
+      }
+
+      @media (max-width: 850px) and (min-width: 600px) {
+        object-fit: contain;
       }
     }
 

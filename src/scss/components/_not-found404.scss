@@ -2,14 +2,14 @@
   &__container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 182px 0;
-
-    max-width: 1026px;
+    gap: 20rem;
+    padding: 182px 206px;
+    padding-top: 80px;
     margin: 0 auto;
 
     @media (min-width: 1441px) {
-      padding: 18.2rem;
-      max-width: 102.6rem;
+      padding: 18.2rem 20.6rem;
+      padding-top: 8rem;
     }
 
     @include mobile {

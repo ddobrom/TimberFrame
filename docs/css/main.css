@@ -11661,6 +11661,9 @@ span.popular-card__figure {
   -ms-grid-column-span: 4;
   grid-column: 4 span;
 }
+.timber-item__content-wrap {
+  position: relative;
+}
 @media (max-width: 850px) {
   .timber-item__content {
     -ms-grid-column: 1;
@@ -11771,10 +11774,10 @@ span.popular-card__figure {
   width: 100%;
   max-width: 540px;
   left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, calc(-100% - 90px));
-  -ms-transform: translate(-50%, calc(-100% - 90px));
-  transform: translate(-50%, calc(-100% - 90px));
+  top: 90px;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
   padding: 30px;
   border-radius: 15px;
   background: var(--focus-color);
@@ -11784,9 +11787,7 @@ span.popular-card__figure {
     padding: 3rem;
     border-radius: 1.5rem;
     max-width: 54rem;
-    -webkit-transform: translate(-50%, calc(-100% - 9rem));
-    -ms-transform: translate(-50%, calc(-100% - 9rem));
-    transform: translate(-50%, calc(-100% - 9rem));
+    top: 9rem;
   }
 }
 @media (max-width: 850px) {
@@ -11815,6 +11816,10 @@ span.popular-card__figure {
 .timber-main__content--sec .timber-item__images {
   -ms-grid-column-span: 6;
   grid-column: 6 span;
+}
+.timber-main__content--sec .timber-item__images img {
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 .timber-main__content--sec .timber-item__content {
   -ms-grid-column-span: 6;

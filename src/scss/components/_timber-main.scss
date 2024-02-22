@@ -184,6 +184,10 @@
 
     grid-column: 4 span;
 
+    &-wrap {
+      position: relative;
+    }
+
     @include mobile {
       grid-column: 1;
       height: auto;
@@ -281,8 +285,8 @@
       width: 100%;
       max-width: 540px;
       left: 50%;
-      top: 50%;
-      transform: translate(-50%, calc(-100% - 90px));
+      top: 90px;
+      transform: translate(-50%, 0);
       padding: 30px;
       border-radius: 15px;
       background: var(--focus-color);
@@ -291,7 +295,8 @@
         padding: 3rem;
         border-radius: 1.5rem;
         max-width: 54rem;
-        transform: translate(-50%, calc(-100% - 9rem));
+        top: 9rem;
+
       }
 
       @include mobile {
@@ -322,6 +327,10 @@
 .timber-main__content--sec {
   .timber-item__images {
     grid-column: 6 span;
+
+    img {
+      object-fit: cover;
+    }
   }
 
   .timber-item__content {

@@ -59,11 +59,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
 const heroslider = new Swiper(".hero__slider", {
   slidesPerView: 1,
-  navigation: {
+  /* navigation: {
     nextEl: ".slider-control__btn--next",
     prevEl: ".slider-control__btn--prev",
-  },
-  loop: true,
+  }, */
+  //loop: true, // DDD 18.02.2024
   effect: "fade",
   speed: 2000,
   autoplay: {
@@ -279,6 +279,9 @@ const initProductSliders = (productSliders) => {
   });
 };
 
+if(document.querySelector('.catalogue-section') && window.matchMedia('(max-width: 1024px)').matches){
+  initProductSliders(document.querySelectorAll('.product__slider'))
+}
 import AOS from "aos";
 
 AOS.init({
@@ -667,6 +670,8 @@ if (modalButtons.length > 0) {
       if (e.currentTarget.dataset.tour) {
         const modalTour = document.querySelector(".modal-tour");
         const src = e.target.dataset.tour;
+        const tour = modalTour.querySelector(".modal-window__tour");
+        tour.setAttribute("src", src);
         modalTour.classList.add("active");
         document.body.classList.add("dis-scroll");
         lenis.stop();
@@ -694,7 +699,7 @@ if(document.querySelector('.office__btn')){
     modalForm.setAttribute("form-id", "contact-form");
   })
 }
-if (document.querySelector(".consult-btn")) {
+/* if (document.querySelector(".consult-btn")) { // DDD 18.02.2024
   document.querySelector(".consult-btn").addEventListener("click", (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -705,6 +710,19 @@ if (document.querySelector(".consult-btn")) {
     modalForm.setAttribute("form-id", e.currentTarget.dataset.formId);
   });
 }
+*/
+document.querySelectorAll(".consult-btn").forEach((el) => { // DDD 18.02.2024
+  el.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const modalForm = document.querySelector(".modal-form");
+    modalForm.classList.add("active");
+    lenis.stop();
+
+    modalForm.setAttribute("form-id", e.currentTarget.dataset.formId);
+  });
+});
+
 if (document.querySelector(".mobile-menu__btn--call")) {
   document
     .querySelector(".mobile-menu__btn--call")
@@ -1402,12 +1420,15 @@ if (itemProdButtons && window.matchMedia("(max-width: 768px)").matches) {
   const offsetTop = rectFooter.y + window.scrollY;
   window.addEventListener("scroll", (e) => {
     const rectProd = itemProdButtons.getBoundingClientRect();
+    const plan = document.querySelector('.plan')
+    const rectPlan = plan.getBoundingClientRect()
+    const length = rectPlan.y + plan.clientHeight * 4
     if (rectProd.y + window.scrollY >= offsetTop) {
       itemProdButtons.style.opacity = "0";
       itemProdButtons.style.zIndex = "-1";
-    } else {
-      itemProdButtons.style.opacity = null;
-      itemProdButtons.style.zIndex = null;
+    } else if(rectProd.y + window.scrollY < offsetTop && rectProd.y + window.scrollY > length){
+      itemProdButtons.style.opacity = "1";
+      itemProdButtons.style.zIndex = "10";
     }
   });
 }
@@ -1897,6 +1918,9 @@ const aboutVideoBtn = document.querySelector('.about-video__wrapper button')
 if(aboutVideoBtn) {
   aboutVideoBtn.addEventListener('click', e => {
     const modal = document.querySelector('.modal-video')
+    const src = e.target.dataset.src;
+    const video = modal.querySelector(".modal-window__video");
+    video.setAttribute("src", src);
     modal.classList.add('active')
   })
 }
@@ -2014,7 +2038,7 @@ if(document.querySelector('.timber-main__content--main')){
   timelineText.to(texts[1], {y: "-1rem", opacity: 1, duration: 1})
   timelineText.to(texts[1], {y: "-3rem", opacity: 0})
   timelineText.to(texts[2], {y: "-1rem", opacity: 1, duration: 1})
-  let startPos = 'top top'
+  let startPos = 'top top+=70'
   if(window.matchMedia('(max-width: 768px)').matches){
     startPos = 'top top+=70'
   }

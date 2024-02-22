@@ -1,5 +1,5 @@
 .about-prod {
-  padding-top: 180px;
+  padding-top: 120px;
   padding-bottom: 120px;
 
   @include mobile {
@@ -9,7 +9,7 @@
   }
 
   @media (min-width: 1441px) {
-    padding-top: 18rem;
+    padding-top: 12rem;
     padding-bottom: 12rem;
   }
 

@@ -6,7 +6,7 @@
   @include mobile {
     padding-bottom: 53px;
   }
-  &__btn {
+  &__btn, &__link {
     margin-bottom: 80px;
     @media (min-width: 1440px){
       margin-bottom: 8rem;

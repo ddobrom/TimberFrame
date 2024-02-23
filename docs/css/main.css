@@ -5698,6 +5698,7 @@ span.popular-card__figure {
 .form__label {
   display: block;
   width: 100%;
+  position: relative;
 }
 .form__label:not(:last-child) {
   margin-bottom: 20px;
@@ -5729,6 +5730,13 @@ span.popular-card__figure {
   .form__label span {
     font-size: 1.4rem;
   }
+}
+.form__label span[data-error] {
+  position: absolute;
+  display: block;
+}
+.form__label span[data-error] span.error {
+  color: #CC0000;
 }
 .form__input {
   color: var(--black-brand-color);
@@ -5772,6 +5780,9 @@ span.popular-card__figure {
   .form__btn {
     margin-top: 1.6rem;
   }
+}
+.form__btn.btn-disabled {
+  background-color: #bdbdbd;
 }
 .form__privacy {
   color: #79716C;

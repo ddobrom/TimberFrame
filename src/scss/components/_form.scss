@@ -50,6 +50,7 @@
   &__label {
     display: block;
     width: 100%;
+    position: relative; // DDD
     &:not(:last-child){
       margin-bottom: 20px;
     }
@@ -74,6 +75,13 @@
       }
       @media (min-width: 1440px){
         font-size: 1.4rem;
+      }
+      &[data-error] { // DDD
+        position: absolute;
+        display: block;
+        & span.error {
+          color: #CC0000;
+        }
       }
     }
 
@@ -114,6 +122,9 @@
     width: 100%;
     @media (min-width: 1440px){
       margin-top: 1.6rem;
+    }
+    &.btn-disabled {
+      background-color: #bdbdbd;
     }
   }
   &__privacy {

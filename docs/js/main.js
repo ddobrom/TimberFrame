@@ -149,6 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fancyapps_ui__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fancyapps/ui */ "./node_modules/@fancyapps/ui/dist/index.esm.js");
 /* harmony import */ var _imagePagination_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./imagePagination.js */ "./src/js/components/imagePagination.js");
 /* harmony import */ var _declOfNum_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./declOfNum.js */ "./src/js/components/declOfNum.js");
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! js-cookie */ "./node_modules/js-cookie/dist/js.cookie.mjs");
 
 
 
@@ -697,10 +698,10 @@ window.onload = () => {
 };
 const menuBtn = document.querySelector(".menu-btn");
 const menu = document.querySelector(".main-menu");
-const fMenuBtn = document.querySelector(".favorites-btn");
+//const fMenuBtn = document.querySelector(".favorites-btn"); // DDD 22.02.2024
 menuBtn.addEventListener("click", e => {
   e.stopPropagation();
-  fMenuBtn.classList.add("disabled");
+  // fMenuBtn.classList.add("disabled"); // DDD 22.02.2024
   menu.classList.add("menu-active");
   menu.classList.remove("menu-disabled");
   document.body.style.overflow = "hidden";
@@ -710,7 +711,7 @@ closeBtn.addEventListener("click", () => {
   menu.classList.add("menu-disabled");
   setTimeout(() => {
     menu.classList.remove("menu-active");
-    fMenuBtn.classList.remove("disabled");
+    // fMenuBtn.classList.remove("disabled"); // DDD 22.02.2024
     document.body.style.overflow = null;
   }, 500);
 });
@@ -963,17 +964,20 @@ if (projectCards) {
     });
   }
 }
+
+/* // DDD 22.02.2024
 const favorites = document.querySelector(".favorites-content");
+
 if (favorites) {
-  favorites.addEventListener("mousemove", e => {
+  favorites.addEventListener("mousemove", (e) => {
     if (e.target.classList.contains("projects-card")) {
       const details = e.target.querySelector(".projects-card__details");
-      e.target.addEventListener("mouseenter", event => {
+      e.target.addEventListener("mouseenter", (event) => {
         event.stopPropagation();
         details.classList.add("active");
         details.style.maxHeight = details.scrollHeight + "px";
       });
-      e.target.addEventListener("mouseleave", event => {
+      e.target.addEventListener("mouseleave", (event) => {
         event.stopPropagation();
         details.classList.remove("active");
         details.style.maxHeight = null;
@@ -983,6 +987,8 @@ if (favorites) {
     }
   });
 }
+*/
+
 const forms = document.querySelectorAll(".form");
 forms.forEach(f => {
   const labels = f.querySelectorAll(".form__label");
@@ -1977,6 +1983,47 @@ if (document.querySelector('.timber-main__content--main')) {
     // })
   });
 }
+
+// DDD 22.02.2024
+
+const likeBtns = document.querySelectorAll('.btn--like');
+const favBtnQuantityBtns = document.querySelectorAll(".favorites-btn__quantity");
+likeBtns.forEach(likeBtn => likeBtn.addEventListener('click', el => {
+  var wasFavorite = likeBtn.classList.contains("active");
+  var id = likeBtn.dataset.id;
+  var favorites = js_cookie__WEBPACK_IMPORTED_MODULE_14__["default"].get("favorites");
+  if (favorites == undefined) favorites = "";
+  var favoriteIds = favorites == "" ? [] : favorites.split("|");
+  var index = favoriteIds.indexOf(id);
+  if (wasFavorite) {
+    if (index > -1) favoriteIds.splice(index, 1);
+    likeBtn.classList.remove("active");
+  } else {
+    if (index == -1) favoriteIds.push(id);
+    likeBtn.classList.add("active");
+  }
+  js_cookie__WEBPACK_IMPORTED_MODULE_14__["default"].set("favorites", favoriteIds.join("|"), {
+    expires: 365
+  });
+  fetch("/favorites/quantity").then(response => response.text()).then(text => favBtnQuantityBtns.forEach(elq => elq.textContent = text));
+}));
+const clearFavoritesBtn = document.querySelector('.btn--clear-favorites');
+if (clearFavoritesBtn) {
+  clearFavoritesBtn.addEventListener('click', el => {
+    js_cookie__WEBPACK_IMPORTED_MODULE_14__["default"].remove("favorites");
+    document.location.reload();
+  });
+}
+document.addEventListener('fetchit:success', e => {
+  const {
+    form
+  } = e.detail;
+  var btn = form.querySelector("button");
+  if (btn) {
+    btn.textContent = "Отправлено";
+    btn.classList.add("btn-disabled");
+  }
+});
 
 /***/ }),
 
@@ -13859,6 +13906,155 @@ const resize = shortcut('resize');
 const scroll = shortcut('scroll');
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ($);
+
+
+
+/***/ }),
+
+/***/ "./node_modules/js-cookie/dist/js.cookie.mjs":
+/*!***************************************************!*\
+  !*** ./node_modules/js-cookie/dist/js.cookie.mjs ***!
+  \***************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ api)
+/* harmony export */ });
+/*! js-cookie v3.0.5 | MIT */
+/* eslint-disable no-var */
+function assign (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+    for (var key in source) {
+      target[key] = source[key];
+    }
+  }
+  return target
+}
+/* eslint-enable no-var */
+
+/* eslint-disable no-var */
+var defaultConverter = {
+  read: function (value) {
+    if (value[0] === '"') {
+      value = value.slice(1, -1);
+    }
+    return value.replace(/(%[\dA-F]{2})+/gi, decodeURIComponent)
+  },
+  write: function (value) {
+    return encodeURIComponent(value).replace(
+      /%(2[346BF]|3[AC-F]|40|5[BDE]|60|7[BCD])/g,
+      decodeURIComponent
+    )
+  }
+};
+/* eslint-enable no-var */
+
+/* eslint-disable no-var */
+
+function init (converter, defaultAttributes) {
+  function set (name, value, attributes) {
+    if (typeof document === 'undefined') {
+      return
+    }
+
+    attributes = assign({}, defaultAttributes, attributes);
+
+    if (typeof attributes.expires === 'number') {
+      attributes.expires = new Date(Date.now() + attributes.expires * 864e5);
+    }
+    if (attributes.expires) {
+      attributes.expires = attributes.expires.toUTCString();
+    }
+
+    name = encodeURIComponent(name)
+      .replace(/%(2[346B]|5E|60|7C)/g, decodeURIComponent)
+      .replace(/[()]/g, escape);
+
+    var stringifiedAttributes = '';
+    for (var attributeName in attributes) {
+      if (!attributes[attributeName]) {
+        continue
+      }
+
+      stringifiedAttributes += '; ' + attributeName;
+
+      if (attributes[attributeName] === true) {
+        continue
+      }
+
+      // Considers RFC 6265 section 5.2:
+      // ...
+      // 3.  If the remaining unparsed-attributes contains a %x3B (";")
+      //     character:
+      // Consume the characters of the unparsed-attributes up to,
+      // not including, the first %x3B (";") character.
+      // ...
+      stringifiedAttributes += '=' + attributes[attributeName].split(';')[0];
+    }
+
+    return (document.cookie =
+      name + '=' + converter.write(value, name) + stringifiedAttributes)
+  }
+
+  function get (name) {
+    if (typeof document === 'undefined' || (arguments.length && !name)) {
+      return
+    }
+
+    // To prevent the for loop in the first place assign an empty array
+    // in case there are no cookies at all.
+    var cookies = document.cookie ? document.cookie.split('; ') : [];
+    var jar = {};
+    for (var i = 0; i < cookies.length; i++) {
+      var parts = cookies[i].split('=');
+      var value = parts.slice(1).join('=');
+
+      try {
+        var found = decodeURIComponent(parts[0]);
+        jar[found] = converter.read(value, found);
+
+        if (name === found) {
+          break
+        }
+      } catch (e) {}
+    }
+
+    return name ? jar[name] : jar
+  }
+
+  return Object.create(
+    {
+      set,
+      get,
+      remove: function (name, attributes) {
+        set(
+          name,
+          '',
+          assign({}, attributes, {
+            expires: -1
+          })
+        );
+      },
+      withAttributes: function (attributes) {
+        return init(this.converter, assign({}, this.attributes, attributes))
+      },
+      withConverter: function (converter) {
+        return init(assign({}, this.converter, converter), this.attributes)
+      }
+    },
+    {
+      attributes: { value: Object.freeze(defaultAttributes) },
+      converter: { value: Object.freeze(converter) }
+    }
+  )
+}
+
+var api = init(defaultConverter, { path: '/' });
+/* eslint-enable no-var */
+
 
 
 

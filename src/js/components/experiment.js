@@ -54,9 +54,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 })
 
-
-
-
 const heroslider = new Swiper(".hero__slider", {
   slidesPerView: 1,
   /* navigation: {
@@ -629,10 +626,10 @@ window.onload = () => {
 
 const menuBtn = document.querySelector(".menu-btn");
 const menu = document.querySelector(".main-menu");
-const fMenuBtn = document.querySelector(".favorites-btn");
+//const fMenuBtn = document.querySelector(".favorites-btn"); // DDD 22.02.2024
 menuBtn.addEventListener("click", (e) => {
   e.stopPropagation();
-  fMenuBtn.classList.add("disabled");
+  // fMenuBtn.classList.add("disabled"); // DDD 22.02.2024
   menu.classList.add("menu-active");
   menu.classList.remove("menu-disabled");
   document.body.style.overflow = "hidden";
@@ -642,7 +639,7 @@ closeBtn.addEventListener("click", () => {
   menu.classList.add("menu-disabled");
   setTimeout(() => {
     menu.classList.remove("menu-active");
-    fMenuBtn.classList.remove("disabled");
+    // fMenuBtn.classList.remove("disabled"); // DDD 22.02.2024
     document.body.style.overflow = null;
   }, 500);
 });
@@ -991,6 +988,7 @@ if (projectCards) {
   }
 }
 
+/* // DDD 22.02.2024
 const favorites = document.querySelector(".favorites-content");
 
 if (favorites) {
@@ -1012,6 +1010,8 @@ if (favorites) {
     }
   });
 }
+*/
+
 const forms = document.querySelectorAll(".form");
 
 forms.forEach((f) => {
@@ -2178,5 +2178,49 @@ if(document.querySelector('.timber-main__content--main')){
 
 }
 
+// DDD 22.02.2024
+import Cookies from "js-cookie";
 
+const likeBtns = document.querySelectorAll('.btn--like');
+const favBtnQuantityBtns = document.querySelectorAll(".favorites-btn__quantity");
 
+likeBtns.forEach((likeBtn) => likeBtn.addEventListener('click', el => {
+  var wasFavorite = (likeBtn.classList.contains("active"));
+  var id = likeBtn.dataset.id;
+  var favorites = Cookies.get("favorites");
+  if (favorites == undefined) favorites = "";
+  var favoriteIds = (favorites == "") ? [] : favorites.split("|");
+  var index = favoriteIds.indexOf(id);
+
+  if (wasFavorite) {
+    if (index > -1) favoriteIds.splice(index, 1);
+    likeBtn.classList.remove("active");
+  }
+  else {
+    if (index == -1) favoriteIds.push(id);
+    likeBtn.classList.add("active");
+  }
+
+  Cookies.set("favorites", favoriteIds.join("|"), { expires: 365 });
+
+  fetch("/favorites/quantity")
+    .then((response) => response.text())
+    .then((text) => favBtnQuantityBtns.forEach((elq) => (elq.textContent = text)));
+}));
+
+const clearFavoritesBtn = document.querySelector('.btn--clear-favorites');
+if (clearFavoritesBtn) {
+  clearFavoritesBtn.addEventListener('click', el => {
+    Cookies.remove("favorites");
+    document.location.reload();
+  });
+}
+
+document.addEventListener('fetchit:success', (e) => {
+  const { form } = e.detail;
+  var btn = form.querySelector("button");
+  if (btn) {
+    btn.textContent = "Отправлено";
+    btn.classList.add("btn-disabled");
+  }
+})

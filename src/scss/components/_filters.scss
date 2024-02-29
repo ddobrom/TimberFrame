@@ -30,8 +30,10 @@
     }
 
     &>li {
-      &>button {
-        cursor: pointer;
+      &>button,
+      &>a {
+        //cursor: pointer;
+        display: inline-block;
         border: none;
         margin: 0;
         background: none;

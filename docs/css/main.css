@@ -4100,7 +4100,7 @@ span.popular-card__figure {
 }
 @media (max-width: 850px) {
   .video-section {
-    height: 60vh;
+    display: none;
   }
 }
 .video-section video {
@@ -5028,7 +5028,7 @@ span.popular-card__figure {
   }
 }
 .tech__img--1 {
-  background-image: url("./../img/text-pic-02-2x.webp");
+  background-image: url("./../img/text-pic-01-2x.webp");
 }
 @media (max-width: 850px) {
   .tech__img--1 {
@@ -5038,7 +5038,7 @@ span.popular-card__figure {
   }
 }
 .tech__img--2 {
-  background-image: url("./../img/text-pic-01-2x.webp");
+  background-image: url("./../img/text-pic-02-2x.webp");
   top: 70%;
 }
 .tech__img img {
@@ -6645,8 +6645,8 @@ span.popular-card__figure {
     gap: 0.4rem;
   }
 }
-.filters ul > li > button {
-  cursor: pointer;
+.filters ul > li > button, .filters ul > li > a {
+  display: inline-block;
   border: none;
   margin: 0;
   background: none;
@@ -6664,11 +6664,11 @@ span.popular-card__figure {
   -webkit-transition: outline 0.2s ease-in;
   transition: outline 0.2s ease-in;
 }
-.filters ul > li > button:active {
+.filters ul > li > button:active, .filters ul > li > a:active {
   outline-color: var(--focus-active-color);
 }
 @media (min-width: 1440px) {
-  .filters ul > li > button {
+  .filters ul > li > button, .filters ul > li > a {
     padding: 0.8rem 2.4rem;
     font-size: 1.2rem;
     border-radius: 0.4rem;
@@ -6676,22 +6676,22 @@ span.popular-card__figure {
   }
 }
 @media (max-width: 850px) {
-  .filters ul > li > button {
+  .filters ul > li > button, .filters ul > li > a {
     padding: 8px 23.5px;
   }
-  .filters ul > li > button:focus, .filters ul > li > button:active {
+  .filters ul > li > button:focus, .filters ul > li > button:active, .filters ul > li > a:focus, .filters ul > li > a:active {
     outline-color: transparent;
   }
 }
 @media (any-hover: hover) {
-  .filters ul > li > button:not(.active):hover {
+  .filters ul > li > button:not(.active):hover, .filters ul > li > a:not(.active):hover {
     outline-color: var(--focus-color);
   }
 }
-.filters ul > li > button.active {
+.filters ul > li > button.active, .filters ul > li > a.active {
   outline-color: var(--focus-active-color) !important;
 }
-.filters ul > li > button.disabled {
+.filters ul > li > button.disabled, .filters ul > li > a.disabled {
   color: var(--gray-lite-color);
   pointer-events: none;
 }
@@ -7188,6 +7188,7 @@ span.popular-card__figure {
 @media (max-width: 1280px) {
   .item-product__slider {
     width: 100%;
+    max-height: 200vh;
   }
 }
 .item-product__slider .swiper-wrapper {
@@ -7246,6 +7247,13 @@ span.popular-card__figure {
     flex: 1;
   }
 }
+@media (max-width: 1280px) and (min-width: 452px) {
+  .item-product__content .chars {
+    width: 426px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 .item-product__buttons {
   padding: 32px 0;
   -webkit-transition: opacity 0.3s ease-in, z-index 0.3s ease-in;
@@ -7258,6 +7266,7 @@ span.popular-card__figure {
 }
 @media (max-width: 1280px) {
   .item-product__buttons {
+    display: none;
     opacity: 0;
     z-index: -1;
     padding: 16px 24px;

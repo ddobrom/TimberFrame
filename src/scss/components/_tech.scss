@@ -99,7 +99,7 @@
     }
 
     &--1 {
-      background-image: url("./../img/text-pic-02-2x.webp");
+      background-image: url("./../img/text-pic-01-2x.webp");
 
       @include mobile {
         transform: translateX(-50%) translateY(-93%);
@@ -107,7 +107,7 @@
     }
 
     &--2 {
-      background-image: url("./../img/text-pic-01-2x.webp");
+      background-image: url("./../img/text-pic-02-2x.webp");
       top: 70%;
     }
 

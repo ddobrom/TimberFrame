@@ -3,7 +3,7 @@ import Lenis from "@studio-freight/lenis";
 import { Swiper } from "swiper/bundle";
 import { Navigation, Thumbs, Pagination, Autoplay } from "swiper";
 Swiper.use([Navigation, Thumbs, Autoplay, Pagination]);
-import initFilters from "./initFilters.js";
+// import initFilters from "./initFilters.js"; // DDD 24.02.2024
 const lenis = new Lenis({
   lerp: 0.07,
   wheelMultiplier: 0.7,
@@ -22,9 +22,9 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
-if(document.querySelector('.filters')){
+/* if(document.querySelector('.filters')){ // DDD 24.02.2024
   initFilters()
-}
+} */
 
 let preloader = document.querySelector('.preloader')
 
@@ -72,6 +72,7 @@ const heroslider = new Swiper(".hero__slider", {
 
 let popularImages = null;
 const popularImagesSlider = new Swiper(".slider-popular__images", {
+  allowTouchMove: false,
   slidesPerView: 1,
   navigation: {
     nextEl: ".popular-slider-btn--next",
@@ -260,6 +261,7 @@ const initProductSliders = (productSliders) => {
         },
         loop: true,
       });
+    /* DDD 27.02.2024
     el.addEventListener("touchmove", (e) => {
       e.preventDefault();
       const pagination = el.querySelector(".product-slider__pagination");
@@ -272,7 +274,7 @@ const initProductSliders = (productSliders) => {
       setTimeout(() => {
         pagination.classList.remove("product-slider__pagination--active");
       }, 500);
-    });
+    }); */
   });
 };
 
@@ -1727,6 +1729,14 @@ const implemVideos = document.querySelectorAll('.implemVideo-item__video')
 if(implemVideos && implemVideos.length > 0){
   implemVideos.forEach(item => {
     item.querySelector('button').addEventListener('click', (e) => {
+      const modal = document.querySelector('.modal-video')
+      const src = e.currentTarget.dataset.src;
+      const video = modal.querySelector(".modal-window__video");
+      video.setAttribute("src", src);
+      modal.classList.add('active')
+    })
+    /*
+    item.querySelector('button').addEventListener('click', (e) => {
       e.stopPropagation()
       e.preventDefault()
       const videoSrc = item.dataset.videoSrc
@@ -1744,9 +1754,9 @@ if(implemVideos && implemVideos.length > 0){
         item.querySelector('div').style.opacity = null
       })
     }
+    */
   })
 }
-
 
 if(implemObjectsSection) {
   const sliders = document.querySelectorAll('.product__slider')

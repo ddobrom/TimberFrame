@@ -8,8 +8,8 @@
   }
 
   @include mobile {
-    height: 60vh;
-
+    //height: 60vh;
+    display: none;
   }
 
   video {

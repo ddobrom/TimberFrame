@@ -3,6 +3,11 @@
     <div class="swiper-wrapper">
       <div class="swiper-slide">
         <video autoplay muted="true" playsinline loop preload="metadata" class="hero__video">
+          <!-- 4K -->
+          <source src="./hero-video-nis.mp4" type="video/mp4" media="(min-width: 1920px)">
+          <!-- 2K, 1024 -->
+          <source src="./hero-video-nis.mp4" type="video/mp4" media="(min-width: 1024px)">
+          <!-- Other -->
           <source src="./hero-video-nis.mp4" type="video/mp4">
         </video>
         <div class="slide__content">
@@ -38,6 +43,11 @@
       </div>
       <div class="swiper-slide">
         <video autoplay muted="true" playsinline loop preload="metadata" class="hero__video">
+          <!-- 4K -->
+          <source src="./hero-video-laut.mp4" type="video/mp4" media="(min-width: 1920px)">
+          <!-- 2K, 1024 -->
+          <source src="./hero-video-laut.mp4" type="video/mp4" media="(min-width: 1024px)">
+          <!-- Other -->
           <source src="./hero-video-laut.mp4" type="video/mp4">
         </video>
         <div class="slide__content">
@@ -73,6 +83,11 @@
       </div>
       <div class="swiper-slide">
         <video autoplay muted="true" playsinline loop preload="metadata" class="hero__video">
+          <!-- 4K -->
+          <source src="./hero-video-ostamo.mp4" type="video/mp4" media="(min-width: 1920px)">
+          <!-- 2K, 1024 -->
+          <source src="./hero-video-ostamo.mp4" type="video/mp4" media="(min-width: 1024px)">
+          <!-- Other -->
           <source src="./hero-video-ostamo.mp4" type="video/mp4">
         </video>
         <div class="slide__content">
@@ -108,6 +123,11 @@
       </div>
       <div class="swiper-slide">
         <video autoplay muted="true" playsinline loop preload="metadata" class="hero__video">
+          <!-- 4K -->
+          <source src="./hero-video-vask.mp4" type="video/mp4" media="(min-width: 1920px)">
+          <!-- 2K, 1024 -->
+          <source src="./hero-video-vask.mp4" type="video/mp4" media="(min-width: 1024px)">
+          <!-- Other -->
           <source src="./hero-video-vask.mp4" type="video/mp4">
         </video>
         <div class="slide__content">
@@ -142,12 +162,12 @@
         </div>
       </div>
     </div>
-    <!--<button class="btn-reset slider-control__btn slider-control__btn--prev">
+    <button class="btn-reset slider-control__btn slider-control__btn--prev hero-prev">
       <span></span>
     </button>
-    <button class="btn-reset slider-control__btn slider-control__btn--next">
+    <button class="btn-reset slider-control__btn slider-control__btn--next hero-next">
       <span></span>
-    </button>-->
+    </button>
   </div>
   @include('./modal-video.html') @include('./modal-tour.html')
   @include('./modal-gallery.html')

@@ -7,30 +7,35 @@
   background: rgba(255, 255, 255, 0.90);
   backdrop-filter: blur(10px);
 
-  @media (min-width: 1440px){
+  @media (min-width: 1440px) {
     padding: 4.5rem;
     width: 83rem;
     border-radius: 1.6rem;
   }
+
   @include mobile {
     padding: 45px 32px;
     width: unset;
     max-width: 450px;
   }
+
   &-close {
     @include mobile {
       top: 45px;
       right: 30px !important;
     }
   }
+
   &__left {
     flex: 1;
     flex-shrink: 0;
   }
+
   &__right {
     flex: 1;
     flex-shrink: 0;
   }
+
   &__title {
     margin: 0;
     margin-bottom: 20px;
@@ -39,29 +44,36 @@
     font-size: 24px;
     font-weight: 700;
     letter-spacing: 0.72px;
-    @media (min-width: 1440px){
+
+    @media (min-width: 1440px) {
       font-size: 2.4rem;
       letter-spacing: 0.072rem;
     }
+
     @include mobile {
       margin-bottom: 16px;
     }
   }
+
   &__label {
     display: block;
     width: 100%;
-    position: relative; // DDD
-    &:not(:last-child){
+    position: relative;
+
+    &:not(:last-child) {
       margin-bottom: 20px;
     }
-    @media (min-width: 1440px){
-      &:not(:last-child){
+
+    @media (min-width: 1440px) {
+      &:not(:last-child) {
         margin-bottom: 2rem;
       }
     }
+
     @include mobile {
       margin-bottom: 16px;
     }
+
     span {
       display: inline-block;
       margin-bottom: 4px;
@@ -70,15 +82,20 @@
       font-weight: 400;
       line-height: 114.286%;
       transition: color .3s ease-in;
+
       &.focus {
         color: var(--gray-lite-color);
       }
-      @media (min-width: 1440px){
+
+      @media (min-width: 1440px) {
         font-size: 1.4rem;
       }
-      &[data-error] { // DDD
+
+      &[data-error] {
+        // DDD
         position: absolute;
         display: block;
+
         & span.error {
           color: #CC0000;
         }
@@ -86,6 +103,7 @@
     }
 
   }
+
   &__input {
     color: var(--black-brand-color);
     font-size: 15px;
@@ -104,7 +122,8 @@
       outline: none;
       border-color: var(--focus-color);
     }
-    @media (min-width: 1440px){
+
+    @media (min-width: 1440px) {
       font-size: 1.5rem;
       padding-left: 1.7rem;
       padding-right: 1.7rem;
@@ -112,21 +131,26 @@
       border-radius: 0.4rem;
       border-width: 0.1rem;
     }
+
     @include mobile {
       height: 46px;
     }
   }
+
   &__btn {
     margin-top: 16px;
     // align-self: center;
     width: 100%;
-    @media (min-width: 1440px){
+
+    @media (min-width: 1440px) {
       margin-top: 1.6rem;
     }
+
     &.btn-disabled {
       background-color: #bdbdbd;
     }
   }
+
   &__privacy {
     color: #79716C;
     text-align: center;
@@ -137,11 +161,13 @@
     font-style: normal;
     font-weight: 400;
     line-height: 160%;
+
     a {
       color: inherit;
       text-decoration: underline;
     }
-    @media (min-width: 1440px){
+
+    @media (min-width: 1440px) {
       font-size: 1.2rem;
     }
   }
@@ -150,6 +176,7 @@
 .form__input.focus-visible {
   border: 1px solid var(--focus-color);
 }
+
 .form-close {
   @include mobile {
     right: 16px;

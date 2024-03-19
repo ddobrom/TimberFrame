@@ -179,3 +179,10 @@
     }
   }
 }
+
+.header__btn.favorites-btn.active {
+  svg {
+    fill: var(--focus-color);
+    stroke: var(--focus-color);
+  }
+}

@@ -5,6 +5,8 @@
   background-size: 100% auto;
   background-repeat: no-repeat;
   overflow-x: hidden;
+  position: relative;
+  z-index: 4;
 
   @media (min-width: 2560px) {
     background-position: bottom;

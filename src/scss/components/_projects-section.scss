@@ -2,9 +2,11 @@
   padding: 120px 30px 60px;
   text-align: center;
   overflow: hidden;
-  @media (min-width: 1440px){
+
+  @media (min-width: 1440px) {
     padding: 12rem 3rem 6rem;
   }
+
   &__container {
     text-align-last: left;
     margin-bottom: 60px;
@@ -15,41 +17,43 @@
     grid-auto-rows: 440px;
 
     gap: 20px;
+
     @include mobile {
       grid-template-columns: 1fr;
       grid-template-rows: repeat(4, 440px);
       gap: 2px;
       margin-bottom: 32px;
     }
-    @media (min-width: 1440px){
+
+    @media (min-width: 1440px) {
       grid-template-rows: repeat(2, 44rem);
       grid-auto-rows: 44rem;
     }
   }
+
   &__title {
     margin-bottom: 64px;
   }
+
   @include mobile {
     padding: 0;
     padding-top: 80px;
     padding-bottom: 32px;
   }
 }
+
 .projects-card {
   position: relative;
   width: 100%;
   overflow: hidden;
-  @include hover {
-    .projects-card__details {
-      display: block;
-    }
-    .projects-card__img {
-      transform: scale(1.05);
-    }
-    &::before {
-      background: rgb(37, 35, 33, 0.6);
-    }
+
+  &__link {
+    position: absolute;
+    z-index: 10;
+    inset: 0;
+
   }
+
   &::before {
     content: '';
     position: absolute;
@@ -57,10 +61,28 @@
     z-index: 1;
     background: rgb(37, 35, 33, 0.3);
     transition: background 0.5s ease-in;
-    @include mobile {
+
+    @media (max-width: 1366px) {
       background: rgb(37, 35, 33, 0.6);
     }
   }
+
+  &:hover {
+    .projects-card__details {
+      display: block;
+    }
+
+    .projects-card__img {
+      transform: scale(1.05);
+    }
+
+    &::before {
+      background: rgb(37, 35, 33, 0.6);
+    }
+  }
+
+
+
   &__btn {
     position: absolute;
     z-index: 5;
@@ -71,18 +93,21 @@
     height: 30px;
     border-color: var(--white-color);
     border: none;
+
     svg {
       padding: 0;
       width: 100%;
       height: 100%;
     }
-    @media (min-width: 1440px){
+
+    @media (min-width: 1440px) {
       width: 3rem;
       height: 3rem;
       top: 3rem;
       right: 3rem;
     }
   }
+
   &__img {
     position: absolute;
     left: 0;
@@ -92,6 +117,7 @@
     object-fit: cover;
     transition: transform 1s ease-in;
   }
+
   &__info {
     position: absolute;
     z-index: 5;
@@ -100,58 +126,70 @@
     color: #fff;
     max-width: 371px;
 
-    @media (min-width: 1440px){
+    @media (min-width: 1440px) {
       max-width: 37.1rem;
     }
   }
+
   &__list {
     justify-content: flex-start;
   }
+
   &__item {
     color: var(--white-color);
+
     span {
       color: inherit;
     }
+
     &--sq {
       &::before {
         background-image: url('./../img/house-icon/house-icon-sq.svg');
       }
     }
+
     &--fl {
       &::before {
         background-image: url('./../img/house-icon/house-icon-fl.svg');
       }
     }
+
     &--bed {
       &::before {
         background-image: url('./../img/house-icon/house-icon-bed.svg');
       }
     }
+
     &--bath {
       &::before {
         background-image: url('./../img/house-icon/house-icon-bath.svg');
       }
     }
+
     &--pl {
       &::before {
         background-image: url('./../img/house-icon/house-icon-pl.svg');
       }
     }
   }
+
   &__title {
     margin: 0;
     color: var(--white-color);
     font-size: 32px;
     font-weight: 700;
     letter-spacing: 1.6px;
-    @media (min-width: 1440px){
+
+    @media (min-width: 1440px) {
       font-size: 3.2rem;
       letter-spacing: 0.16rem;
     }
+
     @include mobile {
       font-size: 24px;
     }
   }
+
   &__more {
     position: relative;
     color: var(--white-color);
@@ -160,14 +198,15 @@
     letter-spacing: 1.44px;
     text-transform: uppercase;
     padding-right: 66.5px;
-    @include mobile {
 
-    }
-    @media (min-width: 1440px){
+    @include mobile {}
+
+    @media (min-width: 1440px) {
       font-size: 1.2rem;
       padding-right: 6.65rem;
       letter-spacing: 0.144rem;
     }
+
     &::before {
       content: '';
       position: absolute;
@@ -181,7 +220,8 @@
       background-size: cover;
       background-repeat: no-repeat;
       transition: width .3s ease-in;
-      @media (min-width: 1440px){
+
+      @media (min-width: 1440px) {
         width: 5.45rem;
         height: 0.6rem;
       }
@@ -190,22 +230,26 @@
     @include hover {
       &::before {
         width: 30px;
-        @media (min-width: 1440px){
+
+        @media (min-width: 1440px) {
           width: 3rem;
         }
       }
     }
   }
+
   &__details {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
     will-change: max-height;
     transition: opacity .3s ease-in .1s, max-height .3s linear, margin-top .3s ease-in;
+
     &.active {
       opacity: 1;
       margin-top: 16px;
-      @media (min-width: 1440px){
+
+      @media (min-width: 1440px) {
         margin-top: 1.6rem;
       }
     }
@@ -215,4 +259,3 @@
     }
   }
 }
-

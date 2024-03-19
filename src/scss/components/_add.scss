@@ -1,12 +1,12 @@
 .add {
-  padding: 65px 108px 66px 166px;
+  padding: 65px 108px;
   background: rgba(255, 150, 92, 0.2);
   position: relative;
   z-index: 2;
 
-  @media (min-width: 1440px) {
-    padding: 6.5rem 10.8rem 6.6rem 16.6rem;
-  }
+
+  padding: 6.5rem 10.8rem;
+
 
   @include mobile {
     padding: 64px 16px;
@@ -85,12 +85,6 @@
 
   &:not(:last-child) {
 
-    // margin-right: 268px;
-    @media (min-width: 1440px) {
-      // margin-right: 26.8rem;
-      max-width: 40rem;
-    }
-
     @include mobile {
       margin-right: 0;
       margin-bottom: 64px;
@@ -102,4 +96,7 @@
   align-items: center;
   justify-content: center;
 
+  @media (min-width: 1440px) {
+    max-width: 40rem;
+  }
 }

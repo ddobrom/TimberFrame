@@ -89,8 +89,6 @@
     position: relative;
     display: inline-block;
     overflow: hidden;
-    // height: 690px;
-    // max-width: 690px;
     width: 100%;
     aspect-ratio: 1 / 1;
 
@@ -122,12 +120,11 @@
       }
     }
 
-    // @include hover {
-    //   img {
-    //     transform: scale(1.05);
-    //   }
-    // }
-    @include mobile {
+    @media (max-width: 850px) {
+      height: auto;
+    }
+
+    @include small-tablet {
       height: 343px;
     }
   }

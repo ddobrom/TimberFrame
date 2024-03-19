@@ -88,6 +88,10 @@
       max-width: 50.3rem;
     }
 
+    @media (max-width: 1366px) {
+      margin: 0 auto;
+    }
+
     &>h4 {
       margin: 0;
       margin-bottom: 12px;

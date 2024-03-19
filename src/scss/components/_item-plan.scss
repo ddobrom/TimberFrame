@@ -137,6 +137,7 @@
   &__content {
     position: relative;
     cursor: zoom-in;
+    background-color: #E4E4E4;
 
     &-buttons {
       position: absolute;
@@ -166,6 +167,7 @@
     // height: 80vh;
     display: none;
 
+
     &.active {
       display: block;
     }
@@ -173,7 +175,8 @@
     picture,
     img {
       width: 100%;
-      object-fit: cover;
+      height: 100%;
+      object-fit: contain;
     }
 
     @include mobile {

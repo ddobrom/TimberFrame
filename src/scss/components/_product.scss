@@ -94,9 +94,7 @@
       height: 44rem;
     }
 
-    @include mobile {
-      height: 250px;
-    }
+
 
     @include hover {
       .image-pagination {

@@ -86,11 +86,17 @@
 
   &__slide {
     height: 100%;
-    width: 100%;
+    width: auto;
     user-select: none;
 
     @include mobile {
       max-width: 290px;
+    }
+
+    img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
     }
   }
 

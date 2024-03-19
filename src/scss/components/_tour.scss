@@ -5,14 +5,10 @@
   overflow: hidden;
 
   iframe {
-    height: 640px;
+    height: 64rem;
 
     @include mobile {
       height: 320px;
-    }
-
-    @media (min-width: 1440px) {
-      height: 64rem;
     }
 
   }

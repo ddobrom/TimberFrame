@@ -32,6 +32,10 @@
     gap: 0 50px;
     margin-bottom: 27px;
 
+    @media (min-width: 850px) and (max-width: 1366px) {
+      align-items: center;
+    }
+
     &--mt {
       margin-top: 190px;
 
@@ -182,6 +186,21 @@
     position: relative;
     z-index: 2;
     display: flex;
+
+    &#bh1,
+    &#bh4 {
+      @media (min-width: 850px) and (max-width: 1366px) {
+        aspect-ratio: 1 / 1;
+      }
+    }
+
+    &#bh4 {
+      @media (min-width: 850px) and (max-width: 1366px) {
+        img {
+          object-fit: contain;
+        }
+      }
+    }
 
     picture {
       width: 100%;

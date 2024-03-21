@@ -381,22 +381,23 @@ const initProductSliders = productSliders => {
       },
       loop: true
     });
-    /* DDD 27.02.2024
-    el.addEventListener("touchmove", (e) => {
+    const pagination = el.querySelector(".product-slider__pagination");
+    const fullScreen = el.closest('.product').querySelector('.implemPhoto-section__btn');
+    el.addEventListener("touchstart", e => {
       e.preventDefault();
-      const pagination = el.querySelector(".product-slider__pagination");
-       pagination.classList.add("product-slider__pagination--active");
+      pagination?.classList.add("product-slider__pagination--active");
+      fullScreen?.classList.add("active");
     });
-    el.addEventListener("touchend", (e) => {
+    el.addEventListener("touchend", e => {
       e.preventDefault();
-      const pagination = el.querySelector(".product-slider__pagination");
       setTimeout(() => {
-        pagination.classList.remove("product-slider__pagination--active");
-      }, 500);
-    }); */
+        pagination?.classList.remove("product-slider__pagination--active");
+        fullScreen?.classList.remove("active");
+      }, 1000);
+    });
   });
 };
-if (document.querySelector('.catalogue-section') && window.matchMedia('(max-width: 1024px)').matches) {
+if (document.querySelector('.catalogue-section') && window.matchMedia('(max-width: 1366px)').matches) {
   initProductSliders(document.querySelectorAll('.product__slider'));
 }
 
@@ -1305,6 +1306,18 @@ if (itemProdButtons && window.matchMedia("(max-width: 768px)").matches) {
 }
 
 _fancyapps_ui__WEBPACK_IMPORTED_MODULE_10__.Fancybox.bind('[data-fancybox="images-preview"]', {
+  Images: {
+    content: (_ref, slide) => {
+      let rez = "<picture>";
+      const media = slide.media.split(";");
+      slide.sources.split(";").map((source, index) => {
+        rez += `<source media="${media[index] || ""}" srcset="${source}" />`;
+      });
+      rez += `<img src="${slide.src}" srcset="${slide.srcset} 2x" alt="" />`;
+      rez += "</picture>";
+      return rez;
+    }
+  },
   Carousel: {
     Navigation: {
       prevTpl: '<div class="slider-control__btn slider-control__btn--prev item-hero__btn" data-carousel-prev="true">' + " <span></span>" + "</div>",
@@ -1323,6 +1336,18 @@ _fancyapps_ui__WEBPACK_IMPORTED_MODULE_10__.Fancybox.bind('[data-fancybox="image
   }
 });
 _fancyapps_ui__WEBPACK_IMPORTED_MODULE_10__.Fancybox.bind('[data-fancybox="fancy-plan"]', {
+  Images: {
+    content: (_ref, slide) => {
+      let rez = "<picture>";
+      const media = slide.media.split(";");
+      slide.sources.split(";").map((source, index) => {
+        rez += `<source media="${media[index] || ""}" srcset="${source}" />`;
+      });
+      rez += `<img src="${slide.src}" srcset="${slide.srcset} 2x" alt="" />`;
+      rez += "</picture>";
+      return rez;
+    }
+  },
   Carousel: {
     Navigation: {
       prevTpl: '<div class="slider-control__btn slider-control__btn--dark btn--fill slider-control__btn--prev item-plan__btn" data-carousel-prev="true">' + " <span></span>" + "</div>",
@@ -1519,7 +1544,7 @@ if (products && products.length > 0) {
 const implemPhotoSection = document.querySelector('.implemPhoto-section');
 if (implemPhotoSection) {
   const productSliders = document.querySelectorAll(".product__slider");
-  if (window.matchMedia("(max-width: 768px)").matches) {
+  if (window.matchMedia("(max-width: 1366px)").matches) {
     initProductSliders(productSliders);
   }
   document.querySelectorAll('.product').forEach((item, index) => {
@@ -2081,6 +2106,29 @@ window.addEventListener("orientationchange", function () {
     document.body.style.overflow = null;
   }
 }, false);
+
+// cookies alert
+
+const cookies = document.querySelector('.cookies');
+if (cookies) {
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      cookies.classList.add('active');
+    }, 300);
+    const cookiesBtnAccept = cookies.querySelector('.cookies__btn');
+    cookiesBtnAccept.addEventListener('click', e => {
+      e.preventDefault();
+      js_cookie__WEBPACK_IMPORTED_MODULE_12__["default"].set("cookiesAccepted", "1", {
+        expires: 36500
+      }); // DDD 22.03.2023
+      cookies.classList.remove('active');
+      setTimeout(() => {
+        cookies.remove();
+      }, 300);
+    });
+  });
+}
+const cookiesBtn = document.querySelector('.cookies__btn');
 
 /***/ }),
 

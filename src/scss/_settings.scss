@@ -358,6 +358,10 @@ a {
     justify-content: center;
     flex-shrink: 0;
 
+    &.active {
+      opacity: 1;
+    }
+
     @media (min-width: 1440px) {
       width: 4rem;
       height: 4rem;

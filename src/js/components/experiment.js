@@ -65,15 +65,12 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 })
 
-
-
-
 const heroslider = new Swiper(".hero__slider", {
   slidesPerView: 1,
-  navigation: {
+  /* navigation: { // DDD 19.03.2024 - 1 slide only
     nextEl: ".hero-next",
     prevEl: ".hero-prev",
-  },
+  }, */
   //loop: true, // DDD 18.02.2024
   effect: "fade",
   speed: 2000,
@@ -687,6 +684,8 @@ if (modalButtons.length > 0) {
       if (e.currentTarget.dataset.tour) {
         const modalTour = document.querySelector(".modal-tour");
         const src = e.target.dataset.tour;
+        const tour = modalTour.querySelector(".modal-window__tour"); // DDD 21.03.2024
+        tour.setAttribute("src", src); // DDD 21.03.2024
         modalTour.classList.add("active");
         document.body.classList.add("dis-scroll");
         lenis.stop();
@@ -1407,7 +1406,7 @@ if(itemDescPriceButtons && itemDescPriceButtons.length > 0) {
 }
 
 // print popup
-
+/* // DDD 19.03.2024 - print PDF
 const itemPrintBtn = document.querySelector(".plan-btn-print");
 const planContent = document.querySelector(".plan__content")
 if (itemPrintBtn) {
@@ -1428,7 +1427,7 @@ if (itemPrintBtn) {
     );
     w.document.write("</body></html>");
   });
-}
+} */
 
 const itemProdButtons = document.querySelector(".item-product__buttons");
 const footer = document.querySelector("footer");
@@ -1501,6 +1500,7 @@ Fancybox.bind('[data-fancybox="fancy-plan"]', {
   }
 });
 
+/* DDD убрали галерею из шапки главной
 Fancybox.bind('[data-fancybox="hero-images-preview-nis"]', {
   Carousel: {
     Navigation: {
@@ -1569,7 +1569,7 @@ Fancybox.bind('[data-fancybox="hero-images-preview-laut"]', {
     type: "classic",
   }
 });
-
+*/
 
 
 
@@ -2204,6 +2204,7 @@ if(document.querySelector('.timber-main__content--main')){
 import Cookies from "js-cookie";
 
 const likeBtns = document.querySelectorAll('.btn--like');
+const favBtns = document.querySelectorAll(".favorites-btn");
 const favBtnQuantityBtns = document.querySelectorAll(".favorites-btn__quantity");
 
 likeBtns.forEach((likeBtn) => likeBtn.addEventListener('click', el => {
@@ -2226,8 +2227,14 @@ likeBtns.forEach((likeBtn) => likeBtn.addEventListener('click', el => {
   Cookies.set("favorites", favoriteIds.join("|"), { expires: 365 });
 
   fetch("/favorites/quantity")
-    .then((response) => response.text())
-    .then((text) => favBtnQuantityBtns.forEach((elq) => (elq.textContent = text)));
+    .then(response => response.text())
+    .then(text => {
+      favBtnQuantityBtns.forEach(elq => elq.textContent = text);
+      favBtns.forEach(el => {
+        if (text != "0") el.classList.add("active");
+        else el.classList.remove("active");
+      });
+    });
 }));
 
 const clearFavoritesBtn = document.querySelector('.btn--clear-favorites');

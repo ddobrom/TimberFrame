@@ -1651,6 +1651,7 @@ const readyArray = [];
 if (implemReadySliders && implemReadySliders.length > 0) {
   implemReadySliders.forEach((el, index) => {
     const slider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(el, {
+      modules: [swiper__WEBPACK_IMPORTED_MODULE_1__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_1__.Navigation],
       slidesPerView: 1,
       navigation: {
         nextEl: `.ready-slider-btn--next-${index + 1}`,
@@ -2107,7 +2108,7 @@ document.addEventListener('fetchit:success', e => {
 
 const alertDisplay = document.querySelector('.alert');
 function checkPosition() {
-  if (alertDisplay && window.innerHeight <= 576 && ((0,_functions_mobile_check_js__WEBPACK_IMPORTED_MODULE_13__.mobileCheck)() == "Android" || (0,_functions_mobile_check_js__WEBPACK_IMPORTED_MODULE_13__.mobileCheck)() == "iOS")) {
+  if (alertDisplay && screen.orientation.type == 'landscape-primary' && window.innerHeight < 576 && ((0,_functions_mobile_check_js__WEBPACK_IMPORTED_MODULE_13__.mobileCheck)() == "Android" || (0,_functions_mobile_check_js__WEBPACK_IMPORTED_MODULE_13__.mobileCheck)() == "iOS")) {
     setTimeout(() => {
       document.body.style.overflow = 'hidden';
     }, 4000);

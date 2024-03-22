@@ -1611,6 +1611,18 @@ html.lenis {
   color: var(--focus-color);
 }
 
+@media (min-width: 768px) and (max-width: 1399px) {
+  .light-shadow {
+    text-shadow: 0 0 3px #ffffff9b;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1399px) {
+  .dark-shadow {
+    text-shadow: 0 0 3px #0000009b;
+  }
+}
+
 .header {
   position: fixed;
   z-index: 10;
@@ -9588,6 +9600,16 @@ span.popular-card__figure {
   transition: opacity 0.3s ease-in;
 }
 
+@media (max-width: 1024px) and (min-width: 768px) {
+  .implemReady-section .main-container {
+    padding: 0 40px;
+  }
+}
+@media (max-width: 767px) {
+  .implemReady-section .main-container {
+    padding: 0 20px;
+  }
+}
 .implemReady-section h1 {
   margin: 0;
   margin-bottom: 16px;

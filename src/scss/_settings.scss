@@ -1463,3 +1463,15 @@ html.lenis {
 // }
 
 //test
+
+.light-shadow {
+  @media (min-width: 768px) and (max-width: 1399px) {
+    text-shadow: 0 0 3px #ffffff9b;
+  }
+}
+
+.dark-shadow {
+  @media (min-width: 768px) and (max-width: 1399px) {
+    text-shadow: 0 0 3px #0000009b;
+  }
+}

@@ -1,7 +1,7 @@
 import Lenis from "@studio-freight/lenis";
 
 import { Swiper } from "swiper/bundle";
-import { Navigation, Thumbs, Pagination, Autoplay } from "swiper";
+import { Navigation, Thumbs, Pagination, Autoplay, A11y } from "swiper";
 Swiper.use([Navigation, Thumbs, Autoplay, Pagination]);
 // import initFilters from "./initFilters.js"; // DDD 24.02.2024
 const lenis = new Lenis({
@@ -1842,6 +1842,7 @@ const readyArray = []
 if(implemReadySliders && implemReadySliders.length > 0){
   implemReadySliders.forEach((el, index) => {
     const slider = new Swiper(el, {
+      modules: [Pagination, Navigation],
       slidesPerView: 1,
       navigation: {
         nextEl: `.ready-slider-btn--next-${index+1}`,
@@ -2292,7 +2293,7 @@ document.addEventListener('fetchit:success', (e) => {
 import {mobileCheck} from './../functions/mobile-check.js'
 const alertDisplay = document.querySelector('.alert')
 function checkPosition(){
-  if(alertDisplay &&  window.innerHeight <= 576 && (mobileCheck() == "Android" ||  mobileCheck() == "iOS")){
+  if(alertDisplay &&  screen.orientation.type == 'landscape-primary' && window.innerHeight < 576 && (mobileCheck() == "Android" ||  mobileCheck() == "iOS")){
     setTimeout(() => {
       document.body.style.overflow = 'hidden'
     }, 4000)

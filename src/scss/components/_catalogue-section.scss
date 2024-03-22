@@ -82,14 +82,14 @@
         pointer-events: none;
       }
 
-      @media (max-width: 1024px) {
+      @media (max-width: 1399px) {
         display: block;
       }
 
     }
 
     &__switch {
-      @media (max-width: 1024px) {
+      @media (max-width: 1399px) {
         display: none !important;
       }
     }

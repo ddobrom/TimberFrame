@@ -130,6 +130,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fancyapps_ui__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fancyapps/ui */ "./node_modules/@fancyapps/ui/dist/index.esm.js");
 /* harmony import */ var _imagePagination_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./imagePagination.js */ "./src/js/components/imagePagination.js");
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! js-cookie */ "./node_modules/js-cookie/dist/js.cookie.mjs");
+/* harmony import */ var _functions_mobile_check_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./../functions/mobile-check.js */ "./src/js/functions/mobile-check.js");
 
 
 
@@ -381,23 +382,24 @@ const initProductSliders = productSliders => {
       },
       loop: true
     });
-    const pagination = el.querySelector(".product-slider__pagination");
-    const fullScreen = el.closest('.product').querySelector('.implemPhoto-section__btn');
-    el.addEventListener("touchstart", e => {
-      e.preventDefault();
-      pagination?.classList.add("product-slider__pagination--active");
-      fullScreen?.classList.add("active");
-    });
-    el.addEventListener("touchend", e => {
-      e.preventDefault();
-      setTimeout(() => {
-        pagination?.classList.remove("product-slider__pagination--active");
-        fullScreen?.classList.remove("active");
-      }, 1000);
-    });
+    // DDD 27.02.2024 // Daniil 22.02.2024 снова закомментировал, думаю этот блок можно удалить вообще
+    // const pagination = el.querySelector(".product-slider__pagination");
+    // const fullScreen = el.closest('.product').querySelector('.implemPhoto-section__btn')
+    // el.addEventListener("touchstart", (e) => {
+    //   e.preventDefault();
+    //   pagination?.classList.add("product-slider__pagination--active");
+    //   fullScreen?.classList.add("active");
+    // });
+    // el.addEventListener("touchend", (e) => {
+    //   e.preventDefault();
+    //   setTimeout(() => {
+    //     pagination?.classList.remove("product-slider__pagination--active");
+    //     fullScreen?.classList.remove("active");
+    //   }, 1000);
+    // });
   });
 };
-if (document.querySelector('.catalogue-section') && window.matchMedia('(max-width: 1366px)').matches) {
+if (document.querySelector('.catalogue-section') && window.matchMedia('(max-width: 1399px)').matches) {
   initProductSliders(document.querySelectorAll('.product__slider'));
 }
 
@@ -1544,7 +1546,7 @@ if (products && products.length > 0) {
 const implemPhotoSection = document.querySelector('.implemPhoto-section');
 if (implemPhotoSection) {
   const productSliders = document.querySelectorAll(".product__slider");
-  if (window.matchMedia("(max-width: 1366px)").matches) {
+  if (window.matchMedia("(max-width: 1399px)").matches) {
     initProductSliders(productSliders);
   }
   document.querySelectorAll('.product').forEach((item, index) => {
@@ -1582,11 +1584,22 @@ const implemVideos = document.querySelectorAll('.implemVideo-item__video');
 if (implemVideos && implemVideos.length > 0) {
   implemVideos.forEach(item => {
     item.querySelector('button').addEventListener('click', e => {
-      const modal = document.querySelector('.modal-video');
-      const src = e.currentTarget.dataset.src;
-      const video = modal.querySelector(".modal-window__video");
-      video.setAttribute("src", src);
-      modal.classList.add('active');
+      if (e.currentTarget.dataset.src) {
+        const modal = document.querySelector('.modal-video');
+        const src = e.currentTarget.dataset.src;
+        const video = modal.querySelector(".modal-window__video");
+        video.setAttribute("src", src);
+        modal.classList.add('active');
+      } else {
+        // DDD 22.03.2023
+        const modal = document.querySelector('.modal-tour');
+        const src = e.currentTarget.dataset.tour;
+        const video = modal.querySelector(".modal-window__tour");
+        video.setAttribute("src", src);
+        modal.classList.add('active');
+      }
+      document.body.classList.add("dis-scroll");
+      lenis.stop();
     });
     /*
     item.querySelector('button').addEventListener('click', (e) => {
@@ -2091,21 +2104,30 @@ document.addEventListener('fetchit:success', e => {
     btn.classList.add("btn-disabled");
   }
 });
+
+const alertDisplay = document.querySelector('.alert');
+function checkPosition() {
+  if (alertDisplay && window.innerHeight <= 576 && ((0,_functions_mobile_check_js__WEBPACK_IMPORTED_MODULE_13__.mobileCheck)() == "Android" || (0,_functions_mobile_check_js__WEBPACK_IMPORTED_MODULE_13__.mobileCheck)() == "iOS")) {
+    setTimeout(() => {
+      document.body.style.overflow = 'hidden';
+    }, 4000);
+    document.body.style.overflow = 'hidden';
+    alertDisplay.style.display = 'flex';
+    console.log((0,_functions_mobile_check_js__WEBPACK_IMPORTED_MODULE_13__.mobileCheck)());
+  } else {
+    document.body.style.overflow = null;
+    alertDisplay.style.display = null;
+  }
+}
 window.addEventListener("orientationchange", function () {
   location.reload();
   gsap_all__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger.refresh();
   builtHouseSlider.destroy();
   const builtHouseSlider = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__.Swiper(".built-houses__slider", buildHousesSlideSetting);
   builtHouseSlider.update();
-  if (document.querySelector('.alert') && window.innerHeight <= 576 && screen.orientation.type == 'landscape-primary') {
-    document.body.style.overflow = 'hidden'; // установка сразу
-    setTimeout(() => {
-      document.body.style.overflow = 'hidden'; // прелоадер сбрасывает свойство через 3с, поэтому еще раз зададим
-    }, 3050);
-  } else {
-    document.body.style.overflow = null;
-  }
+  checkPosition();
 }, false);
+checkPosition();
 
 // cookies alert
 
@@ -2168,6 +2190,34 @@ const addImagePagination = products => {
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addImagePagination);
+
+/***/ }),
+
+/***/ "./src/js/functions/mobile-check.js":
+/*!******************************************!*\
+  !*** ./src/js/functions/mobile-check.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "mobileCheck": () => (/* binding */ mobileCheck)
+/* harmony export */ });
+/* harmony import */ var _vars__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_vars */ "./src/js/_vars.js");
+
+const mobileCheck = () => {
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  if (/android/i.test(userAgent)) {
+    _vars__WEBPACK_IMPORTED_MODULE_0__["default"].htmlEl.classList.add('page--android');
+    return "Android";
+  }
+  if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    _vars__WEBPACK_IMPORTED_MODULE_0__["default"].htmlEl.classList.add('page--ios');
+    return "iOS";
+  }
+  return "unknown";
+};
 
 /***/ }),
 

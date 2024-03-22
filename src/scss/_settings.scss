@@ -1433,7 +1433,7 @@ html.lenis {
 .alert {
   display: none;
   position: fixed;
-  z-index: 100;
+  z-index: 90;
   inset: 0;
   background-color: var(--white-color);
   align-items: center;
@@ -1456,10 +1456,10 @@ html.lenis {
   }
 }
 
-@media (orientation: landscape) and (max-height: 576px) {
-  .alert {
-    display: flex;
-  }
-}
+// @media (orientation: landscape) and (max-height: 576px) {
+//   .alert {
+//     display: flex;
+//   }
+// }
 
 //test

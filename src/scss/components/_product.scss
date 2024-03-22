@@ -436,6 +436,11 @@
   transform: translateY(16px);
   transition: opacity 0.2s ease-in, transform 0.2s ease-in;
 
+  @media (max-width: 1399px) {
+    opacity: 1;
+    transform: none;
+  }
+
   .swiper-pagination-bullet {
     margin: 0 4px;
     height: 8px;

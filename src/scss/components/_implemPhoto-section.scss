@@ -122,8 +122,8 @@
         }
       }
 
-      &.active {
-        opacity: 1;
+      @media (max-width: 1399px) {
+        opacity: 1 !important;
       }
 
     }

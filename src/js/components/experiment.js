@@ -280,23 +280,24 @@ const initProductSliders = (productSliders) => {
       },
       loop: true,
     });
-    const pagination = el.querySelector(".product-slider__pagination");
-    const fullScreen = el.closest('.product').querySelector('.implemPhoto-section__btn')
-    el.addEventListener("touchstart", (e) => {
-      e.preventDefault();
-      pagination?.classList.add("product-slider__pagination--active");
-      fullScreen?.classList.add("active");
-    });
-    el.addEventListener("touchend", (e) => {
-      e.preventDefault();
-      setTimeout(() => {
-        pagination?.classList.remove("product-slider__pagination--active");
-        fullScreen?.classList.remove("active");
-      }, 1000);
-    });
+    // DDD 27.02.2024 // Daniil 22.02.2024 снова закомментировал, думаю этот блок можно удалить вообще
+    // const pagination = el.querySelector(".product-slider__pagination");
+    // const fullScreen = el.closest('.product').querySelector('.implemPhoto-section__btn')
+    // el.addEventListener("touchstart", (e) => {
+    //   e.preventDefault();
+    //   pagination?.classList.add("product-slider__pagination--active");
+    //   fullScreen?.classList.add("active");
+    // });
+    // el.addEventListener("touchend", (e) => {
+    //   e.preventDefault();
+    //   setTimeout(() => {
+    //     pagination?.classList.remove("product-slider__pagination--active");
+    //     fullScreen?.classList.remove("active");
+    //   }, 1000);
+    // });
   });
 };
-if(document.querySelector('.catalogue-section') && window.matchMedia('(max-width: 1366px)').matches){
+if(document.querySelector('.catalogue-section') && window.matchMedia('(max-width: 1399px)').matches){
   initProductSliders(document.querySelectorAll('.product__slider'))
 }
 import AOS from "aos";
@@ -1717,7 +1718,7 @@ if(products && products.length > 0){
 const implemPhotoSection = document.querySelector('.implemPhoto-section')
 if(implemPhotoSection) {
   const productSliders = document.querySelectorAll(".product__slider");
-  if (window.matchMedia("(max-width: 1366px)").matches) {
+  if (window.matchMedia("(max-width: 1399px)").matches) {
     initProductSliders(productSliders);
   }
 
@@ -1767,11 +1768,21 @@ const implemVideos = document.querySelectorAll('.implemVideo-item__video')
 if(implemVideos && implemVideos.length > 0){
   implemVideos.forEach(item => {
     item.querySelector('button').addEventListener('click', (e) => {
-      const modal = document.querySelector('.modal-video')
-      const src = e.currentTarget.dataset.src;
-      const video = modal.querySelector(".modal-window__video");
-      video.setAttribute("src", src);
-      modal.classList.add('active')
+      if (e.currentTarget.dataset.src) {
+        const modal = document.querySelector('.modal-video')
+        const src = e.currentTarget.dataset.src;
+        const video = modal.querySelector(".modal-window__video");
+        video.setAttribute("src", src);
+        modal.classList.add('active');
+       } else { // DDD 22.03.2023
+        const modal = document.querySelector('.modal-tour')
+        const src = e.currentTarget.dataset.tour;
+        const video = modal.querySelector(".modal-window__tour");
+        video.setAttribute("src", src);
+        modal.classList.add('active');
+      }
+      document.body.classList.add("dis-scroll");
+      lenis.stop();
     })
     /*
     item.querySelector('button').addEventListener('click', (e) => {
@@ -2278,22 +2289,30 @@ document.addEventListener('fetchit:success', (e) => {
   }
 })
 
-
+import {mobileCheck} from './../functions/mobile-check.js'
+const alertDisplay = document.querySelector('.alert')
+function checkPosition(){
+  if(alertDisplay &&  window.innerHeight <= 576 && (mobileCheck() == "Android" ||  mobileCheck() == "iOS")){
+    setTimeout(() => {
+      document.body.style.overflow = 'hidden'
+    }, 4000)
+    document.body.style.overflow = 'hidden'
+    alertDisplay.style.display = 'flex'
+    console.log(mobileCheck());
+  } else {
+    document.body.style.overflow = null
+    alertDisplay.style.display = null
+  }
+}
 window.addEventListener("orientationchange", function() {
   location.reload()
   ScrollTrigger.refresh()
   builtHouseSlider.destroy()
   const builtHouseSlider = new Swiper(".built-houses__slider", buildHousesSlideSetting);
   builtHouseSlider.update();
-  if(document.querySelector('.alert') &&  window.innerHeight <= 576 && screen.orientation.type == 'landscape-primary'){
-    document.body.style.overflow = 'hidden' // установка сразу
-    setTimeout(()=> {
-      document.body.style.overflow = 'hidden' // прелоадер сбрасывает свойство через 3с, поэтому еще раз зададим
-    }, 3050)
-  } else {
-    document.body.style.overflow = null
-  }
+  checkPosition()
 }, false);
+checkPosition()
 
 // cookies alert
 

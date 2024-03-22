@@ -1580,9 +1580,9 @@ if (contactBtns) {
     contactBtns.style.maxHeight = null;
   });
 }
-const implemVideos = document.querySelectorAll('.implemVideo-item__video');
-if (implemVideos && implemVideos.length > 0) {
-  implemVideos.forEach(item => {
+const implemVideosAndTours = document.querySelectorAll('.implemVideo-item__video,.implemTours-item__tour');
+if (implemVideosAndTours && implemVideosAndTours.length > 0) {
+  implemVideosAndTours.forEach(item => {
     item.querySelector('button').addEventListener('click', e => {
       if (e.currentTarget.dataset.src) {
         const modal = document.querySelector('.modal-video');
